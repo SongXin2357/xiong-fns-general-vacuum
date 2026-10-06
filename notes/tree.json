@@ -17,10 +17,54 @@
       "lean_status": "lean-verified",
       "gate": "passed",
       "statement": "notes/nodes/N0001/statement.md",
-      "children": [],
+      "children": [
+        "N0002"
+      ],
       "certificate": "evidence/N0001/certificate.json",
       "github_commit": "8211cef495fded145823cfeedd35464ee7a18e6f",
       "extension_status": "eligible-after-current-gate-check"
+    },
+    {
+      "id": "N0002",
+      "parent": "N0001",
+      "dependencies": [],
+      "kind": "analysis-lemma",
+      "mathematical_status": "exploring",
+      "lean_status": "not-started",
+      "gate": "open",
+      "statement": "notes/nodes/N0002/statement.md",
+      "children": [],
+      "certificate": null,
+      "github_commit": null,
+      "extension_status": "blocked-until-verified-and-published"
+    },
+    {
+      "id": "N0003",
+      "parent": "ROOT",
+      "dependencies": [],
+      "kind": "global-PDE-target",
+      "mathematical_status": "exploring",
+      "lean_status": "not-started",
+      "gate": "open",
+      "statement": "notes/nodes/N0003/statement.md",
+      "children": [],
+      "certificate": null,
+      "github_commit": null,
+      "extension_status": "blocked-until-verified-and-published"
+    },
+    {
+      "id": "N0004",
+      "parent": "ROOT",
+      "dependencies": [],
+      "kind": "coupled-thermal-route",
+      "mathematical_status": "exploring",
+      "lean_status": "not-started",
+      "gate": "open",
+      "statement": "notes/nodes/N0004/statement.md",
+      "children": [],
+      "certificate": null,
+      "github_commit": null,
+      "extension_status": "blocked-until-verified-and-published"
     }
   ],
   "github_status": "published-private",
