@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "root": {
+    "id": "ROOT",
+    "kind": "problem",
+    "status": "open",
+    "goal": "2D full compressible heat-conducting NS: small physical energy global strong solutions in Wang original framework, general nonnegative density, far-field vacuum",
+    "not_a_proved_theorem": true
+  },
+  "nodes": [
+    {
+      "id": "N0001",
+      "parent": "ROOT",
+      "dependencies": [],
+      "kind": "analysis-lemma",
+      "mathematical_status": "exploring",
+      "lean_status": "not-started",
+      "gate": "closed",
+      "statement": "notes/nodes/N0001/statement.md",
+      "children": []
+    }
+  ],
+  "github_status": "awaiting-cli-auth"
+}

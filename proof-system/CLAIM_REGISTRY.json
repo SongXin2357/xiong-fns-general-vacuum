@@ -1,0 +1,19 @@
+{
+  "schema": "math-research-claim-registry-v1",
+  "generated_at": "2026-10-06T12:11:50Z",
+  "active_claim_id": "claim-d08766cc9e6b2feb",
+  "claims": {
+    "claim-d08766cc9e6b2feb": {
+      "claim_id": "claim-d08766cc9e6b2feb",
+      "claim": "N0001: For Lebesgue integrable real f and nonnegative h on R2, measurable uniformly bounded cutoffs chi_n converging to 1 almost everywhere, and C >= 0, if abs(integral f*chi_n) <= C*sqrt(integral over norm(x)>=n of h) for every n, then integral f=0. This general lemma does not assert that the FNS fields satisfy its hypotheses.",
+      "claim_digest": "d08766cc9e6b2feb2df6a6fe97dbf5ca744077d7a5488e65019474999d76dea2",
+      "source_scope": "cited-source",
+      "status": "active",
+      "created_at": "2026-10-06T12:11:50Z",
+      "parent_claim_id": null,
+      "relation": "genesis"
+    }
+  },
+  "transitions": [],
+  "proof_authority": false
+}

@@ -1,0 +1,61 @@
+{
+  "schema": "math-research-system-v1",
+  "evidence_binding_version": 1,
+  "generated_at": "2026-10-06T12:11:50Z",
+  "project": "D:\\tex\\Latex\\manuscripts\\王雪全局解\\xiong-fns-small-energy\\research-tree",
+  "claim": "N0001: For Lebesgue integrable real f and nonnegative h on R2, measurable uniformly bounded cutoffs chi_n converging to 1 almost everywhere, and C >= 0, if abs(integral f*chi_n) <= C*sqrt(integral over norm(x)>=n of h) for every n, then integral f=0. This general lemma does not assert that the FNS fields satisfy its hypotheses.",
+  "claim_id": "claim-d08766cc9e6b2feb",
+  "claim_digest": "d08766cc9e6b2feb2df6a6fe97dbf5ca744077d7a5488e65019474999d76dea2",
+  "source_scope": "cited-source",
+  "route_classification": "unclassified",
+  "public_claim_ready": false,
+  "gates": {
+    "claim-card": {
+      "status": "open",
+      "evidence": [
+        "proof-system/CLAIM_CARD.md"
+      ],
+      "note": "Created template; freeze only after exact statement is complete."
+    },
+    "source-fidelity": {
+      "status": "open",
+      "evidence": [
+        "proof-system/SOURCE_FIDELITY.md"
+      ],
+      "note": "Template only; source or problem statement has not been inspected."
+    },
+    "proof-certificate": {
+      "status": "open",
+      "evidence": [],
+      "note": "Requires formula-level proof certificate."
+    },
+    "proof-adversary": {
+      "status": "open",
+      "evidence": [],
+      "note": "Requires adversarial pass for endpoints, assumptions, and counterexamples."
+    },
+    "mechanical-verification": {
+      "status": "open",
+      "evidence": [],
+      "note": "Requires TeX/script/log checks for current artifacts."
+    },
+    "bilingual-sync": {
+      "status": "not-applicable",
+      "evidence": [],
+      "note": "Set to open when a Chinese counterpart or bilingual output exists."
+    },
+    "public-claim-ready": {
+      "status": "open",
+      "evidence": [
+        "proof-system/PUBLIC_CLAIM_READY.md"
+      ],
+      "note": "Must remain open until every required gate closes."
+    }
+  },
+  "invariants": [
+    "Agent output is not proof authority.",
+    "A clean TeX compile proves build health only.",
+    "Old chat or audit outputs are not closure evidence until revalidated.",
+    "public_claim_ready may be true only after all required gates close."
+  ]
+}

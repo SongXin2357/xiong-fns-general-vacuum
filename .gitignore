@@ -1,0 +1,71 @@
+lean/.lake/
+lean/local-runtime/
+.math-research-system/
+runs/
+*.aux
+*.out
+*.toc
+*.synctex.gz
+.env
+*auth.json
+*.key
+.DS_Store
+
+# Codex math workflow local Git governance
+# Local math-system runtime (snapshots and dashboard telemetry)
+.math-research-system/
+
+# Keep proof-system/, core TeX/Markdown, work scripts, and outputs evidence trackable.
+
+# Python and local environments
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Builds and generated intermediates
+build/
+build-*/
+dist/
+tmp/
+temp/
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.toc
+*.out
+*.log
+
+# Large downloaded or external source corpora
+external-sources/
+downloaded-sources/
+source-downloads/
+sources/raw/
+source-cache/
+
+# Credentials, sessions, and local machine identity
+.env
+.env.*
+auth.json
+credentials.json
+secrets.json
+cap_sid
+session*.json
+sessions/
+*.sqlite
+*.sqlite3
+*.db
+*.pem
+*.key
+*.pfx
+*.p12
+installation-id*
+installation_id*
