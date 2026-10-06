@@ -1,0 +1,115 @@
+{
+  "utc": "2026-10-06T13:46:07.968611+00:00",
+  "dependency_commit_actual": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "search_files": 1112,
+  "patterns": {
+    "topological_reflexivity_names": "IsReflexive|ReflexiveSpace|[Rr]eflexive",
+    "lp_dual_and_weak_compactness": "StrongDual.*Lp|Lp.*StrongDual|isCompact.*WeakSpace|WeakSpace.*isCompact",
+    "lp_pairing_surjectivity": "surjective.*lpPairing|lpPairing.*surjective|denseRange.*lpPairing",
+    "available_supporting_apis": "isCompact_closure_of_isBounded|isSeqCompact_closedBall|ae_eq_of_integral_contDiff_smul_eq|theorem denseRange_toLpCLM|instance Lp.SecondCountableTopology|Milman-Pettis"
+  },
+  "results": {
+    "topological_reflexivity_names": [
+      {
+        "file": "Mathlib/MeasureTheory/Integral/IntervalIntegral/Basic.lean",
+        "line": 185,
+        "text": "- interval integrability is symmetric, reflexive, transitive"
+      }
+    ],
+    "lp_dual_and_weak_compactness": [
+      {
+        "file": "Mathlib/Analysis/InnerProductSpace/PiL2.lean",
+        "line": 287,
+        "text": "abbrev EuclideanSpace.proj (i : ι) : StrongDual 𝕜 (EuclideanSpace 𝕜 ι) := PiLp.proj _ _ i"
+      },
+      {
+        "file": "Mathlib/Analysis/Normed/Module/DoubleDual.lean",
+        "line": 145,
+        "text": "theorem isCompact_closure_of_isBounded (S : Set (WeakSpace 𝕜 X))"
+      },
+      {
+        "file": "Mathlib/MeasureTheory/Function/Holder.lean",
+        "line": 24,
+        "text": "is the natural map `Lp (StrongDual 𝕜 E) p μ →L[𝕜] StrongDual 𝕜 (Lp E q μ)`."
+      },
+      {
+        "file": "Mathlib/MeasureTheory/Function/Holder.lean",
+        "line": 141,
+        "text": "natural map `Lp (StrongDual 𝕜 E) p μ →L[𝕜] StrongDual 𝕜 (Lp E q μ)`. -/"
+      },
+      {
+        "file": "Mathlib/MeasureTheory/Measure/CharacteristicFunction/Basic.lean",
+        "line": 411,
+        "text": "    (L : StrongDual ℝ (WithLp p (E × F))) :"
+      },
+      {
+        "file": "Mathlib/MeasureTheory/Measure/CharacteristicFunction/Basic.lean",
+        "line": 441,
+        "text": "    (L : StrongDual ℝ (PiLp p E)) :"
+      }
+    ],
+    "lp_pairing_surjectivity": [],
+    "available_supporting_apis": [
+      {
+        "file": "Mathlib/Analysis/Calculus/Rademacher.lean",
+        "line": 212,
+        "text": "  apply ae_eq_of_integral_contDiff_smul_eq (hf.locallyIntegrable_lineDeriv _)"
+      },
+      {
+        "file": "Mathlib/Analysis/Convex/Uniform.lean",
+        "line": 26,
+        "text": "* Milman-Pettis"
+      },
+      {
+        "file": "Mathlib/Analysis/Distribution/AEEqOfIntegralContDiff.lean",
+        "line": 20,
+        "text": "functions is also given in `ae_eq_of_integral_contDiff_smul_eq`."
+      },
+      {
+        "file": "Mathlib/Analysis/Distribution/AEEqOfIntegralContDiff.lean",
+        "line": 195,
+        "text": "theorem ae_eq_of_integral_contDiff_smul_eq"
+      },
+      {
+        "file": "Mathlib/Analysis/Distribution/SchwartzSpace/Basic.lean",
+        "line": 1383,
+        "text": "theorem denseRange_toLpCLM [FiniteDimensional ℝ E] [BorelSpace E] {p : ℝ≥0∞} (hp : p ≠ ⊤)"
+      },
+      {
+        "file": "Mathlib/Analysis/Normed/Module/DoubleDual.lean",
+        "line": 29,
+        "text": "* `NormedSpace.isCompact_closure_of_isBounded` transfers compactness from the weak-star topology"
+      },
+      {
+        "file": "Mathlib/Analysis/Normed/Module/DoubleDual.lean",
+        "line": 145,
+        "text": "theorem isCompact_closure_of_isBounded (S : Set (WeakSpace 𝕜 X))"
+      },
+      {
+        "file": "Mathlib/Analysis/Normed/Module/WeakDual.lean",
+        "line": 66,
+        "text": "* `WeakDual.isSeqCompact_closedBall`: Sequential version for separable spaces."
+      },
+      {
+        "file": "Mathlib/Analysis/Normed/Module/WeakDual.lean",
+        "line": 370,
+        "text": "theorem isSeqCompact_closedBall (x' : StrongDual 𝕜 E) (r : ℝ) :"
+      },
+      {
+        "file": "Mathlib/MeasureTheory/Measure/SeparableMeasure.lean",
+        "line": 427,
+        "text": "instance Lp.SecondCountableTopology [IsSeparable μ] [TopologicalSpace.SeparableSpace E] :"
+      }
+    ]
+  },
+  "read_only_source_hashes": {
+    "Mathlib/Analysis/Normed/Module/DoubleDual.lean": "83d040d09eac46599a31c77001dacbdffd400e02046d80b6b55d4e39477ad0d2",
+    "Mathlib/Analysis/Normed/Module/WeakDual.lean": "9351a861215e238c39d5cf93aa050a3909108a8b6305d6be6d6afc8ff16e2783",
+    "Mathlib/MeasureTheory/Function/Holder.lean": "60ed95457da79c6fe6a595834222474a89d94ad806405e237a0e9c7182c2a030",
+    "Mathlib/Analysis/Distribution/AEEqOfIntegralContDiff.lean": "626e88cc762fe508d78e07923fdb29ab8b5c47e932b30e43e3cc352c0fee9eb2",
+    "Mathlib/Analysis/Convex/Uniform.lean": "5acb4777a4b9cde3eccbc36ed02ceb4203d95f9e5cd20a6347fbe9cabea39f85",
+    "Mathlib/MeasureTheory/Measure/SeparableMeasure.lean": "988c2285d44787502b46a98330af1ed98091f4b939077e20d66bfc07e8c4be2f",
+    "Mathlib/Analysis/Distribution/SchwartzSpace/Basic.lean": "419ecc0c5e5041be90969b55722b67e368c253d62c75e65209a749a031602cd0"
+  },
+  "inference_limit": "Search non-hits are audit evidence, not a metatheorem that no proof can be built from existing foundations."
+}

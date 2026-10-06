@@ -71,28 +71,28 @@
       "parent": "ROOT",
       "dependencies": [],
       "kind": "source-trace-audit",
-      "mathematical_status": "exploring",
-      "lean_status": "not-started",
+      "mathematical_status": "proved-draft",
+      "lean_status": "partial",
       "gate": "open",
       "statement": "notes/nodes/N0005/statement.md",
       "children": [],
       "certificate": null,
       "github_commit": null,
-      "extension_status": "blocked-until-verified-and-published"
+      "extension_status": "blocked-full-trace-target-not-verified"
     },
     {
       "id": "N0006",
       "parent": "ROOT",
       "dependencies": [],
       "kind": "disputed-obstruction-audit",
-      "mathematical_status": "reopened",
+      "mathematical_status": "proved-draft",
       "lean_status": "not-started",
       "gate": "open",
       "statement": "notes/nodes/N0006/statement.md",
       "children": [],
       "certificate": null,
       "github_commit": null,
-      "extension_status": "blocked-until-verified-and-published"
+      "extension_status": "blocked-full-analytic-chain-not-verified"
     }
   ],
   "github_status": "published-private",

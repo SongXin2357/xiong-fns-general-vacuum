@@ -1,0 +1,453 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./paper_en.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo)) (./li_xin_style.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/mathptmx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/helvet.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/needspace/needspace.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty))))
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(./paper_en.aux) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+))) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg)))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ptm.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(./paper_en.out) (./paper_en.out)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg)
+
+LaTeX Warning: Citation `Wang' on page 1 undefined on input line 65.
+
+
+LaTeX Warning: Citation `Wang' on page 1 undefined on input line 71.
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-
+dist/fonts/enc/dvips/base/8r.enc}]
+
+LaTeX Warning: Reference `eq:data-velocity' on page 2 undefined on input line 8
+8.
+
+
+LaTeX Warning: Citation `Wang' on page 2 undefined on input line 101.
+
+
+LaTeX Warning: Reference `eq:class-velocity' on page 2 undefined on input line 
+122.
+
+
+LaTeX Warning: Citation `Wang' on page 2 undefined on input line 126.
+
+
+LaTeX Warning: Reference `eq:data-density' on page 2 undefined on input line 14
+2.
+
+
+LaTeX Warning: Reference `eq:data-velocity' on page 2 undefined on input line 1
+42.
+
+
+LaTeX Warning: Reference `eq:class-density' on page 2 undefined on input line 1
+48.
+
+
+LaTeX Warning: Reference `eq:class-temperature' on page 2 undefined on input li
+ne 148.
+
+
+LaTeX Warning: Citation `Wang' on page 2 undefined on input line 152.
+
+
+LaTeX Warning: Citation `FLW' on page 2 undefined on input line 158.
+
+
+LaTeX Warning: Reference `sec:cancellation' on page 2 undefined on input line 1
+59.
+
+
+LaTeX Warning: Citation `LiXin' on page 2 undefined on input line 161.
+
+
+LaTeX Warning: Reference `eq:heat' on page 2 undefined on input line 163.
+
+
+LaTeX Warning: Reference `sec:energy' on page 2 undefined on input line 164.
+
+
+LaTeX Warning: Reference `sec:specific' on page 2 undefined on input line 164.
+
+
+LaTeX Warning: Reference `eq:criterion' on page 2 undefined on input line 166.
+
+[2]
+
+LaTeX Warning: Reference `eq:coefficients' on page 3 undefined on input line 17
+1.
+
+
+LaTeX Warning: Reference `eq:tail-hypothesis' on page 3 undefined on input line
+ 205.
+
+[3]
+
+LaTeX Warning: Reference `eq:distributional' on page 4 undefined on input line 
+245.
+
+
+LaTeX Warning: Reference `eq:cutoff-scaling' on page 4 undefined on input line 
+255.
+
+
+LaTeX Warning: Reference `lem:tail' on page 4 undefined on input line 257.
+
+
+LaTeX Warning: Reference `eq:cutoff-scaling' on page 4 undefined on input line 
+261.
+
+
+LaTeX Warning: Reference `thm:cancellation' on page 4 undefined on input line 2
+66.
+
+
+LaTeX Warning: Reference `eq:heat' on page 4 undefined on input line 268.
+
+
+LaTeX Warning: Reference `eq:criterion' on page 4 undefined on input line 272.
+
+
+LaTeX Warning: Reference `sec:energy' on page 4 undefined on input line 275.
+
+
+LaTeX Warning: Reference `sec:specific' on page 4 undefined on input line 275.
+
+
+LaTeX Warning: Reference `eq:class-density' on page 4 undefined on input line 2
+82.
+
+
+LaTeX Warning: Reference `eq:class-temperature' on page 4 undefined on input li
+ne 282.
+
+
+LaTeX Warning: Reference `eq:cutoff-gradient' on page 4 undefined on input line
+ 288.
+
+[4]
+
+LaTeX Warning: Reference `eq:vanishing-flux' on page 5 undefined on input line 
+350.
+
+[5]
+
+LaTeX Warning: Reference `eq:vanishing-flux' on page 6 undefined on input line 
+363.
+
+
+LaTeX Warning: Reference `eq:energy-balances' on page 6 undefined on input line
+ 364.
+
+
+LaTeX Warning: Reference `eq:energy-small' on page 6 undefined on input line 36
+6.
+
+
+LaTeX Warning: Reference `eq:kinetic-pressure' on page 6 undefined on input lin
+e 376.
+
+
+LaTeX Warning: Reference `eq:energy-small' on page 6 undefined on input line 38
+2.
+
+
+LaTeX Warning: Reference `eq:energy-small' on page 6 undefined on input line 38
+8.
+
+
+LaTeX Warning: Reference `eq:internal-flux' on page 6 undefined on input line 4
+09.
+
+
+LaTeX Warning: Reference `eq:kinetic-flux' on page 6 undefined on input line 42
+3.
+
+
+LaTeX Warning: Reference `eq:internal-flux' on page 6 undefined on input line 4
+25.
+
+
+LaTeX Warning: Reference `eq:pressure-spacetime' on page 6 undefined on input l
+ine 426.
+
+
+LaTeX Warning: Reference `eq:kinetic-flux' on page 6 undefined on input line 42
+9.
+
+[6]
+
+LaTeX Warning: Reference `eq:pressure-spacetime' on page 7 undefined on input l
+ine 434.
+
+
+LaTeX Warning: Reference `sec:energy' on page 7 undefined on input line 450.
+
+
+LaTeX Warning: Reference `eq:pressure-evolution' on page 7 undefined on input l
+ine 462.
+
+
+LaTeX Warning: Reference `eq:pressure-square' on page 7 undefined on input line
+ 468.
+
+
+LaTeX Warning: Reference `eq:conduction-pressure' on page 7 undefined on input 
+line 471.
+
+
+LaTeX Warning: Reference `eq:vanishing-flux' on page 7 undefined on input line 
+472.
+
+
+LaTeX Warning: Reference `eq:pressure-square' on page 7 undefined on input line
+ 475.
+
+
+LaTeX Warning: Reference `eq:conduction-pressure' on page 7 undefined on input 
+line 477.
+
+
+LaTeX Warning: Reference `eq:energy-small' on page 7 undefined on input line 47
+8.
+
+
+LaTeX Warning: Reference `sec:energy' on page 7 undefined on input line 489.
+
+
+LaTeX Warning: Reference `eq:thermal-identity' on page 7 undefined on input lin
+e 503.
+
+[7]
+
+LaTeX Warning: Reference `eq:momentum-thermal' on page 8 undefined on input lin
+e 517.
+
+
+LaTeX Warning: Reference `eq:heating-bound' on page 8 undefined on input line 5
+36.
+
+
+LaTeX Warning: Reference `eq:criterion' on page 8 undefined on input line 544.
+
+
+LaTeX Warning: Reference `eq:heating-bound' on page 8 undefined on input line 5
+45.
+
+
+LaTeX Warning: Reference `eq:localized-temperature' on page 8 undefined on inpu
+t line 566.
+
+[8]
+
+LaTeX Warning: Reference `sec:energy' on page 9 undefined on input line 578.
+
+
+LaTeX Warning: Reference `eq:thermal-notation' on page 9 undefined on input lin
+e 600.
+
+
+LaTeX Warning: Reference `eq:kinetic-local' on page 9 undefined on input line 6
+11.
+
+
+LaTeX Warning: Reference `eq:specific-equation' on page 9 undefined on input li
+ne 612.
+
+
+LaTeX Warning: Reference `eq:specific-equation' on page 9 undefined on input li
+ne 620.
+
+
+LaTeX Warning: Reference `eq:specific-theta' on page 9 undefined on input line 
+627.
+
+
+LaTeX Warning: Reference `eq:specific-w' on page 9 undefined on input line 627.
+
+
+
+LaTeX Warning: Reference `eq:specific-w' on page 9 undefined on input line 635.
+
+
+
+LaTeX Warning: Reference `eq:specific-bound' on page 9 undefined on input line 
+641.
+
+[9]
+
+LaTeX Warning: Reference `eq:specific-gronwall' on page 10 undefined on input l
+ine 656.
+
+
+LaTeX Warning: Reference `eq:specific-theta' on page 10 undefined on input line
+ 662.
+
+
+LaTeX Warning: Reference `eq:specific-w' on page 10 undefined on input line 663
+.
+
+
+LaTeX Warning: Reference `eq:specific-bound' on page 10 undefined on input line
+ 665.
+
+
+LaTeX Warning: Reference `eq:specific-gronwall' on page 10 undefined on input l
+ine 666.
+
+
+LaTeX Warning: Reference `eq:data-density' on page 10 undefined on input line 6
+78.
+
+
+LaTeX Warning: Reference `eq:data-velocity' on page 10 undefined on input line 
+678.
+
+
+LaTeX Warning: Reference `eq:compatibility' on page 10 undefined on input line 
+679.
+
+
+LaTeX Warning: Reference `thm:cancellation' on page 10 undefined on input line 
+698.
+
+
+LaTeX Warning: Reference `prop:physical-energy' on page 10 undefined on input l
+ine 699.
+
+
+LaTeX Warning: Reference `sec:energy' on page 10 undefined on input line 701.
+
+
+LaTeX Warning: Reference `eq:class-density' on page 10 undefined on input line 
+702.
+
+
+LaTeX Warning: Reference `eq:class-temperature' on page 10 undefined on input l
+ine 702.
+
+
+LaTeX Warning: Reference `eq:kinetic-pressure' on page 10 undefined on input li
+ne 709.
+
+
+LaTeX Warning: Reference `eq:internal-flux' on page 10 undefined on input line 
+711.
+
+
+LaTeX Warning: Reference `eq:pressure-spacetime' on page 10 undefined on input 
+line 711.
+
+
+LaTeX Warning: Reference `eq:conduction-pressure' on page 10 undefined on input
+ line 714.
+
+[10] [11] (./paper_en.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `paper_en.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )
+pdfTeX warning (dest): name{theorem.3.5} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{appendix.A} has been referenced but does not exist,
+ replaced by a fixed one
+
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helv
+etic/uhvbo8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr
+i8a.pfb>
+Output written on paper_en.pdf (11 pages, 170258 bytes).
+Transcript written on paper_en.log.

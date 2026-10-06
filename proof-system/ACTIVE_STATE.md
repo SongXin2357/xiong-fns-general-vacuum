@@ -2,14 +2,16 @@
 
 Updated: 2026-10-06 (Asia/Shanghai)
 
-- Active exact claim: N0001, general cutoff-tail zero-mean criterion.
-- Research target ROOT: general-density far-field-vacuum small-physical-energy global strong FNS solutions; OPEN.
-- Trusted node: one Lean-verified general analysis lemma; certificate evidence/N0001/certificate.json.
-- Independent evidence: installed xiong-agent derivation and red-team, separate blind reconstruction, actual Lean kernel build and type/axiom output. Only standard foundational axioms.
-- English note: actually compiled twice using WSL pdflatex; both PDF pages inspected.
-- GitHub: authenticated as SongXin2357; private repository https://github.com/SongXin2357/xiong-fns-general-vacuum created and initial evidence pushed. All 83 tracked files read back and matched byte-for-byte; receipt evidence/N0001/github-initial-publication.json.
-- Published N0001 evidence commit: 8211cef495fded145823cfeedd35464ee7a18e6f. Exact node and publication gate passes; complete parent/dependency evidence is mandatory before extension.
-- No child nodes registered or derived yet. The global PDE theorem remains OPEN.
-- Next mathematical obligation: establish admissible cutoff tests and the flux-tail estimate from the original momentum equation without altering the original solution class or adding hidden assumptions.
-- Scope limits: N0001 does not certify its FNS premises, Hardy/Lame pressure control, temperature-density closure or global existence. Managed public-claim gates remain open.
-- Historical review and preregistration snapshots retain their original statuses; current publication status is in notes/tree.json and the publication receipt.
+- Managed active claim remains the exact N0001 claim-card; the canonical multi-node frontier is notes/tree.json. This projection does not replace or broaden the active claim card.
+- Original ROOT: general-density, far-field-vacuum, small-physical-energy global strong heat-conducting FNS in the original Wang-v1 class; OPEN, no completed global-existence proof.
+- Verified complete nodes: N0001 and N0002. N0002 now derives actual planar distributional divergence cancellation from an L2 vector field, with real cutoffs, chain rule, scale-invariant gradient integral and dominated convergence. Both exact certificates include actual build/type/axiom logs, independent reconstruction and semantic review; only propext, Classical.choice, Quot.sound.
+- Private GitHub https://github.com/SongXin2357/xiong-fns-general-vacuum is authenticated and published. N0001 certificate commit 8211cef495fded145823cfeedd35464ee7a18e6f; N0002 certificate commit 1174efed45e32e6a34ecb03e7a003d9a3ee1789b. N0002 full remote archive readback matched all 167 tracked files. Publication binding was pushed at 3b49134. No N0002 child has been started.
+- N0003 positive Li-Xin route: actual installed xiong-agent derivation; pressure-square time integral remains uncontrolled; total physical energy is conservative, not a barotropic dissipation bound.
+- N0004 coupled thermal route: actual installed xiong-agent derivation; specific-energy multiplier leaves velocity/thermal/compression coefficients not controlled up to a hypothetical finite maximal time. No global closure.
+- N0005 trace/source audit: independent paper proof of necessary initial Lp representative. Seven genuine auxiliary analytic lemmas compile; parent repeated actual build and type/axiom checks. Full target actual Lean attempt fails at Lp weak-compactness/representation and unfinished assembly. No certificate, no children. The literal Gaussian-density/constant-velocity source mismatch is separate from compact support.
+- N0006 strict-viscosity compact-support obstruction: blind reconstruction plus actual installed xiong-agent NONBLIND review and primary analytic review. Fixed support and positive conserved energy force an unbounded quadratic second moment, incompatible with its support bound. Smooth allowed data family has fixed mass, common initial upper bounds and energy tending to zero. Paper-level proved-draft only; local solvability not independently certified; Lean NOT_RUN; no children.
+- Do not silently remove compact support, modify the source solution class, import Wang-v3, add small high norms/tails, or assume the requested global conclusion. The contrary paper evidence is substantial and must be addressed, not suppressed.
+- English two-lemma cancellation note has been updated and actually compiled twice with existing WSL pdflatex; both pages inspected. Native editor compiler is unavailable on this platform. Main 11-page and compact-audit 12-page English drafts are integrated separately at the original paths, actually compiled twice and visually inspected page by page. Final source/PDF hashes and the 12 numbered-claim mapping are in notes/current-tex-lean-map-20261006.json. Their positive-global and full-Lean scope remains explicitly incomplete.
+- Full-paper formalization NOT_PASS. All old manuscript targets remain inventoried; no ring-only substitute or auxiliary count is promoted to a full node.
+- Required next proof work: exact source/class reconciliation and genuine analytic formalization of N0005/N0006; pressure/thermal estimates cannot provide the requested global theorem while the compact-support obstruction in the literal class is unresolved under the full gate.
+- Optional result-harvest sidecar is missing at the configured local path; iteration transactions may succeed with harvest pending-error. No tool-environment repair or public-ready claim is implied.

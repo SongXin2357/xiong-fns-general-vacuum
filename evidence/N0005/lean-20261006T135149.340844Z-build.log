@@ -1,0 +1,316 @@
+⚠ [3438/3441] Replayed N0005Bridge
+warning: N0005Bridge.lean:19:0: automatically included section variable(s) unused in theorem `N0005Attempt.density_error_bound`:
+  [CompleteSpace E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [CompleteSpace E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: N0005Bridge.lean:20:5: Variable name `hδ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hδ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: N0005Bridge.lean:40:0: automatically included section variable(s) unused in theorem `N0005Attempt.test_velocity_product_integrable`:
+  [NormedSpace ℝ E]
+  [CompleteSpace E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] [CompleteSpace E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: N0005Bridge.lean:47:0: automatically included section variable(s) unused in theorem `N0005Attempt.test_velocity_product_bound`:
+  [NormedSpace ℝ E]
+  [CompleteSpace E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] [CompleteSpace E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+ℹ [3440/3441] Replayed N0005Check
+info: ../N0005Check.lean:5:0: theorem N0005Attempt.density_error_bound.{u_1, u_2} : ∀ {α : Type u_1} {E : Type u_2} [inst : MeasurableSpace α]
+  [inst_1 : NormedAddCommGroup E] [inst_2 : NormedSpace ℝ E] [CompleteSpace E] {μ : MeasureTheory.Measure α}
+  {ρ ρ₀ φ : α → ℝ} {u : α → E} {δ : ℝ},
+  0 ≤ δ →
+    MeasureTheory.AEStronglyMeasurable (fun x => ((ρ x - ρ₀ x) * φ x) • u x) μ →
+      MeasureTheory.Integrable (fun x => ‖φ x‖ * ‖u x‖) μ →
+        (∀ᵐ (x : α) ∂μ, φ x ≠ 0 → ‖ρ x - ρ₀ x‖ ≤ δ) →
+          MeasureTheory.Integrable (fun x => ((ρ x - ρ₀ x) * φ x) • u x) μ ∧
+            ‖∫ (x : α), ((ρ x - ρ₀ x) * φ x) • u x ∂μ‖ ≤ δ * ∫ (x : α), ‖φ x‖ * ‖u x‖ ∂μ :=
+fun {α} {E} [MeasurableSpace α] [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E] {μ} {ρ ρ₀ φ} {u} {δ} hδ hm
+    hbase hρ =>
+  have hdom :=
+    Filter.mp_mem hρ
+      (Filter.univ_mem'
+        (id fun x hx =>
+          if hφ : φ x = 0 then
+            of_eq_true
+              (Eq.trans
+                (congr
+                  (congrArg LE.le
+                    (Eq.trans
+                      (congrArg norm
+                        (Eq.trans
+                          (congrFun'
+                            (congrArg HSMul.hSMul
+                              (Eq.trans (congrArg (HMul.hMul (ρ x - ρ₀ x)) hφ) (mul_zero (ρ x - ρ₀ x))))
+                            (u x))
+                          (zero_smul ℝ (u x))))
+                      norm_zero))
+                  (Eq.trans
+                    (congrArg (HMul.hMul δ)
+                      (Eq.trans (congrFun' (congrArg HMul.hMul (Eq.trans (congrArg norm hφ) norm_zero)) ‖u x‖)
+                        (zero_mul ‖u x‖)))
+                    (mul_zero δ)))
+                (Std.le_refl._simp_1 0))
+          else
+            Eq.mpr (id (congrArg (fun _a => _a ≤ δ * (‖φ x‖ * ‖u x‖)) (norm_smul ((ρ x - ρ₀ x) * φ x) (u x))))
+              (Eq.mpr (id (congrArg (fun _a => _a * ‖u x‖ ≤ δ * (‖φ x‖ * ‖u x‖)) (norm_mul (ρ x - ρ₀ x) (φ x))))
+                (Eq.mpr (id (congrArg (fun _a => _a ≤ δ * (‖φ x‖ * ‖u x‖)) (mul_assoc ‖ρ x - ρ₀ x‖ ‖φ x‖ ‖u x‖)))
+                  (mul_le_mul_of_nonneg_right (hx hφ) (mul_nonneg (norm_nonneg (φ x)) (norm_nonneg (u x))))))));
+  have hg := MeasureTheory.Integrable.const_mul hbase δ;
+  ⟨MeasureTheory.Integrable.mono' hg hm hdom,
+    Eq.mp
+      (congrArg (LE.le ‖∫ (x : α), ((ρ x - ρ₀ x) * φ x) • u x ∂μ‖)
+        (MeasureTheory.integral_const_mul δ fun a => ‖φ a‖ * ‖u a‖))
+      (MeasureTheory.norm_integral_le_of_norm_le hg hdom)⟩
+info: ../N0005Check.lean:6:0: theorem N0005Attempt.test_velocity_product_integrable.{u_1, u_2} : ∀ {α : Type u_1} {E : Type u_2}
+  [inst : MeasurableSpace α] [inst_1 : NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
+  {μ : MeasureTheory.Measure α} {p q : ENNReal} [p.HolderConjugate q] {u : α → E} {φ : α → ℝ},
+  MeasureTheory.MemLp u p μ → MeasureTheory.MemLp φ q μ → MeasureTheory.Integrable (fun x => ‖φ x‖ * ‖u x‖) μ :=
+fun {α} {E} [MeasurableSpace α] [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E] {μ} {p q}
+    [p.HolderConjugate q] {u} {φ} hu hφ =>
+  MeasureTheory.memLp_one_iff_integrable.mp
+    (MeasureTheory.MemLp.mul (MeasureTheory.MemLp.norm hu) (MeasureTheory.MemLp.norm hφ))
+info: ../N0005Check.lean:7:0: theorem N0005Attempt.test_velocity_product_bound.{u_1, u_2} : ∀ {α : Type u_1} {E : Type u_2} [inst : MeasurableSpace α]
+  [inst_1 : NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E] {μ : MeasureTheory.Measure α} {p q : ℝ},
+  p.HolderConjugate q →
+    ∀ {u : α → E} {φ : α → ℝ},
+      MeasureTheory.MemLp u (ENNReal.ofReal p) μ →
+        MeasureTheory.MemLp φ (ENNReal.ofReal q) μ →
+          ∫ (x : α), ‖φ x‖ * ‖u x‖ ∂μ ≤ (∫ (x : α), ‖φ x‖ ^ q ∂μ) ^ (1 / q) * (∫ (x : α), ‖u x‖ ^ p ∂μ) ^ (1 / p) :=
+fun {α} {E} [MeasurableSpace α] [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E] {μ} {p q} hpq {u} {φ} hu
+    hφ =>
+  Eq.mp
+    (congr
+      (congrArg LE.le
+        (congrArg (MeasureTheory.integral μ)
+          (funext fun a => congr (congrArg HMul.hMul (norm_norm (φ a))) (norm_norm (u a)))))
+      (congr
+        (congrArg HMul.hMul
+          (congrFun'
+            (congrArg HPow.hPow
+              (congrArg (MeasureTheory.integral μ)
+                (funext fun a => congrFun' (congrArg HPow.hPow (norm_norm (φ a))) q)))
+            (1 / q)))
+        (congrFun'
+          (congrArg HPow.hPow
+            (congrArg (MeasureTheory.integral μ) (funext fun a => congrFun' (congrArg HPow.hPow (norm_norm (u a))) p)))
+          (1 / p))))
+    (MeasureTheory.integral_mul_norm_le_Lp_mul_Lq (Real.HolderConjugate.symm hpq) (MeasureTheory.MemLp.norm hφ)
+      (MeasureTheory.MemLp.norm hu))
+info: ../N0005Check.lean:8:0: theorem N0005Attempt.density_error_tendsto.{u_1, u_2, u_3} : ∀ {α : Type u_1} {E : Type u_2} [inst : MeasurableSpace α]
+  [inst_1 : NormedAddCommGroup E] [inst_2 : NormedSpace ℝ E] [CompleteSpace E] {μ : MeasureTheory.Measure α}
+  {ι : Type u_3} {l : Filter ι} {ρ : ι → α → ℝ} {ρ₀ φ : α → ℝ} {u : ι → α → E} {δ : ι → ℝ} {C : ℝ},
+  (∀ (i : ι), 0 ≤ δ i) →
+    Filter.Tendsto δ l (nhds 0) →
+      (∀ (i : ι), MeasureTheory.AEStronglyMeasurable (fun x => ((ρ i x - ρ₀ x) * φ x) • u i x) μ) →
+        (∀ (i : ι), MeasureTheory.Integrable (fun x => ‖φ x‖ * ‖u i x‖) μ) →
+          (∀ (i : ι), ∫ (x : α), ‖φ x‖ * ‖u i x‖ ∂μ ≤ C) →
+            (∀ (i : ι), ∀ᵐ (x : α) ∂μ, φ x ≠ 0 → ‖ρ i x - ρ₀ x‖ ≤ δ i) →
+              Filter.Tendsto (fun i => ∫ (x : α), ((ρ i x - ρ₀ x) * φ x) • u i x ∂μ) l (nhds 0) :=
+fun {α} {E} [MeasurableSpace α] [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E] {μ} {ι} {l} {ρ} {ρ₀ φ} {u}
+    {δ} {C} hδ hδlim hm hbase hbound hρ =>
+  squeeze_zero_norm
+    (fun i =>
+      LE.le.trans (N0005Attempt.density_error_bound (hδ i) (hm i) (hbase i) (hρ i)).right
+        (mul_le_mul_of_nonneg_left (hbound i) (hδ i)))
+    (Eq.mp (congrArg (Filter.Tendsto (fun x => δ x * C) l) (congrArg nhds (zero_mul C)))
+      (Filter.Tendsto.mul_const C hδlim))
+info: ../N0005Check.lean:9:0: theorem N0005Attempt.density_uniform_error_tendsto.{u_1, u_2, u_3} : ∀ {α : Type u_1} {E : Type u_2}
+  [inst : MeasurableSpace α] [inst_1 : NormedAddCommGroup E] [inst_2 : NormedSpace ℝ E] [CompleteSpace E]
+  {μ : MeasureTheory.Measure α} {ι : Type u_3} {l : Filter ι} {ρ : ι → α → ℝ} {ρ₀ φ : α → ℝ} {u : ι → α → E} {C : ℝ},
+  0 ≤ C →
+    TendstoUniformlyOn ρ ρ₀ l (Function.support φ) →
+      (∀ (i : ι), MeasureTheory.AEStronglyMeasurable (fun x => ((ρ i x - ρ₀ x) * φ x) • u i x) μ) →
+        (∀ (i : ι), MeasureTheory.Integrable (fun x => ‖φ x‖ * ‖u i x‖) μ) →
+          (∀ (i : ι), ∫ (x : α), ‖φ x‖ * ‖u i x‖ ∂μ ≤ C) →
+            Filter.Tendsto (fun i => ∫ (x : α), ((ρ i x - ρ₀ x) * φ x) • u i x ∂μ) l (nhds 0) :=
+fun {α} {E} [MeasurableSpace α] [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E] {μ} {ι} {l} {ρ} {ρ₀ φ} {u}
+    {C} hC hconv hm hbase hbound =>
+  Metric.tendsto_nhds.mpr fun ε hε =>
+    have hden :=
+      lt_of_not_ge fun a =>
+        Mathlib.Tactic.Linarith.lt_irrefl
+          (Eq.mp
+            (congrArg (fun _a => _a < 0)
+              (Mathlib.Tactic.Ring.of_eq
+                (Mathlib.Tactic.Ring.Common.add_congr
+                  (Mathlib.Tactic.Ring.Common.add_congr
+                    (Mathlib.Tactic.Ring.Common.neg_congr
+                      (Mathlib.Tactic.Ring.cast_pos (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_one))
+                      (Mathlib.Tactic.Ring.Common.neg_add
+                        (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                          (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                            (Mathlib.Meta.NormNum.IsNat.to_isInt (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1))
+                            (Eq.refl (Int.negOfNat 1))))
+                        Mathlib.Tactic.Ring.Common.neg_zero))
+                    (Mathlib.Tactic.Ring.Common.sub_congr
+                      (Mathlib.Tactic.Ring.cast_zero (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_zero))
+                      (Mathlib.Tactic.Ring.Common.atom_pf C rfl
+                        (Eq.mpr
+                          (id
+                            (congrArg (fun _a => C ^ Nat.rawCast 1 * Nat.rawCast 1 = C ^ Nat.rawCast 1 * _a)
+                              (Eq.symm rfl)))
+                          (Eq.refl (C ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                      (Mathlib.Tactic.Ring.Common.sub_pf
+                        (Mathlib.Tactic.Ring.Common.neg_add
+                          (Mathlib.Tactic.Ring.Common.neg_mul C (Nat.rawCast 1)
+                            (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                              (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                (Mathlib.Meta.NormNum.IsNat.to_isInt (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1))
+                                (Eq.refl (Int.negOfNat 1)))))
+                          Mathlib.Tactic.Ring.Common.neg_zero)
+                        (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                          (C ^ Nat.rawCast 1 * (Int.negOfNat 1).rawCast + 0))))
+                    (Mathlib.Tactic.Ring.Common.add_pf_add_lt (Int.negOfNat 1).rawCast
+                      (Mathlib.Tactic.Ring.Common.add_pf_zero_add (C ^ Nat.rawCast 1 * (Int.negOfNat 1).rawCast + 0))))
+                  (Mathlib.Tactic.Ring.Common.sub_congr
+                    (Mathlib.Tactic.Ring.Common.add_congr
+                      (Mathlib.Tactic.Ring.Common.atom_pf C rfl
+                        (Eq.mpr
+                          (id
+                            (congrArg (fun _a => C ^ Nat.rawCast 1 * Nat.rawCast 1 = C ^ Nat.rawCast 1 * _a)
+                              (Eq.symm rfl)))
+                          (Eq.refl (C ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                      (Mathlib.Tactic.Ring.cast_pos (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_one))
+                      (Mathlib.Tactic.Ring.Common.add_pf_add_gt (Nat.rawCast 1)
+                        (Mathlib.Tactic.Ring.Common.add_pf_add_zero (C ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))))
+                    (Mathlib.Tactic.Ring.cast_zero (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_zero))
+                    (Mathlib.Tactic.Ring.Common.sub_pf Mathlib.Tactic.Ring.Common.neg_zero
+                      (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                        (Nat.rawCast 1 + (C ^ Nat.rawCast 1 * Nat.rawCast 1 + 0)))))
+                  (Mathlib.Tactic.Ring.Common.add_pf_add_overlap_zero
+                    (Mathlib.Meta.NormNum.IsInt.to_isNat
+                      (Mathlib.Meta.NormNum.isInt_add (Eq.refl HAdd.hAdd)
+                        (Mathlib.Meta.NormNum.IsInt.of_raw ℝ (Int.negOfNat 1))
+                        (Mathlib.Meta.NormNum.IsNat.to_isInt (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1))
+                        (Eq.refl (Int.ofNat 0))))
+                    (Mathlib.Tactic.Ring.Common.add_pf_add_overlap_zero
+                      (Mathlib.Tactic.Ring.Common.add_overlap_pf_zero C (Nat.rawCast 1)
+                        (Mathlib.Meta.NormNum.IsInt.to_isNat
+                          (Mathlib.Meta.NormNum.isInt_add (Eq.refl HAdd.hAdd)
+                            (Mathlib.Meta.NormNum.IsInt.of_raw ℝ (Int.negOfNat 1))
+                            (Mathlib.Meta.NormNum.IsNat.to_isInt (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1))
+                            (Eq.refl (Int.ofNat 0)))))
+                      (Mathlib.Tactic.Ring.Common.add_pf_zero_add 0))))
+                (Mathlib.Tactic.Ring.cast_zero (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_zero))))
+            (Mathlib.Tactic.Linarith.add_lt_of_neg_of_le
+              (Mathlib.Tactic.Linarith.add_lt_of_neg_of_le (neg_neg_of_pos Mathlib.Tactic.Linarith.zero_lt_one)
+                (Mathlib.Tactic.Linarith.sub_nonpos_of_le hC))
+              (Mathlib.Tactic.Linarith.sub_nonpos_of_le a)));
+    have hd := div_pos hε hden;
+    Filter.mp_mem (Metric.tendstoUniformlyOn_iff.mp hconv (ε / (C + 1)) hd)
+      (Filter.univ_mem'
+        (id fun i hi =>
+          have herr :=
+            (N0005Attempt.density_error_bound (LT.lt.le hd) (hm i) (hbase i)
+                (Filter.Eventually.of_forall fun x hx =>
+                  have hb := LT.lt.le (hi x hx);
+                  Eq.mp
+                    (congrFun' (congrArg LE.le (Eq.trans (dist_comm (ρ₀ x) (ρ i x)) (dist_eq_norm (ρ i x) (ρ₀ x))))
+                      (ε / (C + 1)))
+                    hb)).right;
+          Eq.mpr (id (congrArg (fun _a => _a < ε) (dist_zero_right (∫ (x : α), ((ρ i x - ρ₀ x) * φ x) • u i x ∂μ))))
+            (Trans.trans
+              (Trans.trans (LE.le.trans herr (mul_le_mul_of_nonneg_left (hbound i) (LT.lt.le hd)))
+                (mul_lt_mul_of_pos_left
+                  (lt_of_not_ge fun a =>
+                    Mathlib.Tactic.Linarith.lt_irrefl
+                      (Eq.mp
+                        (congrArg (fun _a => _a < 0)
+                          (Mathlib.Tactic.Ring.of_eq
+                            (Mathlib.Tactic.Ring.Common.add_congr
+                              (Mathlib.Tactic.Ring.Common.neg_congr
+                                (Mathlib.Tactic.Ring.cast_pos (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_one))
+                                (Mathlib.Tactic.Ring.Common.neg_add
+                                  (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                    (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                      (Mathlib.Meta.NormNum.IsNat.to_isInt (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1))
+                                      (Eq.refl (Int.negOfNat 1))))
+                                  Mathlib.Tactic.Ring.Common.neg_zero))
+                              (Mathlib.Tactic.Ring.Common.sub_congr
+                                (Mathlib.Tactic.Ring.Common.add_congr
+                                  (Mathlib.Tactic.Ring.Common.atom_pf C rfl
+                                    (Eq.mpr
+                                      (id
+                                        (congrArg (fun _a => C ^ Nat.rawCast 1 * Nat.rawCast 1 = C ^ Nat.rawCast 1 * _a)
+                                          (Eq.symm rfl)))
+                                      (Eq.refl (C ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                                  (Mathlib.Tactic.Ring.cast_pos (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_one))
+                                  (Mathlib.Tactic.Ring.Common.add_pf_add_gt (Nat.rawCast 1)
+                                    (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                      (C ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))))
+                                (Mathlib.Tactic.Ring.Common.atom_pf C rfl
+                                  (Eq.mpr
+                                    (id
+                                      (congrArg (fun _a => C ^ Nat.rawCast 1 * Nat.rawCast 1 = C ^ Nat.rawCast 1 * _a)
+                                        (Eq.symm rfl)))
+                                    (Eq.refl (C ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                                (Mathlib.Tactic.Ring.Common.sub_pf
+                                  (Mathlib.Tactic.Ring.Common.neg_add
+                                    (Mathlib.Tactic.Ring.Common.neg_mul C (Nat.rawCast 1)
+                                      (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                        (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                          (Mathlib.Meta.NormNum.IsNat.to_isInt (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1))
+                                          (Eq.refl (Int.negOfNat 1)))))
+                                    Mathlib.Tactic.Ring.Common.neg_zero)
+                                  (Mathlib.Tactic.Ring.Common.add_pf_add_lt (Nat.rawCast 1)
+                                    (Mathlib.Tactic.Ring.Common.add_pf_add_overlap_zero
+                                      (Mathlib.Tactic.Ring.Common.add_overlap_pf_zero C (Nat.rawCast 1)
+                                        (Mathlib.Meta.NormNum.IsInt.to_isNat
+                                          (Mathlib.Meta.NormNum.isInt_add (Eq.refl HAdd.hAdd)
+                                            (Mathlib.Meta.NormNum.IsNat.to_isInt
+                                              (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1))
+                                            (Mathlib.Meta.NormNum.IsInt.of_raw ℝ (Int.negOfNat 1))
+                                            (Eq.refl (Int.ofNat 0)))))
+                                      (Mathlib.Tactic.Ring.Common.add_pf_zero_add 0)))))
+                              (Mathlib.Tactic.Ring.Common.add_pf_add_overlap_zero
+                                (Mathlib.Meta.NormNum.IsInt.to_isNat
+                                  (Mathlib.Meta.NormNum.isInt_add (Eq.refl HAdd.hAdd)
+                                    (Mathlib.Meta.NormNum.IsInt.of_raw ℝ (Int.negOfNat 1))
+                                    (Mathlib.Meta.NormNum.IsNat.to_isInt (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1))
+                                    (Eq.refl (Int.ofNat 0))))
+                                (Mathlib.Tactic.Ring.Common.add_pf_zero_add 0)))
+                            (Mathlib.Tactic.Ring.cast_zero (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_zero))))
+                        (Mathlib.Tactic.Linarith.add_lt_of_neg_of_le
+                          (neg_neg_of_pos Mathlib.Tactic.Linarith.zero_lt_one)
+                          (Mathlib.Tactic.Linarith.sub_nonpos_of_le a))))
+                  hd))
+              (div_mul_cancel₀ ε (ne_of_gt hden)))))
+info: ../N0005Check.lean:10:0: theorem N0005Attempt.momentum_identification : ∀ {m : ℕ} {ρ₀ : N0005Attempt.R2 → ℝ}
+  {v u₀ : N0005Attempt.R2 → EuclideanSpace ℝ (Fin m)},
+  MeasureTheory.LocallyIntegrable (fun x => ρ₀ x • v x) MeasureTheory.volume →
+    MeasureTheory.LocallyIntegrable (fun x => ρ₀ x • u₀ x) MeasureTheory.volume →
+      (∀ (φ : N0005Attempt.R2 → ℝ),
+          ContDiff ℝ (↑⊤) φ →
+            HasCompactSupport φ →
+              ∫ (x : N0005Attempt.R2), φ x • ρ₀ x • v x = ∫ (x : N0005Attempt.R2), φ x • ρ₀ x • u₀ x) →
+        ∀ᵐ (x : N0005Attempt.R2), ρ₀ x • v x = ρ₀ x • u₀ x :=
+fun {m} {ρ₀} {v u₀} hv hu₀ htest => ae_eq_of_integral_contDiff_smul_eq hv hu₀ htest
+info: ../N0005Check.lean:11:0: theorem N0005Attempt.positive_density_transfer : ∀ {m : ℕ} {p : ENNReal} {ρ₀ : N0005Attempt.R2 → ℝ}
+  {v u₀ : N0005Attempt.R2 → EuclideanSpace ℝ (Fin m)},
+  MeasureTheory.MemLp v p MeasureTheory.volume →
+    (∀ᵐ (x : N0005Attempt.R2), ρ₀ x • v x = ρ₀ x • u₀ x) →
+      (∀ᵐ (x : N0005Attempt.R2), 0 < ρ₀ x) → MeasureTheory.MemLp u₀ p MeasureTheory.volume :=
+fun {m} {p} {ρ₀} {v u₀} hv heq hpos =>
+  (fun hfg => MeasureTheory.MemLp.ae_eq hfg hv)
+    (Filter.mp_mem hpos
+      (Filter.mp_mem heq
+        (Filter.univ_mem' (id fun x hx hp => smul_right_injective (EuclideanSpace ℝ (Fin m)) (ne_of_gt hp) hx))))
+info: ../N0005Check.lean:12:0: 'N0005Attempt.density_error_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ../N0005Check.lean:13:0: 'N0005Attempt.test_velocity_product_integrable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ../N0005Check.lean:14:0: 'N0005Attempt.test_velocity_product_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ../N0005Check.lean:15:0: 'N0005Attempt.density_error_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ../N0005Check.lean:16:0: 'N0005Attempt.density_uniform_error_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ../N0005Check.lean:17:0: 'N0005Attempt.momentum_identification' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ../N0005Check.lean:18:0: 'N0005Attempt.positive_density_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (3441 jobs).

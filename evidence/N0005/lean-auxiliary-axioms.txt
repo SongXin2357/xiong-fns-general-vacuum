@@ -1,0 +1,7 @@
+info: ../N0005Check.lean:12:0: 'N0005Attempt.density_error_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ../N0005Check.lean:13:0: 'N0005Attempt.test_velocity_product_integrable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ../N0005Check.lean:14:0: 'N0005Attempt.test_velocity_product_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ../N0005Check.lean:15:0: 'N0005Attempt.density_error_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ../N0005Check.lean:16:0: 'N0005Attempt.density_uniform_error_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ../N0005Check.lean:17:0: 'N0005Attempt.momentum_identification' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ../N0005Check.lean:18:0: 'N0005Attempt.positive_density_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]

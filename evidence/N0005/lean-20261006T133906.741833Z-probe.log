@@ -1,0 +1,26 @@
+/mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/evidence/N0005/attempt-bridges-v1.lean:19:0: warning: automatically included section variable(s) unused in theorem `N0005Attempt.density_error_bound`:
+  [CompleteSpace E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [CompleteSpace E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+/mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/evidence/N0005/attempt-bridges-v1.lean:20:5: warning: Variable name `hδ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hδ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+/mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/evidence/N0005/attempt-bridges-v1.lean:40:0: warning: automatically included section variable(s) unused in theorem `N0005Attempt.test_velocity_product_integrable`:
+  [NormedSpace ℝ E]
+  [CompleteSpace E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] [CompleteSpace E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+/mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/evidence/N0005/attempt-bridges-v1.lean:47:0: warning: automatically included section variable(s) unused in theorem `N0005Attempt.test_velocity_product_bound`:
+  [NormedSpace ℝ E]
+  [CompleteSpace E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NormedSpace ℝ E] [CompleteSpace E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`

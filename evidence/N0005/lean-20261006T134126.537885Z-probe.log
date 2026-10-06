@@ -1,0 +1,33 @@
+/mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/evidence/N0005/attempt-weak-compactness-v1.lean:8:13: error(lean.unknownIdentifier): Unknown identifier `EuclideanSpace`
+/mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/evidence/N0005/attempt-weak-compactness-v1.lean:15:57: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  MeasurableSpace R2
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+/mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/evidence/N0005/attempt-weak-compactness-v1.lean:17:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/evidence/N0005/attempt-weak-compactness-v1.lean:19:73: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  MeasurableSpace R2
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+/mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/evidence/N0005/attempt-weak-compactness-v1.lean:20:68: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  MeasurableSpace R2
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+/mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/evidence/N0005/attempt-weak-compactness-v1.lean:16:33: error: unsolved goals
+case hrange
+R2 : Type u_1
+p : ℝ≥0∞
+hp : 1 < p
+hpfin : p < ∞
+C : ℝ
+this : Fact (1 ≤ p) := ⋯
+⊢ closure
+      (⇑(NormedSpace.inclusionInDoubleDualWeak ℝ ↥(Lp ℝ p sorry)) ''
+        ⇑(toWeakSpace ℝ ↥(Lp ℝ p sorry)) '' Metric.closedBall 0 C) ⊆
+    range ⇑(NormedSpace.inclusionInDoubleDualWeak ℝ ↥(Lp ℝ p sorry))

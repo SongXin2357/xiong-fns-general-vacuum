@@ -1,0 +1,757 @@
+\documentclass[10pt,twoside]{article}
+\usepackage{li_xin_style}
+\newcommand{\R}{\mathbb R}
+\newcommand{\dd}{\,dx}
+\newcommand{\dt}{\,dt}
+\newcommand{\Div}{\operatorname{div}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\norm}[2]{\lVert#1\rVert_{#2}}
+\newcommand{\cH}{\mathcal H}
+\renewcommand{\shorttitle}{Research draft: Planar cancellation and energy estimates}
+\fancypagestyle{firstpage}{\fancyhf{}
+ \fancyhead[L]{\sffamily\fontsize{8}{9.6}\selectfont Research draft}
+ \fancyhead[R]{\sffamily\fontsize{8}{9.6}\selectfont\thepage}
+ \renewcommand{\headrulewidth}{1pt}}
+\title{Planar Cancellation and Energy Estimates\\
+for Heat-Conducting Compressible Flow}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+We study cancellation and energy estimates relevant to the two-dimensional
+full compressible Navier--Stokes system with vacuum at infinity.
+We prove that an integrable distributional divergence of a square-integrable
+vector field on the plane has zero integral, by constructing cutoffs with
+scale-invariant gradient energy and controlling their flux tails.
+For smooth rapidly decaying solutions of the full system, we derive the
+kinetic and internal energy balances, the pressure equation with its thermal
+sources, and an estimate for the square of the total specific energy.
+These identities exhibit useful cancellations and the terms requiring
+further estimates: the pressure-square integral, temperature-weighted viscous
+heating, and the velocity-weighted energy flux.
+The original local strong-solution class is recorded separately from the
+additional hypotheses used to justify these computations.
+The estimates do not bound the continuation quantities in that class,
+and no small-energy global-existence result is established.
+\end{abstract}
+\keywords{Compressible Navier--Stokes equations; vacuum; planar cancellation;
+heat conduction; energy estimates}
+
+\section{Introduction}
+Consider the full compressible Navier--Stokes equations on $\R^2$:
+\begin{align}
+ \rho_t+\Div(\rho u)&=0, \label{eq:mass}\\
+ (\rho u)_t+\Div(\rho u\otimes u)
+ -\mu\Delta u-(\mu+\lambda)\nabla\Div u+\nabla P&=0,
+ \label{eq:momentum}\\
+ c_v\bigl((\rho\theta)_t+\Div(\rho\theta u)\bigr)
+ -\kappa\Delta\theta+P\Div u&=Q(u), \label{eq:heat}\\
+ P=R\rho\theta,\qquad
+ Q(u)&=2\mu|D(u)|^2+\lambda(\Div u)^2. \label{eq:constitutive}
+\end{align}
+Here $\rho\ge0$, $u\in\R^2$, and $\theta\ge0$ denote density, velocity,
+and temperature, respectively, and
+\begin{equation}\label{eq:coefficients}
+ D(u)=\frac{\nabla u+(\nabla u)^{\mathrm{tr}}}{2},\qquad
+ \mu>0,\quad \mu+\lambda\ge0,\quad R,c_v,\kappa>0.
+\end{equation}
+The convention is $(\nabla u)_{ij}=\partial_j u_i$.
+The initial condition is prescribed in conservative variables:
+\begin{equation}\label{eq:initial}
+ (\rho,\rho u,\rho\theta)(x,0)
+   =(\rho_0,\rho_0u_0,\rho_0\theta_0)(x).
+\end{equation}
+The far-field condition in the local theory of Wang \cite{Wang} is
+$(\rho,u,\theta)(x,t)\to(0,0,0)$ as $|x|\to\infty$, $t>0$, with the
+qualification \lq\lq in some weak sense\rq\rq.
+We retain that qualification; it is not replaced here by pointwise decay
+or by an independently chosen normalization of $u$ or $\theta$.
+
+The initial data in \cite[Theorem 1.1]{Wang} satisfy, for $a>1$, $q>2$,
+and $\eta_0>0$,
+\begin{equation}\label{eq:weight}
+ \bar{x}=(e+|x|^2)^{1/2}\log^{1+\eta_0}(e+|x|^2),
+\end{equation}
+and
+\begin{align}
+ &0\le\bar{x}^{a}\rho_0\in L^1\cap H^1\cap W^{1,q},
+       \qquad \theta_0\ge0, \label{eq:data-density}\\
+ &\sqrt{\rho_0}u_0,\ \sqrt{\rho_0}\theta_0\in L^2,\qquad
+       \nabla u_0\in H^1,\quad \nabla\theta_0\in L^2,
+       \label{eq:data-velocity}\\
+ &-\mu\Delta u_0-(\mu+\lambda)\nabla\Div u_0
+       +R\nabla(\rho_0\theta_0)=\sqrt{\rho_0}\,g,
+       \qquad g\in L^2. \label{eq:compatibility}
+\end{align}
+All unqualified function spaces below are over $\R^2$.
+In particular, \eqref{eq:data-velocity} requires
+$\int\rho_0\theta_0^2\dd<\infty$.
+It does not separately require $\theta_0\in L^2$ or $u_0\in L^2$.
+There is no second thermal compatibility condition in these printed
+hypotheses.
+
+Put
+\begin{equation}\label{eq:exponents}
+ \alpha=\min\{a/2,1\},\qquad p_u=\frac4\alpha,\qquad
+ p_\theta=\frac6{2\alpha-1},\qquad q_1\in(2,\infty).
+\end{equation}
+Thus $1/2<\alpha\le1$ and both $p_u,p_\theta$ are finite.
+On a local existence interval $[0,T_0]$, the class stated in
+\cite[(1.8)--(1.9)]{Wang} is
+\begin{align}
+ &\rho\in C([0,T_0];L^1\cap H^1\cap W^{1,q}),\nonumber\\
+ &\bar{x}^{a}\rho\in L^\infty(0,T_0;L^1\cap H^1\cap W^{1,q}),
+       \label{eq:class-density}\\
+ &\nabla u\in L^\infty(0,T_0;H^1)
+                  \cap L^2(0,T_0;W^{1,q}),\qquad
+ u\in L^\infty(0,T_0;L^{p_u}),\label{eq:class-velocity}\\
+ &\sqrt\rho u,\ \sqrt\rho\theta,\ \sqrt\rho u_t,\ \nabla\theta,\
+   \sqrt t\sqrt\rho\theta_t,\ \sqrt t\nabla^2\theta,\
+   \bar{x}^{\alpha/2}\nabla u
+      \in L^\infty(0,T_0;L^2), \label{eq:class-bounded}\\
+ &\nabla u_t,\ \sqrt\rho\theta_t,\ \nabla^2\theta,\
+       \sqrt t\nabla\theta_t
+      \in L^2(\R^2\times(0,T_0)), \label{eq:class-integrated}\\
+ &\theta\in L^2(0,T_0;L^{p_\theta}),\qquad
+   \sqrt t\nabla^2\theta\in L^2(0,T_0;L^{q_1}).
+       \label{eq:class-temperature}
+\end{align}
+The strong-solution definition in that source requires the derivatives in
+the equations to be regular distributions and the equations to hold almost
+everywhere. The condition in \eqref{eq:class-velocity} concerns $u$
+itself, not a class of velocities modulo constants.
+
+Let $T_{\max}$ denote the maximal existence time in this class.
+The continuation criterion stated in \cite[Theorem 1.2]{Wang} is
+\begin{equation}\label{eq:criterion}
+ T_{\max}<\infty\quad\Longrightarrow\quad
+ \lim_{T\uparrow T_{\max}}\int_0^T
+       \bigl(\norm{\Div u}{\infty}+\norm{u}{p_u}\bigr)\dt=\infty.
+\end{equation}
+Both time exponents in this criterion are one.
+A bound on compact subintervals whose constants may diverge as
+$T\uparrow T_{\max}$ does not establish the required continuation bound.
+
+The small quantity motivating this investigation is the physical
+initial energy
+\begin{equation}\label{eq:E0}
+ E_0=\int_{\R^2}
+       \left(\frac12\rho_0|u_0|^2+c_v\rho_0\theta_0\right)\dd.
+\end{equation}
+It is finite under \eqref{eq:data-density}--\eqref{eq:data-velocity}:
+with $m_0=\int\rho_0\dd$, Cauchy--Schwarz gives
+$\int\rho_0\theta_0\dd
+ \le m_0^{1/2}\norm{\sqrt{\rho_0}\theta_0}{2}$.
+The question is whether sufficiently small $E_0$, for prescribed finite
+bounds on the other initial quantities, ensures global continuation in
+\eqref{eq:class-density}--\eqref{eq:class-temperature}.
+No small higher norm, small mass, zero total momentum, second moment,
+positive density lower bound, or support restriction is appended to that
+question. No mass normalization is used below.
+The printed initial hypotheses in \cite{Wang} do not separately state
+$m_0>0$; an argument using a positive local mass must specify that premise
+and the dependence of its constants. Our cancellation theorem uses no
+mass condition.
+
+The planar cutoff argument behind the cancellation methods of
+Fan--L\"u--Wang \cite{FLW} concerns integrable divergences of
+square-integrable fields. Section~\ref{sec:cancellation} proves that
+general result without a total-momentum assumption.
+The energy approach, for which Li--Xin \cite{LiXin} is a useful reference
+in the compressible setting, must retain pressure work, viscous heating,
+and thermal conduction in \eqref{eq:heat}.
+Sections~\ref{sec:energy}--\ref{sec:specific} derive corresponding
+estimates with their hypotheses displayed. They do not establish the
+missing uniform bounds in \eqref{eq:criterion}.
+
+Throughout, $\norm{\cdot}{p}$ denotes the $L^p(\R^2)$ norm, and
+$\dot f=f_t+u\cdot\nabla f$ denotes the material derivative.
+Unless otherwise specified, constants $C$ depend only on the physical
+coefficients in \eqref{eq:coefficients}; $C_\varepsilon$ may additionally
+depend on the positive parameter $\varepsilon$.
+
+\section{A planar cancellation theorem}\label{sec:cancellation}
+We first isolate the limiting argument. Its hypotheses concern actual
+Lebesgue integrals and do not include a differential equation.
+
+\begin{lemma}\label{lem:tail}
+Let $f,h\in L^1(\R^2)$ be real-valued, with $h\ge0$ almost everywhere.
+Let $\chi_n$ be measurable real functions such that
+$|\chi_n(x)|\le B$ for every $n\in\mathbb N$ and $x\in\R^2$,
+for a fixed $B\ge0$, and $\chi_n\to1$ almost everywhere.
+Suppose that, for a fixed $C\ge0$,
+\begin{equation}\label{eq:tail-hypothesis}
+ \left|\int f\chi_n\dd\right|
+   \le C\left(\int_{\{|x|\ge n\}}h\dd\right)^{1/2}
+       \qquad(n\in\mathbb N).
+\end{equation}
+Then $\int f\dd=0$.
+\end{lemma}
+\begin{proof}
+The products $f\chi_n$ are integrable because $|f\chi_n|\le B|f|$.
+For each fixed $x$, the indicator of $\{|x|\ge n\}$ tends to zero.
+The functions $h\mathbf1_{\{|x|\ge n\}}$ are dominated by $h$,
+so dominated convergence gives
+\[
+ \lim_{n\to\infty}\int_{\{|x|\ge n\}}h\dd=0.
+\]
+These integrals are nonnegative and their square roots also tend to zero.
+On the other hand, dominated convergence with dominating function
+$B|f|$ yields
+\[
+ \lim_{n\to\infty}\int f\chi_n\dd=\int f\dd.
+\]
+Taking limits in \eqref{eq:tail-hypothesis} proves the conclusion.
+\end{proof}
+
+\begin{theorem}\label{thm:cancellation}
+Let $f\in L^1(\R^2;\R)$ and $V\in L^2(\R^2;\R^2)$.
+Suppose that $f=\Div V$ in distributions, that is,
+\begin{equation}\label{eq:distributional}
+ \int f\varphi\dd=-\int V\cdot\nabla\varphi\dd
+       \qquad\text{for every }\varphi\in C_c^\infty(\R^2).
+\end{equation}
+Then $\int_{\R^2}f\dd=0$.
+\end{theorem}
+\begin{proof}
+Construct a cutoff by setting
+\[
+ b(t)=
+ \begin{cases}\exp(-1/t),&t>0,\\0,&t\le0,\end{cases}
+ \qquad
+ \eta(x)=\frac{b(4-|x|^2)}
+                 {b(4-|x|^2)+b(|x|^2-1)}.
+\]
+Every derivative of $b$ from the right vanishes at zero, so $b$ is smooth.
+The two arguments in the denominator cannot both be nonpositive.
+Thus $\eta$ is smooth, $0\le\eta\le1$, $\eta=1$ on $|x|\le1$,
+and $\eta=0$ on $|x|\ge2$. In particular,
+$K_\eta=\int|\nabla\eta|^2\dd<\infty$.
+For $L>0$, define $\chi_L(x)=\eta(x/L)$.
+The chain rule gives
+\begin{equation}\label{eq:cutoff-gradient}
+ \nabla\chi_L(x)=L^{-1}\nabla\eta(x/L),\qquad
+ \supp\nabla\chi_L\subset\{L\le|x|\le2L\}.
+\end{equation}
+The planar change of variables $x=Ly$ yields
+\begin{equation}\label{eq:cutoff-scaling}
+ \int|\nabla\chi_L(x)|^2\dd
+ =L^{-2}L^2\int|\nabla\eta(y)|^2\,dy=K_\eta.
+\end{equation}
+All integrals here are finite by smoothness and compact support.
+
+Take $L=n+1$. The actual test function $\chi_{n+1}$ is admissible in
+\eqref{eq:distributional}, so
+\begin{align}
+ \left|\int f\chi_{n+1}\dd\right|
+ &\le\int_{\{|x|\ge n\}}|V|\,|\nabla\chi_{n+1}|\dd\nonumber\\
+ &\le K_\eta^{1/2}
+       \left(\int_{\{|x|\ge n\}}|V|^2\dd\right)^{1/2}.
+       \label{eq:derived-tail}
+\end{align}
+The tested forcing is integrable since $|\chi_{n+1}|\le1$.
+The flux pairing is integrable by Cauchy--Schwarz, using
+$V\in L^2$ and \eqref{eq:cutoff-scaling}.
+Moreover, $\chi_{n+1}(x)=1$ for all sufficiently large $n$ at every
+fixed $x$. Lemma~\ref{lem:tail}, with
+$h=|V|^2$, $B=1$, and $C=K_\eta^{1/2}$, proves the conclusion.
+\end{proof}
+
+The scale-independent bound \eqref{eq:cutoff-scaling} is the planar
+feature of this argument. In dimension $d$, the same dilation gives
+$L^{d-2}K_\eta$. No $L^1$ assumption on $V$ was used in the plane,
+and the constant function one was never used as a distributional test.
+
+Theorem~\ref{thm:cancellation} is a statement about $f$ and $V$ with
+the displayed function-space hypotheses. It is not an assertion that
+a particular forcing or stress of \eqref{eq:mass}--\eqref{eq:heat}
+satisfies them. Such an application requires its own verification of
+the distributional identity, $L^1$ integrability of the forcing, and
+$L^2$ integrability of the flux. The theorem alone supplies neither
+weighted elliptic bounds nor the norms in \eqref{eq:criterion}.
+
+\section{Physical energy and pressure work}\label{sec:energy}
+For Sections~\ref{sec:energy}--\ref{sec:specific}, impose the following
+sufficient regularity condition explicitly: $(\rho,u,\theta)$ is a smooth
+solution with $\rho,\theta\ge0$, and these functions and all spatial
+and time derivatives used below decay faster than every inverse power
+of $|x|$, uniformly on compact time intervals.
+This condition makes every displayed integral finite and permits
+differentiation under the integral. Its validity for the original class
+\eqref{eq:class-density}--\eqref{eq:class-temperature} is not asserted.
+The conditional identities below assert no existence of positive-energy
+solutions in this auxiliary decay class. They provide neither a local
+construction nor a non-vacuity assertion for that class.
+
+Integrations on $\R^2$ can then be justified with $\chi_L$ from
+\eqref{eq:cutoff-gradient}. Every smooth rapidly decaying vector field
+$F$ used below satisfies
+\begin{equation}\label{eq:vanishing-flux}
+ \begin{split}
+ \int\chi_L\Div F\dd&=-\int F\cdot\nabla\chi_L\dd,\\
+ \left|\int F\cdot\nabla\chi_L\dd\right|
+ &\le\frac{\norm{\nabla\eta}{\infty}}{L}
+          \int_{\{|x|\ge L\}}|F|\dd\longrightarrow0.
+ \end{split}
+\end{equation}
+Dominated convergence treats the volume integrals.
+For integration by parts of two factors, apply this estimate to their
+product flux. Uniform decay supplies time-local dominating functions.
+These observations justify the boundary and time operations used below.
+
+Write
+\begin{equation}\label{eq:notation-stress}
+ d=\Div u,\quad k=\tfrac12|u|^2,\quad
+ S=2\mu D(u)+\lambda dI,\quad \nu=2\mu+\lambda>0.
+\end{equation}
+Then $\Div S=\mu\Delta u+(\mu+\lambda)\nabla d$ and $Q=S:\nabla u$.
+In two dimensions,
+\begin{equation}\label{eq:Q-positive}
+ Q=2\mu\left|D(u)-\tfrac12dI\right|^2+(\mu+\lambda)d^2\ge0.
+\end{equation}
+Define
+\begin{align}
+ K(t)&=\int\rho k\dd,\qquad H(t)=c_v\int\rho\theta\dd,\qquad
+ E(t)=K(t)+H(t),\label{eq:energy-quantities}\\
+ \mathcal D(t)&=\int\{\mu|\nabla u|^2+(\mu+\lambda)d^2\}\dd.
+ \label{eq:dissipation}
+\end{align}
+
+\begin{proposition}\label{prop:physical-energy}
+Under the regularity condition above,
+\begin{equation}\label{eq:energy-balances}
+ K'+\mathcal D=\int Pd\dd,\qquad
+ H'=\mathcal D-\int Pd\dd,\qquad E'=0.
+\end{equation}
+If the interval includes zero, with the stated initial traces, then
+\begin{equation}\label{eq:energy-small}
+ K(t)+H(t)=E_0,\qquad
+ \norm{\sqrt\rho u}{2}^2\le2E_0,\qquad
+ \norm{P}{1}\le\frac{R}{c_v}E_0.
+\end{equation}
+For any two times $s<t$ in the interval,
+\begin{equation}\label{eq:kinetic-pressure}
+ K(t)+\frac{\mu}{2}\int_s^t\norm{\nabla u}{2}^2\dt
+ \le K(s)+\frac1\mu\int_s^t\norm{P}{2}^2\dt.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Continuity gives the transport identity
+\begin{equation}\label{eq:transport}
+ \partial_t(\rho f)+\Div(\rho uf)=\rho\dot f.
+\end{equation}
+The momentum equation is $\rho\dot u=\Div S-\nabla P$.
+Dotting it with $u$, and using the symmetry of $S$, gives
+\begin{equation}\label{eq:kinetic-local}
+ \rho\dot k=\Div(Su-Pu)-Q+Pd.
+\end{equation}
+Integrate \eqref{eq:transport} with $f=k$ and apply
+\eqref{eq:vanishing-flux} to obtain $K'+\int Q\dd=\int Pd\dd$.
+Integration by parts twice gives
+\[
+ \int\partial_i u_j\,\partial_j u_i\dd
+ =-\int u_j\,\partial_j(\Div u)\dd=\int d^2\dd,
+\]
+where repeated indices are summed over $1,2$. Since
+$2|D(u)|^2=|\nabla u|^2+\sum_{i,j}\partial_i u_j\,\partial_j u_i$,
+\begin{equation}\label{eq:integrated-Q}
+ \int Q\dd=\mu\norm{\nabla u}{2}^2
+                 +(\mu+\lambda)\norm{d}{2}^2=\mathcal D.
+\end{equation}
+The heat equation, \eqref{eq:transport} with $f=\theta$, and
+\eqref{eq:vanishing-flux} with $F=\nabla\theta$ give
+$H'=\int Q\dd-\int Pd\dd$. This proves \eqref{eq:energy-balances}.
+Add the first two identities, integrate in time, and use $\rho,\theta\ge0$
+to obtain \eqref{eq:energy-small}.
+
+Finally, $|d|\le\sqrt2|\nabla u|$, and Cauchy--Schwarz followed by
+Young's inequality gives
+\[
+ \left|\int Pd\dd\right|
+ \le\sqrt2\norm{P}{2}\norm{\nabla u}{2}
+ \le\frac{\mu}{2}\norm{\nabla u}{2}^2+\frac1\mu\norm{P}{2}^2.
+\]
+Since $\mathcal D\ge\mu\norm{\nabla u}{2}^2$, integration of the
+kinetic identity proves \eqref{eq:kinetic-pressure}.
+\end{proof}
+
+The physical energy conserves the sum of kinetic and internal energy.
+The term $\mathcal D$ transfers energy between them; it does not
+appear with a positive sign in the equation for $E$.
+Thus \eqref{eq:energy-small} supplies no bound on
+$\int_s^t\mathcal D\dt$ by itself. If $M(t)=\norm{\rho(t)}{\infty}$,
+\begin{equation}\label{eq:pressure-thermal}
+ \norm{P}{2}^2\le R^2M(t)\int\rho\theta^2\dd,
+\end{equation}
+but this introduces a higher thermal quantity and a density coefficient,
+neither bounded uniformly up to $T_{\max}$ by \eqref{eq:energy-small}.
+
+The effective viscous flux $G=\nu d-P$ describes the same coupling.
+
+\begin{proposition}\label{prop:pressure-feedback}
+Under the same regularity condition,
+\begin{align}
+ H'+\frac1\nu\norm{P}{2}^2
+     &=\mathcal D-\frac1\nu\int PG\dd,\label{eq:internal-flux}\\
+ K'+\frac12\mathcal D
+     &\le\frac1{2\nu}\norm{P}{2}^2.\label{eq:kinetic-flux}
+\end{align}
+Consequently,
+\begin{equation}\label{eq:pressure-spacetime}
+ \frac1{2\nu}\int_s^t\norm{P}{2}^2\dt
+ \le H(s)+\int_s^t\mathcal D\dt
+                 +\frac1{2\nu}\int_s^t\norm{G}{2}^2\dt.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Substitute $d=(G+P)/\nu$ in the internal-energy identity to obtain
+\eqref{eq:internal-flux}. The identity
+\[
+ \norm{\nabla u}{2}^2=\norm{d}{2}^2+\norm{\omega}{2}^2,\qquad
+ \omega=\partial_1u_2-\partial_2u_1,
+\]
+follows by expanding the squares and using
+$\int\partial_1u_1\,\partial_2u_2\dd
+ =\int\partial_2u_1\,\partial_1u_2\dd$.
+Hence $\mathcal D=\nu\norm{d}{2}^2+\mu\norm{\omega}{2}^2
+\ge\nu\norm{d}{2}^2$, and
+\[
+ \int Pd\dd\le\frac1{2\nu}\norm{P}{2}^2+\frac{\nu}{2}\norm{d}{2}^2
+ \le\frac1{2\nu}\norm{P}{2}^2+\frac12\mathcal D.
+\]
+This proves \eqref{eq:kinetic-flux}. Finally,
+$-\int PG\dd\le\frac12\norm{P}{2}^2+\frac12\norm{G}{2}^2$.
+Insert this in \eqref{eq:internal-flux}, integrate, and discard the
+nonnegative $H(t)$ to obtain \eqref{eq:pressure-spacetime}.
+\end{proof}
+
+Integration of \eqref{eq:kinetic-flux} yields
+\[
+ \int_s^t\mathcal D\dt
+ \le2K(s)+\frac1\nu\int_s^t\norm{P}{2}^2\dt.
+\]
+Inserting this in \eqref{eq:pressure-spacetime} leaves the coefficient
+$1/\nu$ of the pressure integral on the right, exceeding its coefficient
+$1/(2\nu)$ on the left. The two estimates therefore give no absorption.
+At the level of exact identities their sum is $E'=0$.
+A further estimate independent of this exchange is needed.
+
+\section{Thermal sources and the pressure equation}\label{sec:thermal}
+Set $\beta=R/c_v$. Since $\dot\rho=-\rho d$ and
+$c_v\rho\dot\theta=\kappa\Delta\theta+Q-Pd$, the pressure equation is
+\begin{equation}\label{eq:pressure-evolution}
+ \dot P+(1+\beta)Pd=\beta(Q+\kappa\Delta\theta).
+\end{equation}
+No division by density is involved. The two thermal sources cannot be
+discarded in favor of a source-free barotropic pressure equation.
+
+\begin{proposition}\label{prop:pressure-square}
+Under the regularity condition of Section~\ref{sec:energy},
+\begin{align}
+ \frac d{dt}\norm{P}{2}^2+\frac{1+2\beta}{\nu}\int P^3\dd
+ ={}&-\frac{1+2\beta}{\nu}\int P^2G\dd+2\beta\int PQ\dd\nonumber\\
+ &+2\beta\kappa\int P\Delta\theta\dd,\label{eq:pressure-square}\\
+ \int P\Delta\theta\dd
+ ={}&-R\int\rho|\nabla\theta|^2\dd
+       -R\int\theta\nabla\rho\cdot\nabla\theta\dd.
+       \label{eq:conduction-pressure}
+\end{align}
+\end{proposition}
+\begin{proof}
+Multiply \eqref{eq:pressure-evolution} by $2P$ and use
+$\int u\cdot\nabla(P^2)\dd=-\int dP^2\dd$. Then
+\[
+ \frac d{dt}\norm{P}{2}^2+(1+2\beta)\int P^2d\dd
+       =2\beta\int PQ\dd+2\beta\kappa\int P\Delta\theta\dd.
+\]
+Substitute $d=(G+P)/\nu$ to obtain \eqref{eq:pressure-square}.
+Integration by parts with
+$\nabla P=R\rho\nabla\theta+R\theta\nabla\rho$ proves
+\eqref{eq:conduction-pressure}. All product fluxes satisfy
+\eqref{eq:vanishing-flux}.
+\end{proof}
+
+The favorable cubic term in \eqref{eq:pressure-square} is accompanied
+by $\int PQ\dd\ge0$ on the right. The last integral in
+\eqref{eq:conduction-pressure} has no fixed sign.
+Neither term is controlled by \eqref{eq:energy-small}.
+
+For the thermal estimate, write
+\begin{equation}\label{eq:thermal-notation}
+ \begin{gathered}
+ X=\int\rho\theta^2\dd,\quad Z=\norm{\nabla\theta}{2}^2,\quad
+ J=\int\theta Q\dd,\\
+ V=\int\rho|\dot u|^2\dd,\qquad N=\norm{\nabla u}{2}^2.
+ \end{gathered}
+\end{equation}
+\begin{proposition}\label{prop:thermal}
+Under the regularity condition of Section~\ref{sec:energy},
+\begin{equation}\label{eq:thermal-identity}
+ \frac{c_v}{2}X'+\kappa Z=J-R\int\rho\theta^2d\dd.
+\end{equation}
+Writing $U=\norm{u}{\infty}$ and $M=\norm{\rho}{\infty}$, for every
+$\varepsilon>0$ one has
+\begin{equation}\label{eq:heating-bound}
+ J\le\varepsilon(V+Z)+C_\varepsilon U^2\{N+(1+M)X\}
+                  +C\norm{d}{\infty} X.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Multiply the heat equation by $\theta$ and apply
+\eqref{eq:transport} to $\theta^2/2$. Integration by parts of conduction
+gives \eqref{eq:thermal-identity}.
+Testing the momentum equation by $u\theta$ gives
+\begin{align}
+ \int\theta\{\mu|\nabla u|^2+(\mu+\lambda)d^2\}\dd
+ ={}&-\int\rho\theta u\cdot\dot u\dd+\int P\theta d\dd
+                 +\int Pu\cdot\nabla\theta\dd\nonumber\\
+ &-\mu\int\partial_i u_j\,u_j\partial_i\theta\dd
+       -(\mu+\lambda)\int d\,u\cdot\nabla\theta\dd.
+       \label{eq:momentum-thermal}
+\end{align}
+Because $\theta\ge0$ and $\mu+\lambda\ge0$, the left side is at least
+$\mu\int\theta|\nabla u|^2\dd$. Also,
+$0\le Q\le(2\mu+2|\lambda|)|\nabla u|^2$.
+Thus $J$ is bounded by a constant times the sum of the absolute values
+on the right of \eqref{eq:momentum-thermal}. Cauchy--Schwarz gives
+\begin{align*}
+ \left|\int\rho\theta u\cdot\dot u\dd\right|
+   &\le UX^{1/2}V^{1/2},\\
+ \left|\int P\theta d\dd\right|&\le R\norm{d}{\infty} X,\\
+ \left|\int Pu\cdot\nabla\theta\dd\right|
+   &\le RU(MX)^{1/2}Z^{1/2}.
+\end{align*}
+The two viscous cross terms are bounded by $CUN^{1/2}Z^{1/2}$,
+using $|d|\le\sqrt2|\nabla u|$.
+Young's inequality gives
+\[
+ CUX^{1/2}V^{1/2}\le\varepsilon V+C_\varepsilon U^2X
+\]
+and, choosing the two parameters with sum $\varepsilon$,
+\[
+ CU(MX)^{1/2}Z^{1/2}+CUN^{1/2}Z^{1/2}
+ \le\varepsilon Z+C_\varepsilon U^2(MX+N).
+\]
+Together these inequalities prove \eqref{eq:heating-bound}.
+\end{proof}
+
+With $d_-=\max\{-d,0\}$,
+\begin{equation}\label{eq:compression}
+ -R\int\rho\theta^2d\dd\le R\norm{d_-}{\infty} X.
+\end{equation}
+Using this coefficient in Gronwall's inequality requires its time
+integrability, already part of \eqref{eq:criterion}.
+The quantities $V$, $U$, and $M$ in \eqref{eq:heating-bound} also remain
+to be controlled uniformly up to a finite $T_{\max}$.
+
+For a time-independent $h\in C_c^\infty(\R^2)$ the localized
+temperature test is
+\begin{align}
+ \frac{c_v}{2}\frac d{dt}\int h\rho\theta^2\dd
+       +\kappa\int h|\nabla\theta|^2\dd
+ ={}&\int h\theta Q\dd-\int hP\theta d\dd\nonumber\\
+ &+\frac{c_v}{2}\int\rho\theta^2u\cdot\nabla h\dd
+       +\frac{\kappa}{2}\int\theta^2\Delta h\dd.
+       \label{eq:localized-temperature}
+\end{align}
+Indeed, apply \eqref{eq:transport} to $\theta^2/2$ and multiply by $h$;
+for conduction use
+\[
+ \kappa\int h\theta\Delta\theta\dd
+ =-\kappa\int h|\nabla\theta|^2\dd
+       +\frac{\kappa}{2}\int\theta^2\Delta h\dd.
+\]
+An extension to a growing weight requires control of both additional
+terms in \eqref{eq:localized-temperature}.
+The density-weighted physical energy gives no unweighted $\theta^2$
+control in a vacuum region.
+
+\section{A total specific-energy multiplier}\label{sec:specific}
+Pressure work and viscous heating can be cancelled before estimating
+them. Set
+\begin{equation}\label{eq:specific-definitions}
+ w=c_v\theta+k,\quad F=Su-Pu,\quad a_\kappa=\frac{\kappa}{c_v},
+ \quad Y=\int\rho w^2\dd.
+\end{equation}
+\begin{proposition}\label{prop:specific}
+Under the regularity condition of Section~\ref{sec:energy},
+\begin{equation}\label{eq:specific-equation}
+ \rho\dot w=\kappa\Delta\theta+\Div F.
+\end{equation}
+The functional $Y$ satisfies
+\begin{align}
+ \frac12Y'+\kappa c_v\norm{\nabla\theta}{2}^2
+ &=-\kappa\int\nabla k\cdot\nabla\theta\dd
+       -\int F\cdot(c_v\nabla\theta+\nabla k)\dd,
+       \label{eq:specific-theta}\\
+ \frac12Y'+a_\kappa\norm{\nabla w}{2}^2
+ &=\int(a_\kappa\nabla k-F)\cdot\nabla w\dd.
+       \label{eq:specific-w}
+\end{align}
+In particular,
+\begin{equation}\label{eq:specific-bound}
+ \begin{split}
+ Y'+a_\kappa\norm{\nabla w}{2}^2
+ &\le a_\kappa^{-1}\norm{a_\kappa\nabla k-F}{2}^2\\
+ &\le C\int|u|^2(|\nabla u|^2+P^2)\dd .
+ \end{split}
+\end{equation}
+With $N$ as in \eqref{eq:thermal-notation},
+$U=\norm{u}{\infty}$, and $M=\norm{\rho}{\infty}$,
+\begin{equation}\label{eq:specific-gronwall}
+ \begin{split}
+ Y(t)+a_\kappa\int_s^t\norm{\nabla w}{2}^2\dt
+ \le{}&\left(Y(s)+C\int_s^tU^2N\dt\right)\\
+ &{}\times\exp\left(C\int_s^tMU^2\dt\right).
+ \end{split}
+\end{equation}
+\end{proposition}
+\begin{proof}
+Add \eqref{eq:kinetic-local} to the material form of the heat equation.
+The terms $Q-Pd$ cancel and give \eqref{eq:specific-equation}
+without division by density. Since
+$Su=\mu\nabla k+\mu(u\cdot\nabla)u+\lambda ud$, equivalently
+\[
+ \rho\dot w=\kappa\Delta\theta+\mu\Delta k
+       +\mu\Div((u\cdot\nabla)u)+\lambda\Div(ud)-\Div(Pu).
+\]
+Apply \eqref{eq:transport} to $w^2/2$ and test
+\eqref{eq:specific-equation} by $w$. Then
+\begin{equation}\label{eq:specific-test}
+ \frac12Y'=-\kappa\int\nabla w\cdot\nabla\theta\dd
+                     -\int F\cdot\nabla w\dd.
+\end{equation}
+The substitutions $\nabla w=c_v\nabla\theta+\nabla k$ and
+$\nabla\theta=c_v^{-1}(\nabla w-\nabla k)$ respectively prove
+\eqref{eq:specific-theta} and \eqref{eq:specific-w}.
+
+Cauchy--Schwarz and Young's inequality yield
+\[
+ \left|\int(a_\kappa\nabla k-F)\cdot\nabla w\dd\right|
+ \le\frac{a_\kappa}{2}\norm{\nabla w}{2}^2
+       +\frac1{2a_\kappa}\norm{a_\kappa\nabla k-F}{2}^2.
+\]
+Insert this in \eqref{eq:specific-w} and multiply by two.
+The pointwise bounds $|\nabla k|\le|u||\nabla u|$ and
+$|S|\le C|\nabla u|$ imply
+\[
+ |a_\kappa\nabla k-F|^2\le C|u|^2(|\nabla u|^2+P^2),
+\]
+which proves \eqref{eq:specific-bound}. Positivity also gives
+\begin{equation}\label{eq:specific-positive}
+ Y\ge c_v^2X+\frac14\int\rho|u|^4\dd,\qquad
+ \norm{P}{2}^2\le\frac{R^2}{c_v^2}MY.
+\end{equation}
+Consequently,
+\begin{equation}\label{eq:specific-coefficients}
+ Y'+a_\kappa\norm{\nabla w}{2}^2\le CU^2N+CMU^2Y.
+\end{equation}
+Multiply by $\exp(-C\int_s^tMU^2\,d\tau)$ and integrate.
+After multiplying back, the dissipation integral has the weight
+$\exp(C\int_\tau^tMU^2\,d\sigma)\ge1$.
+The forcing term is at most
+$\exp(C\int_s^tMU^2\,d\tau)\int_s^tCU^2N\,d\tau$.
+Dropping the excess dissipation weight proves
+\eqref{eq:specific-gronwall}.
+\end{proof}
+
+The positive functional $Y$ contains both the density-weighted
+temperature square and velocity fourth power.
+However, $\nabla w=c_v\nabla\theta+\nabla k$ controls only their sum.
+The identity \eqref{eq:specific-theta} retains the mixed conduction
+term, whereas \eqref{eq:specific-w} places the other terms in a flux.
+No small factor depending on $E_0$ has been established on the right
+of \eqref{eq:specific-bound}. The coefficients in
+\eqref{eq:specific-gronwall} have not been bounded uniformly at a
+finite maximal time under the original data assumptions.
+
+Small $\int\rho_0w_0\dd=E_0$ does not imply small
+$\int\rho_0w_0^2\dd$. To see the distinction, choose a smooth
+nonnegative compactly supported density equal to one near the origin
+and a nonnegative nonzero $\psi\in C_c^\infty(\R^2)$.
+For $r>0$ sufficiently small, set
+\[
+ u_0=0,\qquad \theta_0(x)=b\psi(x/r),\qquad b>0,
+\]
+with the thermal support inside the region where $\rho_0=1$.
+The data satisfy \eqref{eq:data-density}--\eqref{eq:data-velocity}.
+Condition \eqref{eq:compatibility} holds with $g=R\nabla\theta_0$,
+extended by zero away from its support.
+A change of variables gives
+\begin{equation}\label{eq:concentration}
+ \begin{gathered}
+ E_0=c_vbr^2\int\psi\dd,\qquad
+ \norm{P_0}{2}^2=R^2b^2r^2\int\psi^2\dd,\\
+ Y(0)=c_v^2b^2r^2\int\psi^2\dd.
+ \end{gathered}
+\end{equation}
+For fixed positive small $E_0$, take
+$r^2=E_0/(c_vb\int\psi\dd)$ and let $b$ increase.
+Both $\norm{P_0}{2}^2$ and $Y(0)$ then grow linearly in $b$.
+The higher initial norms are finite for each datum but not uniform in
+this family. This rules out an instantaneous bound using $E_0$ alone;
+it does not rule out a spacetime estimate using smoothing and prescribed
+higher initial bounds, and gives no conclusion against global existence.
+
+\section{Remaining estimates and the continuation question}
+Theorem~\ref{thm:cancellation} is complete under its $L^1$ forcing and
+$L^2$ flux assumptions. The energy and thermal estimates are proved under the explicit
+smoothness and decay condition of Section~\ref{sec:energy}. Their use for every solution in
+\eqref{eq:class-density}--\eqref{eq:class-temperature} requires the
+corresponding cutoff limits, nonlinear tests, and initial traces.
+For example, the $w^2$ test requires integrability of $\rho|u|^4$
+and its flux terms. A formal multiplier or the weak far-field phrase
+does not prove these facts.
+
+Even after those justifications, a chain of unresolved estimates remains.
+The kinetic inequality \eqref{eq:kinetic-pressure} requires the
+pressure-square time integral. The effective-flux identities
+\eqref{eq:internal-flux}--\eqref{eq:pressure-spacetime} do not provide
+an absorbable bound for it. The pressure equation introduces
+$\int PQ\dd$ and the mixed density-gradient term in
+\eqref{eq:conduction-pressure}. The thermal test requires
+temperature-weighted heating and a compression coefficient.
+The total specific-energy functional replaces the explicit heating
+and pressure work by $\int|u|^2(|\nabla u|^2+P^2)\dd$,
+which remains uncontrolled by the physical energy estimate.
+
+Continuation requires constants remaining finite as
+$T\uparrow T_{\max}<\infty$, sufficient to prove
+\[
+ \sup_{T<T_{\max}}\int_0^T
+       \bigl(\norm{\Div u}{\infty}+\norm{u}{4/\alpha}\bigr)\dt<\infty.
+\]
+Assuming this integral finite to estimate the preceding coefficients
+cannot establish its finiteness from small initial energy.
+A bootstrap density bound or velocity supremum bound must likewise
+be recovered from the equations with uniform constants.
+
+The results therefore identify positive cancellations and exact
+requirements for a future closure. They establish neither a
+small-energy global-existence theorem in the original local class
+nor a contradiction to such a theorem.
+An independent estimate connecting the pressure and thermal flux terms
+to the continuation quantities is still needed, without adding
+assumptions to the target data.
+
+\begin{thebibliography}{9}
+\bibitem{Wang}
+X. Wang,
+\emph{On Local Existence and Blowup Criterion of Strong Solutions to
+Cauthy Problem of 2D Full Compressible Navier-Stokes System with Vacuum},
+arXiv:2212.13343v1, 27 December 2022.
+\bibitem{LiXin}
+J. Li and Z. Xin,
+\emph{Global Well-Posedness and Large Time Asymptotic Behavior of Classical
+Solutions to the Compressible Navier--Stokes Equations with Vacuum},
+Annals of PDE \textbf{5} (2019), Article 7.
+\href{https://doi.org/10.1007/s40818-019-0064-5}
+{doi:10.1007/s40818-019-0064-5}.
+\bibitem{FLW}
+X. Fan, B. L\"u, and X. Wang,
+\emph{Hardy Space and Exponential Decay of Inhomogeneous Navier--Stokes
+System in $\R^2$},
+arXiv:2610.04884v1, 4 October 2026.
+\end{thebibliography}
+\end{document}

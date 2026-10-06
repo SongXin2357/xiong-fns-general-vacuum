@@ -1,0 +1,79 @@
+N0005ExactAttempt.InitialRepresentativeStatement : Prop
+def N0005ExactAttempt.InitialRepresentativeStatement : Prop :=
+∀ (m : ℕ) (p T C : ℝ) (ρ : ℝ → R2 → ℝ) (ρ₀ : R2 → ℝ) (u : ℝ → Velocity m) (u₀ : Velocity m),
+  1 < p →
+    0 < T →
+      0 ≤ C →
+        (∀ t ∈ Ioo 0 T, MemLp (u t) (ENNReal.ofReal p) volume) →
+          (∀ t ∈ Ioo 0 T, (eLpNorm (u t) (ENNReal.ofReal p) volume).toReal ≤ C) →
+            (∀ (K : Set R2), IsCompact K → MemLp ρ₀ ∞ (volume.restrict K)) →
+              (∀ (K : Set R2), IsCompact K → TendstoUniformlyOn ρ ρ₀ (𝓝[Ioo 0 T] 0) K) →
+                (∀ t ∈ Ioo 0 T, LocallyIntegrable (fun x => ρ t x • u t x) volume) →
+                  LocallyIntegrable (fun x => ρ₀ x • u₀ x) volume →
+                    (∀ (φ : R2 → ℝ),
+                        ContDiff ℝ ∞ φ →
+                          HasCompactSupport φ →
+                            Tendsto (fun t => ∫ (x : R2), φ x • ρ t x • u t x) (𝓝[Ioo 0 T] 0)
+                              (𝓝 (∫ (x : R2), φ x • ρ₀ x • u₀ x))) →
+                      ∃ v, MemLp v (ENNReal.ofReal p) volume ∧ ∀ᵐ (x : R2), ρ₀ x • v x = ρ₀ x • u₀ x
+/mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/evidence/N0005/attempt-exact-proof-v1.lean:41:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/evidence/N0005/attempt-exact-proof-v1.lean:43:86: error: unsolved goals
+case hrange
+m : ℕ
+p T C : ℝ
+ρ : ℝ → R2 → ℝ
+ρ₀ : R2 → ℝ
+u : ℝ → Velocity m
+u₀ : Velocity m
+hp : 1 < p
+hT : 0 < T
+hC : 0 ≤ C
+hu : ∀ t ∈ Ioo 0 T, MemLp (u t) (ENNReal.ofReal p) volume
+hbound : ∀ t ∈ Ioo 0 T, (eLpNorm (u t) (ENNReal.ofReal p) volume).toReal ≤ C
+hρloc : ∀ (K : Set R2), IsCompact K → MemLp ρ₀ ∞ (volume.restrict K)
+hρconv : ∀ (K : Set R2), IsCompact K → TendstoUniformlyOn ρ ρ₀ (𝓝[Ioo 0 T] 0) K
+hmomentum : ∀ t ∈ Ioo 0 T, LocallyIntegrable (fun x => ρ t x • u t x) volume
+hmomentum₀ : LocallyIntegrable (fun x => ρ₀ x • u₀ x) volume
+htrace :
+  ∀ (φ : R2 → ℝ),
+    ContDiff ℝ ∞ φ →
+      HasCompactSupport φ →
+        Tendsto (fun t => ∫ (x : R2), φ x • ρ t x • u t x) (𝓝[Ioo 0 T] 0) (𝓝 (∫ (x : R2), φ x • ρ₀ x • u₀ x))
+hpE : 1 ≤ ENNReal.ofReal p
+this : Fact (1 ≤ ENNReal.ofReal p) := ⋯
+X : AddSubgroup (R2 →ₘ[volume] EuclideanSpace ℝ (Fin m)) := ⋯
+⊢ closure (⇑(NormedSpace.inclusionInDoubleDualWeak ℝ ↥X) '' ⇑(toWeakSpace ℝ ↥X) '' Metric.closedBall 0 C) ⊆
+    range ⇑(NormedSpace.inclusionInDoubleDualWeak ℝ ↥X)
+/mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/evidence/N0005/attempt-exact-proof-v1.lean:37:66: error: unsolved goals
+m : ℕ
+p T C : ℝ
+ρ : ℝ → R2 → ℝ
+ρ₀ : R2 → ℝ
+u : ℝ → Velocity m
+u₀ : Velocity m
+hp : 1 < p
+hT : 0 < T
+hC : 0 ≤ C
+hu : ∀ t ∈ Ioo 0 T, MemLp (u t) (ENNReal.ofReal p) volume
+hbound : ∀ t ∈ Ioo 0 T, (eLpNorm (u t) (ENNReal.ofReal p) volume).toReal ≤ C
+hρloc : ∀ (K : Set R2), IsCompact K → MemLp ρ₀ ∞ (volume.restrict K)
+hρconv : ∀ (K : Set R2), IsCompact K → TendstoUniformlyOn ρ ρ₀ (𝓝[Ioo 0 T] 0) K
+hmomentum : ∀ t ∈ Ioo 0 T, LocallyIntegrable (fun x => ρ t x • u t x) volume
+hmomentum₀ : LocallyIntegrable (fun x => ρ₀ x • u₀ x) volume
+htrace :
+  ∀ (φ : R2 → ℝ),
+    ContDiff ℝ ∞ φ →
+      HasCompactSupport φ →
+        Tendsto (fun t => ∫ (x : R2), φ x • ρ t x • u t x) (𝓝[Ioo 0 T] 0) (𝓝 (∫ (x : R2), φ x • ρ₀ x • u₀ x))
+hpE : 1 ≤ ENNReal.ofReal p
+this : Fact (1 ≤ ENNReal.ofReal p) := { out := hpE }
+X : AddSubgroup (R2 →ₘ[volume] EuclideanSpace ℝ (Fin m)) := Lp (EuclideanSpace ℝ (Fin m)) (ENNReal.ofReal p) volume
+hcompact : IsCompact (closure (⇑(toWeakSpace ℝ ↥X) '' Metric.closedBall 0 C))
+⊢ ∃ v, MemLp v (ENNReal.ofReal p) volume ∧ ∀ᵐ (x : R2), ρ₀ x • v x = ρ₀ x • u₀ x

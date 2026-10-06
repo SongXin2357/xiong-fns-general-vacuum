@@ -75,3 +75,6 @@ installation_id*
 
 # Per-node local-only Lean build runtimes
 lean/local-runtime-*/
+
+# Full-size PDF QA renders stay local; contact sheets and reports are versioned.
+evidence/manuscript/*/render/page-*.png

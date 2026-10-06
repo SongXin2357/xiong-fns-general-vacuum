@@ -1,0 +1,30 @@
+{
+  "source_name": "paper_en.tex",
+  "source_sha256": "04adfd4b0e76db5c0976e4b57a28ce4359ca5802ada1b3e541f68434537bf039",
+  "engine": "/usr/bin/pdflatex",
+  "time_utc": "20261006T141121Z",
+  "passes": [
+    {
+      "command": [
+        "/usr/bin/pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "paper_en.tex"
+      ],
+      "exit_code": 0,
+      "log": "20261006T141121Z-pass1.log"
+    },
+    {
+      "command": [
+        "/usr/bin/pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "paper_en.tex"
+      ],
+      "exit_code": 0,
+      "log": "20261006T141121Z-pass2.log"
+    }
+  ],
+  "pdf_sha256": "380a7ff292c552e62d250c45c547d9c1f8761f740ad910df66224fac8ef503f2",
+  "pdf_bytes": 168379
+}

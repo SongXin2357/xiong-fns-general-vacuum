@@ -1,3 +1,5 @@
 # N0004
 
-[Target](statement.md). Independent coupled-thermal route; exploring, not Lean verified; no child allowed.
+Coupled thermal estimates derived, but time-integrated closure remains open; no Lean certificate.
+
+[Immutable registered statement](statement.md). Current status is in ../../tree.json.

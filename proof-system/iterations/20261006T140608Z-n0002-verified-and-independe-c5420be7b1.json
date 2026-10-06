@@ -1,0 +1,44 @@
+{
+  "schema": "math-research-iteration-v1",
+  "iteration_id": "20261006T140608Z-n0002-verified-and-independe-c5420be7b1",
+  "atomic_intent_root": "20261006T140608Z-n0002-verified-and-independe-c5420be7b1.atomic",
+  "generated_at": "2026-10-06T14:06:08Z",
+  "operation": "n0002-verified-and-independent-global-obstruction-audit",
+  "parent_iteration_id": "20261006T125934Z-n0001-github-publication-ver-deb50f33d9",
+  "parent_head_digest": "e5abee521d3f6a2e4b7109ebb3a379b456dfa2b18401daf3a6cc4215ba98c7f9",
+  "active_claim_id": "claim-d08766cc9e6b2feb",
+  "semantic_delta": {
+    "operation_label": "n0002-verified-and-independent-global-obstruction-audit",
+    "projection_names": [
+      "ACTIVE_STATE.md"
+    ]
+  },
+  "project_state_semantics": {
+    "schema": "math-research-project-state-v1",
+    "lifecycle": "active",
+    "status_reason": "transaction state initialized",
+    "active_claim_id": "claim-d08766cc9e6b2feb",
+    "resume_required": false,
+    "proof_authority": false
+  },
+  "previous_projection_hashes": {
+    "ACTIVE_STATE.md": "2d2cd21fa97891bf3b5c65105721825773717ff3b3c378f2720b17a17c9d9706",
+    "CLAIM_CARD.md": "2b2477aceb6de75d992ad3c284faf165c17496e4656b32f7c36746b4b2ac616a",
+    "CLAIM_REGISTRY.json": "d554b888e6447d2eb29f303b01b2af7db73f3bb6d4810d1b95bb84cf5799ca4c",
+    "OBSTRUCTION_LEDGER.md": "30a2e1843cb133ddd4f572f41dc7a2ecb245cab30f035f28c79611afc6b91e94",
+    "PROOF_GATE.json": "ad4be09cb9db45b94db7a3acb7e23c2f175be473ec295e90838d55f33a5534d3",
+    "PUBLIC_CLAIM_READY.md": "02b9c01f45d2d9485f2dde0168d08887c283bb49e01a2f9ac67426bfa03839dc",
+    "SOURCE_FIDELITY.md": "f2b21b6490e08e8369644c329c765325369caec859fa4c9da21f5b5f2e701411"
+  },
+  "projection_hashes": {
+    "ACTIVE_STATE.md": "a75f5429a993d6c074e4a2b5ee7f6312532830c04f60c7dace9384afcde52846",
+    "CLAIM_CARD.md": "2b2477aceb6de75d992ad3c284faf165c17496e4656b32f7c36746b4b2ac616a",
+    "CLAIM_REGISTRY.json": "d554b888e6447d2eb29f303b01b2af7db73f3bb6d4810d1b95bb84cf5799ca4c",
+    "OBSTRUCTION_LEDGER.md": "30a2e1843cb133ddd4f572f41dc7a2ecb245cab30f035f28c79611afc6b91e94",
+    "PROOF_GATE.json": "ad4be09cb9db45b94db7a3acb7e23c2f175be473ec295e90838d55f33a5534d3",
+    "PUBLIC_CLAIM_READY.md": "02b9c01f45d2d9485f2dde0168d08887c283bb49e01a2f9ac67426bfa03839dc",
+    "SOURCE_FIDELITY.md": "f2b21b6490e08e8369644c329c765325369caec859fa4c9da21f5b5f2e701411"
+  },
+  "proof_authority": false,
+  "iteration_digest": "c8e01a3eb4ba9910abd99a7fdbc61172184669f155a85d6ee99c6b8dfabb4ce6"
+}

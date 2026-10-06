@@ -80,16 +80,16 @@
 }{\def\@noitemerr{\@latex@warning{Empty bibliography}}\endlist}
 \makeatother
 
-\renewcommand{\shorttitle}{A Cutoff Criterion for Cancellation}
+\renewcommand{\shorttitle}{Planar Distributional Cancellation}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\dd}{\,\mathrm{d}x}
-\title{A Cutoff Criterion for Cancellation on the Plane}
+\title{Integral Cancellation for Distributional Divergences on the Plane}
 \author{}
 \date{}
 \begin{document}
 \maketitle
 \begin{abstract}
-We record a cancellation criterion for an integrable function on the plane. A uniform bound on the testing functions and an integrable flux-tail estimate imply that the source has zero mean. The criterion isolates a limiting argument relevant to weighted elliptic estimates; verifying its hypotheses for a compressible flow remains a separate problem.
+We prove that an integrable distributional divergence of a square-integrable vector field on the plane has zero integral. The proof constructs smooth expanding cutoffs, uses the scale invariance of their Dirichlet integral in two dimensions, and applies an integrable tail criterion. No estimate of the physical pressure or global-existence assertion for a compressible flow is included.
 \end{abstract}
 \section{The cancellation criterion}
 All integrals are taken with respect to Lebesgue measure on $\R^2$, and $|x|$ denotes the Euclidean norm. The cancellation argument in Fan--L\"u--Wang \cite[Lemma 3.3]{FLW} motivates the following elementary analytic criterion.
@@ -135,6 +135,37 @@ Equation \eqref{eq:testlimit} also implies $|I_n|\to|I|$. Uniqueness of the limi
 \begin{remark}
 The estimate \eqref{eq:flux} is a substantive hypothesis. An application to a momentum equation must establish it from admissible testing, integrability, and control of the flux at infinity. Lemma~\ref{lem:cutoff} does not assert that these requirements hold for a particular compressible solution, nor does it establish a global existence theorem.
 \end{remark}
+
+\section{Distributional divergence in two dimensions}
+\begin{theorem}\label{thm:divergence}
+Let $f\in L^1(\R^2;\R)$ and $V\in L^2(\R^2;\R^2)$. Suppose that
+\begin{equation}\label{eq:weakdiv}
+ \int f\varphi\dd=-\int V\cdot\nabla\varphi\dd
+ \qquad\text{for every }\varphi\in C_c^\infty(\R^2).
+\end{equation}
+Then $\int f\dd=0$.
+\end{theorem}
+\begin{proof}
+Choose $\eta\in C_c^\infty(\R^2)$ with $0\le\eta\le1$, $\eta=1$ on $B_1$, and $\operatorname{supp}\eta\subset\overline B_2$. For $n\ge0$ put $r_n=n+1$ and $\chi_n(x)=\eta(x/r_n)$. These are admissible tests in \eqref{eq:weakdiv}, and $\chi_n\to1$ pointwise. The chain rule gives $\nabla\chi_n(x)=r_n^{-1}\nabla\eta(x/r_n)$, so the change of variables $x=r_ny$ yields
+\begin{equation}\label{eq:dirichlet}
+ \int|\nabla\chi_n|^2\dd
+ =r_n^{-2}r_n^2\int|\nabla\eta(y)|^2\,\mathrm dy
+ =:A^2<\infty.
+\end{equation}
+Moreover, $\nabla\chi_n=0$ for $|x|<r_n$. The product $f\chi_n$ is integrable since $|\chi_n|\le1$, and $V\cdot\nabla\chi_n$ is integrable by H\"older's inequality. Testing and using \eqref{eq:dirichlet}, we obtain
+\begin{align}
+ \left|\int f\chi_n\dd\right|
+ &\le \left(\int_{|x|\ge r_n}|V|^2\dd\right)^{1/2}
+       \left(\int|\nabla\chi_n|^2\dd\right)^{1/2}\notag\\
+ &\le A\left(\int_{|x|\ge n}|V|^2\dd\right)^{1/2}.
+ \label{eq:actualflux}
+\end{align}
+Apply Lemma~\ref{lem:cutoff} with $h=|V|^2$, $B=1$ and $C=A$ to obtain the conclusion.
+\end{proof}
+\begin{remark}
+The cancellation depends on the planar scaling in \eqref{eq:dirichlet}. For a compressible momentum equation, identifying the tensor rows as $L^2$ fluxes and the material force as an $L^1$ function is a separate analytic application. The theorem does not bound either quantity uniformly in time.
+\end{remark}
+
 \begin{thebibliography}{1}
 \bibitem{FLW} X.~Fan, B.~L\"u, X.~Wang, Hardy Space and Exponential Decay of Inhomogeneous Navier--Stokes System in $\R^2$, arXiv:2610.04884v1 (2026).
 \end{thebibliography}

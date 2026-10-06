@@ -1,0 +1,30 @@
+{
+  "source_name": "paper_general_vacuum.tex",
+  "source_sha256": "04adfd4b0e76db5c0976e4b57a28ce4359ca5802ada1b3e541f68434537bf039",
+  "engine": "/usr/bin/pdflatex",
+  "time_utc": "20261006T141158Z",
+  "passes": [
+    {
+      "command": [
+        "/usr/bin/pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "paper_general_vacuum.tex"
+      ],
+      "exit_code": 0,
+      "log": "20261006T141158Z-pass1.log"
+    },
+    {
+      "command": [
+        "/usr/bin/pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "paper_general_vacuum.tex"
+      ],
+      "exit_code": 0,
+      "log": "20261006T141158Z-pass2.log"
+    }
+  ],
+  "pdf_sha256": "ef26cc58ab3ea0e89aa75ed4dcbf5e006346f487a3eb377cc278753f044d0b40",
+  "pdf_bytes": 168379
+}

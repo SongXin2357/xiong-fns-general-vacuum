@@ -1,0 +1,56 @@
+NormedSpace.isCompact_closure_of_isBounded.{u_3, u_4} (𝕜 : Type u_3) [RCLike 𝕜] (X : Type u_4) [NormedAddCommGroup X]
+  [NormedSpace 𝕜 X] (S : Set (WeakSpace 𝕜 X)) (hb : Bornology.IsBounded (⇑(toWeakSpace 𝕜 X) ⁻¹' S))
+  (hrange :
+    closure (⇑(NormedSpace.inclusionInDoubleDualWeak 𝕜 X) '' S) ⊆ range ⇑(NormedSpace.inclusionInDoubleDualWeak 𝕜 X)) :
+  IsCompact (closure S)
+NormedSpace.inclusionInDoubleDualWeak.{u_1, u_2} (𝕜 : Type u_1) [NontriviallyNormedField 𝕜] (X : Type u_2)
+  [SeminormedAddCommGroup X] [NormedSpace 𝕜 X] : WeakSpace 𝕜 X →L[𝕜] WeakDual 𝕜 (StrongDual 𝕜 X)
+WeakDual.isSeqCompact_closedBall.{u_1, u_3} (𝕜 : Type u_1) (E : Type u_3) [NontriviallyNormedField 𝕜]
+  [SeminormedAddCommGroup E] [NormedSpace 𝕜 E] [TopologicalSpace.SeparableSpace E] [ProperSpace 𝕜] (x' : StrongDual 𝕜 E)
+  (r : ℝ) : IsSeqCompact (⇑WeakDual.toStrongDual ⁻¹' Metric.closedBall x' r)
+ContinuousLinearMap.lpPairing.{u_1, u_2, u_3, u_4, u_5} {α : Type u_1} {𝕜 : Type u_2} {E : Type u_3} {F : Type u_4}
+  {G : Type u_5} {m : MeasurableSpace α} (μ : Measure α) (p q : ℝ≥0∞) [NontriviallyNormedField 𝕜] [NormedAddCommGroup E]
+  [NormedAddCommGroup F] [NormedAddCommGroup G] [NormedSpace 𝕜 E] [NormedSpace 𝕜 F] [NormedSpace 𝕜 G] [Fact (1 ≤ p)]
+  [Fact (1 ≤ q)] [p.HolderConjugate q] [NormedSpace ℝ G] [SMulCommClass ℝ 𝕜 G] [CompleteSpace G]
+  (B : E →L[𝕜] F →L[𝕜] G) : ↥(Lp E p μ) →L[𝕜] ↥(Lp F q μ) →L[𝕜] G
+ContinuousLinearMap.lpPairing_eq_integral.{u_1, u_2, u_3, u_4, u_5} {α : Type u_1} {𝕜 : Type u_2} {E : Type u_3}
+  {F : Type u_4} {G : Type u_5} {m : MeasurableSpace α} {μ : Measure α} {p q : ℝ≥0∞} [NontriviallyNormedField 𝕜]
+  [NormedAddCommGroup E] [NormedAddCommGroup F] [NormedAddCommGroup G] [NormedSpace 𝕜 E] [NormedSpace 𝕜 F]
+  [NormedSpace 𝕜 G] (B : E →L[𝕜] F →L[𝕜] G) [Fact (1 ≤ p)] [Fact (1 ≤ q)] [p.HolderConjugate q] [NormedSpace ℝ G]
+  [SMulCommClass ℝ 𝕜 G] [CompleteSpace G] (f : ↥(Lp E p μ)) (g : ↥(Lp F q μ)) :
+  ((ContinuousLinearMap.lpPairing μ p q B) f) g = ∫ (x : α), (B (↑↑f x)) (↑↑g x) ∂μ
+ae_eq_of_integral_contDiff_smul_eq.{u_1, u_2} {E : Type u_1} [NormedAddCommGroup E] [NormedSpace ℝ E]
+  [FiniteDimensional ℝ E] {F : Type u_2} [NormedAddCommGroup F] [NormedSpace ℝ F] [CompleteSpace F] [MeasurableSpace E]
+  [BorelSpace E] {f f' : E → F} {μ : Measure E} (hf : LocallyIntegrable f μ) (hf' : LocallyIntegrable f' μ)
+  (h : ∀ (g : E → ℝ), ContDiff ℝ ∞ g → HasCompactSupport g → ∫ (x : E), g x • f x ∂μ = ∫ (x : E), g x • f' x ∂μ) :
+  ∀ᵐ (x : E) ∂μ, f x = f' x
+MeasureTheory.MemLp.mul.{u_1, u_2} {α : Type u_1} {x✝ : MeasurableSpace α} {𝕜 : Type u_2} [NormedRing 𝕜] {μ : Measure α}
+  {p q r : ℝ≥0∞} {f φ : α → 𝕜} (hf : MemLp f q μ) (hφ : MemLp φ p μ) [hpqr : p.HolderTriple q r] : MemLp (φ * f) r μ
+MeasureTheory.MemLp.integrable.{u_1, u_5} {α : Type u_1} {ε : Type u_5} {m : MeasurableSpace α} {μ : Measure α}
+  [TopologicalSpace ε] [ContinuousENorm ε] {q : ℝ≥0∞} (hq1 : 1 ≤ q) {f : α → ε} [IsFiniteMeasure μ]
+  (hfq : MemLp f q μ) : Integrable f μ
+MeasureTheory.MemLp.locallyIntegrable.{u_1, u_3} {X : Type u_1} {ε : Type u_3} [MeasurableSpace X] [TopologicalSpace X]
+  [TopologicalSpace ε] [ContinuousENorm ε] {f : X → ε} {μ : Measure X} [IsLocallyFiniteMeasure μ] {p : ℝ≥0∞}
+  (hf : MemLp f p μ) (hp : 1 ≤ p) : LocallyIntegrable f μ
+MeasureTheory.memLp_one_iff_integrable.{u_1, u_5} {α : Type u_1} {ε : Type u_5} {m : MeasurableSpace α} {μ : Measure α}
+  [TopologicalSpace ε] [ContinuousENorm ε] {f : α → ε} : MemLp f 1 μ ↔ Integrable f μ
+MeasureTheory.integral_mul_norm_le_Lp_mul_Lq.{u_1, u_6} {α : Type u_1} {m : MeasurableSpace α} {μ : Measure α}
+  {E : Type u_6} [NormedAddCommGroup E] {f g : α → E} {p q : ℝ} (hpq : p.HolderConjugate q)
+  (hf : MemLp f (ENNReal.ofReal p) μ) (hg : MemLp g (ENNReal.ofReal q) μ) :
+  ∫ (a : α), ‖f a‖ * ‖g a‖ ∂μ ≤ (∫ (a : α), ‖f a‖ ^ p ∂μ) ^ (1 / p) * (∫ (a : α), ‖g a‖ ^ q ∂μ) ^ (1 / q)
+MeasureTheory.norm_integral_le_of_norm_le.{u_1, u_5} {α : Type u_1} {G : Type u_5} [NormedAddCommGroup G]
+  [NormedSpace ℝ G] {m : MeasurableSpace α} {μ : Measure α} {f : α → G} {g : α → ℝ} (hg : Integrable g μ)
+  (h : ∀ᵐ (x : α) ∂μ, ‖f x‖ ≤ g x) : ‖∫ (x : α), f x ∂μ‖ ≤ ∫ (x : α), g x ∂μ
+MeasureTheory.integral_mono_ae.{u_1, u_2} {α : Type u_1} {E : Type u_2} [NormedAddCommGroup E] [NormedSpace ℝ E]
+  {m : MeasurableSpace α} {μ : Measure α} [PartialOrder E] [IsOrderedAddMonoid E] [IsOrderedModule ℝ E]
+  [ClosedIciTopology E] {f g : α → E} (hf : Integrable f μ) (hg : Integrable g μ) (h : f ≤ᵐ[μ] g) :
+  ∫ (x : α), f x ∂μ ≤ ∫ (x : α), g x ∂μ
+Real.HolderConjugate (p q : ℝ) : Prop
+ENNReal.HolderConjugate (p q : ℝ≥0∞) : Prop
+/mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/evidence/N0005/attempt-api.lean:22:7: error(lean.unknownIdentifier): Unknown constant `ContinuousLinearMap.integrable_mul`
+TendstoUniformlyOn.{u_1, u_2, u_4} {α : Type u_1} {β : Type u_2} {ι : Type u_4} [UniformSpace β] (F : ι → α → β)
+  (f : α → β) (p : Filter ι) (s : Set α) : Prop
+TendstoLocallyUniformlyOn.{u_1, u_2, u_4} {α : Type u_1} {β : Type u_2} {ι : Type u_4} [TopologicalSpace α]
+  [UniformSpace β] (F : ι → α → β) (f : α → β) (p : Filter ι) (s : Set α) : Prop
+/mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/evidence/N0005/attempt-api.lean:25:7: error(lean.unknownIdentifier): Unknown constant `NormedSpace.Dual`
+Module.IsReflexive.{u_3, u_4} (R : Type u_3) (M : Type u_4) [CommSemiring R] [AddCommMonoid M] [Module R M] : Prop

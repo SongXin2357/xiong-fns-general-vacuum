@@ -1,0 +1,6 @@
+{
+  "exit_code": 2,
+  "stdout": "",
+  "stderr": "math_research_system iteration-commit failed: directory-anchor-open-failed: D:\\tex\\Latex\\manuscripts\\王雪全局解\\xiong-fns-small-energy\\research-tree: winerror=32: 另一个程序正在使用此文件，进程无法访问。\n",
+  "known_sidecar_limitation": "Optional OHP script missing; inspect changed flag separately from pending-error harvest."
+}

@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "node_id": "N0006",
+  "review_id": "blind-review-20261006",
+  "date": "2026-10-06",
+  "reviewer_role": "independent_blind_reconstruction",
+  "status": "analytic_reconstruction_complete_not_kernel_verified",
+  "conclusion": {
+    "statement": "Within the exact displayed Wang-v1 (1.8) class on every finite time interval, conservative initial traces, nonnegative temperature, mu > 0 and mu + lambda > 0, compactly supported positive-mass initial density and positive initial physical energy exclude a global solution.",
+    "global_small_energy_target": "obstructed_in_the_stated_class",
+    "local_existence": "not_independently_proved_or_certified",
+    "sharp_scope": "Conditional absence of global solutions; no assertion that the constructed data possess local solutions.",
+    "data_family": "rho0 = c f^2, c = M / integral(f^2), u0 = 0, theta0_epsilon = epsilon rho0, 0 < epsilon <= 1; fixed smooth nonnegative compact f, fixed M > 0.",
+    "compatibility": "g_epsilon = 2 R epsilon sqrt(rho0) grad(rho0) is smooth compactly supported and satisfies the sole displayed momentum compatibility condition.",
+    "energy": "E0_epsilon = c_nu epsilon integral(rho0^2) > 0 and tends to zero; all listed initial norms and the compatibility norm share fixed upper bounds.",
+    "virial": "H'' = 4 K + 4 (R/c_nu) U >= 4 min(1,R/c_nu) E0; H <= M b^2.",
+    "finite_time_inequality": "H0 + 2 F0 t + 2 min(1,R/c_nu) E0 t^2 <= M b^2"
+  },
+  "independence": {
+    "candidate_proof_read": false,
+    "manuscript_read": false,
+    "other_nodes_read": false,
+    "old_runs_or_evidence_read": false,
+    "original_pdf_directly_read": false,
+    "internet_sources_used": false,
+    "subagents_spawned": false,
+    "git_operations": false,
+    "repository_inputs": [
+      {
+        "path": "AGENTS.md",
+        "sha256": "9c27822d4dc9f44f2bedc1f3b47fd992a410b557ffac85eca86559e06ef1bf98"
+      },
+      {
+        "path": "notes/sources/wang-v1-baseline-20261006.md",
+        "sha256": "78143c9ba93bb8e8633de7f6d748b4629a437a96f48b0ef5f36c61c6e381d55c"
+      }
+    ],
+    "procedural_skill_inputs": [
+      "mathematics-proof/SKILL.md",
+      "mathematics-proof/references/source-instructions.md"
+    ],
+    "original_pdf_identity_reported_by_baseline": {
+      "version": "arXiv:2212.13343v1, 2022-12-27",
+      "sha256": "a5c89e5c8f33b2a74adb276abf99649a0efd4d47ca1196c57a5e08a4a939856d",
+      "direct_source_reverification": false
+    }
+  },
+  "analytic_obligations": [
+    {
+      "id": "flow",
+      "result": "closed_on_paper",
+      "detail": "Finite q2 and gradient L2_t W1q imply integrable bounded Lipschitz velocity. Spatial convolution proves the transport identity without assuming pointwise differentiability of rho."
+    },
+    {
+      "id": "time_exceptional_sets",
+      "result": "closed_on_paper",
+      "detail": "Use the open spacetime flow-image vacuum set, a countable rational cylinder cover and countable test families to obtain one full-measure time set independent of trajectories."
+    },
+    {
+      "id": "exterior_heat_equation",
+      "result": "closed_on_paper",
+      "detail": "Conservative products vanish as distributions on the open spacetime vacuum region; hence -kappa Delta theta = Q there."
+    },
+    {
+      "id": "temperature_extinction",
+      "result": "closed_on_paper",
+      "detail": "Log-radius circular means are nonnegative concave functions. Finite L^p forces them to vanish in the far exterior; the superharmonic mean inequality propagates zero throughout the connected flow-image exterior."
+    },
+    {
+      "id": "velocity_extinction",
+      "result": "closed_on_paper",
+      "detail": "Strict dissipation positivity gives D(u)=0. Distributional rigidity and finite L^{q2} remove every affine rigid motion in the exterior."
+    },
+    {
+      "id": "fixed_support",
+      "result": "closed_on_paper",
+      "detail": "On the common good-time set every exterior trajectory has zero velocity. All original exterior labels and the ball boundary remain fixed."
+    },
+    {
+      "id": "kinetic_initial_trace",
+      "result": "closed_on_paper",
+      "detail": "Fixed support plus gradient u_t in L2 yields u_t in L2_t H1_x by mollifier Poincare, hence a strong H1 velocity trace. Conservative momentum trace identifies its rho0-weighted kinetic energy."
+    },
+    {
+      "id": "thermal_initial_trace",
+      "result": "closed_on_paper",
+      "detail": "The integrated heat equation makes total internal energy absolutely continuous and the conservative rho theta trace identifies its initial value."
+    },
+    {
+      "id": "energy_conservation",
+      "result": "closed_on_paper",
+      "detail": "Momentum tested by u gives K'=-integral Q+integral P div u; heat tested by a fixed cutoff gives the opposite derivative for U, with no exterior flux."
+    },
+    {
+      "id": "virial",
+      "result": "closed_on_paper",
+      "detail": "Compactly supported tests of continuity and momentum yield H'=2F and F'=2K+2(R/c_nu)U; integral div u=0."
+    },
+    {
+      "id": "small_positive_energy_family",
+      "result": "closed_on_paper",
+      "detail": "Smooth square density, zero velocity and theta0=epsilon rho0 satisfy all displayed initial requirements with common upper bounds and fixed mass."
+    }
+  ],
+  "first_unclosed_analytic_step_in_stated_conditional_argument": null,
+  "unresolved": [
+    "Independent local solvability and full verification of Wang's local existence proof for the constructed family.",
+    "Lean formalization, real build, axiom audit, root import coverage, independent semantic review and promotion.",
+    "The excluded endpoint mu + lambda = 0.",
+    "Any altered solution class dropping nonnegativity or the displayed finite unweighted velocity/temperature spaces."
+  ],
+  "lean": {
+    "attempted": false,
+    "build_command": null,
+    "build_exit_code": null,
+    "build_log": null,
+    "kernel_verified": false,
+    "print_axioms_executed": false,
+    "custom_axioms": "not_applicable_no_Lean_artifact",
+    "node_promotion_permitted_by_this_review": false
+  },
+  "artifact": {
+    "path": "notes/nodes/N0006/independent-proof-20261006.md",
+    "sha256": "11e68c704e5234c28065c1ef9a0e4764f9cc54e02ecda9090a5e1e5fc05ca703",
+    "content_language": "zh",
+    "changes_limited_to_assigned_paths": true
+  }
+}

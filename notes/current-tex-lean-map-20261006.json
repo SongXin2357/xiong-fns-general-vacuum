@@ -1,0 +1,150 @@
+{
+  "date": "2026-10-06",
+  "full_paper_formalization": "NOT_PASS",
+  "global_existence": "NOT_PROVED",
+  "historical_inventory": "notes/manuscript-inventory-20261006.json",
+  "current_manuscripts": [
+    {
+      "path": "manuscript/paper_en.tex",
+      "source_sha256": "04adfd4b0e76db5c0976e4b57a28ce4359ca5802ada1b3e541f68434537bf039",
+      "pdf_sha256": "380a7ff292c552e62d250c45c547d9c1f8761f740ad910df66224fac8ef503f2",
+      "claims": [
+        {
+          "label": "lem:tail",
+          "environment": "lemma",
+          "line": 178,
+          "node": "N0001",
+          "formalization_status": "lean-verified",
+          "claim_text": "\\label{lem:tail}\nLet $f,h\\in L^1(\\R^2)$ be real-valued, with $h\\ge0$ almost everywhere.\nLet $\\chi_n$ be measurable real functions such that\n$|\\chi_n(x)|\\le B$ for every $n\\in\\mathbb N$ and $x\\in\\R^2$,\nfor a fixed $B\\ge0$, and $\\chi_n\\to1$ almost everywhere.\nSuppose that, for a fixed $C\\ge0$,\n\\begin{equation}\\label{eq:tail-hypothesis}\n \\left|\\int f\\chi_n\\dd\\right|\n   \\le C\\left(\\int_{\\{|x|\\ge n\\}}h\\dd\\right)^{1/2}\n       \\qquad(n\\in\\mathbb N).\n\\end{equation}\nThen $\\int f\\dd=0$."
+        },
+        {
+          "label": "thm:cancellation",
+          "environment": "theorem",
+          "line": 208,
+          "node": "N0002",
+          "formalization_status": "lean-verified",
+          "claim_text": "\\label{thm:cancellation}\nLet $f\\in L^1(\\R^2;\\R)$ and $V\\in L^2(\\R^2;\\R^2)$.\nSuppose that $f=\\Div V$ in distributions, that is,\n\\begin{equation}\\label{eq:distributional}\n \\int f\\varphi\\dd=-\\int V\\cdot\\nabla\\varphi\\dd\n       \\qquad\\text{for every }\\varphi\\in C_c^\\infty(\\R^2).\n\\end{equation}\nThen $\\int_{\\R^2}f\\dd=0$."
+        },
+        {
+          "label": "prop:physical-energy",
+          "environment": "proposition",
+          "line": 321,
+          "node": "N0003",
+          "formalization_status": "not-started",
+          "claim_text": "\\label{prop:physical-energy}\nUnder the regularity condition above,\n\\begin{equation}\\label{eq:energy-balances}\n K'+\\mathcal D=\\int Pd\\dd,\\qquad\n H'=\\mathcal D-\\int Pd\\dd,\\qquad E'=0.\n\\end{equation}\nIf the interval includes zero, with the stated initial traces, then\n\\begin{equation}\\label{eq:energy-small}\n K(t)+H(t)=E_0,\\qquad\n \\norm{\\sqrt\\rho u}{2}^2\\le2E_0,\\qquad\n \\norm{P}{1}\\le\\frac{R}{c_v}E_0.\n\\end{equation}\nFor any two times $s<t$ in the interval,\n\\begin{equation}\\label{eq:kinetic-pressure}\n K(t)+\\frac{\\mu}{2}\\int_s^t\\norm{\\nabla u}{2}^2\\dt\n \\le K(s)+\\frac1\\mu\\int_s^t\\norm{P}{2}^2\\dt.\n\\end{equation}"
+        },
+        {
+          "label": "prop:pressure-feedback",
+          "environment": "proposition",
+          "line": 392,
+          "node": "N0003",
+          "formalization_status": "not-started",
+          "claim_text": "\\label{prop:pressure-feedback}\nUnder the same regularity condition,\n\\begin{align}\n H'+\\frac1\\nu\\norm{P}{2}^2\n     &=\\mathcal D-\\frac1\\nu\\int PG\\dd,\\label{eq:internal-flux}\\\\\n K'+\\frac12\\mathcal D\n     &\\le\\frac1{2\\nu}\\norm{P}{2}^2.\\label{eq:kinetic-flux}\n\\end{align}\nConsequently,\n\\begin{equation}\\label{eq:pressure-spacetime}\n \\frac1{2\\nu}\\int_s^t\\norm{P}{2}^2\\dt\n \\le H(s)+\\int_s^t\\mathcal D\\dt\n                 +\\frac1{2\\nu}\\int_s^t\\norm{G}{2}^2\\dt.\n\\end{equation}"
+        },
+        {
+          "label": "prop:pressure-square",
+          "environment": "proposition",
+          "line": 449,
+          "node": "N0003",
+          "formalization_status": "not-started",
+          "claim_text": "\\label{prop:pressure-square}\nUnder the regularity condition of Section~\\ref{sec:energy},\n\\begin{align}\n \\frac d{dt}\\norm{P}{2}^2+\\frac{1+2\\beta}{\\nu}\\int P^3\\dd\n ={}&-\\frac{1+2\\beta}{\\nu}\\int P^2G\\dd+2\\beta\\int PQ\\dd\\nonumber\\\\\n &+2\\beta\\kappa\\int P\\Delta\\theta\\dd,\\label{eq:pressure-square}\\\\\n \\int P\\Delta\\theta\\dd\n ={}&-R\\int\\rho|\\nabla\\theta|^2\\dd\n       -R\\int\\theta\\nabla\\rho\\cdot\\nabla\\theta\\dd.\n       \\label{eq:conduction-pressure}\n\\end{align}"
+        },
+        {
+          "label": "prop:thermal",
+          "environment": "proposition",
+          "line": 488,
+          "node": "N0004",
+          "formalization_status": "not-started",
+          "claim_text": "\\label{prop:thermal}\nUnder the regularity condition of Section~\\ref{sec:energy},\n\\begin{equation}\\label{eq:thermal-identity}\n \\frac{c_v}{2}X'+\\kappa Z=J-R\\int\\rho\\theta^2d\\dd.\n\\end{equation}\nWriting $U=\\norm{u}{\\infty}$ and $M=\\norm{\\rho}{\\infty}$, for every\n$\\varepsilon>0$ one has\n\\begin{equation}\\label{eq:heating-bound}\n J\\le\\varepsilon(V+Z)+C_\\varepsilon U^2\\{N+(1+M)X\\}\n                  +C\\norm{d}{\\infty} X.\n\\end{equation}"
+        },
+        {
+          "label": "prop:specific",
+          "environment": "proposition",
+          "line": 577,
+          "node": "N0004",
+          "formalization_status": "not-started",
+          "claim_text": "\\label{prop:specific}\nUnder the regularity condition of Section~\\ref{sec:energy},\n\\begin{equation}\\label{eq:specific-equation}\n \\rho\\dot w=\\kappa\\Delta\\theta+\\Div F.\n\\end{equation}\nThe functional $Y$ satisfies\n\\begin{align}\n \\frac12Y'+\\kappa c_v\\norm{\\nabla\\theta}{2}^2\n &=-\\kappa\\int\\nabla k\\cdot\\nabla\\theta\\dd\n       -\\int F\\cdot(c_v\\nabla\\theta+\\nabla k)\\dd,\n       \\label{eq:specific-theta}\\\\\n \\frac12Y'+a_\\kappa\\norm{\\nabla w}{2}^2\n &=\\int(a_\\kappa\\nabla k-F)\\cdot\\nabla w\\dd.\n       \\label{eq:specific-w}\n\\end{align}\nIn particular,\n\\begin{equation}\\label{eq:specific-bound}\n \\begin{split}\n Y'+a_\\kappa\\norm{\\nabla w}{2}^2\n &\\le a_\\kappa^{-1}\\norm{a_\\kappa\\nabla k-F}{2}^2\\\\\n &\\le C\\int|u|^2(|\\nabla u|^2+P^2)\\dd .\n \\end{split}\n\\end{equation}\nWith $N$ as in \\eqref{eq:thermal-notation},\n$U=\\norm{u}{\\infty}$, and $M=\\norm{\\rho}{\\infty}$,\n\\begin{equation}\\label{eq:specific-gronwall}\n \\begin{split}\n Y(t)+a_\\kappa\\int_s^t\\norm{\\nabla w}{2}^2\\dt\n \\le{}&\\left(Y(s)+C\\int_s^tU^2N\\dt\\right)\\\\\n &{}\\times\\exp\\left(C\\int_s^tMU^2\\dt\\right).\n \\end{split}\n\\end{equation}"
+        }
+      ]
+    },
+    {
+      "path": "research/compact-recheck/paper_en_reviewed.tex",
+      "source_sha256": "44287e13676392d18e7b9989484b4f9e4703d8d1ed4643a6164cb280098fb887",
+      "pdf_sha256": "e790d9e5b245556a798260ead362d3057483cd93b23780604621efbb06280b75",
+      "claims": [
+        {
+          "label": "thm:obstruction",
+          "environment": "theorem",
+          "line": 237,
+          "node": "N0006",
+          "formalization_status": "not-started",
+          "claim_text": "\\label{thm:obstruction}\nAssume \\eqref{eq:parameters}, \\eqref{eq:data},\n\\eqref{eq:compatibility}, and \\eqref{eq:compactdata}.\nIf a solution in the sense of Definition~\\ref{def:solution} exists on\n$[0,T_*)$, then for every $0\\le t<T_*$,\n\\begin{equation}\n I_0+2J_0t+2\\beta E_0t^2\n       \\le\\int\\rho(t,x)|x|^2\\dd\\le ML^2.\n \\label{eq:mainbound}\n\\end{equation}\nConsequently,\n\\begin{equation}\n T_*\\le\n \\frac{-J_0+\\sqrt{J_0^2+2\\beta E_0(ML^2-I_0)}}\n      {2\\beta E_0}<\\infty.\n \\label{eq:lifespan}\n\\end{equation}\nIn particular, no global solution satisfying the stated class on\nevery finite interval exists for these data."
+        },
+        {
+          "label": "lem:superharmonic",
+          "environment": "lemma",
+          "line": 269,
+          "node": "N0006",
+          "formalization_status": "not-started",
+          "claim_text": "\\label{lem:superharmonic}\nLet $\\Omega\\subset\\R^2$ be connected and open, and suppose that\n$\\{|x|>L_1\\}\\subset\\Omega$ for some $L_1>0$. If\n\\[\n v\\in W^{2,2}_{\\mathrm{loc}}(\\Omega)\\cap L^p(\\Omega),\\qquad\n v\\ge0,\\qquad -\\Delta v\\ge0\n\\]\nin distributions, where $1\\le p<\\infty$, then $v=0$ in $\\Omega$."
+        },
+        {
+          "label": "prop:fixedsupport",
+          "environment": "proposition",
+          "line": 323,
+          "node": "N0006",
+          "formalization_status": "not-started",
+          "claim_text": "\\label{prop:fixedsupport}\nLet a solution satisfy Definition~\\ref{def:solution} on $[0,T_*)$,\nand suppose that $\\supp\\rho_0\\subset\\overline{B_L}$. Then\n\\begin{equation}\n \\begin{gathered}\n \\supp\\rho(t)\\subset\\overline{B_L}\\quad(0\\le t<T_*),\\\\\n u(t)=\\theta(t)=0\\quad\\hbox{on }\\R^2\\setminus\\overline{B_L}\n \\end{gathered}\n \\label{eq:fixedsupport}\n\\end{equation}\nfor almost every $t\\in(0,T_*)$. The density assertion holds for its\ncontinuous spatial representative."
+        },
+        {
+          "label": "prop:energy",
+          "environment": "proposition",
+          "line": 515,
+          "node": "N0006",
+          "formalization_status": "not-started",
+          "claim_text": "\\label{prop:energy}\nUnder the hypotheses of Theorem~\\ref{thm:obstruction}, set\n\\[\n K(t)=\\frac12\\int\\rho|u|^2\\dd,\\qquad\n U(t)=c_v\\int\\rho\\theta\\dd.\n\\]\nFor each $T<T_*$ these quantities have absolutely continuous\nrepresentatives on $[0,T]$, with\n\\begin{equation}\n \\begin{aligned}\n K(0)&=\\frac12\\int\\rho_0|u_0|^2\\dd,\\qquad\n U(0)=c_v\\int\\rho_0\\theta_0\\dd,\\\\\n K'(t)&=-\\int Q(u)\\dd+\\int P\\Div u\\dd,\\\\\n U'(t)&=\\int Q(u)\\dd-\\int P\\Div u\\dd\n \\end{aligned}\\label{eq:energyidentities}\n\\end{equation}\nfor almost every $t$. In particular,\n\\begin{equation}\n K(t)+U(t)=E_0,\\qquad K(t),U(t)\\ge0,\\qquad 0\\le t<T_*.\n \\label{eq:energyconservation}\n\\end{equation}\nMoreover, $\\int\\rho(t)\\dd=M$ for all $t<T_*$."
+        },
+        {
+          "label": "cor:smallenergy",
+          "environment": "corollary",
+          "line": 783,
+          "node": "N0006",
+          "formalization_status": "not-started",
+          "claim_text": "\\label{cor:smallenergy}\nFix the parameters in \\eqref{eq:parameters}, $a>1$, $q>2$,\n$\\eta_0>0$, and a mass $M>0$. There is a family\n$(\\rho_0^\\varepsilon,u_0^\\varepsilon,\\theta_0^\\varepsilon)$,\n$0<\\varepsilon\\le1$, of smooth compactly supported data satisfying\n\\eqref{eq:data}--\\eqref{eq:compatibility} such that\n\\begin{equation}\n \\begin{gathered}\n \\int\\rho_0^\\varepsilon\\dd=M,\\qquad\n \\supp\\rho_0^\\varepsilon\\subset\\overline{B_1},\\\\\n E_0^\\varepsilon>0,\\qquad E_0^\\varepsilon\\longrightarrow0.\n \\end{gathered}\n \\label{eq:familyproperties}\n\\end{equation}\nThe density is independent of $\\varepsilon$. Every norm displayed\nin \\eqref{eq:data}, as well as $\\norm{g^\\varepsilon}{2}$, has a\ncommon finite upper bound. No member of the family admits a global\nsolution in Definition~\\ref{def:solution}."
+        }
+      ]
+    }
+  ],
+  "important_unnumbered_obligations": [
+    {
+      "claim": "Original-source theorem validity, representative choices and continuation application",
+      "node": "ROOT/N0005",
+      "formalization_status": "open"
+    },
+    {
+      "claim": "Actual PDE application of generic cancellation theorem",
+      "node": "unregistered-future-application",
+      "formalization_status": "not-started; no derived child"
+    },
+    {
+      "claim": "All smooth-decay tests hold in original solution class and positive-energy auxiliary class construction",
+      "node": "N0003/N0004",
+      "formalization_status": "open"
+    },
+    {
+      "claim": "Thermal concentration example at nonuniform higher initial norms",
+      "node": "N0004",
+      "formalization_status": "not-started"
+    },
+    {
+      "claim": "Flow construction, distribution slicing, superharmonic rigidity, support, time traces, energy and virial of N0006",
+      "node": "N0006",
+      "formalization_status": "NOT_RUN"
+    },
+    {
+      "claim": "Actual local solvability of compact small-energy data family",
+      "node": "ROOT/N0006",
+      "formalization_status": "not-proved"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Reproduction
 
-The global FNS target is open. This repository currently certifies only N0001.
+The global FNS target is open. This repository currently certifies the complete exact nodes N0001 and N0002. N0005 has auxiliary proofs only; the full target fails and remains open.
 
 ## Portable Lean build
 
@@ -44,3 +44,15 @@ The repository disables Git text conversion in `.gitattributes`. Certificates ha
 ## N0002 separate import root
 
 The historical N0001 root is immutable. From `lean/`, build the new module explicitly with `lake build FNSTree.N0002`, then run `lake env lean N0002Check.lean`. The actual local driver is `evidence/N0002/lean-driver.py`; its separate ignored runtime uses the same pinned dependency. A partial root build never certifies open tree nodes or the global theorem.
+
+## Partial N0005 attempt
+
+`evidence/N0005/lean-report-20261006.md` records the actual complete-target failure and the separately successful analytical auxiliaries. Its local `lean-driver.py` actions `build attempt-bridges-v2.lean` and `print attempt-bridges-v2.lean` reproduce auxiliary checks, not N0005 certification. The `probe attempt-exact-proof-v1.lean` action is expected to fail with the recorded representation obligation. No full N0005 module is imported by the verified roots.
+
+## Current installed-agent runs
+
+`positive-lixin-r02`, `positive-thermal-r02`, `source-r02`, `review-r03`, and `compact-audit-r02` actually completed through the installed xiong-agent launcher. Their safe execution, instruction-load and mathematical results are retained under the corresponding node evidence. The N0002 Lean reconstruction and N0006 mathematical reconstruction were blind; review-r03 and compact-audit-r02 were explicitly NONBLIND red-team processes. Open routes are not certificates.
+
+## TeX build helper
+
+The existing-toolchain helper `python scripts/compile_tex.py --source PATH.tex --evidence EVIDENCE_DIR` executes two actual pdflatex passes, records command/exit logs and source/PDF hashes, and does not install software. Native Codex compilation was attempted but failed to locate platform directories. Final drafts and their style file are mirrored under manuscript/ for GitHub, while the user-requested editable originals remain in the original parent project paths.

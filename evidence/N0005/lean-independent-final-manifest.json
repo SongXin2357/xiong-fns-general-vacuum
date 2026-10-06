@@ -1,0 +1,23 @@
+{
+  "node": "N0005",
+  "status": "OPEN",
+  "full_target_certified": false,
+  "successful_auxiliary_theorems": 7,
+  "root_import_modified": false,
+  "final_source_hashes": {
+    "evidence/N0005/attempt-api.lean": "15a2bf8f6c7434a926c6cf2ec8ab6d04023daadf4739f44e7187d6f842ecc428",
+    "evidence/N0005/attempt-bridges-v1.lean": "37b99edb05df2c2f6a885231afba3c3d39f5825060b43c771bd4d1dd8d266d8a",
+    "evidence/N0005/attempt-bridges-v2.lean": "cdc4622fc70d1e3f7be35b9541cc0c94c96d939246ec0165f8244c7cefa20eae",
+    "evidence/N0005/attempt-exact-statement.lean": "b8a23d62c79bb5ee29f0bc256e6df675cec54a1e659fd0f29a2d3be07dacaf8d",
+    "evidence/N0005/attempt-exact-proof-v1.lean": "d56f963f70466f4d435665a52828d7e3ca7bf9fd45e5c75f4fcd580204d2cef6",
+    "evidence/N0005/attempt-weak-compactness-v1.lean": "67f8720c208bda9a8c8d4f0217de85e74f58f80a291e2074a1385ae248bc9f29",
+    "evidence/N0005/attempt-weak-compactness-v2.lean": "a4b24d7b74acab6ed6e391f473ed2f5453672924184cc0758b7aa6626f0cda88",
+    "evidence/N0005/lean-driver.py": "5c4a574037dab185aa83fa68f3fe758118d3b2e01caff15ce1af5eee2dd214a3",
+    "evidence/N0005/lean-api-audit.py": "896d594c43c6c4ad12d92218c0b6729db05b3d73162bf654a51d2c439ed26de6",
+    "evidence/N0005/lean-api-audit.json": "b078e52aa6da6b04fc9737fce0888fe76865e78e321fb0dff34907e3624473a8",
+    "evidence/N0005/independent-proof-20261006.md": "2374800597c49cda8ffd814bfbdf6fc26913769ea2af4e16aabc3f6acec5fa41",
+    "evidence/N0005/lean-report-20261006.md": "bd75fb8d2d608cd93c44f834233037b064c4b38abf19f936b5741ed0b771411c",
+    "evidence/N0005/lean-auxiliary-axioms.txt": "c9b7c4488de24264b159128c5009f6ed325ddea13b2a6ce4ae9610ff33464cb7",
+    "lean/N0005Check.lean": "a3ad0ce79459c163dc8d88d19001c1d175c01f4d5aa012f55b9449eeeb56ca19"
+  }
+}

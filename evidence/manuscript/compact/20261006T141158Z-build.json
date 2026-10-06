@@ -1,0 +1,30 @@
+{
+  "source_name": "paper_en_reviewed.tex",
+  "source_sha256": "44287e13676392d18e7b9989484b4f9e4703d8d1ed4643a6164cb280098fb887",
+  "engine": "/usr/bin/pdflatex",
+  "time_utc": "20261006T141158Z",
+  "passes": [
+    {
+      "command": [
+        "/usr/bin/pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "paper_en_reviewed.tex"
+      ],
+      "exit_code": 0,
+      "log": "20261006T141158Z-pass1.log"
+    },
+    {
+      "command": [
+        "/usr/bin/pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "paper_en_reviewed.tex"
+      ],
+      "exit_code": 0,
+      "log": "20261006T141158Z-pass2.log"
+    }
+  ],
+  "pdf_sha256": "e790d9e5b245556a798260ead362d3057483cd93b23780604621efbb06280b75",
+  "pdf_bytes": 178105
+}

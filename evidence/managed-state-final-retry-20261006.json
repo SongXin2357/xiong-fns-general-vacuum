@@ -1,0 +1,6 @@
+{
+  "exit_code": 3,
+  "stdout": "{\n  \"schema\": \"math-research-system-iteration-commit-v1\",\n  \"generated_at\": \"2026-10-06T14:21:21Z\",\n  \"project\": \"D:\\\\tex\\\\Latex\\\\manuscripts\\\\\\u738b\\u96ea\\u5168\\u5c40\\u89e3\\\\xiong-fns-small-energy\\\\research-tree\",\n  \"operation\": \"reviewed-english-drafts-compiled-and-visually-inspected\",\n  \"changed\": true,\n  \"transaction_id\": \"20261006T142121Z-reviewed-english-drafts-comp-905a98eb26\",\n  \"head_digest\": \"ee18a7d1a437fefcd3cd1fcee376f3ae977a3fa5c93244e4fdb397ad9df8c6b9\",\n  \"updated_projections\": [\n    \"ACTIVE_STATE.md\"\n  ],\n  \"proof_authority\": false,\n  \"outcome_harvest\": {\n    \"status\": \"pending-error\",\n    \"error\": \"OHP checkpoint script is unavailable: C:\\\\Users\\\\11988\\\\.codex\\\\math-system-improvement\\\\scripts\\\\result_harvest_checkpoint.py\",\n    \"proof_authority\": false\n  }\n}\n",
+  "stderr": "",
+  "note": "Retried outside project cwd to release Windows directory anchor; optional harvest sidecar remains unavailable."
+}

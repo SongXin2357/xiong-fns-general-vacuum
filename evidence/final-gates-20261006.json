@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-06T14:18:13.918035+00:00",
+  "registry_sha256": "160b15e111b50da03e71453eac75fd09bb5ffcc78e2e4f0058b3e26c447d96ac",
+  "harness_note": "Initial harness expected rejection code 1; tree_gate correctly uses 2. Corrected only the harness expectation, no gate or proof change.",
+  "results": [
+    {
+      "command": [
+        "python",
+        "scripts/tree_gate.py",
+        "audit"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"tree_integrity\": \"PASS\",\n  \"nodes\": 6,\n  \"verified_nodes\": 2,\n  \"global_PDE_theorem\": \"OPEN\",\n  \"github_status\": \"published-private\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/tree_gate.py",
+        "can-extend",
+        "N0002"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "N0002: exact current evidence permits a child; this is not a global PDE certificate.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/tree_gate.py",
+        "can-extend",
+        "N0005"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "REJECTED: N0005 has not passed its exact Lean/semantic gate\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "scripts/tree_gate.py",
+        "can-extend",
+        "N0006"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "REJECTED: N0006 has not passed its exact Lean/semantic gate\n",
+      "stderr": ""
+    }
+  ],
+  "global_existence": "NOT_PROVED",
+  "full_paper_formalization": "NOT_PASS"
+}

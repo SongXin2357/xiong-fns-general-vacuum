@@ -1,0 +1,30 @@
+{
+  "source_name": "cutoff_cancellation.tex",
+  "source_sha256": "5607dcee5fd738631f2feb002863315560c01b24dff97400d74c5dd5503f0eb0",
+  "engine": "/usr/bin/pdflatex",
+  "time_utc": "20261006T135016Z",
+  "passes": [
+    {
+      "command": [
+        "/usr/bin/pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "cutoff_cancellation.tex"
+      ],
+      "exit_code": 0,
+      "log": "20261006T135016Z-pass1.log"
+    },
+    {
+      "command": [
+        "/usr/bin/pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "cutoff_cancellation.tex"
+      ],
+      "exit_code": 0,
+      "log": "20261006T135016Z-pass2.log"
+    }
+  ],
+  "pdf_sha256": "cb082498889316e74142553c95643941f4173681770568d7ef0e94eeaa0529f2",
+  "pdf_bytes": 110108
+}

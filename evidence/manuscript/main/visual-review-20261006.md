@@ -1,0 +1,7 @@
+# Main manuscript visual and mathematical integration review — 2026-10-06
+
+All 11 pages of the final PDF were actually rendered and inspected in four contact sheets. The first page, source-class formulas, complete cutoff proof, energy/pressure/thermal estimates, specific-energy argument and final references are legible and within margins. No clipped formulas, overlapping equation numbers, blank pages or isolated headings were found. The initial 1.32pt paragraph overflow was repaired by rephrasing one prose sentence; both final main and identical general sources compiled twice with no overfull/undefined-reference/missing-glyph warnings.
+
+The primary reviewer read the complete TeX. The pressure material equation, stress convention, heating test, positive specific-energy lower bound and weighted Gronwall dissipation estimate match the displayed proofs. N0001's cutoff bound was aligned to the immutable pointwise certificate statement before final build. Smooth rapid decay is an explicit auxiliary hypothesis, with no positive-energy existence/non-vacuity or original-class extension asserted. Thus only the generic two analysis claims match completed Lean nodes; the conditional PDE identities do not establish global existence.
+
+Layout uses the existing measured Li–Xin-inspired 155 x 235 mm style, continuous equation-driven proofs and numbered parameter choices; no claim is made that stylistic similarity closes an analytic gap.

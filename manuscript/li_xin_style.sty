@@ -1,0 +1,81 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{li_xin_style}[2026/10/06 Measured Li--Xin-inspired local style]
+% Measured reference layout; standard PSNFSS fonts, no extracted reference fonts.
+\RequirePackage[T1]{fontenc}
+\RequirePackage{mathptmx}
+\RequirePackage[scaled=1]{helvet}
+\RequirePackage{amsmath,amssymb,amsthm,mathtools}
+\RequirePackage[paperwidth=155mm,paperheight=235mm,
+ left=17.9mm,right=18.1mm,top=20.1mm,bottom=18mm,
+ headheight=10pt,headsep=11.5pt]{geometry}
+\RequirePackage{microtype}
+\RequirePackage{titlesec}
+\RequirePackage{fancyhdr}
+\RequirePackage{needspace}
+\RequirePackage[colorlinks=true,linkcolor=blue,citecolor=blue,
+ urlcolor=blue,pdfborder={0 0 0}]{hyperref}
+\setlength{\parindent}{4mm}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{1.5em}
+\setlength{\abovedisplayskip}{8pt plus 2pt minus 2pt}
+\setlength{\belowdisplayskip}{8pt plus 2pt minus 2pt}
+\setlength{\abovedisplayshortskip}{3pt plus 2pt}
+\setlength{\belowdisplayshortskip}{6pt plus 2pt minus 2pt}
+\allowdisplaybreaks[1]
+\widowpenalty=10000
+\clubpenalty=10000
+\raggedbottom
+\titleformat{\section}{\sffamily\bfseries\fontsize{11}{13}\selectfont}
+ {\thesection}{.65em}{}
+\titlespacing*{\section}{0pt}{18pt plus 3pt minus 2pt}{11pt plus 2pt minus 1pt}
+\titleformat{\subsection}{\sffamily\bfseries\fontsize{10}{12}\selectfont}
+ {\thesubsection}{.65em}{}
+\titlespacing*{\subsection}{0pt}{13pt plus 2pt minus 1pt}{7pt plus 1pt}
+\newtheoremstyle{lixinplain}{7pt plus 2pt}{7pt plus 2pt}
+ {\itshape}{0pt}{\sffamily\bfseries}{}{.6em}{}
+\newtheoremstyle{lixindef}{7pt plus 2pt}{7pt plus 2pt}
+ {\normalfont}{0pt}{\sffamily\bfseries}{}{.6em}{}
+\theoremstyle{lixinplain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{lixindef}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{remark}{Remark}[section]
+\numberwithin{equation}{section}
+\renewenvironment{proof}[1][\proofname]{\par
+ \pushQED{\qed}\normalfont\topsep6pt plus2pt\relax
+ \trivlist\item[\hskip\labelsep\sffamily\bfseries\itshape #1]\ignorespaces
+}{\popQED\endtrivlist\@endpefalse}
+\newcommand{\shorttitle}{Small Energy and Exterior Vacuum}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\sffamily\fontsize{8}{9.6}\selectfont\shorttitle}
+\fancyhead[R]{\sffamily\fontsize{8}{9.6}\selectfont\thepage}
+\renewcommand{\headrulewidth}{1pt}
+\fancypagestyle{firstpage}{\fancyhf{}
+ \fancyhead[L]{\sffamily\fontsize{8}{9.6}\selectfont Draft}
+ \fancyhead[R]{\sffamily\fontsize{8}{9.6}\selectfont\thepage}
+ \renewcommand{\headrulewidth}{1pt}}
+\makeatletter
+\renewcommand{\maketitle}{\par\thispagestyle{firstpage}
+ \begingroup\parindent0pt
+ {\raggedright\sffamily\bfseries\fontsize{13}{15.6}\selectfont\@title\par}
+ \ifx\@author\@empty\else\vskip9pt{\normalsize\@author\par}\fi
+ \vskip14pt\endgroup}
+\renewenvironment{abstract}{\par\noindent
+ {\sffamily\bfseries Abstract}\par\nobreak\vskip2pt\noindent\ignorespaces}{\par\vskip8pt}
+\newcommand{\keywords}[1]{\par\noindent{\sffamily\bfseries Keywords}\quad
+ #1\par}
+\renewenvironment{thebibliography}[1]{%
+ \section*{\refname}\fontsize{8}{9.6}\selectfont
+ \list{\@arabic\c@enumiv.}{\settowidth\labelwidth{#1.}%
+ \leftmargin\labelwidth\advance\leftmargin\labelsep
+ \usecounter{enumiv}\let\p@enumiv\@empty
+ \renewcommand\theenumiv{\@arabic\c@enumiv}
+ \setlength{\itemsep}{1pt}\setlength{\parsep}{0pt}}%
+ \sloppy\clubpenalty10000\widowpenalty10000
+ \sfcode46=\@m
+}{\def\@noitemerr{\@latex@warning{Empty bibliography}}\endlist}
+\makeatother

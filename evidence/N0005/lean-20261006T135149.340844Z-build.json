@@ -1,0 +1,20 @@
+{
+  "utc": "20261006T135149.340844Z",
+  "command": [
+    "/home/sx/xiong-agent/.elan/bin/lake",
+    "build",
+    "N0005Bridge",
+    "N0005Check"
+  ],
+  "cwd": "/mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime-n0005",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "hashes": {
+    "evidence/N0005/attempt-bridges-v2.lean": "cdc4622fc70d1e3f7be35b9541cc0c94c96d939246ec0165f8244c7cefa20eae",
+    "lean/lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+    "notes/nodes/N0005/statement.md": "8d4f8babab87192b3f55abbc1b0fc45c51321cd4195db5924d8731f85d1d34cb",
+    "lean/N0005Check.lean": "a3ad0ce79459c163dc8d88d19001c1d175c01f4d5aa012f55b9449eeeb56ca19"
+  },
+  "dependency_commit_expected": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "node_promoted": false,
+  "exit_code": 0
+}

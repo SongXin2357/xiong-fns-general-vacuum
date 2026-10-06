@@ -12,8 +12,8 @@ flowchart TD
  N0001 --> N0002["N0002: distributional divergence — LEAN VERIFIED; published on GitHub"]
  ROOT --> N0003["N0003: Li-Xin global route — UNCLOSED"]
  ROOT --> N0004["N0004: coupled thermal route — UNCLOSED"]
- ROOT --> N0005["N0005: initial representative audit — EXPLORING"]
- ROOT --> N0006["N0006: compact-support audit — REOPENED"]
+ ROOT --> N0005["N0005: initial trace — PARTIAL; full Lean target OPEN"]
+ ROOT --> N0006["N0006: compact obstruction — PAPER DRAFT; Lean NOT_RUN"]
 ```
 
 - [Problem and workflow](AGENTS.md)
@@ -34,3 +34,13 @@ N0002 has passed its exact local Lean/review gate; N0003 is an independent open 
 [English TeX note](manuscript/cutoff_cancellation.tex) · [Compiled PDF](manuscript/cutoff_cancellation.pdf) · [Reproduction](REPRODUCE.md)
 
 N0002 is published at [commit 1174efe](https://github.com/SongXin2357/xiong-fns-general-vacuum/commit/1174efed45e32e6a34ecb03e7a003d9a3ee1789b). Its [publication receipt](evidence/N0002/github-publication.json) records a complete remote byte comparison.
+
+The strict-viscosity compact-support audit now has independent paper-level reconstruction and review. It provides substantial contrary evidence to the original target, but has no Lean certificate and no descendants. The initial-trace node has seven checked auxiliary lemmas; its full target remains open. No complete global paper or full-paper formalization pass is claimed.
+
+## Current English research drafts
+
+- [Main positive-estimate manuscript](manuscript/paper_en.tex) · [11-page compiled PDF](manuscript/paper_en.pdf).
+- [Separate compact-support audit](manuscript/compact_audit.tex) · [12-page compiled PDF](manuscript/compact_audit.pdf).
+- [Chinese substantive report](notes/research-outcome-20261006-zh.md) · [Full current TeX–Lean map](notes/current-tex-lean-map-20261006.json).
+
+The main draft does not claim global existence. The compact audit is a paper-level conditional obstruction in the strict-viscosity original displayed class; its analytic Lean chain and local construction remain unverified. The editable originals remain in the user-requested parent project paths. Full-paper formalization is NOT_PASS.
