@@ -22,6 +22,8 @@ Each proof node must pass Lean build, transitive-axiom inspection and semantic r
 
 N0001 uses actual Lebesgue integrals and two dominated-convergence arguments. [Lean source](lean/FNSTree/N0001.lean), [certificate](evidence/N0001/certificate.json), [independent proof](notes/nodes/N0001/independent-proof-20261006.md), [semantic review](notes/nodes/N0001/semantic-review-20261006.md), [red-team](notes/nodes/N0001/redteam-20261006.md).
 
+The exact-target file is the immutable preregistration snapshot: its initial exploring / Lean NOT_RUN line records the status before proof work. Current status is recorded in the claim ledger, tree registry and certificate above.
+
 No PDE application or child is certified. Publication is waiting for GitHub CLI authentication.
 
 [English TeX note](manuscript/cutoff_cancellation.tex) · [Compiled PDF](manuscript/cutoff_cancellation.pdf) · [Reproduction](REPRODUCE.md)
