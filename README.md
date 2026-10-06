@@ -9,9 +9,11 @@ Research towards small-physical-energy global strong solutions of the two-dimens
 ```mermaid
 flowchart TD
  ROOT["ROOT: original problem — OPEN"] --> N0001["N0001: cutoff-tail zero-mean lemma — LEAN VERIFIED; published on GitHub"]
- N0001 --> N0002["N0002: distributional divergence — EXPLORING"]
+ N0001 --> N0002["N0002: distributional divergence — LEAN VERIFIED; publication pending"]
  ROOT --> N0003["N0003: Li-Xin global route — UNCLOSED"]
- ROOT --> N0004["N0004: coupled thermal route — EXPLORING"]
+ ROOT --> N0004["N0004: coupled thermal route — UNCLOSED"]
+ ROOT --> N0005["N0005: initial representative audit — EXPLORING"]
+ ROOT --> N0006["N0006: compact-support audit — REOPENED"]
 ```
 
 - [Problem and workflow](AGENTS.md)
@@ -27,6 +29,6 @@ N0001 uses actual Lebesgue integrals and two dominated-convergence arguments. [L
 
 The exact-target file is the immutable preregistration snapshot: its initial exploring / Lean NOT_RUN line records the status before proof work. Current status is recorded in the claim ledger, tree registry and certificate above.
 
-N0002 is an unverified child; N0003 is an independent open global target. No PDE application is certified. N0001 is published at [commit 8211cef](https://github.com/SongXin2357/xiong-fns-general-vacuum/commit/8211cef495fded145823cfeedd35464ee7a18e6f). Its branch may extend only after the current evidence and publication gate passes.
+N0002 has passed its exact local Lean/review gate; N0003 is an independent open global target. No PDE application is certified. N0001 is published at [commit 8211cef](https://github.com/SongXin2357/xiong-fns-general-vacuum/commit/8211cef495fded145823cfeedd35464ee7a18e6f). Its branch may extend only after the current evidence and publication gate passes.
 
 [English TeX note](manuscript/cutoff_cancellation.tex) · [Compiled PDF](manuscript/cutoff_cancellation.pdf) · [Reproduction](REPRODUCE.md)

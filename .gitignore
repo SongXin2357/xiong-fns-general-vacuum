@@ -72,3 +72,6 @@ installation_id*
 
 # User requires successful and failed verification logs in the research record.
 !evidence/**/*.log
+
+# Per-node local-only Lean build runtimes
+lean/local-runtime-*/

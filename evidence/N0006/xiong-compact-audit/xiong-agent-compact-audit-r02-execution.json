@@ -1,0 +1,28 @@
+{
+  "executed": true,
+  "command": [
+    "/home/sx/xiong-agent/bin/xiong-agent-codex",
+    "--strict-config",
+    "--no-daemon",
+    "exec",
+    "--cd",
+    "/mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/runs/compact-audit-r02",
+    "--sandbox",
+    "read-only",
+    "--ephemeral",
+    "--json",
+    "--color",
+    "never",
+    "--output-schema",
+    "/mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/runs/compact-audit-r02/evidence/xiong-agent-compact-audit-r02-schema.json",
+    "--output-last-message",
+    "/mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/runs/compact-audit-r02/evidence/xiong-agent-compact-audit-r02-response.json",
+    "-c",
+    "features.shell_tool=false",
+    "-c",
+    "features.unified_exec=false",
+    "-"
+  ],
+  "returncode": 0,
+  "timeout": false
+}

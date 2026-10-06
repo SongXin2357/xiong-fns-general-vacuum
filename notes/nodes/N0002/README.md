@@ -1,3 +1,3 @@
 # N0002
 
-See [preregistered target](statement.md). Current status: exploring; no Lean certificate. Branch extension forbidden.
+Exact generic divergence theorem: Lean verified and independently reviewed. [Certificate](../../../evidence/N0002/certificate.json). [Registered statement](statement.md) is the immutable preregistration snapshot. Publication must be recorded before branch extension. No FNS or global-existence claim is certified.

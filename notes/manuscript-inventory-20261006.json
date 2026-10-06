@@ -1,0 +1,138 @@
+{
+  "scope": "Old drafts are audit inputs, not certified proof. Neither partial builds nor new generic lemmas certify these claims.",
+  "full_paper_formalization": "NOT_PASS",
+  "manuscripts": [
+    {
+      "path_in_original_project": "manuscript/paper_en.tex",
+      "sha256": "40ab8173895612c5570b306e9f20f453d65f8936fdaa6ec61ae77f3305142015",
+      "claims": [
+        {
+          "label": "thm:main",
+          "mathematical_status": "reopened-unverified",
+          "lean_status": "not-certified-by-current-tree"
+        },
+        {
+          "label": "cor:family",
+          "mathematical_status": "reopened-unverified",
+          "lean_status": "not-certified-by-current-tree"
+        },
+        {
+          "label": "prop:endpoint",
+          "mathematical_status": "reopened-unverified",
+          "lean_status": "not-certified-by-current-tree"
+        },
+        {
+          "label": "lem:initial-representative",
+          "mathematical_status": "reopened-unverified",
+          "lean_status": "not-certified-by-current-tree"
+        },
+        {
+          "label": "lem:flow",
+          "mathematical_status": "reopened-unverified",
+          "lean_status": "not-certified-by-current-tree"
+        },
+        {
+          "label": "lem:cutoffs",
+          "mathematical_status": "reopened-unverified",
+          "lean_status": "not-certified-by-current-tree"
+        },
+        {
+          "label": "lem:traces",
+          "mathematical_status": "reopened-unverified",
+          "lean_status": "not-certified-by-current-tree"
+        },
+        {
+          "label": "prop:conservation",
+          "mathematical_status": "reopened-unverified",
+          "lean_status": "not-certified-by-current-tree"
+        },
+        {
+          "label": "lem:flux",
+          "mathematical_status": "reopened-unverified",
+          "lean_status": "not-certified-by-current-tree"
+        },
+        {
+          "label": "lem:anchor",
+          "mathematical_status": "reopened-unverified",
+          "lean_status": "not-certified-by-current-tree"
+        },
+        {
+          "label": "prop:acceleration",
+          "mathematical_status": "reopened-unverified",
+          "lean_status": "not-certified-by-current-tree"
+        },
+        {
+          "label": "lem:pressure",
+          "mathematical_status": "reopened-unverified",
+          "lean_status": "not-certified-by-current-tree"
+        },
+        {
+          "label": "lem:quadratic-thermal",
+          "mathematical_status": "reopened-unverified",
+          "lean_status": "not-certified-by-current-tree"
+        },
+        {
+          "label": "prop:specific",
+          "mathematical_status": "reopened-unverified",
+          "lean_status": "not-certified-by-current-tree"
+        },
+        {
+          "label": "prop:log",
+          "mathematical_status": "reopened-unverified",
+          "lean_status": "not-certified-by-current-tree"
+        },
+        {
+          "label": "lem:mass-density",
+          "mathematical_status": "reopened-unverified",
+          "lean_status": "not-certified-by-current-tree"
+        },
+        {
+          "label": "lem:super",
+          "mathematical_status": "reopened-unverified",
+          "lean_status": "not-certified-by-current-tree"
+        },
+        {
+          "label": "lem:rigid",
+          "mathematical_status": "reopened-unverified",
+          "lean_status": "not-certified-by-current-tree"
+        },
+        {
+          "label": "prop:support",
+          "mathematical_status": "reopened-unverified",
+          "lean_status": "not-certified-by-current-tree"
+        },
+        {
+          "label": "prop:temperature-spike",
+          "mathematical_status": "reopened-unverified",
+          "lean_status": "not-certified-by-current-tree"
+        }
+      ]
+    },
+    {
+      "path_in_original_project": "research/general-vacuum/paper_general_vacuum.tex",
+      "sha256": "8872fa98de5f07a54d274c10b4867f701e519a4bda1f902f14d9f208d2ee91c4",
+      "claims": [
+        {
+          "label": "prop:hardy-lame",
+          "mathematical_status": "reopened-unverified",
+          "lean_status": "not-certified-by-current-tree"
+        },
+        {
+          "label": "lem:hardy-tool",
+          "mathematical_status": "reopened-unverified",
+          "lean_status": "not-certified-by-current-tree"
+        },
+        {
+          "label": "prop:thermal-hardy",
+          "mathematical_status": "reopened-unverified",
+          "lean_status": "not-certified-by-current-tree"
+        },
+        {
+          "label": "prop:thermal-functional",
+          "mathematical_status": "reopened-unverified",
+          "lean_status": "not-certified-by-current-tree"
+        }
+      ]
+    }
+  ]
+}

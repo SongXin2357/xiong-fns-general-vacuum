@@ -1,0 +1,198 @@
+theorem FNSTree.N0002.zero_integral_of_distributional_divergence : ∀ (f : FNSTree.N0002.Plane → ℝ)
+  (V : FNSTree.N0002.Plane → FNSTree.N0002.Plane),
+  MeasureTheory.Integrable f MeasureTheory.volume →
+    MeasureTheory.MemLp V 2 MeasureTheory.volume →
+      (∀ (φ : FNSTree.N0002.Plane → ℝ),
+          ContDiff ℝ (↑⊤) φ →
+            HasCompactSupport φ →
+              ∫ (x : FNSTree.N0002.Plane), f x * φ x = -∫ (x : FNSTree.N0002.Plane), inner ℝ (V x) (gradient φ x)) →
+        ∫ (x : FNSTree.N0002.Plane), f x = 0 :=
+fun f V hf hV hdiv =>
+  FNSTree.N0001.zero_mean_from_cutoffs_and_flux_tails f (fun x => ‖V x‖ ^ 2) (fun n => FNSTree.N0002.cutoff (↑n + 1)) 1
+    (√(∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2)) hf
+    (MeasureTheory.MemLp.integrable_norm_pow hV
+      (Mathlib.Meta.NormNum.isNat_eq_false (Mathlib.Meta.NormNum.IsNat.raw_refl 2)
+        (Mathlib.Meta.NormNum.isNat_ofNat ℕ (Eq.refl 0)) (Eq.refl false)))
+    (Filter.Eventually.of_forall fun x => sq_nonneg ‖V x‖)
+    (fun n => Continuous.measurable (ContDiff.continuous (FNSTree.N0002.cutoff_smooth (↑n + 1))))
+    (Mathlib.Meta.NormNum.isNat_le_true (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_zero)
+      (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_one) (Eq.refl true))
+    (fun n x => FNSTree.N0002.cutoff_bound (↑n + 1) x) (Filter.Eventually.of_forall FNSTree.N0002.cutoff_tendsto_one)
+    (Real.sqrt_nonneg (∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2)) fun n =>
+    Eq.mpr
+      (id
+        (congrArg
+          (fun _a =>
+            |_a| ≤
+              √(∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2) *
+                √(∫ (x : FNSTree.N0001.Plane) in FNSTree.N0001.tailSet n, ‖V x‖ ^ 2))
+          (hdiv (FNSTree.N0002.cutoff (↑n + 1)) (FNSTree.N0002.cutoff_smooth (↑n + 1))
+            (FNSTree.N0002.cutoff_compact
+              (Right.add_pos_of_nonneg_of_pos (Nat.cast_nonneg' n)
+                (Mathlib.Meta.Positivity.pos_of_isNat (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_one)
+                  (Eq.refl (Nat.ble 1 1))))))))
+      (Eq.mpr
+        (id
+          (congrArg
+            (fun _a =>
+              _a ≤
+                √(∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2) *
+                  √(∫ (x : FNSTree.N0001.Plane) in FNSTree.N0001.tailSet n, ‖V x‖ ^ 2))
+            (abs_neg (∫ (x : FNSTree.N0002.Plane), inner ℝ (V x) (gradient (FNSTree.N0002.cutoff (↑n + 1)) x)))))
+        (FNSTree.N0002.cutoff_flux_bound hV n))
+'FNSTree.N0002.zero_integral_of_distributional_divergence' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem FNSTree.N0002.cutoff_energy : ∀ {R : ℝ},
+  0 < R →
+    ∫ (x : FNSTree.N0002.Plane), ‖gradient (FNSTree.N0002.cutoff R) x‖ ^ 2 =
+      ∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2 :=
+fun {R} hR =>
+  Eq.mpr
+    (id
+      (congrFun'
+        (congrArg Eq
+          (congrArg (MeasureTheory.integral MeasureTheory.volume)
+            (funext fun x =>
+              congrFun' (congrArg HPow.hPow (congrArg norm ((fun x => FNSTree.N0002.cutoff_gradient_scale hR x) x)))
+                2)))
+        (∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2)))
+    (Eq.mpr
+      (id
+        (congrFun'
+          (congrArg Eq
+            (congrArg (MeasureTheory.integral MeasureTheory.volume)
+              (funext fun x =>
+                congrFun' (congrArg HPow.hPow (norm_smul R⁻¹ (gradient (↑FNSTree.N0002.base) (R⁻¹ • x)))) 2)))
+          (∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2)))
+      (id
+        (Eq.mpr
+          (id
+            (congrFun'
+              (congrArg Eq
+                (congrArg (MeasureTheory.integral MeasureTheory.volume)
+                  (funext fun x =>
+                    congrFun'
+                      (congrArg HPow.hPow
+                        (congrFun' (congrArg HMul.hMul (abs_of_pos (inv_pos.mpr hR)))
+                          ‖gradient (↑FNSTree.N0002.base) (R⁻¹ • x)‖))
+                      2)))
+              (∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2)))
+          (Eq.mpr
+            (id
+              (congrFun'
+                (congrArg Eq
+                  (congrArg (MeasureTheory.integral MeasureTheory.volume)
+                    (funext fun x => mul_pow R⁻¹ ‖gradient (↑FNSTree.N0002.base) (R⁻¹ • x)‖ 2)))
+                (∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2)))
+            (Eq.mpr
+              (id
+                (congrArg (fun _a => _a = ∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2)
+                  (MeasureTheory.integral_const_mul (R⁻¹ ^ 2) fun x => ‖gradient (↑FNSTree.N0002.base) (R⁻¹ • x)‖ ^ 2)))
+              (Eq.mpr
+                (id
+                  (congrArg
+                    (fun _a => R⁻¹ ^ 2 * _a = ∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2)
+                    (MeasureTheory.Measure.integral_comp_inv_smul_of_nonneg MeasureTheory.volume
+                      (fun x => ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2) (LT.lt.le hR))))
+                (have hd :=
+                  of_eq_true
+                    (Eq.trans (congrFun' (congrArg Eq (Eq.trans finrank_euclideanSpace (Fintype.card_fin 2))) 2)
+                      (eq_self 2));
+                Eq.mpr
+                  (id
+                    (congrArg
+                      (fun _a =>
+                        R⁻¹ ^ 2 * R ^ _a • ∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2 =
+                          ∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2)
+                      hd))
+                  (Eq.mpr
+                    (id
+                      (congrArg
+                        (fun _a => R⁻¹ ^ 2 * _a = ∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2)
+                        (smul_eq_mul (R ^ 2) (∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2))))
+                    (of_eq_true
+                      (Eq.trans
+                        (Mathlib.Tactic.FieldSimp.eq_eq_cancel_eq
+                          (Mathlib.Tactic.FieldSimp.eq_mul_of_eq_eq_eq_mul
+                            (Eq.trans
+                              (congr_arg₂ HMul.hMul
+                                (Eq.trans (congr_arg (fun x => x ^ 2) (Eq.trans (congr_arg Inv.inv rfl) rfl)) rfl)
+                                (Eq.trans (congr_arg₂ HMul.hMul (Eq.trans (congr_arg (fun x => x ^ 2) rfl) rfl) rfl)
+                                  rfl))
+                              rfl)
+                            (Eq.trans
+                              (Mathlib.Tactic.FieldSimp.NF.mul_eq_eval
+                                (Mathlib.Tactic.FieldSimp.NF.pow_eq_eval (of_decide_eq_true (id (Eq.refl true)))
+                                  (Mathlib.Tactic.FieldSimp.NF.inv_eq_eval
+                                    (Eq.trans (Eq.refl R) (Mathlib.Tactic.FieldSimp.NF.atom_eq_eval R))))
+                                (Mathlib.Tactic.FieldSimp.NF.mul_eq_eval
+                                  (Mathlib.Tactic.FieldSimp.NF.pow_eq_eval (of_decide_eq_true (id (Eq.refl true)))
+                                    (Eq.trans (Eq.refl R) (Mathlib.Tactic.FieldSimp.NF.atom_eq_eval R)))
+                                  (Eq.trans
+                                    (Eq.refl (∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2))
+                                    (Mathlib.Tactic.FieldSimp.NF.atom_eq_eval
+                                      (∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2)))
+                                  (Mathlib.Tactic.FieldSimp.NF.mul_eq_eval₃
+                                    (1, ∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2)
+                                    (mul_one ((2, R) ::ᵣ []).eval)))
+                                (Mathlib.Tactic.FieldSimp.NF.mul_eq_eval₃
+                                  (1, ∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2)
+                                  (Mathlib.Tactic.FieldSimp.NF.mul_eq_eval₂ (-2) 2 R
+                                    (one_mul (Mathlib.Tactic.FieldSimp.NF.eval [])))))
+                              (Eq.symm
+                                (Mathlib.Tactic.FieldSimp.NF.eval_mul_eval_cons 1
+                                  (∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2)
+                                  (Mathlib.Tactic.FieldSimp.NF.eval_mul_eval_cons_zero
+                                    (one_mul (Mathlib.Tactic.FieldSimp.NF.eval []))
+                                    (Mathlib.Tactic.FieldSimp.NF.eval_cons_of_pow_eq_zero
+                                      (of_decide_eq_true (id (Eq.refl true))) (ne_of_gt hR) [])))))
+                            rfl
+                            (Mathlib.Tactic.FieldSimp.eq_div_of_eq_one_of_subst
+                              (Mathlib.Tactic.FieldSimp.NF.cons_eq_div_of_eq_div 1
+                                (∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2)
+                                (Eq.symm (div_one 1)))
+                              (Eq.mpr
+                                (id
+                                  (congrArg
+                                    (fun _a => _a = ∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2)
+                                    (Mathlib.Tactic.FieldSimp.NF.eval_cons
+                                      (1, ∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2) [])))
+                                (Eq.trans
+                                  (one_mul
+                                    (Mathlib.Tactic.FieldSimp.zpow'
+                                      (1, ∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2).2
+                                      (1, ∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2).1))
+                                  (Mathlib.Tactic.FieldSimp.zpow'_one
+                                    (∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2))))))
+                          (Mathlib.Tactic.FieldSimp.eq_mul_of_eq_eq_eq_mul rfl
+                            (Eq.trans
+                              (Eq.trans (Eq.refl (∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2))
+                                (Mathlib.Tactic.FieldSimp.NF.atom_eq_eval
+                                  (∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2)))
+                              (Eq.symm
+                                (Mathlib.Tactic.FieldSimp.NF.eval_mul_eval_cons 1
+                                  (∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2)
+                                  (one_mul (Mathlib.Tactic.FieldSimp.NF.eval [])))))
+                            rfl
+                            (Mathlib.Tactic.FieldSimp.eq_div_of_eq_one_of_subst
+                              (Mathlib.Tactic.FieldSimp.NF.cons_eq_div_of_eq_div 1
+                                (∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2)
+                                (Eq.symm (div_one 1)))
+                              (Eq.mpr
+                                (id
+                                  (congrArg
+                                    (fun _a => _a = ∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2)
+                                    (Mathlib.Tactic.FieldSimp.NF.eval_cons
+                                      (1, ∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2) [])))
+                                (Eq.trans
+                                  (one_mul
+                                    (Mathlib.Tactic.FieldSimp.zpow'
+                                      (1, ∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2).2
+                                      (1, ∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2).1))
+                                  (Mathlib.Tactic.FieldSimp.zpow'_one
+                                    (∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2))))))
+                          one_ne_zero)
+                        (eq_self (∫ (x : FNSTree.N0002.Plane), ‖gradient (↑FNSTree.N0002.base) x‖ ^ 2))))))))))))
+'FNSTree.N0002.cutoff_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FNSTree.N0002.cutoff_gradient_support' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FNSTree.N0002.cutoff_tendsto_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FNSTree.N0002.inner_integrable' depends on axioms: [propext, Classical.choice, Quot.sound]

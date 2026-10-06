@@ -1,0 +1,49 @@
+✔ [8706/8709] Built FNSTree.N0001 (15s)
+✖ [8707/8709] Building FNSTree.N0002 (11s)
+trace: .> LEAN_PATH=/home/sx/xiong-agent/lean/formalization/.lake/packages/Cli/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/batteries/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/Qq/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/aesop/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/proofwidgets/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/importGraph/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/plausible/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/mathlib/.lake/build/lib/lean:/mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime-n0002/.lake/build/lib/lean /home/sx/xiong-agent/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean /mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime-n0002/../FNSTree/N0002.lean -o /mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime-n0002/.lake/build/lib/lean/FNSTree/N0002.olean -i /mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime-n0002/.lake/build/lib/lean/FNSTree/N0002.ilean -c /mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime-n0002/.lake/build/ir/FNSTree/N0002.c --setup /mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime-n0002/.lake/build/ir/FNSTree/N0002.setup.json --json
+error: ../FNSTree/N0002.lean:21:31: expected token
+error: ../FNSTree/N0002.lean:23:41: expected token
+error: ../FNSTree/N0002.lean:31:6: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  |↑base ?m.19|
+in the target expression
+  |cutoff R x| ≤ 1
+
+R : ℝ
+x : Plane
+⊢ |cutoff R x| ≤ 1
+error: ../FNSTree/N0002.lean:46:14: Unknown identifier `base_smooth.differentiable`
+error: ../FNSTree/N0002.lean:43:75: unsolved goals
+R : ℝ
+hR : 0 < R
+x : Plane
+⊢ fderiv ℝ (cutoff R) x = R⁻¹ • fderiv ℝ (↑base) (R⁻¹ • x)
+warning: ../FNSTree/N0002.lean:45:40: This simp argument is unused:
+  RingHom.id_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [toDual_gradient, map_smul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+error: ../FNSTree/N0002.lean:55:5: Unknown identifier `base_smooth.continuous_fderiv`
+error: ../FNSTree/N0002.lean:63:32: Invalid field `pow`: The environment does not contain `Function.pow`, so it is not possible to project the field `pow` from an expression
+  HasCompactSupport.norm base_gradient_compact
+of type
+  ?m.65 ≤ 𝓟 (tsupport fun x => ‖gradient (↑base) x‖) → ∃ x ∈ tsupport fun x => ‖gradient (↑base) x‖, ClusterPt x ?m.65
+error: ../FNSTree/N0002.lean:67:6: Unknown identifier `cutoff_smooth`
+error: ../FNSTree/N0002.lean:76:39: Invalid field `pow`: The environment does not contain `Function.pow`, so it is not possible to project the field `pow` from an expression
+  HasCompactSupport.norm (cutoff_gradient_compact hR)
+of type
+  ?m.69 ≤ 𝓟 (tsupport fun x => ‖gradient (cutoff R) x‖) →
+    ∃ x ∈ tsupport fun x => ‖gradient (cutoff R) x‖, ClusterPt x ?m.69
+error: ../FNSTree/N0002.lean:84:26: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∫ (x : ?m.95), ?m.101 (R⁻¹ • x)
+in the target expression
+  R⁻¹ ^ 2 * ∫ (a : Plane), ‖gradient (↑base) (R⁻¹ • a)‖ ^ 2 = ∫ (x : Plane), ‖gradient (↑base) x‖ ^ 2
+
+R : ℝ
+hR : 0 < R
+⊢ R⁻¹ ^ 2 * ∫ (a : Plane), ‖gradient (↑base) (R⁻¹ • a)‖ ^ 2 = ∫ (x : Plane), ‖gradient (↑base) x‖ ^ 2
+error: Lean exited with code 1
+Some required targets logged failures:
+- FNSTree.N0002
+error: build failed

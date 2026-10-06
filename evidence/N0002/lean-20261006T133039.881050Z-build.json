@@ -1,0 +1,19 @@
+{
+  "utc": "20261006T133039.881050Z",
+  "command": [
+    "/home/sx/xiong-agent/.elan/bin/lake",
+    "build",
+    "N0002Check"
+  ],
+  "cwd": "/mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime-n0002",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "hashes": {
+    "lean/FNSTree/N0002.lean": "5ff0beb59d15064127dcbad8f65123aaf9a4782c7cd9a429cc74d5fac1adc82d",
+    "lean/N0002Check.lean": "4369b9cbf8eeacdae551d99136f7af3e931e504f82e76a4ea5bb38c35a3675f3",
+    "lean/lakefile.toml": "5c4c6ef61b8638111b096c5ce44da9e798d92d9a09fbc1479ea45ff5a7f60ca9",
+    "lean/lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+    "notes/nodes/N0002/statement.md": "975b828743d1a8b38a1ab4b6d9a8457fa766424e4ee1563aaeec7ce0248514a4"
+  },
+  "dependency_commit_expected": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "exit_code": 0
+}

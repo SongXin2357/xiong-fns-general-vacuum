@@ -1,0 +1,58 @@
+Review ID: review-r03/N0002. Review mode: NONBLIND. Scope: the supplied registered statement, complete N0001 and N0002 source, and parent-supplied direct Lean print output. No shell, Lean, or TeX execution was performed by this reviewer.
+
+Verdict: PAPER PROOF PASS; EXACT SEMANTIC MAPPING PASS. These verdicts concern the generic distributional-divergence theorem only. Administrative promotion remains subject to the evidence gaps listed below.
+
+\begin{theorem}
+Let $f\in L^1(\mathbb R^2)$ and $V\in L^2(\mathbb R^2;\mathbb R^2)$. Suppose that, for every $\phi\in C_c^\infty(\mathbb R^2)$,
+\[
+\int f\phi\,dx=-\int\langle V,\nabla\phi\rangle\,dx.
+\]
+Then $\int f\,dx=0$.
+\end{theorem}
+\begin{proof}
+Choose a smooth compactly supported function $\eta$ with $0\leq\eta\leq1$, equal to one on the closed unit ball and zero outside the radius-two ball. The supplied explicit exponential construction provides such a function: its denominator is everywhere positive, since simultaneous nonpositivity of its two arguments would require $|x|^2\geq4$ and $|x|^2\leq1$. The Lean source instead constructs an actual Mathlib \texttt{ContDiffBump} with radii one and two; it does not assume the existence of a cutoff certificate.
+
+For $R>0$, put $\chi_R(x)=\eta(R^{-1}x)$. The chain rule gives
+\[
+\nabla\chi_R(x)=R^{-1}\nabla\eta(R^{-1}x).
+\]
+Local constancy implies that this gradient vanishes when $|x|<R$ and when $|x|>2R$. Thus its support lies in $\{R\leq|x|\leq2R\}$. Continuity and compact support imply integrability of its squared norm. Writing $K=\int|\nabla\eta|^2\,dx<\infty$, the genuine Lebesgue change of variables $x=Ry$ gives
+\[
+\int|\nabla\chi_R|^2\,dx=R^{-2}R^2K=K.
+\]
+The dimension-two cancellation is explicit in Lean through \texttt{Module.finrank ℝ Plane = 2}.
+
+Set $R=n+1$. The product $f\chi_R$ is integrable because $|\chi_R|\leq1$. The inner product $\langle V,\nabla\chi_R\rangle$ is integrable by the pointwise inner-product inequality and the $L^2$ product estimate. Since the gradient vanishes outside $\{|x|\geq n\}$, the distributional identity and Cauchy--Schwarz yield
+\[
+\left|\int f\chi_{n+1}\,dx\right|
+\leq\sqrt K\left(\int_{|x|\geq n}|V|^2\,dx\right)^{1/2}.
+\]
+This estimate is derived, not assumed. In Lean, \texttt{cutoff_flux_bound} replaces $V$ by its tail indicator inside the actual inner-product integral, proves the indicator-energy identity, and applies \texttt{inner_l2_bound}.
+
+For each fixed $x$, $\chi_{n+1}(x)=1$ eventually. Dominated convergence with dominating function $|f|$ gives $\int f\chi_{n+1}\to\int f$. Separately, $\mathbf1_{\{|x|\geq n\}}|V|^2\to0$ pointwise and is dominated by the integrable function $|V|^2$, so its integrals tend to zero. The preceding bound therefore forces $\int f\chi_{n+1}\to0$. Uniqueness of limits proves the conclusion. The supplied N0001 source implements these two dominated-convergence arguments and uniqueness of limits.
+\end{proof}
+
+Semantic audit. The printed full theorem quantifies over scalar $f$ and vector-valued $V$ on \texttt{EuclideanSpace ℝ (Fin 2)}, uses Lebesgue \texttt{volume}, assumes \texttt{Integrable f volume} and \texttt{MemLp V 2 volume}, and quantifies over all smooth compactly supported scalar tests. Its weak identity uses Mathlib's actual gradient and Euclidean inner product. Its conclusion is exactly the registered total-integral identity. There is no additional cutoff, flux-tail, smallness, moment, momentum, density, or PDE hypothesis.
+
+The use of \texttt{MemLp} supplies almost-everywhere strong measurability and finite squared-norm integral. This is the usual representative-insensitive $L^2$ formulation; a measurable field with finite squared-norm integral satisfies it. The result thus covers the registered measurable-field hypothesis.
+
+No default nonintegrable-integral exploit was found. Base and cutoff energies have separate integrability proofs. The cutoff flux has the supplied \texttt{inner_integrable} proof. N0001 proves integrability of every tested product and tail restriction. More generally, every smooth compactly supported test is bounded, its gradient is continuous and compactly supported, and consequently both integrals in the distributional hypothesis are integrable under the stated $L^1/L^2$ assumptions. Although the energy identity uses library integral equalities formulated for totalized integrals, the particular integrands have independently established integrability.
+
+Nonvacuity is stronger than the zero example: take a nonconstant $\psi\in C_c^\infty(\mathbb R^2)$ and set $V=(\psi,0)$ and $f=\partial_1\psi$. Then $f\in L^1$, $V\in L^2$, and ordinary compact-support integration by parts proves the required weak identity. Choosing $\psi$ with nonzero first derivative makes both data nontrivial.
+
+The parent-supplied top-level axiom print reports only \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}. This transitive audit includes the invoked N0001 theorem and excludes \texttt{sorryAx} and custom analytic axioms from this theorem's dependency closure, on the supplied evidence. The displayed supporting audits report the same foundational axioms. No mathematical gap was identified in the supplied generic theorem or its paper proof.
+
+NONBLIND：本轮收到候选证明、源码和父进程实际打印输出，不能登记为盲重构。
+论文数学证明 PASS；完整 Lean 类型与注册的二维分布散度命题语义映射 PASS。截止函数、真实梯度、二维能量缩放和尾部通量估计均在源码内构造或证明。
+未发现把目标结论藏进假设、预设截止估计或利用不可积积分默认值的漏洞；N0001 的条件估计在 N0002 中得到实际验证。
+父进程提供的顶层传递公理审计仅含 propext、Classical.choice、Quot.sound；没有显示 sorryAx 或自定义未证分析公理。本审查未自行运行 Lean。
+非空性成立，并存在非零光滑紧支撑向量场及其散度的实例；不要求向量场属于 L¹。
+上述通过结论仅覆盖一般分析引理，不证明 FNS 应用满足假设，也不升级全局解定理或公共发布门禁。
+
+UNRESOLVED
+输入中的 N0001、N0002 statement.md 仍标记 exploring/NOT_RUN，与后附实际打印证据存在状态不同步；父进程需核对并更新规范注册表和账本。
+本输入未提供构建命令、退出码、完整日志、工具链及 Mathlib 锁定核验、源码与证据哈希、项目根 import 覆盖。因此数学和语义 PASS 不能单独充当完整工程晋升证据。
+顶层公理输出覆盖 N0001 的传递逻辑依赖，但输入未包含 N0001 既有独立语义审查及晋升记录；父进程需确认它在派生 N0002 前已经满足项目硬门禁。当前直接源码复核未发现 N0001 的数学缺口。
+未提供外部原文定理位置；本轮不作外部来源忠实性认证，证明结论依靠输入中的直接推导。
+FNS 应用中的 f_i∈L¹、V_i∈L²及对全部紧支撑光滑测试的弱恒等式仍是独立义务；本轮未审查。
+最新 review-grade 公共晋升门禁仍为 NOT_RUN，不能由本次审查或项目 Lean 输出替代。

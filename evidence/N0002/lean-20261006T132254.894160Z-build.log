@@ -1,0 +1,37 @@
+✖ [8707/8709] Building FNSTree.N0002 (36s)
+trace: .> LEAN_PATH=/home/sx/xiong-agent/lean/formalization/.lake/packages/Cli/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/batteries/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/Qq/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/aesop/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/proofwidgets/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/importGraph/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/plausible/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/mathlib/.lake/build/lib/lean:/mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime-n0002/.lake/build/lib/lean /home/sx/xiong-agent/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean /mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime-n0002/../FNSTree/N0002.lean -o /mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime-n0002/.lake/build/lib/lean/FNSTree/N0002.olean -i /mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime-n0002/.lake/build/lib/lean/FNSTree/N0002.ilean -c /mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime-n0002/.lake/build/ir/FNSTree/N0002.c --setup /mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime-n0002/.lake/build/ir/FNSTree/N0002.setup.json --json
+error: ../FNSTree/N0002.lean:24:19: Application type mismatch: The argument
+  ContDiff.smul contDiff_const contDiff_id
+has type
+  ContDiff ?m.51 ?m.56 ((fun x => ?m.33) • id)
+but is expected to have type
+  ContDiff ℝ ∞ (HSMul.hSMul R⁻¹)
+in the application
+  ContDiff.comp base_smooth (ContDiff.smul contDiff_const contDiff_id)
+error: ../FNSTree/N0002.lean:48:14: typeclass instance problem is stuck
+  Module ?m.93 Plane
+
+Note: Lean will not try to resolve this typeclass instance problem because the first and third type arguments to `Module` contain metavariables. These arguments must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+warning: ../FNSTree/N0002.lean:46:40: This simp argument is unused:
+  RingHom.id_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [toDual_gradient, map_smul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+error: ../FNSTree/N0002.lean:64:5: (deterministic) timeout at `isDefEq`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+error: ../FNSTree/N0002.lean:77:5: (deterministic) timeout at `whnf`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+error: Lean exited with code 1
+Some required targets logged failures:
+- FNSTree.N0002
+error: build failed

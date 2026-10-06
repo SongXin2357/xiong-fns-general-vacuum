@@ -40,3 +40,7 @@ The source is standalone and embeds the project's existing Li–Xin-inspired lay
 ## Exact evidence bytes
 
 The repository disables Git text conversion in `.gitattributes`. Certificates hash the exact saved bytes; clone and checkout must preserve those bytes on Windows and Linux. Line-ending changes to certified files require a new certificate review.
+
+## N0002 separate import root
+
+The historical N0001 root is immutable. From `lean/`, build the new module explicitly with `lake build FNSTree.N0002`, then run `lake env lean N0002Check.lean`. The actual local driver is `evidence/N0002/lean-driver.py`; its separate ignored runtime uses the same pinned dependency. A partial root build never certifies open tree nodes or the global theorem.
