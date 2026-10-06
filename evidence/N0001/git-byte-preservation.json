@@ -1,0 +1,66 @@
+{
+  "policy": "Git text conversion disabled; exact working bytes retained",
+  "certificate_blobs": [
+    {
+      "role": "statement",
+      "path": "notes/nodes/N0001/statement.md",
+      "index_sha256": "4efcf8ca1030654a95d8ed2064d2c849d1bc9576600e3294171476d3ecb9a62a",
+      "matches_certificate": true
+    },
+    {
+      "role": "lean_source",
+      "path": "lean/FNSTree/N0001.lean",
+      "index_sha256": "8369a8bb42097de05880c63ea2a07c05e3bb6e02d318a2112872f0c9cec44ed9",
+      "matches_certificate": true
+    },
+    {
+      "role": "lean_root",
+      "path": "lean/FNSTree.lean",
+      "index_sha256": "c4722f765bb3f676be8e498b9ec8d3c222cf9bdd109d4c26c29d69ff8149dcb0",
+      "matches_certificate": true
+    },
+    {
+      "role": "build_log",
+      "path": "evidence/N0001/lean-20261006T121647.943855Z-build.log",
+      "index_sha256": "2120456fd80471fa75a5f6145468e5f2a9d4dd458009a1a55f0d84b019a27c69",
+      "matches_certificate": true
+    },
+    {
+      "role": "type_axiom_log",
+      "path": "evidence/N0001/lean-20261006T121718.576189Z-print.log",
+      "index_sha256": "c13152e93ad52346613633c48dd629f9386014817dfcaaee468a8be0ae80d7ad",
+      "matches_certificate": true
+    },
+    {
+      "role": "semantic_review",
+      "path": "notes/nodes/N0001/semantic-review-20261006.md",
+      "index_sha256": "85699bedadf1ff817b61a54e7c0d96b907a21ad4451b44615e0e0b5bef7ad583",
+      "matches_certificate": true
+    },
+    {
+      "role": "independent_review",
+      "path": "notes/nodes/N0001/independent-proof-20261006.md",
+      "index_sha256": "e04a407c3105c7e44b2fa115b1ff4c9ee634c43f0c1287901015ac1f979584d8",
+      "matches_certificate": true
+    },
+    {
+      "role": "derivation",
+      "path": "notes/nodes/N0001/xiong-proof-20261006.md",
+      "index_sha256": "5a0bc810f68871fff6b60d2b54b436a97a7ab9fd43638465d5197bd3ca807045",
+      "matches_certificate": true
+    },
+    {
+      "role": "redteam",
+      "path": "notes/nodes/N0001/redteam-20261006.md",
+      "index_sha256": "36e0f4523fcc2333be10f5cc8db457df9361bf28e7cacad40e77184031124e27",
+      "matches_certificate": true
+    },
+    {
+      "role": "lean_lock",
+      "path": "lean/lake-manifest.json",
+      "index_sha256": "ba13cabc84bce0cf523061f5022168e36120d5c56974c8a6d451ad47a83ca90e",
+      "matches_certificate": true
+    }
+  ],
+  "certificate_exact_in_index": true
+}

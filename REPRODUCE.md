@@ -36,3 +36,7 @@ The source is standalone and embeds the project's existing Li–Xin-inspired lay
 ## Actual installed xiong-agent calls
 
 `positive-hardy-r02` derived the registered target. `review-r02` independently red-teamed the supplied candidate (not a blind review). Both completed with exit 0; their process, rule-load, execution and result records are under `evidence/N0001/xiong-*`. The separate Lean reconstruction received only the statement and definitions and never read either candidate.
+
+## Exact evidence bytes
+
+The repository disables Git text conversion in `.gitattributes`. Certificates hash the exact saved bytes; clone and checkout must preserve those bytes on Windows and Linux. Line-ending changes to certified files require a new certificate review.

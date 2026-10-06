@@ -1,0 +1,2 @@
+# Preserve exact source and evidence bytes bound by SHA-256 certificates.
+* -text
