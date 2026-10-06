@@ -9,7 +9,7 @@ Research towards small-physical-energy global strong solutions of the two-dimens
 ```mermaid
 flowchart TD
  ROOT["ROOT: original problem — OPEN"] --> N0001["N0001: cutoff-tail zero-mean lemma — LEAN VERIFIED; published on GitHub"]
- N0001 --> N0002["N0002: distributional divergence — LEAN VERIFIED; publication pending"]
+ N0001 --> N0002["N0002: distributional divergence — LEAN VERIFIED; published on GitHub"]
  ROOT --> N0003["N0003: Li-Xin global route — UNCLOSED"]
  ROOT --> N0004["N0004: coupled thermal route — UNCLOSED"]
  ROOT --> N0005["N0005: initial representative audit — EXPLORING"]
@@ -32,3 +32,5 @@ The exact-target file is the immutable preregistration snapshot: its initial exp
 N0002 has passed its exact local Lean/review gate; N0003 is an independent open global target. No PDE application is certified. N0001 is published at [commit 8211cef](https://github.com/SongXin2357/xiong-fns-general-vacuum/commit/8211cef495fded145823cfeedd35464ee7a18e6f). Its branch may extend only after the current evidence and publication gate passes.
 
 [English TeX note](manuscript/cutoff_cancellation.tex) · [Compiled PDF](manuscript/cutoff_cancellation.pdf) · [Reproduction](REPRODUCE.md)
+
+N0002 is published at [commit 1174efe](https://github.com/SongXin2357/xiong-fns-general-vacuum/commit/1174efed45e32e6a34ecb03e7a003d9a3ee1789b). Its [publication receipt](evidence/N0002/github-publication.json) records a complete remote byte comparison.

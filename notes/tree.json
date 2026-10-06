@@ -35,8 +35,8 @@
       "statement": "notes/nodes/N0002/statement.md",
       "children": [],
       "certificate": "evidence/N0002/certificate.json",
-      "github_commit": null,
-      "extension_status": "blocked-until-github-record"
+      "github_commit": "1174efed45e32e6a34ecb03e7a003d9a3ee1789b",
+      "extension_status": "eligible-after-current-gate-check"
     },
     {
       "id": "N0003",
