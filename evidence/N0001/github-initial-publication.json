@@ -1,0 +1,429 @@
+{
+  "verified_at": "2026-10-06T12:57:33.194427+00:00",
+  "repository": "SongXin2357/xiong-fns-general-vacuum",
+  "url": "https://github.com/SongXin2357/xiong-fns-general-vacuum",
+  "private": true,
+  "branch": "codex/lean-gated-research",
+  "commit": "8211cef495fded145823cfeedd35464ee7a18e6f",
+  "verification_method": "Authenticated GitHub REST repository/ref lookup and full zipball readback; every tracked file compared byte-for-byte against committed Git blob",
+  "archive_sha256": "798d9025884bcf5beba79684b10a8e2a753f4f74a0ed1db13df426426d4ae13c",
+  "file_count": 83,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "af2de357d323ef1aa866874db20e280a2162aebb4e0ee4c87b3618cae2c63059",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "6d3a9d3936e0ebccba4d6cd73f3e4c04ddfe4cb1149b6705f8022d77235e6fc9",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "9c27822d4dc9f44f2bedc1f3b47fd992a410b557ffac85eca86559e06ef1bf98",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "README.md",
+      "sha256": "2c6208a1f009018d4633d5351c4dba7bb125cd732bb61ed80c7ce6ca7faaa709",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "REPRODUCE.md",
+      "sha256": "a8a678e17f1518819e2f0fdd6fc43f90d9c8787da4b29bfd97cae112c94288db",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/canonical-claim-update.json",
+      "sha256": "004c23a093bd6894eec105e863d6474ce8928c6a531dfac38bc887894b2068a9",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/certificate.json",
+      "sha256": "c105ad04e000d7cd8b7fbb9709ad3da803dec465efda6d45cf1a9542806520f6",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/gate-checks.json",
+      "sha256": "04e0089659916a34695438e4a966d4d5443ce84e38d8ca5e15c3d70d4c827e5d",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/git-byte-preservation.json",
+      "sha256": "fdcbaff94b921b2a1ca5293481b88bff38ac6ff04d2c3fe3e6cacaf5bc88990f",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/lean-20261006T121249.450732Z-build.json",
+      "sha256": "9f8aa8a12dfc0acc5491ef92b26b7d196254ad0802860fc3541c43343178be05",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/lean-20261006T121249.450732Z-build.log",
+      "sha256": "e89f11c322c3f67a969635fb9ac58a6d235bfe7477415dc5aa04dd2383d873fd",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/lean-20261006T121249.450732Z-build.source.lean",
+      "sha256": "d3089777774ab1284bb0122887254e56beea344afbc9e4f69c369af5bf77215f",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/lean-20261006T121416.672369Z-build.json",
+      "sha256": "513cc7afeb8dab93395f087a4d05e54e0c7ec48ae5403afeebb81355df649596",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/lean-20261006T121416.672369Z-build.log",
+      "sha256": "b28f8d3909f1e4f9592d051e52d3919d4a5f072f63019b062569a2ba0a11b9c0",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/lean-20261006T121416.672369Z-build.source.lean",
+      "sha256": "8369a8bb42097de05880c63ea2a07c05e3bb6e02d318a2112872f0c9cec44ed9",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/lean-20261006T121647.943855Z-build.json",
+      "sha256": "434d24bacb68b8456c446f9c9375bec3b0168f3614c93b95a62ce67470071f84",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/lean-20261006T121647.943855Z-build.log",
+      "sha256": "2120456fd80471fa75a5f6145468e5f2a9d4dd458009a1a55f0d84b019a27c69",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/lean-20261006T121647.943855Z-build.source.lean",
+      "sha256": "8369a8bb42097de05880c63ea2a07c05e3bb6e02d318a2112872f0c9cec44ed9",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/lean-20261006T121718.576189Z-print.json",
+      "sha256": "07f34ea3251dd30f381c394263ec4605f84898038ead00d3ee8f4dbc21092a08",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/lean-20261006T121718.576189Z-print.log",
+      "sha256": "c13152e93ad52346613633c48dd629f9386014817dfcaaee468a8be0ae80d7ad",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/lean-20261006T121718.576189Z-print.source.lean",
+      "sha256": "8369a8bb42097de05880c63ea2a07c05e3bb6e02d318a2112872f0c9cec44ed9",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/lean-20261006T121720.081029Z-version.json",
+      "sha256": "cb389ab1a6f3903b551058705c9e088ecbbdafce8e21d955e8bca157cb017b20",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/lean-20261006T121720.081029Z-version.log",
+      "sha256": "63f3e16bf0258e2cc0ab3010eb1830723df9bb85097b7b72b0137b9be25a78e9",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/lean-20261006T121720.081029Z-version.source.lean",
+      "sha256": "8369a8bb42097de05880c63ea2a07c05e3bb6e02d318a2112872f0c9cec44ed9",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/lean-driver.py",
+      "sha256": "161d92ba99acab4866c5aca2bc0eff789ad8d5f26ffe66cd275adb7ec885eef8",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/lean-final-report.json",
+      "sha256": "fab0fcc3e09378b970e2701966a0288a7e914328f4b40c7dea5793ea23229cee",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/state-iteration.json",
+      "sha256": "de456ae161f14d485bd97af1298a023e3ac8b14afac8e6b94d42e126344fd0fa",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/tex/build.json",
+      "sha256": "d45ed289eb29372ebb711062db8a807e8652c6d71e22136799834b2d4e8e285d",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/tex/native-editor.json",
+      "sha256": "477c0b2019d6be2b41380d9c469904d39d014c1d02c23910ecd02088eb9e0924",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/tex/page-1.png",
+      "sha256": "99e8112edebeb54c00814f3017d2c31f9051cb0970d3c44ecd7c1d3705a07b87",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/tex/page-2.png",
+      "sha256": "97277610f21ee748f682df723199c9332b37c6aec0cdd1be3884646d37ebfae9",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/tex/pass1.log",
+      "sha256": "8de58015e73ae3f0b33927a54dfd693f991328b9b0c1852115e79e303effeea7",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/tex/pass2.log",
+      "sha256": "e727374183b356d9e9ac64b10e31d04711dcd8f792f7d5265cd757bf4ebec97f",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/tex/visual-review.json",
+      "sha256": "ccefd41649e279dab8ba360dbc7a49ccacdd4a892e0ee05ac31ed553f682b077",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/xiong-derivation/process.json",
+      "sha256": "7fad9431448d7f3294f28d5e7a1df6aff72816c241af9e78c1bdd07ef465a736",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/xiong-derivation/result.md",
+      "sha256": "3fa12772e15c0f6f2fc9484714e812e2e3bab8947722644c67c6bd79cff99230",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/xiong-derivation/rule-load.json",
+      "sha256": "99441048872624f004e625c793cc5496b9a499fb61d8b9a326e940935977517c",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/xiong-derivation/xiong-agent-positive-hardy-r02-execution.json",
+      "sha256": "5a9ff46860883d81152bdf3ccec9d97b4b559209efe2d62daa331ae635b339ed",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/xiong-derivation/xiong-agent-positive-hardy-r02-response.json",
+      "sha256": "1d017565e0b66675165d5f8bc4ba5fd9a6c70a661e51c44ecd71f6f7b7eb6ea1",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/xiong-redteam/process.json",
+      "sha256": "4600aa64179204f8e3f940236f6231ad68aca68c8b1041e26c5307b6590b6b62",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/xiong-redteam/result.md",
+      "sha256": "8e7a8daf92e8a80a0153e65c85f2188d7bd957512e7997d850aa916a258bed86",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/xiong-redteam/rule-load.json",
+      "sha256": "54c27067b35e52d0a64722ab2ae12069ca764e93e1edae8cdd2ebdca558ea298",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/xiong-redteam/xiong-agent-review-r02-execution.json",
+      "sha256": "031a1f82d6fcc38b2bce6873bf333d1365ad0fb6f09c6f98f99ae99045ee714e",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "evidence/N0001/xiong-redteam/xiong-agent-review-r02-response.json",
+      "sha256": "1d690a24793395e3a6442518891d3e371da410e9c4c5efdfc4e694879edd04a5",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "lean/FNSTree.lean",
+      "sha256": "c4722f765bb3f676be8e498b9ec8d3c222cf9bdd109d4c26c29d69ff8149dcb0",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "lean/FNSTree/N0001.lean",
+      "sha256": "8369a8bb42097de05880c63ea2a07c05e3bb6e02d318a2112872f0c9cec44ed9",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "lean/lake-manifest.json",
+      "sha256": "ba13cabc84bce0cf523061f5022168e36120d5c56974c8a6d451ad47a83ca90e",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "lean/lakefile.toml",
+      "sha256": "5c4c6ef61b8638111b096c5ce44da9e798d92d9a09fbc1479ea45ff5a7f60ca9",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "lean/lean-toolchain",
+      "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "manuscript/cutoff_cancellation.pdf",
+      "sha256": "898bb02cdffc1f0052102820e8c3c4cab5527a27173cce3b47ef0f56e224f085",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "manuscript/cutoff_cancellation.tex",
+      "sha256": "b81430a47d26bd7f7e2bc948e01cf5bb822651aec315838a28e6879b2a75057d",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "notes/claims.md",
+      "sha256": "96f808abba5e0e172ccb1f3b4a3ac631b784eff74b99765dd0a5d50ae273ea3f",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "notes/findings-20261006.md",
+      "sha256": "fbda2d0c19822c5775602967d66c924abf80a55c64e0923fb9c5a296c4c89043",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "notes/nodes/N0001/independent-proof-20261006.md",
+      "sha256": "e04a407c3105c7e44b2fa115b1ff4c9ee634c43f0c1287901015ac1f979584d8",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "notes/nodes/N0001/redteam-20261006.md",
+      "sha256": "36e0f4523fcc2333be10f5cc8db457df9361bf28e7cacad40e77184031124e27",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "notes/nodes/N0001/semantic-review-20261006.md",
+      "sha256": "85699bedadf1ff817b61a54e7c0d96b907a21ad4451b44615e0e0b5bef7ad583",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "notes/nodes/N0001/statement.md",
+      "sha256": "4efcf8ca1030654a95d8ed2064d2c849d1bc9576600e3294171476d3ecb9a62a",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "notes/nodes/N0001/xiong-proof-20261006.md",
+      "sha256": "5a0bc810f68871fff6b60d2b54b436a97a7ab9fd43638465d5197bd3ca807045",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "notes/protocols/original-template/AGENTS.md",
+      "sha256": "f2c5f14b81dcdaf1c1098a0568a1419b1e84af3bac543ce511a09771d918393f",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "notes/protocols/original-template/README.md",
+      "sha256": "59eb3330e303134ed27da95b03cd3687d4222ff019884b66f6d862910d9319b7",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "notes/protocols/rule-provenance.json",
+      "sha256": "897439d8c152bc39032dd1500198bef8532797dfd1872e0b77e2fe2c4b02f7f1",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "notes/sources/source-registry.json",
+      "sha256": "0442ac1ef25607c59a243d0976765b2bf60fef6b98f603593c1f1290475ecac7",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "notes/sources/wang-v1-baseline-20261006.md",
+      "sha256": "78143c9ba93bb8e8633de7f6d748b4629a437a96f48b0ef5f36c61c6e381d55c",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "notes/tree.json",
+      "sha256": "5dc4207fb1607ba17d3a11b252638b9fc47b8bbb42700fb1a6b2ab46508e67d7",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "proof-system/ACTIVE_STATE.md",
+      "sha256": "143edfffb72ef50ac1682e719e0b27f1d88e1fb9efc198b2aeb0fbd30207284c",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "proof-system/CLAIM_CARD.md",
+      "sha256": "2b2477aceb6de75d992ad3c284faf165c17496e4656b32f7c36746b4b2ac616a",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "proof-system/CLAIM_REGISTRY.json",
+      "sha256": "d554b888e6447d2eb29f303b01b2af7db73f3bb6d4810d1b95bb84cf5799ca4c",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "proof-system/EVIDENCE_LEDGER.jsonl",
+      "sha256": "689f92efd03cddefdd64b6039825da1e8f0f3e93e6cbd7c3b8e49d75ab01caa4",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "proof-system/OBSTRUCTION_LEDGER.md",
+      "sha256": "30a2e1843cb133ddd4f572f41dc7a2ecb245cab30f035f28c79611afc6b91e94",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "proof-system/PROJECT_STATE.json",
+      "sha256": "a1e4d351d95c476d1e2be929a72d6a4d32d15590e01c30393a2d7b88e590d76c",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "proof-system/PROOF_GATE.json",
+      "sha256": "ad4be09cb9db45b94db7a3acb7e23c2f175be473ec295e90838d55f33a5534d3",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "proof-system/PUBLIC_CLAIM_READY.md",
+      "sha256": "02b9c01f45d2d9485f2dde0168d08887c283bb49e01a2f9ac67426bfa03839dc",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "proof-system/SOURCE_FIDELITY.md",
+      "sha256": "f2b21b6490e08e8369644c329c765325369caec859fa4c9da21f5b5f2e701411",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "proof-system/iterations/20261006T122614Z-n0001-exact-result-local-lea-08f14be9f1.atomic/i0001.json",
+      "sha256": "d80512b7847320ccd155afd2461b16cf995cbdd02740ef23da4a6e025af99658",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "proof-system/iterations/20261006T122614Z-n0001-exact-result-local-lea-08f14be9f1.atomic/i0002.json",
+      "sha256": "382fd2fa091dfae35ff9a5355a83327b87d1cefcd5a11735774e9104c45750c9",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "proof-system/iterations/20261006T122614Z-n0001-exact-result-local-lea-08f14be9f1.json",
+      "sha256": "a26b7b0bd7c33bd76a9e559830e608f5c3ea2eeabde3876d6d7195a1d06985cb",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "proof-system/iterations/20261006T122902Z-canonical-record-update-b8b5b1a345.atomic/i0001.json",
+      "sha256": "07061ef75bd1fa8950a2e8c2ade8ef74d04b044bd5d9a69437f2acff13110239",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "proof-system/iterations/20261006T122902Z-canonical-record-update-b8b5b1a345.atomic/i0002.json",
+      "sha256": "7b1ba458bc31e549a4418858ce2598fe9c55db080b93b42b5d067c2b667c0878",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "proof-system/iterations/20261006T122902Z-canonical-record-update-b8b5b1a345.atomic/i0003.json",
+      "sha256": "1978559a4bb8073b966badbd4ab6edd5dbb9dd4fc30ef68f65c2f7356769e5cd",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "proof-system/iterations/20261006T122902Z-canonical-record-update-b8b5b1a345.json",
+      "sha256": "c7cc91e44984ea85bae64190e15f1eb5611e6c80e11a8b0dda09eebf388c2e07",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "proof-system/iterations/genesis-d08766cc9e6b2feb.json",
+      "sha256": "2c15cfa53926ff2fb2e719361cc737b22c3bf6f130492c1a5c91d46063b7fa23",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "scripts/run_xiong.py",
+      "sha256": "cfed4b0a5bacfbc35f64dab06f383701ecf09789364e66ff510500b70d4fa1bc",
+      "remote_matches_git_blob": true
+    },
+    {
+      "path": "scripts/tree_gate.py",
+      "sha256": "b1647eec10e78bb22f5d63dc10f6ace3068b62f5d10f8b4ee9324a0e6bbf0225",
+      "remote_matches_git_blob": true
+    }
+  ],
+  "global_PDE_theorem": "OPEN"
+}

@@ -8,7 +8,7 @@ Research towards small-physical-energy global strong solutions of the two-dimens
 
 ```mermaid
 flowchart TD
- ROOT["ROOT: original problem — OPEN"] --> N0001["N0001: cutoff-tail zero-mean lemma — LEAN VERIFIED; GitHub pending"]
+ ROOT["ROOT: original problem — OPEN"] --> N0001["N0001: cutoff-tail zero-mean lemma — LEAN VERIFIED; published on GitHub"]
 ```
 
 - [Problem and workflow](AGENTS.md)
@@ -16,7 +16,7 @@ flowchart TD
 - [Claim ledger](notes/claims.md)
 - [Machine-readable tree](notes/tree.json)
 
-Each proof node must pass Lean build, transitive-axiom inspection and semantic review before its branch can extend. Failed nodes remain visible. GitHub publication awaits local CLI authentication.
+Each proof node must pass Lean build, transitive-axiom inspection and semantic review before its branch can extend. Failed nodes remain visible. Publication must include all certificate-bound files and the full dependency closure. The private [GitHub repository](https://github.com/SongXin2357/xiong-fns-general-vacuum) is active; [N0001 publication receipt](evidence/N0001/github-initial-publication.json) records full byte-for-byte remote readback.
 
 ## First verified node
 
@@ -24,6 +24,6 @@ N0001 uses actual Lebesgue integrals and two dominated-convergence arguments. [L
 
 The exact-target file is the immutable preregistration snapshot: its initial exploring / Lean NOT_RUN line records the status before proof work. Current status is recorded in the claim ledger, tree registry and certificate above.
 
-No PDE application or child is certified. Publication is waiting for GitHub CLI authentication.
+No PDE application or child is certified. N0001 is published at [commit 8211cef](https://github.com/SongXin2357/xiong-fns-general-vacuum/commit/8211cef495fded145823cfeedd35464ee7a18e6f). Its branch may extend only after the current evidence and publication gate passes.
 
 [English TeX note](manuscript/cutoff_cancellation.tex) · [Compiled PDF](manuscript/cutoff_cancellation.pdf) · [Reproduction](REPRODUCE.md)

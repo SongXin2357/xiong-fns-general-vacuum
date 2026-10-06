@@ -1,0 +1,47 @@
+{
+  "checked_at": "2026-10-06T12:59:33.768568+00:00",
+  "results": [
+    {
+      "command": [
+        "C:\\Users\\11988\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\tex\\Latex\\manuscripts\\王雪全局解\\xiong-fns-small-energy\\research-tree\\scripts\\test_tree_gate.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_audit_requires_explicit_dependency_publication_for_pending_node (__main__.TreeGateTests.test_audit_requires_explicit_dependency_publication_for_pending_node) ... ok\ntest_changed_dependency_certificate_is_stale (__main__.TreeGateTests.test_changed_dependency_certificate_is_stale) ... ok\ntest_missing_or_changed_remote_bound_file_rejected (__main__.TreeGateTests.test_missing_or_changed_remote_bound_file_rejected) ... ok\ntest_origin_is_pinned_to_authorized_repository (__main__.TreeGateTests.test_origin_is_pinned_to_authorized_repository) ... ok\ntest_registry_dependency_removal_cannot_drop_certificate_pin (__main__.TreeGateTests.test_registry_dependency_removal_cannot_drop_certificate_pin) ... ok\ntest_registry_statement_cannot_be_retargeted (__main__.TreeGateTests.test_registry_statement_cannot_be_retargeted) ... ok\ntest_remote_certificate_or_unfetched_commit_rejected (__main__.TreeGateTests.test_remote_certificate_or_unfetched_commit_rejected) ... ok\ntest_unpublished_parent_explicit_and_transitive_dependency_rejected (__main__.TreeGateTests.test_unpublished_parent_explicit_and_transitive_dependency_rejected) ... ok\ntest_valid_remote_bundle_checks_full_dependency_closure (__main__.TreeGateTests.test_valid_remote_bundle_checks_full_dependency_closure) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.580s\n\nOK\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\11988\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\tex\\Latex\\manuscripts\\王雪全局解\\xiong-fns-small-energy\\research-tree\\scripts\\tree_gate.py",
+        "audit"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"tree_integrity\": \"PASS\",\n  \"nodes\": 1,\n  \"verified_nodes\": 1,\n  \"global_PDE_theorem\": \"OPEN\",\n  \"github_status\": \"published-private\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\11988\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "D:\\tex\\Latex\\manuscripts\\王雪全局解\\xiong-fns-small-energy\\research-tree\\scripts\\tree_gate.py",
+        "can-extend",
+        "N0001"
+      ],
+      "exit_code": 0,
+      "stdout": "N0001: exact current evidence permits a child; this is not a global PDE certificate.\n",
+      "stderr": ""
+    }
+  ],
+  "gate_source_sha256": "e8910f07eb047e6a9912778ab7b7657852e01f268fde3afbfb493a5f13b54e55",
+  "test_source_sha256": "edb53fd76650116f3f3da71ab8770aa584f48c614f7124acb42b1e2ce94e64da",
+  "global_PDE_theorem": "OPEN"
+}

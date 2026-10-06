@@ -21,7 +21,7 @@ python scripts/tree_gate.py audit
 python scripts/tree_gate.py can-extend N0001
 ```
 
-The first command validates current evidence hashes and tree structure. The second intentionally rejects extension until the verified node has a recorded GitHub commit. A passing structural audit is not a global PDE proof.
+The first command validates current evidence hashes and tree structure. The second checks the exact current certificate, all bound files and every parent/dependency against the recorded fetched GitHub commits. N0001 now has a verified private-repository publication. Before extension, fetch origin and retain actual remote readback evidence; an offline gate does not attest live GitHub freshness. A passing structural audit is not a global PDE proof.
 
 ## English note
 

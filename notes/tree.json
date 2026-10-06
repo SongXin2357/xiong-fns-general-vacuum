@@ -19,9 +19,11 @@
       "statement": "notes/nodes/N0001/statement.md",
       "children": [],
       "certificate": "evidence/N0001/certificate.json",
-      "github_commit": null,
-      "extension_status": "blocked-until-github-record"
+      "github_commit": "8211cef495fded145823cfeedd35464ee7a18e6f",
+      "extension_status": "eligible-after-current-gate-check"
     }
   ],
-  "github_status": "awaiting-cli-auth"
+  "github_status": "published-private",
+  "github_repository": "https://github.com/SongXin2357/xiong-fns-general-vacuum",
+  "publication_receipt": "evidence/N0001/github-initial-publication.json"
 }

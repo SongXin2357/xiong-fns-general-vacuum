@@ -1,0 +1,12 @@
+{
+  "schema": "math-research-atomic-intent-v1",
+  "transaction_id": "20261006T125934Z-n0001-github-publication-ver-deb50f33d9",
+  "intent_id": "i0001",
+  "role": "apply-projection",
+  "kind": "replace",
+  "target_slot": "projection:ACTIVE_STATE.md",
+  "work_relpath": "a/i0001",
+  "expected_preimage_sha256": "143edfffb72ef50ac1682e719e0b27f1d88e1fb9efc198b2aeb0fbd30207284c",
+  "candidate_sha256": "2d2cd21fa97891bf3b5c65105721825773717ff3b3c378f2720b17a17c9d9706",
+  "proof_authority": false
+}
