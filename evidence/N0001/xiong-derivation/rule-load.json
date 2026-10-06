@@ -1,0 +1,8 @@
+{
+  "returncode": 0,
+  "project_rules_visible": true,
+  "final_rules_visible": true,
+  "rules_sha256": "9c27822d4dc9f44f2bedc1f3b47fd992a410b557ffac85eca86559e06ef1bf98",
+  "tools_disabled": true,
+  "read_boundary": "Only serialized input; no shell/unified tools, no other branch history."
+}

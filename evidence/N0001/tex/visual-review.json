@@ -1,0 +1,12 @@
+{
+  "reviewed_pages": [
+    1,
+    2
+  ],
+  "clipping": false,
+  "overlap": false,
+  "missing_glyphs": false,
+  "undefined_references": false,
+  "review": "All pages rendered and visually inspected; first page contains complete lemma and proof, second page scope remark and bibliography.",
+  "pdf_sha256": "898bb02cdffc1f0052102820e8c3c4cab5527a27173cce3b47ef0f56e224f085"
+}

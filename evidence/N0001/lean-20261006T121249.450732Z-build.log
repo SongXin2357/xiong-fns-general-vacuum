@@ -1,0 +1,30 @@
+✖ [8706/8708] Building FNSTree.N0001 (26s)
+trace: .> LEAN_PATH=/home/sx/xiong-agent/lean/formalization/.lake/packages/Cli/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/batteries/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/Qq/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/aesop/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/proofwidgets/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/importGraph/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/plausible/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/mathlib/.lake/build/lib/lean:/mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime/.lake/build/lib/lean /home/sx/xiong-agent/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean /mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime/../FNSTree/N0001.lean -o /mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime/.lake/build/lib/lean/FNSTree/N0001.olean -i /mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime/.lake/build/lib/lean/FNSTree/N0001.ilean -c /mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime/.lake/build/ir/FNSTree/N0001.c --setup /mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime/.lake/build/ir/FNSTree/N0001.setup.json --json
+error: ../FNSTree/N0001.lean:56:4: Type mismatch: After simplification, term
+  mul_le_mul_of_nonneg_left (hbound n x) (abs_nonneg (f x))
+ has type
+  |f x| * |chi n x| ≤ |f x| * B
+but is expected to have type
+  |(f * chi n) x| ≤ |f x| * B
+warning: ../FNSTree/N0001.lean:79:5: Variable name `hh_nonneg` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hh_nonneg
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ../FNSTree/N0001.lean:80:38: Variable name `hB` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hB
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ../FNSTree/N0001.lean:83:5: Variable name `hC` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hC
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+error: Lean exited with code 1
+Some required targets logged failures:
+- FNSTree.N0001
+error: build failed

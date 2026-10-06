@@ -69,3 +69,6 @@ sessions/
 *.p12
 installation-id*
 installation_id*
+
+# User requires successful and failed verification logs in the research record.
+!evidence/**/*.log

@@ -1,7 +1,7 @@
 {
   "schema": "math-research-system-v1",
   "evidence_binding_version": 1,
-  "generated_at": "2026-10-06T12:11:50Z",
+  "generated_at": "2026-10-06T12:29:02Z",
   "project": "D:\\tex\\Latex\\manuscripts\\王雪全局解\\xiong-fns-small-energy\\research-tree",
   "claim": "N0001: For Lebesgue integrable real f and nonnegative h on R2, measurable uniformly bounded cutoffs chi_n converging to 1 almost everywhere, and C >= 0, if abs(integral f*chi_n) <= C*sqrt(integral over norm(x)>=n of h) for every n, then integral f=0. This general lemma does not assert that the FNS fields satisfy its hypotheses.",
   "claim_id": "claim-d08766cc9e6b2feb",
@@ -15,29 +15,29 @@
       "evidence": [
         "proof-system/CLAIM_CARD.md"
       ],
-      "note": "Created template; freeze only after exact statement is complete."
+      "note": "Reopened because protected canonical records changed; rerun the validator-backed gate for the active Claim."
     },
     "source-fidelity": {
       "status": "open",
       "evidence": [
         "proof-system/SOURCE_FIDELITY.md"
       ],
-      "note": "Template only; source or problem statement has not been inspected."
+      "note": "Reopened because protected canonical records changed; rerun the validator-backed gate for the active Claim."
     },
     "proof-certificate": {
       "status": "open",
       "evidence": [],
-      "note": "Requires formula-level proof certificate."
+      "note": "Reopened because protected canonical records changed; rerun the validator-backed gate for the active Claim."
     },
     "proof-adversary": {
       "status": "open",
       "evidence": [],
-      "note": "Requires adversarial pass for endpoints, assumptions, and counterexamples."
+      "note": "Reopened because protected canonical records changed; rerun the validator-backed gate for the active Claim."
     },
     "mechanical-verification": {
       "status": "open",
       "evidence": [],
-      "note": "Requires TeX/script/log checks for current artifacts."
+      "note": "Reopened because protected canonical records changed; rerun the validator-backed gate for the active Claim."
     },
     "bilingual-sync": {
       "status": "not-applicable",
@@ -49,7 +49,7 @@
       "evidence": [
         "proof-system/PUBLIC_CLAIM_READY.md"
       ],
-      "note": "Must remain open until every required gate closes."
+      "note": "Reopened because protected canonical records changed; rerun the validator-backed gate for the active Claim."
     }
   },
   "invariants": [

@@ -1,0 +1,62 @@
+{
+  "node_id": "N0001",
+  "verified_at": "2026-10-06T20:20:20.695616+08:00",
+  "kernel_build_exit_code": 0,
+  "type_axiom_exit_code": 0,
+  "semantic_review_passed": true,
+  "independent_review_passed": true,
+  "unproved_analytic_dependencies": [],
+  "sorry_ax": false,
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "theorem_name": "FNSTree.N0001.zero_mean_from_cutoffs_and_flux_tails",
+  "lean_module": "FNSTree.N0001",
+  "files": {
+    "statement": {
+      "path": "notes/nodes/N0001/statement.md",
+      "sha256": "4efcf8ca1030654a95d8ed2064d2c849d1bc9576600e3294171476d3ecb9a62a"
+    },
+    "lean_source": {
+      "path": "lean/FNSTree/N0001.lean",
+      "sha256": "8369a8bb42097de05880c63ea2a07c05e3bb6e02d318a2112872f0c9cec44ed9"
+    },
+    "lean_root": {
+      "path": "lean/FNSTree.lean",
+      "sha256": "c4722f765bb3f676be8e498b9ec8d3c222cf9bdd109d4c26c29d69ff8149dcb0"
+    },
+    "build_log": {
+      "path": "evidence/N0001/lean-20261006T121647.943855Z-build.log",
+      "sha256": "2120456fd80471fa75a5f6145468e5f2a9d4dd458009a1a55f0d84b019a27c69"
+    },
+    "type_axiom_log": {
+      "path": "evidence/N0001/lean-20261006T121718.576189Z-print.log",
+      "sha256": "c13152e93ad52346613633c48dd629f9386014817dfcaaee468a8be0ae80d7ad"
+    },
+    "semantic_review": {
+      "path": "notes/nodes/N0001/semantic-review-20261006.md",
+      "sha256": "85699bedadf1ff817b61a54e7c0d96b907a21ad4451b44615e0e0b5bef7ad583"
+    },
+    "independent_review": {
+      "path": "notes/nodes/N0001/independent-proof-20261006.md",
+      "sha256": "e04a407c3105c7e44b2fa115b1ff4c9ee634c43f0c1287901015ac1f979584d8"
+    },
+    "derivation": {
+      "path": "notes/nodes/N0001/xiong-proof-20261006.md",
+      "sha256": "5a0bc810f68871fff6b60d2b54b436a97a7ab9fd43638465d5197bd3ca807045"
+    },
+    "redteam": {
+      "path": "notes/nodes/N0001/redteam-20261006.md",
+      "sha256": "36e0f4523fcc2333be10f5cc8db457df9361bf28e7cacad40e77184031124e27"
+    },
+    "lean_lock": {
+      "path": "lean/lake-manifest.json",
+      "sha256": "ba13cabc84bce0cf523061f5022168e36120d5c56974c8a6d451ad47a83ca90e"
+    }
+  },
+  "dependency_certificates": {},
+  "certified_scope": "general analysis lemma only; no FNS application",
+  "global_PDE_theorem": "OPEN"
+}

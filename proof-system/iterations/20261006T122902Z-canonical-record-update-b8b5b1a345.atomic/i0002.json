@@ -1,0 +1,12 @@
+{
+  "schema": "math-research-atomic-intent-v1",
+  "transaction_id": "20261006T122902Z-canonical-record-update-b8b5b1a345",
+  "intent_id": "i0002",
+  "role": "apply-projection",
+  "kind": "replace",
+  "target_slot": "projection:PROOF_GATE.json",
+  "work_relpath": "a/i0002",
+  "expected_preimage_sha256": "d13a509636d4c5f6bb0ab2510f84ec7c7247468343bf387267f270a62e484805",
+  "candidate_sha256": "ad4be09cb9db45b94db7a3acb7e23c2f175be473ec295e90838d55f33a5534d3",
+  "proof_authority": false
+}

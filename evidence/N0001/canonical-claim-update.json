@@ -1,0 +1,16 @@
+{
+  "schema": "math-research-system-canonical-record-update-v1",
+  "generated_at": "2026-10-06T12:29:03Z",
+  "project": "D:\\tex\\Latex\\manuscripts\\\u738b\u96ea\u5168\u5c40\u89e3\\xiong-fns-small-energy\\research-tree",
+  "changed": true,
+  "records": [
+    "CLAIM_CARD.md"
+  ],
+  "changed_records": [
+    "CLAIM_CARD.md"
+  ],
+  "reopened_gates": [],
+  "transaction_id": "20261006T122902Z-canonical-record-update-b8b5b1a345",
+  "head_digest": "2045b7e6fc9cb739119cd7572ec8e64d8241cee79dd35acc327a7bc1944a15eb",
+  "proof_authority": false
+}

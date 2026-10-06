@@ -1,0 +1,22 @@
+[
+  {
+    "case": "exact_current_certificate",
+    "result": "PASS"
+  },
+  {
+    "case": "unverified_parent",
+    "result": "EXPECTED_REJECT",
+    "reason": "N0001 has not passed its exact Lean/semantic gate"
+  },
+  {
+    "case": "modified_lean_source_digest",
+    "result": "EXPECTED_REJECT",
+    "reason": "N0001 has stale evidence: lean_source"
+  },
+  {
+    "case": "local_verified_but_unpublished_parent",
+    "result": "EXPECTED_REJECT",
+    "exit_code": 2,
+    "stdout": "REJECTED: N0001 is locally verified but not yet recorded on GitHub; extension remains blocked\n"
+  }
+]

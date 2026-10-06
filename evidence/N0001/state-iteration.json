@@ -1,0 +1,18 @@
+{
+  "schema": "math-research-system-iteration-commit-v1",
+  "generated_at": "2026-10-06T12:26:15Z",
+  "project": "D:\\tex\\Latex\\manuscripts\\\u738b\u96ea\u5168\u5c40\u89e3\\xiong-fns-small-energy\\research-tree",
+  "operation": "N0001-exact-result-local-lean-verified",
+  "changed": true,
+  "transaction_id": "20261006T122614Z-n0001-exact-result-local-lea-08f14be9f1",
+  "head_digest": "c538781c6d99f4693d6d14f4cba909893498f960b29098e1f561eccf04e1efdd",
+  "updated_projections": [
+    "ACTIVE_STATE.md"
+  ],
+  "proof_authority": false,
+  "outcome_harvest": {
+    "status": "pending-error",
+    "error": "OHP checkpoint script is unavailable: C:\\Users\\11988\\.codex\\math-system-improvement\\scripts\\result_harvest_checkpoint.py",
+    "proof_authority": false
+  }
+}

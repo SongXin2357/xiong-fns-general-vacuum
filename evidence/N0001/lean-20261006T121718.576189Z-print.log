@@ -1,0 +1,68 @@
+@[reducible] def FNSTree.N0001.Plane : Type :=
+EuclideanSpace.{0, 0} ℝ (Fin 2)
+def FNSTree.N0001.tailSet : ℕ → Set.{0} FNSTree.N0001.Plane :=
+fun n => Set.ofPred.{0} fun x => LE.le.{0} (↑n) (Norm.norm.{0} x)
+FNSTree.N0001.measurableSet_tailSet : ∀ (n : ℕ), MeasurableSet.{0} (FNSTree.N0001.tailSet n)
+@FNSTree.N0001.tail_integrable : ∀ {h : FNSTree.N0001.Plane → ℝ},
+  MeasureTheory.Integrable.{0, 0} h MeasureTheory.MeasureSpace.volume.{0} →
+    ∀ (n : ℕ), MeasureTheory.IntegrableOn.{0, 0} h (FNSTree.N0001.tailSet n) MeasureTheory.MeasureSpace.volume.{0}
+@FNSTree.N0001.tail_nonneg : ∀ {h : FNSTree.N0001.Plane → ℝ},
+  (∀ᵐ (x : FNSTree.N0001.Plane), LE.le.{0} 0 (h x)) →
+    ∀ (n : ℕ), LE.le.{0} 0 (∫ (x : FNSTree.N0001.Plane) in FNSTree.N0001.tailSet n, h x)
+@FNSTree.N0001.tail_integral_tendsto_zero : ∀ {h : FNSTree.N0001.Plane → ℝ},
+  MeasureTheory.Integrable.{0, 0} h MeasureTheory.MeasureSpace.volume.{0} →
+    Filter.Tendsto.{0, 0} (fun n => ∫ (x : FNSTree.N0001.Plane) in FNSTree.N0001.tailSet n, h x) Filter.atTop.{0}
+      (nhds.{0} 0)
+@FNSTree.N0001.tested_integrable : ∀ {f : FNSTree.N0001.Plane → ℝ} {chi : ℕ → FNSTree.N0001.Plane → ℝ} {B : ℝ},
+  MeasureTheory.Integrable.{0, 0} f MeasureTheory.MeasureSpace.volume.{0} →
+    (∀ (n : ℕ), Measurable.{0, 0} (chi n)) →
+      (∀ (n : ℕ) (x : FNSTree.N0001.Plane), LE.le.{0} (abs.{0} (chi n x)) B) →
+        ∀ (n : ℕ),
+          MeasureTheory.Integrable.{0, 0} (fun x => HMul.hMul.{0, 0, 0} (f x) (chi n x))
+            MeasureTheory.MeasureSpace.volume.{0}
+@FNSTree.N0001.tested_integral_tendsto : ∀ {f : FNSTree.N0001.Plane → ℝ} {chi : ℕ → FNSTree.N0001.Plane → ℝ} {B : ℝ},
+  MeasureTheory.Integrable.{0, 0} f MeasureTheory.MeasureSpace.volume.{0} →
+    (∀ (n : ℕ), Measurable.{0, 0} (chi n)) →
+      (∀ (n : ℕ) (x : FNSTree.N0001.Plane), LE.le.{0} (abs.{0} (chi n x)) B) →
+        (∀ᵐ (x : FNSTree.N0001.Plane), Filter.Tendsto.{0, 0} (fun n => chi n x) Filter.atTop.{0} (nhds.{0} 1)) →
+          Filter.Tendsto.{0, 0} (fun n => ∫ (x : FNSTree.N0001.Plane), HMul.hMul.{0, 0, 0} (f x) (chi n x))
+            Filter.atTop.{0} (nhds.{0} (∫ (x : FNSTree.N0001.Plane), f x))
+theorem FNSTree.N0001.zero_mean_from_cutoffs_and_flux_tails : ∀ (f h : FNSTree.N0001.Plane → ℝ)
+  (chi : ℕ → FNSTree.N0001.Plane → ℝ) (B C : ℝ),
+  MeasureTheory.Integrable.{0, 0} f MeasureTheory.MeasureSpace.volume.{0} →
+    MeasureTheory.Integrable.{0, 0} h MeasureTheory.MeasureSpace.volume.{0} →
+      (∀ᵐ (x : FNSTree.N0001.Plane), LE.le.{0} 0 (h x)) →
+        (∀ (n : ℕ), Measurable.{0, 0} (chi n)) →
+          LE.le.{0} 0 B →
+            (∀ (n : ℕ) (x : FNSTree.N0001.Plane), LE.le.{0} (abs.{0} (chi n x)) B) →
+              (∀ᵐ (x : FNSTree.N0001.Plane), Filter.Tendsto.{0, 0} (fun n => chi n x) Filter.atTop.{0} (nhds.{0} 1)) →
+                LE.le.{0} 0 C →
+                  (∀ (n : ℕ),
+                      LE.le.{0} (abs.{0} (∫ (x : FNSTree.N0001.Plane), HMul.hMul.{0, 0, 0} (f x) (chi n x)))
+                        (HMul.hMul.{0, 0, 0} C √(∫ (x : FNSTree.N0001.Plane) in FNSTree.N0001.tailSet n, h x))) →
+                    Eq.{1} (∫ (x : FNSTree.N0001.Plane), f x) 0 :=
+fun f h chi B C hf hh _hh_nonneg hchi _hB hbound hlim _hC hflux =>
+  have htested := FNSTree.N0001.tested_integral_tendsto hf hchi hbound hlim;
+  have htail := FNSTree.N0001.tail_integral_tendsto_zero hh;
+  have hrhs :=
+    Eq.mp.{0}
+      (congrArg.{1, 1}
+        (Filter.Tendsto.{0, 0}
+          (fun x => HMul.hMul.{0, 0, 0} C √(∫ (x : FNSTree.N0001.Plane) in FNSTree.N0001.tailSet x, h x))
+          Filter.atTop.{0})
+        (congrArg.{1, 1} nhds.{0}
+          (Eq.trans.{1} (congrArg.{1, 1} (HMul.hMul.{0, 0, 0} C) Real.sqrt_zero) (MulZeroClass.mul_zero.{0} C))))
+      (Filter.Tendsto.mul.{0, 0} tendsto_const_nhds.{0, 0}
+        (Filter.Tendsto.comp.{0, 0, 0}
+          (ContinuousAt.tendsto.{0, 0} (Continuous.continuousAt.{0, 0} Real.continuous_sqrt)) htail));
+  have hzero :=
+    squeeze_zero.{0} (fun n => abs_nonneg.{0} (∫ (x : FNSTree.N0001.Plane), HMul.hMul.{0, 0, 0} (f x) (chi n x))) hflux
+      hrhs;
+  abs_eq_zero.{0}.mp (tendsto_nhds_unique.{0, 0} (Filter.Tendsto.abs.{0, 0} htested) hzero)
+'FNSTree.N0001.measurableSet_tailSet' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+'FNSTree.N0001.tail_integrable' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+'FNSTree.N0001.tail_nonneg' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+'FNSTree.N0001.tail_integral_tendsto_zero' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+'FNSTree.N0001.tested_integrable' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+'FNSTree.N0001.tested_integral_tendsto' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+'FNSTree.N0001.zero_mean_from_cutoffs_and_flux_tails' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]

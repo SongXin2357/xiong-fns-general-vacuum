@@ -13,11 +13,14 @@
       "parent": "ROOT",
       "dependencies": [],
       "kind": "analysis-lemma",
-      "mathematical_status": "exploring",
-      "lean_status": "not-started",
-      "gate": "closed",
+      "mathematical_status": "proved-draft",
+      "lean_status": "lean-verified",
+      "gate": "passed",
       "statement": "notes/nodes/N0001/statement.md",
-      "children": []
+      "children": [],
+      "certificate": "evidence/N0001/certificate.json",
+      "github_commit": null,
+      "extension_status": "blocked-until-github-record"
     }
   ],
   "github_status": "awaiting-cli-auth"

@@ -1,0 +1,29 @@
+{
+  "runs": [
+    {
+      "pass": 1,
+      "command": [
+        "/usr/bin/pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "cutoff_cancellation.tex"
+      ],
+      "exit_code": 0
+    },
+    {
+      "pass": 2,
+      "command": [
+        "/usr/bin/pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "cutoff_cancellation.tex"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "pdf_exists": true,
+  "tex_sha256": "b81430a47d26bd7f7e2bc948e01cf5bb822651aec315838a28e6879b2a75057d",
+  "pdf_sha256": "898bb02cdffc1f0052102820e8c3c4cab5527a27173cce3b47ef0f56e224f085"
+}
