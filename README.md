@@ -21,7 +21,7 @@ flowchart TD
 - [Claim ledger](notes/claims.md)
 - [Machine-readable tree](notes/tree.json)
 
-Each proof node must pass Lean build, transitive-axiom inspection and semantic review before its branch can extend. Failed nodes remain visible. Publication must include all certificate-bound files and the full dependency closure. The private [GitHub repository](https://github.com/SongXin2357/xiong-fns-general-vacuum) is active; [N0001 publication receipt](evidence/N0001/github-initial-publication.json) records full byte-for-byte remote readback.
+Each proof node must pass Lean build, transitive-axiom inspection and semantic review before its branch can extend. Failed nodes remain visible. Publication must include all certificate-bound files and the full dependency closure. The public [GitHub repository](https://github.com/SongXin2357/xiong-fns-general-vacuum) is active; [N0001 publication receipt](evidence/N0001/github-initial-publication.json) records full byte-for-byte remote readback.
 
 ## First verified node
 

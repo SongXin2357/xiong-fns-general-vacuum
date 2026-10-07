@@ -1,11 +1,11 @@
 # Active State
 
-Updated: 2026-10-06 (Asia/Shanghai)
+Updated: 2026-10-07 (Asia/Shanghai)
 
 - Managed active claim remains the exact N0001 claim-card; the canonical multi-node frontier is notes/tree.json. This projection does not replace or broaden the active claim card.
 - Original ROOT: general-density, far-field-vacuum, small-physical-energy global strong heat-conducting FNS in the original Wang-v1 class; OPEN, no completed global-existence proof.
 - Verified complete nodes: N0001 and N0002. N0002 now derives actual planar distributional divergence cancellation from an L2 vector field, with real cutoffs, chain rule, scale-invariant gradient integral and dominated convergence. Both exact certificates include actual build/type/axiom logs, independent reconstruction and semantic review; only propext, Classical.choice, Quot.sound.
-- Private GitHub https://github.com/SongXin2357/xiong-fns-general-vacuum is authenticated and published. N0001 certificate commit 8211cef495fded145823cfeedd35464ee7a18e6f; N0002 certificate commit 1174efed45e32e6a34ecb03e7a003d9a3ee1789b. N0002 full remote archive readback matched all 167 tracked files. Publication binding was pushed at 3b49134. No N0002 child has been started.
+- Public GitHub https://github.com/SongXin2357/xiong-fns-general-vacuum is accessible without authentication (made public on 2026-10-07). N0001 certificate commit 8211cef495fded145823cfeedd35464ee7a18e6f; N0002 certificate commit 1174efed45e32e6a34ecb03e7a003d9a3ee1789b. N0002 full remote archive readback matched all 167 tracked files. Publication binding was pushed at 3b49134. No N0002 child has been started.
 - N0003 positive Li-Xin route: actual installed xiong-agent derivation; pressure-square time integral remains uncontrolled; total physical energy is conservative, not a barotropic dissipation bound.
 - N0004 coupled thermal route: actual installed xiong-agent derivation; specific-energy multiplier leaves velocity/thermal/compression coefficients not controlled up to a hypothetical finite maximal time. No global closure.
 - N0005 trace/source audit: independent paper proof of necessary initial Lp representative. Seven genuine auxiliary analytic lemmas compile; parent repeated actual build and type/axiom checks. Full target actual Lean attempt fails at Lp weak-compactness/representation and unfinished assembly. No certificate, no children. The literal Gaussian-density/constant-velocity source mismatch is separate from compact support.
