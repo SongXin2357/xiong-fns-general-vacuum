@@ -1,0 +1,13 @@
+{
+  "schema": "n0007-full-lean-gap-evidence-v1",
+  "node": "N0007",
+  "scope": "Actual installed agent review and exact gap record, not a Lean certificate",
+  "node_gate": "OPEN",
+  "full_exact_target_Lean": "NOT_RUN",
+  "file_sha256": {
+    "evidence/N0007/xiong-full-lean-r05/result.md": "55b82eff3f94ffb2c6697a71c11b6a3ff48291f11f52c9ea86efe0aa227b874e",
+    "evidence/N0007/xiong-full-lean-r05/xiong-agent-n0007-full-lean-r05-response.json": "4d058e5e6533fc1fc0cd9681d906cbdf9f80a283d47e8a288effdf7bf5da1658",
+    "evidence/N0007/xiong-full-lean-r05/run-summary.json": "430ded0d3247d0a225ed06262ce0a8cd8010dab6ea20295d57ff4ff3faf4834a",
+    "notes/nodes/N0007/full-target-lean-gap-20261007.md": "442349ad2afcf247941a660a74e26401314343fed0d3aac4ea9e116d3130dfd1"
+  }
+}

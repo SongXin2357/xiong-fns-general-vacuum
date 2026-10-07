@@ -1,0 +1,25 @@
+{
+  "schema": "xiong-n0007-full-lean-audit-v1",
+  "run_id": "n0007-full-lean-r05",
+  "kind": "nonblind exact-target Lean architecture audit; agent did not run Lean",
+  "launcher": "wsl.exe --distribution Ubuntu-24.04 -- python3 scripts/run_xiong.py research n0007-full-lean-r05",
+  "actual_binary": "/home/sx/xiong-agent/bin/xiong-agent-codex",
+  "agent_executed": true,
+  "agent_exit_code": 0,
+  "agent_timeout": false,
+  "rules_loaded": true,
+  "installed_root_rules_sha256": {
+    "AGENTS.md": "c8f50fff2499fc839952843047ac20d3d1d0abc190e3abad1c3b3442eae00c7f",
+    "README.md": "aad07df044d9b6a3bfc6178805a765f6415611d5fede47f32b3f096d42c8e612"
+  },
+  "project_rules_sha256": "29221c71b68145bb980c13666feee6e89f144c7cca5cf1969129c535ca412802",
+  "serialized_input_sha256": "2c05317f1038458a8656d9a78f4e83055c88544448d1eea655f7390981adf9a9",
+  "actual_prompt_sha256": "7f0a6c61941a55d76a5ca3ecc93f60c60ea58f160026be1130edfdcdfa94ac74",
+  "model_visible_prompt_sha256": "2517976bcaeffdaaadce840a862191e1f7cb590f0aeb08fc3b5975cba4e891a6",
+  "result_sha256": "55b82eff3f94ffb2c6697a71c11b6a3ff48291f11f52c9ea86efe0aa227b874e",
+  "response_sha256": "4d058e5e6533fc1fc0cd9681d906cbdf9f80a283d47e8a288effdf7bf5da1658",
+  "tools_disabled": true,
+  "full_target_lean_build": "NOT_RUN",
+  "node_gate": "OPEN",
+  "proof_authority": false
+}

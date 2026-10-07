@@ -8,6 +8,8 @@ The [formalization report](formalization-report-20261007.md) records five actual
 
 The [Lean bridge continuation](lean-bridges-20261007.md) adds four actually built time-slice results and one stress-row result, with full type/axiom logs. These make ten N0007 auxiliaries in total while leaving the conservative PDE product rule, full spatial test extension, and full-node Lean target open.
 
+The [full-target Lean gap audit](full-target-lean-gap-20261007.md) records a fresh actual installed xiong-agent run against the original Wang-v1 class. It identifies the first unformalized weighted local coercivity and weak-derivative interface; it is not a full-target Lean certificate.
+
 The [partial evidence manifest](../../../evidence/N0007/partial-evidence-manifest.json) binds task-owned source and Lean files by hash. The [deterministic checker](../../../scripts/audit_n0007_partial.py) passes for these auxiliary records while explicitly returning the full node gate as OPEN.
 
 **Status: OPEN.** The common weak-time-derivative representative, conservative-to-material product rule, common exceptional-time set, and complete PDE-to-N0002 Lean translation have not passed the exact node gate. No N0007 child may start, and no global-existence conclusion follows.

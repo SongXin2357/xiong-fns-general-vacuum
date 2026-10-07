@@ -1,0 +1,12 @@
+{
+  "schema": "math-research-atomic-intent-v1",
+  "transaction_id": "20261007T123918Z-n0007-exact-lean-gap-audit-aa90271d8a",
+  "intent_id": "i0001",
+  "role": "apply-projection",
+  "kind": "replace",
+  "target_slot": "projection:ACTIVE_STATE.md",
+  "work_relpath": "a/i0001",
+  "expected_preimage_sha256": "02a0ee23b674f85b8d86f64a082663d634bfc92802fbdad447ed7c1c0d32325e",
+  "candidate_sha256": "708e8758536cb99057ea78982d645ea9e94f004acea9995be6696700ad0fb9ed",
+  "proof_authority": false
+}
