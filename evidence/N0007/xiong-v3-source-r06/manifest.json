@@ -1,0 +1,25 @@
+{
+  "schema": "n0007-wang-v3-source-assessment-v1",
+  "run_id": "n0007-wang-v3-r06",
+  "node": "N0007",
+  "role": "independent v3 source and mathematical assessment; no version substitution or Lean certificate",
+  "source_version": "arXiv:2212.13343v3",
+  "source_pdf_sha256": "3d57bb0d85391db8515c8c554509f645886c7e1851efe9a13ee4cc321c63e00a",
+  "launcher": "wsl.exe --distribution Ubuntu-24.04 -- python3 scripts/run_xiong.py research n0007-wang-v3-r06",
+  "installed_agent_root_rules_sha256": {
+    "AGENTS.md": "c8f50fff2499fc839952843047ac20d3d1d0abc190e3abad1c3b3442eae00c7f",
+    "README.md": "aad07df044d9b6a3bfc6178805a765f6415611d5fede47f32b3f096d42c8e612"
+  },
+  "project_rules_sha256": "29221c71b68145bb980c13666feee6e89f144c7cca5cf1969129c535ca412802",
+  "rule_probe_exit_code": 0,
+  "project_rules_visible": true,
+  "final_rules_visible": true,
+  "model_tools_disabled": true,
+  "model_execution_exit_code": 0,
+  "model_timeout": false,
+  "serialized_input_sha256": "7cea5e87a853327bb1f4b12c57077ba712a06bd85bd5b233865fcec30ce887ef",
+  "published_result_sha256": "f451f04bef240154ec9f7afd518daedfa997f31c739f8587f7f56b4e7694ab6e",
+  "full_exact_target_Lean": "NOT_RUN",
+  "node_gate": "OPEN",
+  "global_theorem": "OPEN"
+}
