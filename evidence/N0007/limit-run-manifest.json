@@ -1,0 +1,32 @@
+{
+  "node": "N0007",
+  "role": "nonblind-two-limit-source-audit",
+  "run_id": "n0007-limit-r04",
+  "source_pdf_sha256": "a5c89e5c8f33b2a74adb276abf99649a0efd4d47ca1196c57a5e08a4a939856d",
+  "input_sha256": "11c331c9443c5fa080fd2b33a34a268442a90daad9b221f57a37769edf705849",
+  "prompt_sha256": "86bfc18dc88c1944a121da2f01e7d9ac03583edca2e8c30097369a6b40cb3839",
+  "installed_root_rules": [
+    {
+      "name": "AGENTS.md",
+      "sha256": "c8f50fff2499fc839952843047ac20d3d1d0abc190e3abad1c3b3442eae00c7f",
+      "bytes": 7533
+    },
+    {
+      "name": "README.md",
+      "sha256": "aad07df044d9b6a3bfc6178805a765f6415611d5fede47f32b3f096d42c8e612",
+      "bytes": 14447
+    }
+  ],
+  "actual_run_exit_code": 0,
+  "archived_files": [
+    "evidence/N0007/xiong-limit-r04/run-summary.json",
+    "evidence/N0007/xiong-limit-r04/result.md",
+    "evidence/N0007/xiong-limit-r04/xiong-agent-n0007-limit-r04-response.json"
+  ],
+  "raw_process_and_prompt": "retained only in ignored local run; hashes in run-summary.json",
+  "reviewed_candidate_snapshot": "notes/sources/wang-v1-two-limit-ut-pre-review-20261007.md",
+  "reviewed_candidate_sha256": "b2c474efca09a53a86e9fe9608f8fbc5545cb54af3fd632c51ad4ca382eddd50",
+  "reviewed_candidate_repaired_after_review": true,
+  "N0007_gate": "OPEN",
+  "full_target_Lean": "NOT_RUN"
+}

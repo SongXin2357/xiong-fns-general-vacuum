@@ -1,0 +1,12 @@
+{
+  "schema": "math-research-atomic-intent-v1",
+  "transaction_id": "20261007T100029Z-n0007-two-limit-source-audit-2af92c5470",
+  "intent_id": "i0002",
+  "role": "apply-head",
+  "kind": "replace",
+  "target_slot": "project-head",
+  "work_relpath": "a/i0002",
+  "expected_preimage_sha256": "5d6cff6713c7945b642f437b11ea167af27d97a12a6e64b236d7890529a9ef2a",
+  "candidate_sha256": "7ee440c6a0c3eaa038988ef47570aff20489ed628ea28165dd604f8d534ceae8",
+  "proof_authority": false
+}

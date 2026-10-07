@@ -1,0 +1,39 @@
+{
+  "node": "N0007",
+  "run_id": "n0007-proof-r03",
+  "role": "nonblind-paper-proof-redteam",
+  "dedicated_launcher": "scripts/run_xiong.py run n0007-proof-r03",
+  "input_sha256": "4d3245efa6062e903f2d829f56afe3a8727bab5e6575814c9bfacb8abd96b558",
+  "project_rules_sha256": "29221c71b68145bb980c13666feee6e89f144c7cca5cf1969129c535ca412802",
+  "installed_root_rules": [
+    {
+      "name": "AGENTS.md",
+      "sha256": "c8f50fff2499fc839952843047ac20d3d1d0abc190e3abad1c3b3442eae00c7f",
+      "bytes": 7533
+    },
+    {
+      "name": "README.md",
+      "sha256": "aad07df044d9b6a3bfc6178805a765f6415611d5fede47f32b3f096d42c8e612",
+      "bytes": 14447
+    }
+  ],
+  "instruction_probe_exit_code": 0,
+  "project_rules_visible": true,
+  "final_project_section_visible": true,
+  "tools_disabled": true,
+  "agent_process_exit_code": 0,
+  "agent_timeout": false,
+  "cli_sandbox": "read-only",
+  "ephemeral": true,
+  "raw_local_evidence_sha256": {
+    "process": "038697a8b822c12bb420a020ce9c8dfb7b927e8b0d2656a6894403d2e88da316",
+    "rule_load": "0b3029af318d5b8deb4a5c17396d8e2bf13ae55b7b569c9e5544a456968382e1",
+    "execution": "f5d4a95131e6f05a20e883e042378e0c24d1f7f1375930ea4acad0e79a89b600",
+    "model_visible_prompt": "ea4d3dd12812baaa3fb9e1cfb20846c6ee8533dd70a5d23c95e54fe617040281",
+    "full_agent_prompt": "a38b94545823edb3b97eaab280c65d09fddf431a159b3ebfe770fe5dcf243629"
+  },
+  "archived_result_sha256": "53596b37c03d1f9d859d1b502fb4a1a4b8361ac9a4d64866f76796460b225548",
+  "archived_response_sha256": "346b867538fd720b390f3b36de94abcf3123986b49819b6148788c366f51c012",
+  "full_exact_target_Lean": "NOT_RUN",
+  "N0007_gate": "OPEN"
+}

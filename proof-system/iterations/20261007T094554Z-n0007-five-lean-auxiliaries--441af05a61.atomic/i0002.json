@@ -1,0 +1,12 @@
+{
+  "schema": "math-research-atomic-intent-v1",
+  "transaction_id": "20261007T094554Z-n0007-five-lean-auxiliaries--441af05a61",
+  "intent_id": "i0002",
+  "role": "apply-head",
+  "kind": "replace",
+  "target_slot": "project-head",
+  "work_relpath": "a/i0002",
+  "expected_preimage_sha256": "fb61a579d5135abd403d487540b5054a0576a6a49f6a16ffcf43ce5fac5ea361",
+  "candidate_sha256": "5d6cff6713c7945b642f437b11ea167af27d97a12a6e64b236d7890529a9ef2a",
+  "proof_authority": false
+}

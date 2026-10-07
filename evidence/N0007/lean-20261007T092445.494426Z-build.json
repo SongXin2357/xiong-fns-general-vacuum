@@ -1,0 +1,20 @@
+{
+  "utc": "20261007T092445.494426Z",
+  "scope": "N0007 pressure L2 auxiliary only; full exact target OPEN",
+  "command": [
+    "/home/sx/xiong-agent/.elan/bin/lake",
+    "build",
+    "N0007AuxCheck"
+  ],
+  "cwd": "/mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime-n0007",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "hashes": {
+    "lean/FNSTree/N0007.lean": "cf0cc06e4e1cc10d33f26cd2a8afafc7c4699e664d8b92caf4446541dc9e57b3",
+    "lean/N0007AuxCheck.lean": "0bded009c6d771bec3ddc51a623269c1a80e3253708390d92b5765a7f334260e",
+    "lean/lakefile.toml": "5c4c6ef61b8638111b096c5ce44da9e798d92d9a09fbc1479ea45ff5a7f60ca9",
+    "lean/lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+    "notes/nodes/N0007/statement.md": "f17c534505fb96b5f99cd7154cd1c01dd5d9821b151a54b4e7503ade01353de5"
+  },
+  "dependency_commit_expected": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "exit_code": 0
+}

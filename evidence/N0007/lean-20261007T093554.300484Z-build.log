@@ -1,0 +1,72 @@
+⚠ [8707/8710] Replayed FNSTree.N0002
+warning: ../FNSTree/N0002.lean:43:37: Variable name `hR` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hR
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✖ [8708/8710] Building FNSTree.N0007 (4.9s)
+trace: .> LEAN_PATH=/home/sx/xiong-agent/lean/formalization/.lake/packages/Cli/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/batteries/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/Qq/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/aesop/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/proofwidgets/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/importGraph/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/plausible/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/mathlib/.lake/build/lib/lean:/mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime-n0007/.lake/build/lib/lean /home/sx/xiong-agent/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean /mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime-n0007/../FNSTree/N0007.lean -o /mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime-n0007/.lake/build/lib/lean/FNSTree/N0007.olean -i /mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime-n0007/.lake/build/lib/lean/FNSTree/N0007.ilean -c /mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime-n0007/.lake/build/ir/FNSTree/N0007.c --setup /mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime-n0007/.lake/build/ir/FNSTree/N0007.setup.json --json
+warning: ../FNSTree/N0007.lean:37:38: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ../FNSTree/N0007.lean:37:51: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+error: ../FNSTree/N0007.lean:124:27: Tactic `apply` failed: could not unify the conclusion of `@funext`
+  ?f = ?g
+with the goal
+  SeminormedAddGroup.toContinuousENorm = NormedAddCommGroup.toENormedAddCommMonoid.toContinuousENorm
+
+Note: The full type of `@funext` is
+  ∀ {α : Sort ?u.115} {β : α → Sort ?u.114} {f g : (x : α) → β x}, (∀ (x : α), f x = g x) → f = g
+
+case e'_3
+ρ u₁ u₂ v g₁ g₂ : Plane → ℝ
+B : ℝ
+hρmeas : Measurable ρ
+hρnonneg : ∀ᵐ (x : Plane), 0 ≤ ρ x
+hρbound : ∀ᵐ (x : Plane), ρ x ≤ B
+hρint : Integrable ρ volume
+hv : MemLp (fun x => √(ρ x) * v x) 2 volume
+hu₁ : MemLp (fun x => √(ρ x) * u₁ x) 2 volume
+hu₂ : MemLp (fun x => √(ρ x) * u₂ x) 2 volume
+hg₁ : MemLp g₁ 2 volume
+hg₂ : MemLp g₂ 2 volume
+htime : Integrable (fun x => ρ x * v x) volume
+hconv₁ : Integrable (fun x => ρ x * u₁ x * g₁ x) volume
+hconv₂ : Integrable (fun x => ρ x * u₂ x * g₂ x) volume
+hsum : Integrable (((fun x => ρ x * v x) + fun x => ρ x * u₁ x * g₁ x) + fun x => ρ x * u₂ x * g₂ x) volume
+⊢ SeminormedAddGroup.toContinuousENorm = NormedAddCommGroup.toENormedAddCommMonoid.toContinuousENorm
+error: ../FNSTree/N0007.lean:117:16: unsolved goals
+case e'_6
+ρ u₁ u₂ v g₁ g₂ : Plane → ℝ
+B : ℝ
+hρmeas : Measurable ρ
+hρnonneg : ∀ᵐ (x : Plane), 0 ≤ ρ x
+hρbound : ∀ᵐ (x : Plane), ρ x ≤ B
+hρint : Integrable ρ volume
+hv : MemLp (fun x => √(ρ x) * v x) 2 volume
+hu₁ : MemLp (fun x => √(ρ x) * u₁ x) 2 volume
+hu₂ : MemLp (fun x => √(ρ x) * u₂ x) 2 volume
+hg₁ : MemLp g₁ 2 volume
+hg₂ : MemLp g₂ 2 volume
+htime : Integrable (fun x => ρ x * v x) volume
+hconv₁ : Integrable (fun x => ρ x * u₁ x * g₁ x) volume
+hconv₂ : Integrable (fun x => ρ x * u₂ x * g₂ x) volume
+hsum : Integrable (((fun x => ρ x * v x) + fun x => ρ x * u₁ x * g₁ x) + fun x => ρ x * u₂ x * g₂ x) volume
+x : Plane
+⊢ ρ x * (v x + u₁ x * g₁ x + u₂ x * g₂ x) =
+    (((fun x => ρ x * v x) + fun x => ρ x * u₁ x * g₁ x) + fun x => ρ x * u₂ x * g₂ x) x
+error: ../FNSTree/N0007.lean:141:40: Application type mismatch: The argument
+  ∞
+has type
+  ℝ≥0∞
+but is expected to have type
+  WithTop ℕ∞
+in the application
+  ContDiff ℝ ∞
+error: Lean exited with code 1
+Some required targets logged failures:
+- FNSTree.N0007
+error: build failed

@@ -1,0 +1,12 @@
+{
+  "schema": "math-research-atomic-intent-v1",
+  "transaction_id": "20261007T093136Z-n0007-three-lean-auxiliaries-0a279e4a4c",
+  "intent_id": "i0001",
+  "role": "apply-projection",
+  "kind": "replace",
+  "target_slot": "projection:ACTIVE_STATE.md",
+  "work_relpath": "a/i0001",
+  "expected_preimage_sha256": "ab77f90c2a6e2de83e5b43389acf74cc3195e1c45e1d8be1887a8476108fe68d",
+  "candidate_sha256": "5f0907ce5f4c8b33bbb5d3db8ace4405a6dd323671f5861033918a3b9a1f7bfe",
+  "proof_authority": false
+}

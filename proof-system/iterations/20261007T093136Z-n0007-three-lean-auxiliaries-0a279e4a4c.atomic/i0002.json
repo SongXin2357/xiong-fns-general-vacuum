@@ -1,0 +1,12 @@
+{
+  "schema": "math-research-atomic-intent-v1",
+  "transaction_id": "20261007T093136Z-n0007-three-lean-auxiliaries-0a279e4a4c",
+  "intent_id": "i0002",
+  "role": "apply-head",
+  "kind": "replace",
+  "target_slot": "project-head",
+  "work_relpath": "a/i0002",
+  "expected_preimage_sha256": "48f916b96c9e6311958618b947738b9689635d66d61e4aea6b46efac19452fe0",
+  "candidate_sha256": "fb61a579d5135abd403d487540b5054a0576a6a49f6a16ffcf43ce5fac5ea361",
+  "proof_authority": false
+}

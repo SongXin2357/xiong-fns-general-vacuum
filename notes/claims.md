@@ -9,7 +9,7 @@
 | [N0004](nodes/N0004/statement.md) | Coupled total-specific-energy global closure | exploring; velocity/compression coefficients uncontrolled | not-started | no |
 | [N0005](nodes/N0005/statement.md) | Necessary initial Lp representative | proved-draft, source interpretation explicit | partial: seven auxiliaries only; full target actual build fails | no |
 | [N0006](nodes/N0006/statement.md) | Strict-viscosity compact-support obstruction in displayed class | proved-draft, blind reconstruction and nonblind review | NOT_RUN; no Lean certificate | no |
-| [N0007](nodes/N0007/statement.md) | Wang-v1 momentum-source application of N0002 for a.e. time | paper draft and blind/red-team review; common u_t representative unresolved | NOT_RUN; full target open | no |
+| [N0007](nodes/N0007/statement.md) | Wang-v1 momentum-source application of N0002 for a.e. time | paper draft and red-team repair; source-limit identification of common u_t remains open | five auxiliaries built and axiom-checked, including conditional N0002 bridge; full target NOT_RUN | no |
 
 No global-existence theorem is proved. N0006 is not a child of N0005 and does not use its representative argument. N0005 and N0006 have no certified descendants. Each entire exploratory route remains one open node until its exact promotion gate closes. Source preregistration status lines are historical snapshots; this ledger and notes/tree.json record current state.
 

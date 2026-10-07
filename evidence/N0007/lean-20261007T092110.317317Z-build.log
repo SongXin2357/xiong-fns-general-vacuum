@@ -1,0 +1,15 @@
+✔ [8706/8710] Built FNSTree.N0001 (22s)
+⚠ [8707/8710] Built FNSTree.N0002 (10s)
+warning: ../FNSTree/N0002.lean:43:37: Variable name `hR` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hR
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✖ [8708/8710] Building FNSTree.N0007 (6.3s)
+trace: .> LEAN_PATH=/home/sx/xiong-agent/lean/formalization/.lake/packages/Cli/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/batteries/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/Qq/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/aesop/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/proofwidgets/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/importGraph/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/plausible/.lake/build/lib/lean:/home/sx/xiong-agent/lean/formalization/.lake/packages/mathlib/.lake/build/lib/lean:/mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime-n0007/.lake/build/lib/lean /home/sx/xiong-agent/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean /mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime-n0007/../FNSTree/N0007.lean -o /mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime-n0007/.lake/build/lib/lean/FNSTree/N0007.olean -i /mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime-n0007/.lake/build/lib/lean/FNSTree/N0007.ilean -c /mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime-n0007/.lake/build/ir/FNSTree/N0007.c --setup /mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime-n0007/.lake/build/ir/FNSTree/N0007.setup.json --json
+error: ../FNSTree/N0007.lean:36:4: `simp` made no progress
+error: Lean exited with code 1
+Some required targets logged failures:
+- FNSTree.N0007
+error: build failed

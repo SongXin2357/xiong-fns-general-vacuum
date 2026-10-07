@@ -1,0 +1,32 @@
+{
+  "node": "N0007",
+  "role": "nonblind-paper-proof-redteam",
+  "run_id": "n0007-proof-r03",
+  "source_pdf_sha256": "a5c89e5c8f33b2a74adb276abf99649a0efd4d47ca1196c57a5e08a4a939856d",
+  "input_sha256": "4d3245efa6062e903f2d829f56afe3a8727bab5e6575814c9bfacb8abd96b558",
+  "prompt_sha256": "a38b94545823edb3b97eaab280c65d09fddf431a159b3ebfe770fe5dcf243629",
+  "installed_root_rules": [
+    {
+      "name": "AGENTS.md",
+      "sha256": "c8f50fff2499fc839952843047ac20d3d1d0abc190e3abad1c3b3442eae00c7f",
+      "bytes": 7533
+    },
+    {
+      "name": "README.md",
+      "sha256": "aad07df044d9b6a3bfc6178805a765f6415611d5fede47f32b3f096d42c8e612",
+      "bytes": 14447
+    }
+  ],
+  "actual_run_exit_code": 0,
+  "archived_files": [
+    "evidence/N0007/xiong-proof-r03/run-summary.json",
+    "evidence/N0007/xiong-proof-r03/result.md",
+    "evidence/N0007/xiong-proof-r03/xiong-agent-n0007-proof-r03-response.json"
+  ],
+  "raw_process_and_prompt": "retained only in ignored local run; hashes in run-summary.json",
+  "N0007_gate": "OPEN",
+  "full_target_Lean": "NOT_RUN",
+  "reviewed_candidate_snapshot": "notes/nodes/N0007/paper-proof-pre-redteam-20261007.md",
+  "reviewed_candidate_sha256": "4431ce77cc92e67bc39449876d4bd4c6733a71d83ff7de69faece9fa0036160b",
+  "reviewed_candidate_repaired_after_review": true
+}

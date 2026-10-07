@@ -1,0 +1,21 @@
+{
+  "utc": "20261007T093632.210862Z",
+  "scope": "Five N0007 auxiliaries only; full exact PDE target OPEN",
+  "command": [
+    "/home/sx/xiong-agent/.elan/bin/lake",
+    "build",
+    "N0007AuxCheck"
+  ],
+  "cwd": "/mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime-n0007",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "hashes": {
+    "lean/FNSTree/N0007.lean": "52cced714e386abd62c30d3501b3a6a243a9096459c794b15810c202690cd6a5",
+    "lean/N0007AuxCheck.lean": "4b6d736aad4409cb99c1215680a63061f96d0e5cd6b5b4e537d033002e7fa61b",
+    "lean/lakefile.toml": "5c4c6ef61b8638111b096c5ce44da9e798d92d9a09fbc1479ea45ff5a7f60ca9",
+    "lean/lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+    "notes/nodes/N0007/statement.md": "f17c534505fb96b5f99cd7154cd1c01dd5d9821b151a54b4e7503ade01353de5"
+  },
+  "dependency_commit_expected": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "dependency_commit_actual": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "exit_code": 0
+}

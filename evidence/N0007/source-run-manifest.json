@@ -1,0 +1,29 @@
+{
+  "node": "N0007",
+  "role": "independent-source-fidelity-audit",
+  "run_id": "n0007-source-r02",
+  "source_pdf_sha256": "a5c89e5c8f33b2a74adb276abf99649a0efd4d47ca1196c57a5e08a4a939856d",
+  "input_sha256": "8a8470681b2da59edd7c6f709c8d74bc787673fb4e61720e7e441cdaf7d39b3f",
+  "prompt_sha256": "85201e858f3454d10068b5285d91ec7c3bc82e1d9ceeeb40c2ed9957812c46a1",
+  "installed_root_rules": [
+    {
+      "name": "AGENTS.md",
+      "sha256": "c8f50fff2499fc839952843047ac20d3d1d0abc190e3abad1c3b3442eae00c7f",
+      "bytes": 7533
+    },
+    {
+      "name": "README.md",
+      "sha256": "aad07df044d9b6a3bfc6178805a765f6415611d5fede47f32b3f096d42c8e612",
+      "bytes": 14447
+    }
+  ],
+  "actual_run_exit_code": 0,
+  "archived_files": [
+    "evidence/N0007/xiong-source-r02/run-summary.json",
+    "evidence/N0007/xiong-source-r02/result.md",
+    "evidence/N0007/xiong-source-r02/xiong-agent-n0007-source-r02-response.json"
+  ],
+  "raw_process_and_prompt": "retained only in ignored local run; hashes in run-summary.json",
+  "N0007_gate": "OPEN",
+  "full_target_Lean": "NOT_RUN"
+}

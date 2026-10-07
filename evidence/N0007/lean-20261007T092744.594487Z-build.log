@@ -1,0 +1,347 @@
+⚠ [8707/8710] Replayed FNSTree.N0002
+warning: ../FNSTree/N0002.lean:43:37: Variable name `hR` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hR
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8708/8710] Replayed FNSTree.N0007
+warning: ../FNSTree/N0007.lean:37:38: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ../FNSTree/N0007.lean:37:51: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+ℹ [8709/8710] Replayed N0007AuxCheck
+info: ../N0007AuxCheck.lean:2:0: theorem FNSTree.N0007.pressure_memLp_of_bounded_density : ∀ (ρ θ : FNSTree.N0007.Plane → ℝ) (R B : ℝ),
+  Measurable ρ →
+    (∀ᵐ (x : FNSTree.N0007.Plane), 0 ≤ ρ x) →
+      (∀ᵐ (x : FNSTree.N0007.Plane), ρ x ≤ B) →
+        MeasureTheory.MemLp (fun x => √(ρ x) * θ x) 2 MeasureTheory.volume →
+          MeasureTheory.MemLp (fun x => R * ρ x * θ x) 2 MeasureTheory.volume :=
+fun ρ θ R B hρmeas hρnonneg hρbound hweighted =>
+  have hsqrt_meas := Measurable.aestronglyMeasurable (Measurable.sqrt hρmeas);
+  have hsqrt_bound :=
+    Filter.mp_mem hρbound
+      (Filter.univ_mem'
+        (id fun x hx =>
+          Eq.mpr (id (congrArg (fun _a => _a ≤ √B) (Real.norm_eq_abs √(ρ x))))
+            (Eq.mpr (id (congrArg (fun _a => _a ≤ √B) (abs_of_nonneg (Real.sqrt_nonneg (ρ x)))))
+              (Real.sqrt_le_sqrt hx))));
+  have hsqrt := MeasureTheory.memLp_top_of_bound hsqrt_meas (√B) hsqrt_bound;
+  have hproduct := MeasureTheory.MemLp.mul' hweighted hsqrt;
+  have htarget :=
+    (fun hfg => MeasureTheory.MemLp.ae_eq hfg hproduct)
+      (Filter.mp_mem hρnonneg
+        (Filter.univ_mem'
+          (id fun x hx =>
+            Eq.mpr (id (congrArg (fun _a => _a = ρ x * θ x) (Eq.symm (mul_assoc (√(ρ x)) (√(ρ x)) (θ x)))))
+              (Eq.mpr (id (congrArg (fun _a => _a * θ x = ρ x * θ x) (Real.mul_self_sqrt hx)))
+                (Eq.refl (ρ x * θ x))))));
+  Eq.mpr
+    (eq_of_heq
+      ((fun α ε m0 inst inst_1 f f' e'_6 p μ =>
+          Eq.casesOn (motive := fun a x => f' = a → e'_6 ≍ x → MeasureTheory.MemLp f p μ ≍ MeasureTheory.MemLp f' p μ)
+            e'_6
+            (fun h =>
+              Eq.ndrec (motive := fun f' =>
+                ∀ (e_6 : f = f'), e_6 ≍ Eq.refl f → MeasureTheory.MemLp f p μ ≍ MeasureTheory.MemLp f' p μ)
+                (fun e_6 h => HEq.refl (MeasureTheory.MemLp f p μ)) (Eq.symm h) e'_6)
+            (Eq.refl f') (HEq.refl e'_6))
+        FNSTree.N0007.Plane ℝ measureSpaceOfInnerProductSpace.toMeasurableSpace
+        SeminormedAddGroup.toContinuousENorm.toENorm PseudoMetricSpace.toUniformSpace.toTopologicalSpace
+        (fun x => R * ρ x * θ x) (fun x => R * (ρ x * θ x))
+        (funext fun x =>
+          Mathlib.Tactic.Ring.of_eq
+            (Mathlib.Tactic.Ring.Common.mul_congr
+              (Mathlib.Tactic.Ring.Common.mul_congr
+                (Mathlib.Tactic.Ring.Common.atom_pf R rfl
+                  (Eq.mpr
+                    (id (congrArg (fun _a => R ^ Nat.rawCast 1 * Nat.rawCast 1 = R ^ Nat.rawCast 1 * _a) (Eq.symm rfl)))
+                    (Eq.refl (R ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                (Mathlib.Tactic.Ring.Common.atom_pf (ρ x) rfl
+                  (Eq.mpr
+                    (id
+                      (congrArg (fun _a => ρ x ^ Nat.rawCast 1 * Nat.rawCast 1 = ρ x ^ Nat.rawCast 1 * _a)
+                        (Eq.symm rfl)))
+                    (Eq.refl (ρ x ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                (Mathlib.Tactic.Ring.Common.add_mul
+                  (Mathlib.Tactic.Ring.Common.mul_add
+                    (Mathlib.Tactic.Ring.Common.mul_pf_left R (Nat.rawCast 1)
+                      (Mathlib.Tactic.Ring.Common.mul_pf_right (ρ x) (Nat.rawCast 1)
+                        (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                          (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul) (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1)
+                            (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1) (Eq.refl 1)))))
+                    (Mathlib.Tactic.Ring.Common.mul_zero (R ^ Nat.rawCast 1 * Nat.rawCast 1))
+                    (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                      (R ^ Nat.rawCast 1 * (ρ x ^ Nat.rawCast 1 * Nat.rawCast 1) + 0)))
+                  (Mathlib.Tactic.Ring.Common.zero_mul (ρ x ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                  (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                    (R ^ Nat.rawCast 1 * (ρ x ^ Nat.rawCast 1 * Nat.rawCast 1) + 0))))
+              (Mathlib.Tactic.Ring.Common.atom_pf (θ x) rfl
+                (Eq.mpr
+                  (id
+                    (congrArg (fun _a => θ x ^ Nat.rawCast 1 * Nat.rawCast 1 = θ x ^ Nat.rawCast 1 * _a) (Eq.symm rfl)))
+                  (Eq.refl (θ x ^ Nat.rawCast 1 * Nat.rawCast 1))))
+              (Mathlib.Tactic.Ring.Common.add_mul
+                (Mathlib.Tactic.Ring.Common.mul_add
+                  (Mathlib.Tactic.Ring.Common.mul_pf_left R (Nat.rawCast 1)
+                    (Mathlib.Tactic.Ring.Common.mul_pf_left (ρ x) (Nat.rawCast 1)
+                      (Mathlib.Tactic.Ring.Common.mul_pf_right (θ x) (Nat.rawCast 1)
+                        (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                          (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul) (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1)
+                            (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1) (Eq.refl 1))))))
+                  (Mathlib.Tactic.Ring.Common.mul_zero (R ^ Nat.rawCast 1 * (ρ x ^ Nat.rawCast 1 * Nat.rawCast 1)))
+                  (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                    (R ^ Nat.rawCast 1 * (ρ x ^ Nat.rawCast 1 * (θ x ^ Nat.rawCast 1 * Nat.rawCast 1)) + 0)))
+                (Mathlib.Tactic.Ring.Common.zero_mul (θ x ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                  (R ^ Nat.rawCast 1 * (ρ x ^ Nat.rawCast 1 * (θ x ^ Nat.rawCast 1 * Nat.rawCast 1)) + 0))))
+            (Mathlib.Tactic.Ring.Common.mul_congr
+              (Mathlib.Tactic.Ring.Common.atom_pf R rfl
+                (Eq.mpr
+                  (id (congrArg (fun _a => R ^ Nat.rawCast 1 * Nat.rawCast 1 = R ^ Nat.rawCast 1 * _a) (Eq.symm rfl)))
+                  (Eq.refl (R ^ Nat.rawCast 1 * Nat.rawCast 1))))
+              (Mathlib.Tactic.Ring.Common.mul_congr
+                (Mathlib.Tactic.Ring.Common.atom_pf (ρ x) rfl
+                  (Eq.mpr
+                    (id
+                      (congrArg (fun _a => ρ x ^ Nat.rawCast 1 * Nat.rawCast 1 = ρ x ^ Nat.rawCast 1 * _a)
+                        (Eq.symm rfl)))
+                    (Eq.refl (ρ x ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                (Mathlib.Tactic.Ring.Common.atom_pf (θ x) rfl
+                  (Eq.mpr
+                    (id
+                      (congrArg (fun _a => θ x ^ Nat.rawCast 1 * Nat.rawCast 1 = θ x ^ Nat.rawCast 1 * _a)
+                        (Eq.symm rfl)))
+                    (Eq.refl (θ x ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                (Mathlib.Tactic.Ring.Common.add_mul
+                  (Mathlib.Tactic.Ring.Common.mul_add
+                    (Mathlib.Tactic.Ring.Common.mul_pf_left (ρ x) (Nat.rawCast 1)
+                      (Mathlib.Tactic.Ring.Common.mul_pf_right (θ x) (Nat.rawCast 1)
+                        (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                          (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul) (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1)
+                            (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1) (Eq.refl 1)))))
+                    (Mathlib.Tactic.Ring.Common.mul_zero (ρ x ^ Nat.rawCast 1 * Nat.rawCast 1))
+                    (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                      (ρ x ^ Nat.rawCast 1 * (θ x ^ Nat.rawCast 1 * Nat.rawCast 1) + 0)))
+                  (Mathlib.Tactic.Ring.Common.zero_mul (θ x ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                  (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                    (ρ x ^ Nat.rawCast 1 * (θ x ^ Nat.rawCast 1 * Nat.rawCast 1) + 0))))
+              (Mathlib.Tactic.Ring.Common.add_mul
+                (Mathlib.Tactic.Ring.Common.mul_add
+                  (Mathlib.Tactic.Ring.Common.mul_pf_left R (Nat.rawCast 1)
+                    (Mathlib.Tactic.Ring.Common.mul_pf_right (ρ x) (Nat.rawCast 1)
+                      (Mathlib.Tactic.Ring.Common.mul_pf_right (θ x) (Nat.rawCast 1)
+                        (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                          (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul) (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1)
+                            (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1) (Eq.refl 1))))))
+                  (Mathlib.Tactic.Ring.Common.mul_zero (R ^ Nat.rawCast 1 * Nat.rawCast 1))
+                  (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                    (R ^ Nat.rawCast 1 * (ρ x ^ Nat.rawCast 1 * (θ x ^ Nat.rawCast 1 * Nat.rawCast 1)) + 0)))
+                (Mathlib.Tactic.Ring.Common.zero_mul (ρ x ^ Nat.rawCast 1 * (θ x ^ Nat.rawCast 1 * Nat.rawCast 1) + 0))
+                (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                  (R ^ Nat.rawCast 1 * (ρ x ^ Nat.rawCast 1 * (θ x ^ Nat.rawCast 1 * Nat.rawCast 1)) + 0)))))
+        2 MeasureTheory.volume))
+    (MeasureTheory.MemLp.const_mul htarget R)
+info: ../N0007AuxCheck.lean:3:0: 'FNSTree.N0007.pressure_memLp_of_bounded_density' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ../N0007AuxCheck.lean:4:0: theorem FNSTree.N0007.weighted_source_integrable : ∀ (ρ v : FNSTree.N0007.Plane → ℝ),
+  Measurable ρ →
+    (∀ᵐ (x : FNSTree.N0007.Plane), 0 ≤ ρ x) →
+      MeasureTheory.Integrable ρ MeasureTheory.volume →
+        MeasureTheory.MemLp (fun x => √(ρ x) * v x) 2 MeasureTheory.volume →
+          MeasureTheory.Integrable (fun x => ρ x * v x) MeasureTheory.volume :=
+fun ρ v hρmeas hρnonneg hρint hweighted =>
+  have hsqrt_meas := Measurable.aestronglyMeasurable (Measurable.sqrt hρmeas);
+  have hsqrt_sq := Filter.mp_mem hρnonneg (Filter.univ_mem' (id fun x hx => Real.sq_sqrt hx));
+  have hsqrt_int := MeasureTheory.Integrable.congr hρint (Filter.EventuallyEq.symm hsqrt_sq);
+  have hsqrt := (MeasureTheory.memLp_two_iff_integrable_sq hsqrt_meas).mpr hsqrt_int;
+  have hproduct := MeasureTheory.MemLp.mul' hweighted hsqrt;
+  have htarget :=
+    (fun hfg => MeasureTheory.MemLp.ae_eq hfg hproduct)
+      (Filter.mp_mem hρnonneg
+        (Filter.univ_mem'
+          (id fun x hx =>
+            Eq.mpr (id (congrArg (fun _a => _a = ρ x * v x) (Eq.symm (mul_assoc (√(ρ x)) (√(ρ x)) (v x)))))
+              (Eq.mpr (id (congrArg (fun _a => _a * v x = ρ x * v x) (Real.mul_self_sqrt hx)))
+                (Eq.refl (ρ x * v x))))));
+  MeasureTheory.memLp_one_iff_integrable.mp htarget
+info: ../N0007AuxCheck.lean:5:0: 'FNSTree.N0007.weighted_source_integrable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ../N0007AuxCheck.lean:7:0: theorem FNSTree.N0007.weighted_convection_integrable : ∀ (ρ u g : FNSTree.N0007.Plane → ℝ) (B : ℝ),
+  Measurable ρ →
+    (∀ᵐ (x : FNSTree.N0007.Plane), 0 ≤ ρ x) →
+      (∀ᵐ (x : FNSTree.N0007.Plane), ρ x ≤ B) →
+        MeasureTheory.MemLp (fun x => √(ρ x) * u x) 2 MeasureTheory.volume →
+          MeasureTheory.MemLp g 2 MeasureTheory.volume →
+            MeasureTheory.Integrable (fun x => ρ x * u x * g x) MeasureTheory.volume :=
+fun ρ u g B hρmeas hρnonneg hρbound hweighted_u hg =>
+  have hsqrt_meas := Measurable.aestronglyMeasurable (Measurable.sqrt hρmeas);
+  have hsqrt_bound :=
+    Filter.mp_mem hρbound
+      (Filter.univ_mem'
+        (id fun x hx =>
+          Eq.mpr (id (congrArg (fun _a => _a ≤ √B) (Real.norm_eq_abs √(ρ x))))
+            (Eq.mpr (id (congrArg (fun _a => _a ≤ √B) (abs_of_nonneg (Real.sqrt_nonneg (ρ x)))))
+              (Real.sqrt_le_sqrt hx))));
+  have hsqrt := MeasureTheory.memLp_top_of_bound hsqrt_meas (√B) hsqrt_bound;
+  have hweighted_g := MeasureTheory.MemLp.mul' hg hsqrt;
+  have hproduct := MeasureTheory.MemLp.mul' hweighted_g hweighted_u;
+  have htarget :=
+    (fun hfg => MeasureTheory.MemLp.ae_eq hfg hproduct)
+      (Filter.mp_mem hρnonneg
+        (Filter.univ_mem'
+          (id fun x hx =>
+            Trans.trans
+              (Mathlib.Tactic.Ring.of_eq
+                (Mathlib.Tactic.Ring.Common.mul_congr
+                  (Mathlib.Tactic.Ring.Common.mul_congr
+                    (Mathlib.Tactic.Ring.Common.atom_pf (√(ρ x)) rfl
+                      (Eq.mpr
+                        (id
+                          (congrArg (fun _a => √(ρ x) ^ Nat.rawCast 1 * Nat.rawCast 1 = √(ρ x) ^ Nat.rawCast 1 * _a)
+                            (Eq.symm rfl)))
+                        (Eq.refl (√(ρ x) ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                    (Mathlib.Tactic.Ring.Common.atom_pf (u x) rfl
+                      (Eq.mpr
+                        (id
+                          (congrArg (fun _a => u x ^ Nat.rawCast 1 * Nat.rawCast 1 = u x ^ Nat.rawCast 1 * _a)
+                            (Eq.symm rfl)))
+                        (Eq.refl (u x ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                    (Mathlib.Tactic.Ring.Common.add_mul
+                      (Mathlib.Tactic.Ring.Common.mul_add
+                        (Mathlib.Tactic.Ring.Common.mul_pf_left (√(ρ x)) (Nat.rawCast 1)
+                          (Mathlib.Tactic.Ring.Common.mul_pf_right (u x) (Nat.rawCast 1)
+                            (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                              (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1) (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1)
+                                (Eq.refl 1)))))
+                        (Mathlib.Tactic.Ring.Common.mul_zero (√(ρ x) ^ Nat.rawCast 1 * Nat.rawCast 1))
+                        (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                          (√(ρ x) ^ Nat.rawCast 1 * (u x ^ Nat.rawCast 1 * Nat.rawCast 1) + 0)))
+                      (Mathlib.Tactic.Ring.Common.zero_mul (u x ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                      (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                        (√(ρ x) ^ Nat.rawCast 1 * (u x ^ Nat.rawCast 1 * Nat.rawCast 1) + 0))))
+                  (Mathlib.Tactic.Ring.Common.mul_congr
+                    (Mathlib.Tactic.Ring.Common.atom_pf (√(ρ x)) rfl
+                      (Eq.mpr
+                        (id
+                          (congrArg (fun _a => √(ρ x) ^ Nat.rawCast 1 * Nat.rawCast 1 = √(ρ x) ^ Nat.rawCast 1 * _a)
+                            (Eq.symm rfl)))
+                        (Eq.refl (√(ρ x) ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                    (Mathlib.Tactic.Ring.Common.atom_pf (g x) rfl
+                      (Eq.mpr
+                        (id
+                          (congrArg (fun _a => g x ^ Nat.rawCast 1 * Nat.rawCast 1 = g x ^ Nat.rawCast 1 * _a)
+                            (Eq.symm rfl)))
+                        (Eq.refl (g x ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                    (Mathlib.Tactic.Ring.Common.add_mul
+                      (Mathlib.Tactic.Ring.Common.mul_add
+                        (Mathlib.Tactic.Ring.Common.mul_pf_left (√(ρ x)) (Nat.rawCast 1)
+                          (Mathlib.Tactic.Ring.Common.mul_pf_right (g x) (Nat.rawCast 1)
+                            (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                              (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1) (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1)
+                                (Eq.refl 1)))))
+                        (Mathlib.Tactic.Ring.Common.mul_zero (√(ρ x) ^ Nat.rawCast 1 * Nat.rawCast 1))
+                        (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                          (√(ρ x) ^ Nat.rawCast 1 * (g x ^ Nat.rawCast 1 * Nat.rawCast 1) + 0)))
+                      (Mathlib.Tactic.Ring.Common.zero_mul (g x ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                      (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                        (√(ρ x) ^ Nat.rawCast 1 * (g x ^ Nat.rawCast 1 * Nat.rawCast 1) + 0))))
+                  (Mathlib.Tactic.Ring.Common.add_mul
+                    (Mathlib.Tactic.Ring.Common.mul_add
+                      (Mathlib.Tactic.Ring.Common.mul_pp_pf_overlap (√(ρ x))
+                        (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                          (Mathlib.Meta.NormNum.isNat_add (Eq.refl HAdd.hAdd) (Mathlib.Meta.NormNum.IsNat.of_raw ℕ 1)
+                            (Mathlib.Meta.NormNum.IsNat.of_raw ℕ 1) (Eq.refl 2)))
+                        (Mathlib.Tactic.Ring.Common.mul_pf_left (u x) (Nat.rawCast 1)
+                          (Mathlib.Tactic.Ring.Common.mul_pf_right (g x) (Nat.rawCast 1)
+                            (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                              (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1) (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1)
+                                (Eq.refl 1))))))
+                      (Mathlib.Tactic.Ring.Common.mul_zero
+                        (√(ρ x) ^ Nat.rawCast 1 * (u x ^ Nat.rawCast 1 * Nat.rawCast 1)))
+                      (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                        (√(ρ x) ^ Nat.rawCast 2 * (u x ^ Nat.rawCast 1 * (g x ^ Nat.rawCast 1 * Nat.rawCast 1)) + 0)))
+                    (Mathlib.Tactic.Ring.Common.zero_mul
+                      (√(ρ x) ^ Nat.rawCast 1 * (g x ^ Nat.rawCast 1 * Nat.rawCast 1) + 0))
+                    (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                      (√(ρ x) ^ Nat.rawCast 2 * (u x ^ Nat.rawCast 1 * (g x ^ Nat.rawCast 1 * Nat.rawCast 1)) + 0))))
+                (Mathlib.Tactic.Ring.Common.mul_congr
+                  (Mathlib.Tactic.Ring.Common.mul_congr
+                    (Mathlib.Tactic.Ring.Common.mul_congr
+                      (Mathlib.Tactic.Ring.Common.atom_pf (√(ρ x)) rfl
+                        (Eq.mpr
+                          (id
+                            (congrArg (fun _a => √(ρ x) ^ Nat.rawCast 1 * Nat.rawCast 1 = √(ρ x) ^ Nat.rawCast 1 * _a)
+                              (Eq.symm rfl)))
+                          (Eq.refl (√(ρ x) ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                      (Mathlib.Tactic.Ring.Common.atom_pf (√(ρ x)) rfl
+                        (Eq.mpr
+                          (id
+                            (congrArg (fun _a => √(ρ x) ^ Nat.rawCast 1 * Nat.rawCast 1 = √(ρ x) ^ Nat.rawCast 1 * _a)
+                              (Eq.symm rfl)))
+                          (Eq.refl (√(ρ x) ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                      (Mathlib.Tactic.Ring.Common.add_mul
+                        (Mathlib.Tactic.Ring.Common.mul_add
+                          (Mathlib.Tactic.Ring.Common.mul_pp_pf_overlap (√(ρ x))
+                            (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                              (Mathlib.Meta.NormNum.isNat_add (Eq.refl HAdd.hAdd)
+                                (Mathlib.Meta.NormNum.IsNat.of_raw ℕ 1) (Mathlib.Meta.NormNum.IsNat.of_raw ℕ 1)
+                                (Eq.refl 2)))
+                            (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                              (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1) (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1)
+                                (Eq.refl 1))))
+                          (Mathlib.Tactic.Ring.Common.mul_zero (√(ρ x) ^ Nat.rawCast 1 * Nat.rawCast 1))
+                          (Mathlib.Tactic.Ring.Common.add_pf_add_zero (√(ρ x) ^ Nat.rawCast 2 * Nat.rawCast 1 + 0)))
+                        (Mathlib.Tactic.Ring.Common.zero_mul (√(ρ x) ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                        (Mathlib.Tactic.Ring.Common.add_pf_add_zero (√(ρ x) ^ Nat.rawCast 2 * Nat.rawCast 1 + 0))))
+                    (Mathlib.Tactic.Ring.Common.atom_pf (u x) rfl
+                      (Eq.mpr
+                        (id
+                          (congrArg (fun _a => u x ^ Nat.rawCast 1 * Nat.rawCast 1 = u x ^ Nat.rawCast 1 * _a)
+                            (Eq.symm rfl)))
+                        (Eq.refl (u x ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                    (Mathlib.Tactic.Ring.Common.add_mul
+                      (Mathlib.Tactic.Ring.Common.mul_add
+                        (Mathlib.Tactic.Ring.Common.mul_pf_left (√(ρ x)) (Nat.rawCast 2)
+                          (Mathlib.Tactic.Ring.Common.mul_pf_right (u x) (Nat.rawCast 1)
+                            (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                              (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1) (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1)
+                                (Eq.refl 1)))))
+                        (Mathlib.Tactic.Ring.Common.mul_zero (√(ρ x) ^ Nat.rawCast 2 * Nat.rawCast 1))
+                        (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                          (√(ρ x) ^ Nat.rawCast 2 * (u x ^ Nat.rawCast 1 * Nat.rawCast 1) + 0)))
+                      (Mathlib.Tactic.Ring.Common.zero_mul (u x ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                      (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                        (√(ρ x) ^ Nat.rawCast 2 * (u x ^ Nat.rawCast 1 * Nat.rawCast 1) + 0))))
+                  (Mathlib.Tactic.Ring.Common.atom_pf (g x) rfl
+                    (Eq.mpr
+                      (id
+                        (congrArg (fun _a => g x ^ Nat.rawCast 1 * Nat.rawCast 1 = g x ^ Nat.rawCast 1 * _a)
+                          (Eq.symm rfl)))
+                      (Eq.refl (g x ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                  (Mathlib.Tactic.Ring.Common.add_mul
+                    (Mathlib.Tactic.Ring.Common.mul_add
+                      (Mathlib.Tactic.Ring.Common.mul_pf_left (√(ρ x)) (Nat.rawCast 2)
+                        (Mathlib.Tactic.Ring.Common.mul_pf_left (u x) (Nat.rawCast 1)
+                          (Mathlib.Tactic.Ring.Common.mul_pf_right (g x) (Nat.rawCast 1)
+                            (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                              (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1) (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1)
+                                (Eq.refl 1))))))
+                      (Mathlib.Tactic.Ring.Common.mul_zero
+                        (√(ρ x) ^ Nat.rawCast 2 * (u x ^ Nat.rawCast 1 * Nat.rawCast 1)))
+                      (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                        (√(ρ x) ^ Nat.rawCast 2 * (u x ^ Nat.rawCast 1 * (g x ^ Nat.rawCast 1 * Nat.rawCast 1)) + 0)))
+                    (Mathlib.Tactic.Ring.Common.zero_mul (g x ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                    (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                      (√(ρ x) ^ Nat.rawCast 2 * (u x ^ Nat.rawCast 1 * (g x ^ Nat.rawCast 1 * Nat.rawCast 1)) + 0)))))
+              (Eq.mpr (id (congrArg (fun _a => _a * u x * g x = ρ x * u x * g x) (Real.mul_self_sqrt hx)))
+                (Eq.refl (ρ x * u x * g x))))));
+  MeasureTheory.memLp_one_iff_integrable.mp htarget
+info: ../N0007AuxCheck.lean:8:0: 'FNSTree.N0007.weighted_convection_integrable' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (8710 jobs).

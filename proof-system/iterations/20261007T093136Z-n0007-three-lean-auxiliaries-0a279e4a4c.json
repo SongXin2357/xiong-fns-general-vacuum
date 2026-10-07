@@ -1,0 +1,44 @@
+{
+  "schema": "math-research-iteration-v1",
+  "iteration_id": "20261007T093136Z-n0007-three-lean-auxiliaries-0a279e4a4c",
+  "atomic_intent_root": "20261007T093136Z-n0007-three-lean-auxiliaries-0a279e4a4c.atomic",
+  "generated_at": "2026-10-07T09:31:36Z",
+  "operation": "n0007-three-lean-auxiliaries-open",
+  "parent_iteration_id": "20261007T031552Z-n0007-independent-review-ope-f297978d74",
+  "parent_head_digest": "68686f6fa5112d9bdd273d721b9ad4b1b501336f7c4d58d7b06f46de0fefce4a",
+  "active_claim_id": "claim-d08766cc9e6b2feb",
+  "semantic_delta": {
+    "operation_label": "n0007-three-lean-auxiliaries-open",
+    "projection_names": [
+      "ACTIVE_STATE.md"
+    ]
+  },
+  "project_state_semantics": {
+    "schema": "math-research-project-state-v1",
+    "lifecycle": "active",
+    "status_reason": "transaction state initialized",
+    "active_claim_id": "claim-d08766cc9e6b2feb",
+    "resume_required": false,
+    "proof_authority": false
+  },
+  "previous_projection_hashes": {
+    "ACTIVE_STATE.md": "ab77f90c2a6e2de83e5b43389acf74cc3195e1c45e1d8be1887a8476108fe68d",
+    "CLAIM_CARD.md": "2b2477aceb6de75d992ad3c284faf165c17496e4656b32f7c36746b4b2ac616a",
+    "CLAIM_REGISTRY.json": "d554b888e6447d2eb29f303b01b2af7db73f3bb6d4810d1b95bb84cf5799ca4c",
+    "OBSTRUCTION_LEDGER.md": "30a2e1843cb133ddd4f572f41dc7a2ecb245cab30f035f28c79611afc6b91e94",
+    "PROOF_GATE.json": "ad4be09cb9db45b94db7a3acb7e23c2f175be473ec295e90838d55f33a5534d3",
+    "PUBLIC_CLAIM_READY.md": "02b9c01f45d2d9485f2dde0168d08887c283bb49e01a2f9ac67426bfa03839dc",
+    "SOURCE_FIDELITY.md": "f2b21b6490e08e8369644c329c765325369caec859fa4c9da21f5b5f2e701411"
+  },
+  "projection_hashes": {
+    "ACTIVE_STATE.md": "5f0907ce5f4c8b33bbb5d3db8ace4405a6dd323671f5861033918a3b9a1f7bfe",
+    "CLAIM_CARD.md": "2b2477aceb6de75d992ad3c284faf165c17496e4656b32f7c36746b4b2ac616a",
+    "CLAIM_REGISTRY.json": "d554b888e6447d2eb29f303b01b2af7db73f3bb6d4810d1b95bb84cf5799ca4c",
+    "OBSTRUCTION_LEDGER.md": "30a2e1843cb133ddd4f572f41dc7a2ecb245cab30f035f28c79611afc6b91e94",
+    "PROOF_GATE.json": "ad4be09cb9db45b94db7a3acb7e23c2f175be473ec295e90838d55f33a5534d3",
+    "PUBLIC_CLAIM_READY.md": "02b9c01f45d2d9485f2dde0168d08887c283bb49e01a2f9ac67426bfa03839dc",
+    "SOURCE_FIDELITY.md": "f2b21b6490e08e8369644c329c765325369caec859fa4c9da21f5b5f2e701411"
+  },
+  "proof_authority": false,
+  "iteration_digest": "73d8204017b2f1f519fa89009121d6f6436ac1ade8ecb2cd7349e466e43fe749"
+}
