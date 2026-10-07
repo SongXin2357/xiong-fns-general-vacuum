@@ -6,6 +6,7 @@
 - [N0004](nodes/N0004/README.md): total-specific-energy route; thermal/velocity coefficients uncontrolled.
 - [N0005](nodes/N0005/README.md): initial representative/source audit; seven checked auxiliaries, full trace target open.
 - [N0006](nodes/N0006/README.md): strict-viscosity compact-support obstruction; independent paper reconstruction and review, Lean NOT_RUN.
+- [N0007](nodes/N0007/README.md): Wang-v1 momentum-source application of N0002; preregistered, Lean NOT_RUN.
 
 [Current machine-readable tree](tree.json) · [Claim ledger](claims.md) · [Substantive Chinese outcome report](research-outcome-20261006-zh.md).
 

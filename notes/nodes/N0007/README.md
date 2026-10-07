@@ -1,0 +1,3 @@
+# N0007
+
+The exact target is [preregistered here](statement.md). N0002 has a passing Lean/review/publication gate and is the mathematical parent. This node is still OPEN: no application proof, full-target Lean build, independent review, or GitHub certificate is claimed. The Wang-v1 source claim at (4.16) is contextual and its approximate-system argument is not accepted automatically for the original strong solution. No child may extend N0007 until its own gate passes.

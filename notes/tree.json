@@ -33,7 +33,9 @@
       "lean_status": "lean-verified",
       "gate": "passed",
       "statement": "notes/nodes/N0002/statement.md",
-      "children": [],
+      "children": [
+        "N0007"
+      ],
       "certificate": "evidence/N0002/certificate.json",
       "github_commit": "1174efed45e32e6a34ecb03e7a003d9a3ee1789b",
       "extension_status": "eligible-after-current-gate-check"
@@ -93,6 +95,20 @@
       "certificate": null,
       "github_commit": null,
       "extension_status": "blocked-full-analytic-chain-not-verified"
+    },
+    {
+      "id": "N0007",
+      "parent": "N0002",
+      "dependencies": [],
+      "kind": "PDE-application",
+      "mathematical_status": "exploring",
+      "lean_status": "not-started",
+      "gate": "open",
+      "statement": "notes/nodes/N0007/statement.md",
+      "children": [],
+      "certificate": null,
+      "github_commit": null,
+      "extension_status": "blocked-until-verified-and-published"
     }
   ],
   "github_status": "published-public",

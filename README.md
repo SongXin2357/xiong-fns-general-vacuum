@@ -10,6 +10,7 @@ Research towards small-physical-energy global strong solutions of the two-dimens
 flowchart TD
  ROOT["ROOT: original problem — OPEN"] --> N0001["N0001: cutoff-tail zero-mean lemma — LEAN VERIFIED; published on GitHub"]
  N0001 --> N0002["N0002: distributional divergence — LEAN VERIFIED; published on GitHub"]
+ N0002 --> N0007["N0007: Wang-v1 momentum-source application — OPEN; Lean NOT_RUN"]
  ROOT --> N0003["N0003: Li-Xin global route — UNCLOSED"]
  ROOT --> N0004["N0004: coupled thermal route — UNCLOSED"]
  ROOT --> N0005["N0005: initial trace — PARTIAL; full Lean target OPEN"]
