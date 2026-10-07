@@ -1,0 +1,20 @@
+{
+  "returncode": 0,
+  "project_rules_visible": true,
+  "final_rules_visible": false,
+  "rules_sha256": "29221c71b68145bb980c13666feee6e89f144c7cca5cf1969129c535ca412802",
+  "installed_root_rules": [
+    {
+      "path": "/home/sx/xiong-agent/AGENTS.md",
+      "sha256": "c8f50fff2499fc839952843047ac20d3d1d0abc190e3abad1c3b3442eae00c7f",
+      "bytes": 7533
+    },
+    {
+      "path": "/home/sx/xiong-agent/README.md",
+      "sha256": "aad07df044d9b6a3bfc6178805a765f6415611d5fede47f32b3f096d42c8e612",
+      "bytes": 14447
+    }
+  ],
+  "tools_disabled": true,
+  "read_boundary": "Only serialized input; no shell/unified tools, no other branch history."
+}

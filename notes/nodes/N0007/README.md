@@ -1,3 +1,5 @@
 # N0007
 
-The exact target is [preregistered here](statement.md). N0002 has a passing Lean/review/publication gate and is the mathematical parent. This node is still OPEN: no application proof, full-target Lean build, independent review, or GitHub certificate is claimed. The Wang-v1 source claim at (4.16) is contextual and its approximate-system argument is not accepted automatically for the original strong solution. No child may extend N0007 until its own gate passes.
+The [exact target](statement.md) is the original Wang-v1 momentum-source application of N0002. The [parent derivation](derivation-draft.md) and [independent review](review-20261007.md) are paper-level drafts. The [two actual xiong-agent runs](../../../evidence/N0007/run-manifest.json) are archived with input/prompt hashes, installed-rule hashes, process records, and exit codes.
+
+**Status: OPEN.** The (u_t) common-function representative/source-meaning obligation remains explicit; exact-target Lean build NOT_RUN; no certificate or descendants. No global-existence conclusion follows.

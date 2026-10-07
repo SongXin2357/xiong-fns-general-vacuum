@@ -101,7 +101,7 @@
       "parent": "N0002",
       "dependencies": [],
       "kind": "PDE-application",
-      "mathematical_status": "exploring",
+      "mathematical_status": "paper-draft-open-representative-obligation",
       "lean_status": "not-started",
       "gate": "open",
       "statement": "notes/nodes/N0007/statement.md",

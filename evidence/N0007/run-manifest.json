@@ -1,0 +1,73 @@
+{
+  "node": "N0007",
+  "recorded_on": "2026-10-07",
+  "wang_v1_pdf_sha256": "a5c89e5c8f33b2a74adb276abf99649a0efd4d47ca1196c57a5e08a4a939856d",
+  "n0002_certificate_sha256": "0e6bc196f23d39c4fa96171e0ac0f31181609969e419bea17e206ff79c3e6dab",
+  "adapter_sha256": "85862fc73ad39331d34ea6dd6a698433eda26c1aa2d822b358398864b71f2fa8",
+  "runs": [
+    {
+      "role": "blind",
+      "run_id": "n0007-blind-r01",
+      "status": "completed-draft-only",
+      "input_sha256": "069d72abaf4b7c42cea077361db9a3c0e1790e454f2d8f8f4cba66fd45d5af4c",
+      "prompt_sha256": "2dfdc76b2247f5522d015a0b53d0536739336318cc8bce5f760fc42e994d4dff",
+      "project_rules_sha256": "29221c71b68145bb980c13666feee6e89f144c7cca5cf1969129c535ca412802",
+      "installed_root_rules": [
+        {
+          "path": "/home/sx/xiong-agent/AGENTS.md",
+          "sha256": "c8f50fff2499fc839952843047ac20d3d1d0abc190e3abad1c3b3442eae00c7f",
+          "bytes": 7533
+        },
+        {
+          "path": "/home/sx/xiong-agent/README.md",
+          "sha256": "aad07df044d9b6a3bfc6178805a765f6415611d5fede47f32b3f096d42c8e612",
+          "bytes": 14447
+        }
+      ],
+      "prompt_contains_installed_root_hashes": true,
+      "process_exit_code": 0,
+      "input_frozen_before_parent_draft": true,
+      "archived_files": [
+        "evidence/N0007/xiong-blind/process.json",
+        "evidence/N0007/xiong-blind/rule-load.json",
+        "evidence/N0007/xiong-blind/result.md",
+        "evidence/N0007/xiong-blind/xiong-agent-n0007-blind-r01-execution.json",
+        "evidence/N0007/xiong-blind/xiong-agent-n0007-blind-r01-response.json"
+      ]
+    },
+    {
+      "role": "redteam",
+      "run_id": "n0007-redteam-r01",
+      "status": "completed-draft-only",
+      "input_sha256": "617adf172c2907ea6cff003d6c856182b42116af2ad2811f6c24bd676db45f15",
+      "prompt_sha256": "f3d0dfb5608d7937d0144b8f84e297fd07d199ad4d02ab4803e976e49aff5228",
+      "project_rules_sha256": "29221c71b68145bb980c13666feee6e89f144c7cca5cf1969129c535ca412802",
+      "installed_root_rules": [
+        {
+          "path": "/home/sx/xiong-agent/AGENTS.md",
+          "sha256": "c8f50fff2499fc839952843047ac20d3d1d0abc190e3abad1c3b3442eae00c7f",
+          "bytes": 7533
+        },
+        {
+          "path": "/home/sx/xiong-agent/README.md",
+          "sha256": "aad07df044d9b6a3bfc6178805a765f6415611d5fede47f32b3f096d42c8e612",
+          "bytes": 14447
+        }
+      ],
+      "prompt_contains_installed_root_hashes": true,
+      "process_exit_code": 0,
+      "input_frozen_before_parent_draft": false,
+      "archived_files": [
+        "evidence/N0007/xiong-redteam/process.json",
+        "evidence/N0007/xiong-redteam/rule-load.json",
+        "evidence/N0007/xiong-redteam/result.md",
+        "evidence/N0007/xiong-redteam/xiong-agent-n0007-redteam-r01-execution.json",
+        "evidence/N0007/xiong-redteam/xiong-agent-n0007-redteam-r01-response.json"
+      ]
+    }
+  ],
+  "mathematical_status": "paper-draft-with-source-representative-obligation",
+  "lean_status": "NOT_RUN",
+  "gate": "OPEN",
+  "rule_probe_interpretation": "The blind run copied a legacy Chinese-section marker check, yielding final_rules_visible=false although project_rules_visible=true and the full current project AGENTS.md was visible in its model-visible prompt; the later red-team run checks the actual current Formalization and writing section and returns true. Both prompts contain the exact installed root AGENTS.md and README.md hashes."
+}

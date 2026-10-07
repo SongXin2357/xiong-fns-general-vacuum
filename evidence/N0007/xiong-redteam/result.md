@@ -1,0 +1,67 @@
+Adversarial review of N0007 (analytic DRAFT; no execution or formal certification).
+
+Verdict. No counterexample has been established in Wang-v1's conventional weak-function interpretation of (1.8). The spatial cancellation follows under that interpretation. The parent draft is incomplete at the representative and time-product-rule steps; the blind reconstruction supplies a viable repair, but its representative argument must be stated more precisely. Reading the weighted expressions as unspecified products of arbitrary distributions does not define an alternative strong-solution class in which this theorem has been refuted.
+
+1. Source-space estimates: VALID once the listed weighted derivatives have their usual common-function meaning.
+Fix 0<T<T*. Put M=sup_t ||rho(t)||_1 and B=sup_t ||rho(t)||_infty. Continuity into W^{1,q}, q>2, gives B<infty, and continuity into L^1 gives M<infty. For almost every time,
+||R rho theta||_2 <= R B^{1/2}||sqrt(rho) theta||_2,
+||rho u_{i,t}||_1 <= M^{1/2}||sqrt(rho) u_{i,t}||_2,
+||rho u dot grad u_i||_1 <= B^{1/2}||sqrt(rho)u||_2||grad u_i||_2.
+Thus f_i is in L^infty_t L^1_x. Since |div u|<=sqrt(2)|grad u|, V_i is in L^infty_t L^2_x. These statements require no unweighted global L^2 bound for u or theta.
+
+2. Local H^2 regularity: VALID.
+Here alpha belongs to (1/2,1], so p=4/alpha belongs to [4,8). For every bounded ball D,
+||u(t)||_{H^2(D)} <= C_D(||u(t)||_{L^p(R^2)}+||grad u(t)||_{H^1(R^2)}).
+The zeroth-order term follows from Holder on D; first and second weak derivatives are explicitly controlled by grad u in H^1. Consequently u belongs to L^infty(0,T;H^2(D)), hence to L^infty(0,T;L^infty(D)). There is no missing global L^2 hypothesis in this inference.
+The spatial product rule now gives rho_t=-u dot grad rho-rho div u in L^infty(0,T;L^2(D)). With rho itself locally bounded in L^2, this implies rho belongs locally to W^{1,infty}(0,T;L^2(D)).
+
+3. Mass and anchoring: VALID; the application to u_t is CONDITIONAL on its common representative.
+The flux satisfies ||rho u||_1<=M^{1/2}||sqrt(rho)u||_2. Testing continuity with eta(t)chi(x/L) and letting L tend to infinity proves that total mass is constant distributionally. Continuity into L^1 makes it constant at every time. Compactness of rho([0,T]) in L^1 gives uniform tails. If the mass m is positive, some ball D_0 satisfies integral_{D_0}rho(t)>=c>0 for all t.
+Let D contain D_0 and let v belong to H^1(D). Write b=v_D and m_0=integral_{D_0}rho. Then
+m_0|b| <= m_0^{1/2}||sqrt(rho)v||_{L^2(D_0)}+B|D_0|^{1/2}||v-b||_{L^2(D)}.
+Poincare and m_0>=c yield
+||v||_{L^2(D)} <= C(D,D_0,c,B)(||grad v||_{L^2(D)}+||sqrt(rho)v||_{L^2(D_0)}).
+This is a genuine weighted anchor, not a positive pointwise density bound.
+
+The first unjustified inference in the parent candidate would be applying this inequality to an arbitrary distribution u_t. A distribution with spatial gradient zero can be a spatial constant multiplied by a singular temporal distribution. For example, U(t,x)=h(t) has grad_x partial_t U=0 even when h is the Cantor function and partial_t U is singular. This example violates Wang's global L^p velocity requirement and is therefore only a counterexample to the isolated representative inference, not to N0007.
+
+Precise repair: explain that the notation in (1.8) refers to one measurable weak-time-derivative field g=u_t, with grad_x g its distributional spatial gradient and sqrt(rho)g its pointwise weighted field. Require no additional local L^2 hypothesis. If g is initially locally integrable, its L^2 spatial gradient implies g(t) belongs to H^1_loc for almost every t: on each ball, subtract a Sobolev potential with the same gradient; the remaining distribution has zero gradient and is a constant. Apply the anchored estimate and integrate in time to obtain g in L^2_t L^2_loc. Slice identification of the spatial gradient follows by Fubini and a countable family of spatial tests. Merely writing 'measurable' without establishing local integrability and weak-derivative identification is insufficient. Definition 1.1 alone mentions derivatives of the conservative variables and does not independently supply this identification for u_t. The supplied excerpt supports the conventional notation, but contains no explicit construction resolving every representative detail.
+If m=0, rho=0. Under the common-function interpretation the weighted source is zero, and conservative momentum directly supplies div V_i=0. This branch needs no anchor.
+
+4. Time product rule: VALID after the repaired local time regularity; incomplete as written in the parent draft.
+On a bounded spatial ball and an interior time interval, rho and u_i are bounded, belong to W^{1,2}_t L^2_x, and have derivatives rho_t and u_{i,t} in L^2. Mollify both only in time. Denoting mollifications by rho_epsilon and u_epsilon, the Banach-valued time product rule gives
+partial_t(rho_epsilon u_{i,epsilon})=(rho_t)_epsilon u_{i,epsilon}+rho_epsilon(u_{i,t})_epsilon.
+Time convolution preserves their local L^infty bounds. Choose a sequence epsilon tending to zero along which the undifferentiated functions converge almost everywhere; all functions and their time derivatives converge strongly in local L^2. For example,
+||(rho_t)_epsilon u_{i,epsilon}-rho_t u_i||_1
+<= ||(rho_t)_epsilon-rho_t||_2||u_{i,epsilon}||_2+||rho_t(u_{i,epsilon}-u_i)||_1 ->0.
+The second term converges by dominated convergence, using bounded u_{i,epsilon}; the other derivative product is treated by the same explicit decomposition. The products themselves converge in L^1. Passing against tests proves partial_t(rho u_i)=rho u_{i,t}+rho_t u_i. No temporal L^infty convergence is needed.
+Spatial Sobolev Leibniz rules give
+ div(rho u_i u)=rho u dot grad u_i+u_i div(rho u).
+All terms are locally integrable by bounded rho,u and their listed local derivatives. Continuity cancels the remaining term. Conservative momentum therefore gives f_i=div V_i in spacetime distributions, with the registered sign.
+
+5. Common exceptional set: VALID.
+For fixed i and phi, the function A_{i,phi}(t)=integral f_i phi+integral V_i dot grad phi belongs to L^1(0,T). Tensor-product tests show A_{i,phi}=0 almost everywhere. For each integer n, choose a countable subset of C_c^infty(B_n) dense in its C^1 norm, viewing each function as zero outside B_n. Such a subset exists by separability of the ambient C^1 space. Unite the exceptional sets for this countable collection, both components, and the spatial norm/representative assertions. At every remaining time,
+|integral f_i(phi_k-phi)| <= ||f_i||_1||phi_k-phi||_infty,
+|integral V_i dot grad(phi_k-phi)| <= ||V_i||_2|B_n|^{1/2}||grad(phi_k-phi)||_infty.
+Choose n with supp phi compactly contained in B_n and pass to the limit. This yields the required identity for every test on one common full-measure set. An uncountable union of individual exceptional sets would be INVALID; neither repaired proof needs it.
+
+6. N0002 matching: VALID at the supplied statement level; application formalization remains NOT_RUN.
+Its hypotheses are exactly integrability of a real scalar f, MemLp V 2 on the Euclidean plane, and the identity for every infinitely differentiable compactly supported real test. The repaired argument supplies these hypotheses separately for each component and each good time. The sign matches. For a Lean implementation one must identify R^2 with the parent's Plane, use its volume and inner product, choose measurable representatives, and translate classical gradient notation to the parent's gradient. These are genuine formalization obligations, not additional physical assumptions. The supplied certificate reports only foundational axioms and certifies a general divergence theorem. It does not certify this PDE reduction; its logs and hashes have not been independently inspected here.
+
+7. Independent cutoff check: VALID with a minor explicit repair.
+The blind reconstruction's logarithmic cutoff has squared L^2 gradient norm 2pi/log L. For fixed L, extend the spatial test identity by convolution of this compactly supported Lipschitz cutoff: uniform convergence controls the f term, and strong L^2 gradient convergence controls the V term. Then |integral f chi_L|<=||V||_2 sqrt(2pi/log L), and dominated convergence gives integral f=0. A single-scale planar cutoff cannot use its gradient norm alone to make the flux vanish. It can still work with L^2 tail control, as in N0002; it would be incorrect to reject every single-scale cutoff argument.
+
+Overall classification: the norm estimates, local spatial regularity, mass argument, anchored inequality, common-null-set construction, and N0002 statement matching are VALID. The material-derivative reduction is CONDITIONAL until the common weak-function representative is explicitly justified from the intended meaning of (1.8). Applying weighted Poincare directly to an arbitrary distribution, or treating unspecified distributional multiplication by sqrt(rho) as a defined hypothesis, is INVALID. No exact-class counterexample and no global-existence consequence have been established.
+
+【红队结论／草案】未发现符合 Wang-v1 通常弱导数函数解释的反例；两个候选路线可修复为几乎处处时间的空间抵消证明。
+【有效】局部 H² 来自 u∈L∞ₜLᵖₓ 与 ∇u∈L∞ₜH¹ₓ，不需要全局 u∈L²；它还简化了时间乘积规则的指数处理。
+【首个缺口】不能对任意分布 u_t 直接使用锚定 Poincaré。必须明确加权项和空间导数属于同一个弱时间导数函数代表，并说明其局部可积性及切片识别。
+【有效】正质量与密度的 L¹ 时间连续性提供固定球上的统一质量锚，不隐藏密度正下界；零质量分支应直接使用保守动量方程。
+【有效】时间卷积、局部有界性与导数的 L² 收敛给出完整乘积规则；可数 C¹ 稠密测试集给出独立于分量和测试函数的共同零测集。
+【父节点匹配】提供的 N0002 精确类型与所需空间结论匹配；其证书不覆盖本次 PDE 到该类型的转换。单尺度截断配合 L² 尾部控制仍可有效。
+【核验范围】仅审阅输入中的原文第1、3页及候选证明、父节点类型和证书文本；未运行 shell、Lean 或 TeX，N0007 为 DRAFT／NOT_RUN，不能解锁后继或升级全局存在结论。
+
+UNRESOLVED
+源语义义务：明确 (1.8) 的 u_t、√ρu_t、∇u_t 是同一弱时间导数函数的表示；仅凭 Definition 1.1 的保守变量导数措辞尚未完整核验这一点。
+若初始只给可测代表，仍须交代局部可积性、分布导数识别与几乎处处空间切片；不能将这些技术条件未经证明塞入最终 PDE 假设。
+父实例须完成准确 PDE 类到 N0002 的 Lean 类型映射、实际构建、公理记录及独立语义审查；本次未核验底层证书文件。
