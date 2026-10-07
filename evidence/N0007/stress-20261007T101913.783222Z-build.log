@@ -1,0 +1,30 @@
+⚠ [8707/8711] Replayed FNSTree.N0002
+warning: ../FNSTree/N0002.lean:43:37: Variable name `hR` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hR
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8708/8711] Replayed FNSTree.N0007
+warning: ../FNSTree/N0007.lean:37:38: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ../FNSTree/N0007.lean:37:51: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [8709/8711] Built FNSTree.N0007Stress (5.6s)
+ℹ [8710/8711] Built N0007StressCheck (4.7s)
+info: ../N0007StressCheck.lean:3:0: theorem FNSTree.N0007.stress_row_memLp : ∀ (μ bulk : ℝ) (G : FNSTree.N0007.Plane → FNSTree.N0007.Plane)
+  (d P : FNSTree.N0007.Plane → ℝ) (e : FNSTree.N0007.Plane),
+  MeasureTheory.MemLp G 2 MeasureTheory.volume →
+    MeasureTheory.MemLp d 2 MeasureTheory.volume →
+      MeasureTheory.MemLp P 2 MeasureTheory.volume →
+        MeasureTheory.MemLp ((μ • G + (μ + bulk) • d • fun x => e) - P • fun x => e) 2 MeasureTheory.volume :=
+fun μ bulk G d P e hG hd hP =>
+  have he := MeasureTheory.memLp_top_const e;
+  MeasureTheory.MemLp.sub
+    (MeasureTheory.MemLp.add (MeasureTheory.MemLp.const_smul hG μ)
+      (MeasureTheory.MemLp.const_smul (MeasureTheory.MemLp.smul he hd) (μ + bulk)))
+    (MeasureTheory.MemLp.smul he hP)
+info: ../N0007StressCheck.lean:4:0: 'FNSTree.N0007.stress_row_memLp' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (8711 jobs).

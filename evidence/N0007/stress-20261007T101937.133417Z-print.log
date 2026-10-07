@@ -1,0 +1,13 @@
+theorem FNSTree.N0007.stress_row_memLp : ∀ (μ bulk : ℝ) (G : FNSTree.N0007.Plane → FNSTree.N0007.Plane)
+  (d P : FNSTree.N0007.Plane → ℝ) (e : FNSTree.N0007.Plane),
+  MeasureTheory.MemLp G 2 MeasureTheory.volume →
+    MeasureTheory.MemLp d 2 MeasureTheory.volume →
+      MeasureTheory.MemLp P 2 MeasureTheory.volume →
+        MeasureTheory.MemLp ((μ • G + (μ + bulk) • d • fun x => e) - P • fun x => e) 2 MeasureTheory.volume :=
+fun μ bulk G d P e hG hd hP =>
+  have he := MeasureTheory.memLp_top_const e;
+  MeasureTheory.MemLp.sub
+    (MeasureTheory.MemLp.add (MeasureTheory.MemLp.const_smul hG μ)
+      (MeasureTheory.MemLp.const_smul (MeasureTheory.MemLp.smul he hd) (μ + bulk)))
+    (MeasureTheory.MemLp.smul he hP)
+'FNSTree.N0007.stress_row_memLp' depends on axioms: [propext, Classical.choice, Quot.sound]

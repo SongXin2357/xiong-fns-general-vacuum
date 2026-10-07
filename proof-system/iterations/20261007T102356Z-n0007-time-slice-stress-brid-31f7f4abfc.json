@@ -1,0 +1,44 @@
+{
+  "schema": "math-research-iteration-v1",
+  "iteration_id": "20261007T102356Z-n0007-time-slice-stress-brid-31f7f4abfc",
+  "atomic_intent_root": "20261007T102356Z-n0007-time-slice-stress-brid-31f7f4abfc.atomic",
+  "generated_at": "2026-10-07T10:23:56Z",
+  "operation": "n0007-time-slice-stress-bridges",
+  "parent_iteration_id": "20261007T100029Z-n0007-two-limit-source-audit-2af92c5470",
+  "parent_head_digest": "21ba9dfaaf0e38ae0c19c237d0252d2f93a1fb003eff6de60aa5ff2a1ddf6661",
+  "active_claim_id": "claim-d08766cc9e6b2feb",
+  "semantic_delta": {
+    "operation_label": "n0007-time-slice-stress-bridges",
+    "projection_names": [
+      "ACTIVE_STATE.md"
+    ]
+  },
+  "project_state_semantics": {
+    "schema": "math-research-project-state-v1",
+    "lifecycle": "active",
+    "status_reason": "transaction state initialized",
+    "active_claim_id": "claim-d08766cc9e6b2feb",
+    "resume_required": false,
+    "proof_authority": false
+  },
+  "previous_projection_hashes": {
+    "ACTIVE_STATE.md": "021865f0dfaa3598040c8c6ada11ef9e966d34098b383afcd7b23e5bd6aa7ce3",
+    "CLAIM_CARD.md": "2b2477aceb6de75d992ad3c284faf165c17496e4656b32f7c36746b4b2ac616a",
+    "CLAIM_REGISTRY.json": "d554b888e6447d2eb29f303b01b2af7db73f3bb6d4810d1b95bb84cf5799ca4c",
+    "OBSTRUCTION_LEDGER.md": "30a2e1843cb133ddd4f572f41dc7a2ecb245cab30f035f28c79611afc6b91e94",
+    "PROOF_GATE.json": "ad4be09cb9db45b94db7a3acb7e23c2f175be473ec295e90838d55f33a5534d3",
+    "PUBLIC_CLAIM_READY.md": "02b9c01f45d2d9485f2dde0168d08887c283bb49e01a2f9ac67426bfa03839dc",
+    "SOURCE_FIDELITY.md": "f2b21b6490e08e8369644c329c765325369caec859fa4c9da21f5b5f2e701411"
+  },
+  "projection_hashes": {
+    "ACTIVE_STATE.md": "02a0ee23b674f85b8d86f64a082663d634bfc92802fbdad447ed7c1c0d32325e",
+    "CLAIM_CARD.md": "2b2477aceb6de75d992ad3c284faf165c17496e4656b32f7c36746b4b2ac616a",
+    "CLAIM_REGISTRY.json": "d554b888e6447d2eb29f303b01b2af7db73f3bb6d4810d1b95bb84cf5799ca4c",
+    "OBSTRUCTION_LEDGER.md": "30a2e1843cb133ddd4f572f41dc7a2ecb245cab30f035f28c79611afc6b91e94",
+    "PROOF_GATE.json": "ad4be09cb9db45b94db7a3acb7e23c2f175be473ec295e90838d55f33a5534d3",
+    "PUBLIC_CLAIM_READY.md": "02b9c01f45d2d9485f2dde0168d08887c283bb49e01a2f9ac67426bfa03839dc",
+    "SOURCE_FIDELITY.md": "f2b21b6490e08e8369644c329c765325369caec859fa4c9da21f5b5f2e701411"
+  },
+  "proof_authority": false,
+  "iteration_digest": "2972d8b6d436d26d76b7a616036b6eb507dd8420c2800a6935740c3aa77299cc"
+}

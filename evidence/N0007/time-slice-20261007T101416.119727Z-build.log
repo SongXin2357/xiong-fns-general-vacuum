@@ -1,0 +1,56 @@
+⚠ [8707/8711] Replayed FNSTree.N0002
+warning: ../FNSTree/N0002.lean:43:37: Variable name `hR` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hR
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8708/8711] Replayed FNSTree.N0007
+warning: ../FNSTree/N0007.lean:37:38: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ../FNSTree/N0007.lean:37:51: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [8709/8711] Built FNSTree.N0007TimeSlice (6.5s)
+ℹ [8710/8711] Built N0007TimeSliceCheck (4.5s)
+info: ../N0007TimeSliceCheck.lean:3:0: theorem FNSTree.N0007.temporal_residual_ae_zero : ∀ (F : ℝ → ℝ),
+  MeasureTheory.Integrable F MeasureTheory.volume →
+    (∀ (η : ℝ → ℝ), ContDiff ℝ (↑⊤) η → HasCompactSupport η → ∫ (t : ℝ), η t * F t = 0) → ∀ᵐ (t : ℝ), F t = 0 :=
+fun F hF hweak =>
+  ae_eq_zero_of_integral_contDiff_smul_eq_zero (MeasureTheory.Integrable.locallyIntegrable hF) fun η hη hc =>
+    id (hweak η hη hc)
+info: ../N0007TimeSliceCheck.lean:4:0: 'FNSTree.N0007.temporal_residual_ae_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ../N0007TimeSliceCheck.lean:6:0: theorem FNSTree.N0007.common_time_ae_for_countable_tests.{u_1} : ∀ {J : Type u_1} [Countable J] (F : Fin 2 → J → ℝ → ℝ),
+  (∀ (i : Fin 2) (j : J), MeasureTheory.Integrable (F i j) MeasureTheory.volume) →
+    (∀ (i : Fin 2) (j : J) (η : ℝ → ℝ), ContDiff ℝ (↑⊤) η → HasCompactSupport η → ∫ (t : ℝ), η t * F i j t = 0) →
+      ∀ᵐ (t : ℝ), ∀ (i : Fin 2) (j : J), F i j t = 0 :=
+fun {J} [Countable J] F hF hweak =>
+  have hJ := fun i =>
+    eventually_countable_forall.mpr fun j => FNSTree.N0007.temporal_residual_ae_zero (F i j) (hF i j) (hweak i j);
+  Filter.eventually_all.mpr hJ
+info: ../N0007TimeSliceCheck.lean:7:0: 'FNSTree.N0007.common_time_ae_for_countable_tests' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ../N0007TimeSliceCheck.lean:8:0: theorem FNSTree.N0007.temporal_residual_ae_zero_on_interval : ∀ (T : ℝ) (F : ℝ → ℝ),
+  MeasureTheory.IntegrableOn F (Set.Ioo 0 T) MeasureTheory.volume →
+    (∀ (η : ℝ → ℝ), ContDiff ℝ (↑⊤) η → HasCompactSupport η → tsupport η ⊆ Set.Ioo 0 T → ∫ (t : ℝ), η t * F t = 0) →
+      ∀ᵐ (t : ℝ), t ∈ Set.Ioo 0 T → F t = 0 :=
+fun T F hF hweak =>
+  IsOpen.ae_eq_zero_of_integral_contDiff_smul_eq_zero isOpen_Ioo (MeasureTheory.IntegrableOn.locallyIntegrableOn hF)
+    fun η hη hc hs => id (hweak η hη hc hs)
+info: ../N0007TimeSliceCheck.lean:9:0: 'FNSTree.N0007.temporal_residual_ae_zero_on_interval' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ../N0007TimeSliceCheck.lean:11:0: theorem FNSTree.N0007.common_time_ae_for_countable_tests_on_interval.{u_1} : ∀ {J : Type u_1} [Countable J] (T : ℝ)
+  (F : Fin 2 → J → ℝ → ℝ),
+  (∀ (i : Fin 2) (j : J), MeasureTheory.IntegrableOn (F i j) (Set.Ioo 0 T) MeasureTheory.volume) →
+    (∀ (i : Fin 2) (j : J) (η : ℝ → ℝ),
+        ContDiff ℝ (↑⊤) η → HasCompactSupport η → tsupport η ⊆ Set.Ioo 0 T → ∫ (t : ℝ), η t * F i j t = 0) →
+      ∀ᵐ (t : ℝ), t ∈ Set.Ioo 0 T → ∀ (i : Fin 2) (j : J), F i j t = 0 :=
+fun {J} [Countable J] T F hF hweak =>
+  have hJ := fun i =>
+    eventually_countable_forall.mpr fun j =>
+      FNSTree.N0007.temporal_residual_ae_zero_on_interval T (F i j) (hF i j) (hweak i j);
+  have hIJ := Filter.eventually_all.mpr hJ;
+  Filter.mp_mem hIJ (Filter.univ_mem' (id fun t ht hti i j => ht i j hti))
+info: ../N0007TimeSliceCheck.lean:12:0: 'FNSTree.N0007.common_time_ae_for_countable_tests_on_interval' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Build completed successfully (8711 jobs).

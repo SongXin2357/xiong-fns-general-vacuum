@@ -1,0 +1,12 @@
+import FNSTree.N0007TimeSlice
+
+#print FNSTree.N0007.temporal_residual_ae_zero
+#print axioms FNSTree.N0007.temporal_residual_ae_zero
+
+#print FNSTree.N0007.common_time_ae_for_countable_tests
+#print axioms FNSTree.N0007.common_time_ae_for_countable_tests
+#print FNSTree.N0007.temporal_residual_ae_zero_on_interval
+#print axioms FNSTree.N0007.temporal_residual_ae_zero_on_interval
+
+#print FNSTree.N0007.common_time_ae_for_countable_tests_on_interval
+#print axioms FNSTree.N0007.common_time_ae_for_countable_tests_on_interval

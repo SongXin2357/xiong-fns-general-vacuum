@@ -1,0 +1,21 @@
+{
+  "utc": "20261007T101127.416253Z",
+  "scope": "N0007 time-slice auxiliaries only; full exact PDE target OPEN",
+  "command": [
+    "/home/sx/xiong-agent/.elan/bin/lake",
+    "build",
+    "N0007TimeSliceCheck"
+  ],
+  "cwd": "/mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime-n0007",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "hashes": {
+    "lean/FNSTree/N0007TimeSlice.lean": "eb0c7df2c62b3c46cfdd0a0c439a4fdbff12b9a5520a697c3944cb825539c432",
+    "lean/N0007TimeSliceCheck.lean": "9cb5431dd12bc383d86dcb0f6bed992f66d1343a6ebd3bbfa0f376381a64906f",
+    "lean/lakefile.toml": "5c4c6ef61b8638111b096c5ce44da9e798d92d9a09fbc1479ea45ff5a7f60ca9",
+    "lean/lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+    "notes/nodes/N0007/statement.md": "f17c534505fb96b5f99cd7154cd1c01dd5d9821b151a54b4e7503ade01353de5"
+  },
+  "dependency_commit_expected": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "dependency_commit_actual": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "exit_code": 0
+}

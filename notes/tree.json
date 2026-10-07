@@ -102,7 +102,7 @@
       "dependencies": [],
       "kind": "PDE-application",
       "mathematical_status": "paper-draft-open-representative-obligation",
-      "lean_status": "five-auxiliaries-verified-full-target-not-run",
+      "lean_status": "ten-auxiliaries-verified-full-target-not-run",
       "gate": "open",
       "statement": "notes/nodes/N0007/statement.md",
       "children": [],

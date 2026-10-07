@@ -1,0 +1,52 @@
+../FNSTree/N0007Stress.lean:20:4: error: Type mismatch: After simplification, term
+  MemLp.smul he hd
+ has type
+  @MemLp Plane Plane measureSpaceOfInnerProductSpace.toMeasurableSpace SeminormedAddGroup.toContinuousENorm.toENorm
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace (d • fun x => e) 2 volume
+but is expected to have type
+  @MemLp Plane Plane measureSpaceOfInnerProductSpace.toMeasurableSpace SeminormedAddGroup.toContinuousENorm.toENorm
+    (PiLp.topologicalSpace 2 fun x => ℝ) (fun x => d x • e) 2 volume
+../FNSTree/N0007Stress.lean:22:4: error: Type mismatch: After simplification, term
+  MemLp.smul he hP
+ has type
+  @MemLp Plane Plane measureSpaceOfInnerProductSpace.toMeasurableSpace SeminormedAddGroup.toContinuousENorm.toENorm
+    PseudoMetricSpace.toUniformSpace.toTopologicalSpace (P • fun x => e) 2 volume
+but is expected to have type
+  @MemLp Plane Plane measureSpaceOfInnerProductSpace.toMeasurableSpace SeminormedAddGroup.toContinuousENorm.toENorm
+    (PiLp.topologicalSpace 2 fun x => ℝ) (fun x => P x • e) 2 volume
+../FNSTree/N0007Stress.lean:24:30: error: Tactic `apply` failed: could not unify the conclusion of `@funext`
+  ?f = ?g
+with the goal
+  (PiLp.topologicalSpace 2 fun x => ℝ) = PseudoMetricSpace.toUniformSpace.toTopologicalSpace
+
+Note: The full type of `@funext` is
+  ∀ {α : Sort ?u.105} {β : α → Sort ?u.104} {f g : (x : α) → β x}, (∀ (x : α), f x = g x) → f = g
+
+case e'_5
+μ bulk : ℝ
+G : Plane → Plane
+d P : Plane → ℝ
+e : Plane
+hG : MemLp G 2 volume
+hd : MemLp d 2 volume
+hP : MemLp P 2 volume
+he : MemLp (fun x => e) ∞ volume
+hde : MemLp (fun x => d x • e) 2 volume
+hPe : MemLp (fun x => P x • e) 2 volume
+hstress : MemLp ((μ • G + (μ + bulk) • fun x => d x • e) - fun x => P x • e) 2 volume
+⊢ (PiLp.topologicalSpace 2 fun x => ℝ) = PseudoMetricSpace.toUniformSpace.toTopologicalSpace
+../FNSTree/N0007Stress.lean:17:18: error: unsolved goals
+case e'_6
+μ bulk : ℝ
+G : Plane → Plane
+d P : Plane → ℝ
+e : Plane
+hG : MemLp G 2 volume
+hd : MemLp d 2 volume
+hP : MemLp P 2 volume
+he : MemLp (fun x => e) ∞ volume
+hde : MemLp (fun x => d x • e) 2 volume
+hPe : MemLp (fun x => P x • e) 2 volume
+hstress : MemLp ((μ • G + (μ + bulk) • fun x => d x • e) - fun x => P x • e) 2 volume
+x : Plane
+⊢ μ • G x + (μ + bulk) • d x • e - P x • e = ((μ • G + (μ + bulk) • fun x => d x • e) - fun x => P x • e) x

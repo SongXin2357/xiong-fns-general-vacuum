@@ -1,0 +1,22 @@
+{
+  "utc": "20261007T101852.800408Z",
+  "scope": "N0007 stress-row auxiliary only; full exact PDE target OPEN",
+  "command": [
+    "/home/sx/xiong-agent/.elan/bin/lake",
+    "env",
+    "lean",
+    "../FNSTree/N0007Stress.lean"
+  ],
+  "cwd": "/mnt/d/tex/Latex/manuscripts/王雪全局解/xiong-fns-small-energy/research-tree/lean/local-runtime-n0007",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "hashes": {
+    "lean/FNSTree/N0007Stress.lean": "e9bc6c4bc7e8f91bbf002c62d60983d89c69359411eed602c37c2a60465f576a",
+    "lean/N0007StressCheck.lean": "4e1c0037b2fa9f6b97efeadf95253f6acffdd7f7ff206dd2b1d4697d50685f29",
+    "lean/lakefile.toml": "5c4c6ef61b8638111b096c5ce44da9e798d92d9a09fbc1479ea45ff5a7f60ca9",
+    "lean/lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+    "notes/nodes/N0007/statement.md": "f17c534505fb96b5f99cd7154cd1c01dd5d9821b151a54b4e7503ade01353de5"
+  },
+  "dependency_commit_expected": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "dependency_commit_actual": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "exit_code": 0
+}

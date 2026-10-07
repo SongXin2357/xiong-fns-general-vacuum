@@ -1,0 +1,12 @@
+{
+  "schema": "math-research-atomic-intent-v1",
+  "transaction_id": "20261007T102356Z-n0007-time-slice-stress-brid-31f7f4abfc",
+  "intent_id": "i0002",
+  "role": "apply-head",
+  "kind": "replace",
+  "target_slot": "project-head",
+  "work_relpath": "a/i0002",
+  "expected_preimage_sha256": "7ee440c6a0c3eaa038988ef47570aff20489ed628ea28165dd604f8d534ceae8",
+  "candidate_sha256": "65adcd025b5555fd518097e96b7565097a0b9135a2144f2cccaef11bb6f50a55",
+  "proof_authority": false
+}
