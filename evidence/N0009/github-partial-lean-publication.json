@@ -1,0 +1,31 @@
+{
+  "node": "N0009",
+  "scope": "partial Lean bridge publication only",
+  "exact_full_target_gate": "OPEN",
+  "repository": "https://github.com/SongXin2357/xiong-fns-general-vacuum",
+  "branch": "codex/lean-gated-research",
+  "source_commit": "e7ce4dbba1deba996a15f0ae2175223efe5d124c",
+  "remote_branch_at_readback": "e7ce4dbba1deba996a15f0ae2175223efe5d124c",
+  "public_raw_readback": [
+    {
+      "path": "lean/FNSTree/N0009.lean",
+      "sha256": "769ee9c1addd84f1fe13e99f9deaef85dcd318433b3290e9a506afb20d875645"
+    },
+    {
+      "path": "evidence/N0009/lean/n0009-bridge-manifest.json",
+      "sha256": "22fee3d488f4874a9ef2e85ccc513278c20ec7f1c98d9652cc4c19102169e6b7"
+    },
+    {
+      "path": "notes/tree.json",
+      "sha256": "d330befaaa1758b4d2dd8b6ef7895dfd5c98b7cfe776384c65de93cd7fe6d36f"
+    },
+    {
+      "path": "notes/nodes/N0009/lean-bridge-progress-20261008.md",
+      "sha256": "2d721d70e2d0630e662a4273b5956b01f36bdbd52d9f2c3174a400cf6ab3b83b"
+    }
+  ],
+  "readback_method": "unauthenticated raw.githubusercontent.com request pinned to the exact source commit, compared by local SHA-256",
+  "readback_result": "all_four_byte_identical",
+  "node_promoted": false,
+  "descendants_unlocked": false
+}
