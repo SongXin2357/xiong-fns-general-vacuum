@@ -16,6 +16,7 @@ flowchart TD
  ROOT --> N0004["N0004: coupled thermal route — UNCLOSED"]
  ROOT --> N0005["N0005: initial trace — PARTIAL; full Lean target OPEN"]
  ROOT --> N0006["N0006: compact obstruction — PAPER DRAFT; Lean NOT_RUN"]
+ ROOT --> N0009["N0009: Wang-v3 compact obstruction — PREREGISTERED; Lean NOT_RUN"]
 ```
 
 - [Problem and workflow](AGENTS.md)

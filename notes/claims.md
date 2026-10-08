@@ -11,6 +11,7 @@
 | [N0006](nodes/N0006/statement.md) | Strict-viscosity compact-support obstruction in displayed class | proved-draft, blind reconstruction and nonblind review | NOT_RUN; no Lean certificate | no |
 | [N0007](nodes/N0007/statement.md) | Wang-v1 momentum-source application of N0002 for a.e. time | paper draft and red-team repair; source-limit identification of common u_t remains open | ten auxiliaries built and axiom-checked, including conditional N0002, interval time-slice and stress-row bridges; full target NOT_RUN | no |
 | [N0008](nodes/N0008/statement.md) | Wang-v3 final-solution momentum-source application of N0002, including common u_t identification | direct momentum-anchor reconstruction independently reviewed on paper; weighted-limit/source-continuation identification remains open | exact full target NOT_RUN | no |
+| [N0009](nodes/N0009/statement.md) | Wang-v3 strict-viscosity compact-support obstruction to universal small-energy global existence | preregistered; source and proof audit pending | exact full target NOT_RUN | no |
 
 No global-existence theorem is proved. N0006 is not a child of N0005 and does not use its representative argument. N0005 and N0006 have no certified descendants. Each entire exploratory route remains one open node until its exact promotion gate closes. Source preregistration status lines are historical snapshots; this ledger and notes/tree.json record current state.
 

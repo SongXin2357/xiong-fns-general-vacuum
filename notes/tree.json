@@ -124,6 +124,20 @@
       "certificate": null,
       "github_commit": null,
       "extension_status": "blocked-until-exact-full-Lean-semantic-and-publication-gate"
+    },
+    {
+      "id": "N0009",
+      "parent": "ROOT",
+      "dependencies": [],
+      "kind": "v3-compact-support-obstruction-audit",
+      "mathematical_status": "preregistered-exploring",
+      "lean_status": "not-started",
+      "gate": "open",
+      "statement": "notes/nodes/N0009/statement.md",
+      "children": [],
+      "certificate": null,
+      "github_commit": null,
+      "extension_status": "blocked-until-exact-full-Lean-semantic-and-publication-gate"
     }
   ],
   "github_status": "published-public",
