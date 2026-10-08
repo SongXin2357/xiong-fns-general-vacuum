@@ -1,0 +1,38 @@
+{
+  "schema": "n0009-paper-draft-github-readback-v1",
+  "repository": "https://github.com/SongXin2357/xiong-fns-general-vacuum",
+  "branch": "codex/lean-gated-research",
+  "published_commit": "6dd0dfa7b1277a1aaf014384abd603984693166f",
+  "remote_ref_readback": "6dd0dfa7b1277a1aaf014384abd603984693166f",
+  "method": "git ls-remote origin refs/heads/codex/lean-gated-research plus gh api contents at immutable commit; compare each remote blob SHA to git hash-object of the local file",
+  "blob_checks": [
+    {
+      "path": "manuscript/wang_v3_compact_obstruction.tex",
+      "local_blob_sha1": "99ad211d066fdf12b71eb14f1b82cd03806c32a4",
+      "github_api_blob_sha1": "99ad211d066fdf12b71eb14f1b82cd03806c32a4",
+      "match": true
+    },
+    {
+      "path": "manuscript/wang_v3_compact_obstruction.pdf",
+      "local_blob_sha1": "1152a44ba77d7ce83e136ebfeb63f863af2dd848",
+      "github_api_blob_sha1": "1152a44ba77d7ce83e136ebfeb63f863af2dd848",
+      "match": true
+    },
+    {
+      "path": "evidence/N0009/xiong-run-manifest.json",
+      "local_blob_sha1": "0d80b8c8fd463591e418aae77994d7374b8d4ca0",
+      "github_api_blob_sha1": "0d80b8c8fd463591e418aae77994d7374b8d4ca0",
+      "match": true
+    },
+    {
+      "path": "notes/tree.json",
+      "local_blob_sha1": "65fd24f347590c86513fb8ff5d4e4306c9d6a07e",
+      "github_api_blob_sha1": "65fd24f347590c86513fb8ff5d4e4306c9d6a07e",
+      "match": true
+    }
+  ],
+  "node_gate": "OPEN",
+  "exact_full_target_lean": "NOT_RUN",
+  "global_existence_theorem": "OPEN",
+  "scope": "paper-level publication and readback only; no Lean or theorem promotion"
+}
