@@ -116,7 +116,7 @@
       "parent": "N0002",
       "dependencies": [],
       "kind": "PDE-application-v3",
-      "mathematical_status": "preregistered-exploring",
+      "mathematical_status": "paper-conditional-open-weighted-identification",
       "lean_status": "not-started",
       "gate": "open",
       "statement": "notes/nodes/N0008/statement.md",

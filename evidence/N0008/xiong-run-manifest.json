@@ -1,0 +1,88 @@
+{
+  "schema": "n0008-xiong-research-evidence-v1",
+  "node": "N0008",
+  "recorded_at_utc": "2026-10-08T09:01:46.335497+00:00",
+  "source_pdf_sha256": "3d57bb0d85391db8515c8c554509f645886c7e1851efe9a13ee4cc321c63e00a",
+  "runs": [
+    {
+      "run_id": "n0008-blind-r01",
+      "role": "blind",
+      "invocation": "wsl.exe --distribution Ubuntu-24.04 -- python3 scripts/run_xiong.py research n0008-blind-r01",
+      "private_serialized_input_sha256": "0b20dad8425456e9b298efd0fd421b4d1d28b914d20ff93019cb5bb86e9d99c9",
+      "project_run_rules_sha256": "29221c71b68145bb980c13666feee6e89f144c7cca5cf1969129c535ca412802",
+      "root_rules_sha256": {
+        "AGENTS.md": "c8f50fff2499fc839952843047ac20d3d1d0abc190e3abad1c3b3442eae00c7f",
+        "README.md": "aad07df044d9b6a3bfc6178805a765f6415611d5fede47f32b3f096d42c8e612"
+      },
+      "instruction_load_returncode": 0,
+      "project_rules_visible": true,
+      "final_rules_visible": true,
+      "agent_exec_returncode": 0,
+      "agent_exec_timed_out": false,
+      "result_path": "evidence/N0008/n0008-blind-r01/result.md",
+      "result_sha256": "1101dafc038a0912db1939e537d043020fa717993772a3341b69891b09b3935c",
+      "raw_input_and_runtime_logs": "private ignored runs; not published"
+    },
+    {
+      "run_id": "n0008-redteam-r01",
+      "role": "nonblind-redteam",
+      "invocation": "wsl.exe --distribution Ubuntu-24.04 -- python3 scripts/run_xiong.py research n0008-redteam-r01",
+      "private_serialized_input_sha256": "b717218963e36fe5a842ef6b6cbbebb76ca066dd31f5a9bb73041707f0e68b5f",
+      "project_run_rules_sha256": "29221c71b68145bb980c13666feee6e89f144c7cca5cf1969129c535ca412802",
+      "root_rules_sha256": {
+        "AGENTS.md": "c8f50fff2499fc839952843047ac20d3d1d0abc190e3abad1c3b3442eae00c7f",
+        "README.md": "aad07df044d9b6a3bfc6178805a765f6415611d5fede47f32b3f096d42c8e612"
+      },
+      "instruction_load_returncode": 0,
+      "project_rules_visible": true,
+      "final_rules_visible": true,
+      "agent_exec_returncode": 0,
+      "agent_exec_timed_out": false,
+      "result_path": "evidence/N0008/n0008-redteam-r01/result.md",
+      "result_sha256": "36bd3e039c6d7e410f3faabbeec86cb81e533dc817a9af6e107b4f52a1d54bea",
+      "raw_input_and_runtime_logs": "private ignored runs; not published"
+    },
+    {
+      "run_id": "n0008-interval-r01",
+      "role": "focused-independent",
+      "invocation": "wsl.exe --distribution Ubuntu-24.04 -- python3 scripts/run_xiong.py research n0008-interval-r01",
+      "private_serialized_input_sha256": "d0b15f608d9ef3807dd3ff85b3ad5cfc19493af3e982cfe94aadbd98d5e7f0b2",
+      "project_run_rules_sha256": "29221c71b68145bb980c13666feee6e89f144c7cca5cf1969129c535ca412802",
+      "root_rules_sha256": {
+        "AGENTS.md": "c8f50fff2499fc839952843047ac20d3d1d0abc190e3abad1c3b3442eae00c7f",
+        "README.md": "aad07df044d9b6a3bfc6178805a765f6415611d5fede47f32b3f096d42c8e612"
+      },
+      "instruction_load_returncode": 0,
+      "project_rules_visible": true,
+      "final_rules_visible": true,
+      "agent_exec_returncode": 0,
+      "agent_exec_timed_out": false,
+      "result_path": "evidence/N0008/n0008-interval-r01/result.md",
+      "result_sha256": "8b5c1dffe72def51a9d6488eb528a2d2bca4869fa15c51e8def761714e0fcec6",
+      "raw_input_and_runtime_logs": "private ignored runs; not published"
+    },
+    {
+      "run_id": "n0008-anchor-redteam-r01",
+      "role": "focused-nonblind-redteam",
+      "invocation": "wsl.exe --distribution Ubuntu-24.04 -- python3 scripts/run_xiong.py research n0008-anchor-redteam-r01",
+      "private_serialized_input_sha256": "f357fa7a2b4961bf1047f125c85252b0e0bf72eb352919ee5f6f42353622a5f3",
+      "project_run_rules_sha256": "29221c71b68145bb980c13666feee6e89f144c7cca5cf1969129c535ca412802",
+      "root_rules_sha256": {
+        "AGENTS.md": "c8f50fff2499fc839952843047ac20d3d1d0abc190e3abad1c3b3442eae00c7f",
+        "README.md": "aad07df044d9b6a3bfc6178805a765f6415611d5fede47f32b3f096d42c8e612"
+      },
+      "instruction_load_returncode": 0,
+      "project_rules_visible": true,
+      "final_rules_visible": true,
+      "agent_exec_returncode": 0,
+      "agent_exec_timed_out": false,
+      "result_path": "evidence/N0008/n0008-anchor-redteam-r01/result.md",
+      "result_sha256": "a2a7b1845a466205a4ff8357c2615b6977bd4e10951b326acb611ab173caef2f",
+      "raw_input_and_runtime_logs": "private ignored runs; not published"
+    }
+  ],
+  "mathematical_status": "conditional paper derivation; weighted derivative source mapping open",
+  "exact_full_target_lean": "NOT_RUN",
+  "node_gate": "OPEN",
+  "global_theorem": "OPEN"
+}
