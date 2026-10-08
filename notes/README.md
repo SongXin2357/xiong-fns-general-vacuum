@@ -8,7 +8,7 @@
 - [N0006](nodes/N0006/README.md): strict-viscosity compact-support obstruction; independent paper reconstruction and review, Lean NOT_RUN.
 - [N0007](nodes/N0007/README.md): Wang-v1 momentum-source application of N0002; source audit and ten Lean-built auxiliaries; complete PDE application OPEN.
 - [N0008](nodes/N0008/README.md): Wang-v3 application; direct momentum-anchor paper bridge and xiong-agent red-team recorded; weighted-limit identification and full Lean proof OPEN.
-- [N0009](nodes/N0009/README.md): Wang-v3 compact-support obstruction independently reconstructed and red-teamed on paper; exact Lean and source trace semantics OPEN.
+- [N0009](nodes/N0009/README.md): Wang-v3 compact-support obstruction independently reconstructed and red-teamed on paper; strict-viscosity, fixed-moment and integrated-virial Lean bridges PARTIAL; exact target and source trace semantics OPEN.
 
 [Current machine-readable tree](tree.json) · [Claim ledger](claims.md) · [Substantive Chinese outcome report](research-outcome-20261006-zh.md).
 

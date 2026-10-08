@@ -78,6 +78,25 @@
       "result_path": "evidence/N0009/n0009-v3-manuscript-redteam-r01/result.md",
       "result_sha256": "19b14d508e83dbe68aafa8d3244300ecf7453b2f8e50a96dce9bf7cd352d8742",
       "raw_input_and_runtime_logs": "private ignored runs; not published"
+    },
+    {
+      "run_id": "n0009-lean-bridge-audit-r01",
+      "role": "independent Lean type and source-mapping semantic audit; reviewed a pre-integral-variant snapshot",
+      "invocation": "wsl.exe --distribution Ubuntu-24.04 -- python3 scripts/run_xiong.py research n0009-lean-bridge-audit-r01",
+      "private_serialized_input_sha256": "64519d58ce72f2f6d03da47dbf50feeb2d07699542a2bb8d6ff187bb08718f0a",
+      "project_run_rules_sha256": "29221c71b68145bb980c13666feee6e89f144c7cca5cf1969129c535ca412802",
+      "installed_root_rules": {
+        "AGENTS.md": "c8f50fff2499fc839952843047ac20d3d1d0abc190e3abad1c3b3442eae00c7f",
+        "README.md": "aad07df044d9b6a3bfc6178805a765f6415611d5fede47f32b3f096d42c8e612"
+      },
+      "instruction_load_returncode": 0,
+      "project_rules_visible": true,
+      "final_rules_visible": true,
+      "agent_exec_returncode": 0,
+      "agent_exec_timed_out": false,
+      "result_path": "evidence/N0009/n0009-lean-bridge-audit-r01/result.md",
+      "result_sha256": "a8b407791feb236534104e1eda6852f0158b1d63bdd265879c65dfabacaaed72",
+      "raw_input_and_runtime_logs": "private ignored runs; not published"
     }
   ],
   "mathematical_status": "repaired paper derivation for strict viscosity; source trace semantics open",

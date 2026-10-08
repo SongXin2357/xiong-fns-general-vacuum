@@ -1,8 +1,10 @@
 # N0009 exact-target Lean audit, 2026-10-08
 
-Status: **OPEN; exact target NOT_RUN**. This note is a formalization dependency
-audit, not a proof certificate. No `sorry`, custom axiom, assumed PDE estimate,
-abstract virial wrapper, or proof of an easier theorem is counted as N0009.
+Status: **OPEN; exact full target NOT_RUN; partial Lean bridges now built**.
+This note is a formalization dependency audit, not a proof certificate. No
+`sorry`, custom axiom, assumed PDE estimate, abstract virial wrapper, or proof
+of an easier theorem is counted as N0009. The post-audit bridge result is
+recorded in [the progress report](lean-bridge-progress-20261008.md).
 
 The pinned environment exists: Lean 4.33.1 through the installed
 xiong-agent toolchain, Mathlib commit
@@ -39,13 +41,18 @@ checked import closure, with the original quantifiers and source class:
    and transitive axioms, perform independent semantic review, then publish
    source/build logs and read the remote GitHub commit back.
 
-No present project module formalizes bridges 1–6 for N0009. Prior verified
-N0001/N0002 are general cancellation lemmas and do not imply any of these
-PDE hypotheses. Building an algebraic quadratic escape lemma alone would
-verify only the final elementary consequence and is not a substitute for the
-exact node target. The source's initial-condition topology and construction
-of the displayed regularity are also not independently certified by the
-supplied PDF pages. Accordingly N0009 stays without a primary Lean theorem,
-build certificate, promotion, or descendants. The user's original universal
-global-existence claim cannot be promoted while a compatible strict-viscosity
-compact-support obstruction remains on the table.
+The new `lean/FNSTree/N0009.lean` verifies the finite-dimensional strict
+viscosity algebra, fixed-support moment integrability and upper bound, and
+the finite-interval integrated virial growth and conditional scalar
+contradiction. It does **not** derive the hypotheses of those theorems from
+the exact Wang-v3 PDE class, and it does not construct the compatible witness
+family. The classical-derivative variants in the file assume two-sided
+`HasDerivAt` at time zero and cannot be used as a source-class bridge without
+additional justification; the integrated variants avoid that mismatch but
+still assume the integral representations. Prior verified N0001/N0002 do not
+imply the missing PDE hypotheses. The source's initial-condition topology and
+construction of the displayed regularity are also not independently
+certified by the supplied PDF pages. Accordingly N0009 stays without an
+exact-target certificate, promotion, or descendants. The user's original
+universal global-existence claim cannot be promoted while a compatible
+strict-viscosity compact-support obstruction remains on the table.

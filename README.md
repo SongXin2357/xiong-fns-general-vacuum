@@ -16,7 +16,7 @@ flowchart TD
  ROOT --> N0004["N0004: coupled thermal route — UNCLOSED"]
  ROOT --> N0005["N0005: initial trace — PARTIAL; full Lean target OPEN"]
  ROOT --> N0006["N0006: compact obstruction — PAPER DRAFT; Lean NOT_RUN"]
- ROOT --> N0009["N0009: Wang-v3 compact obstruction — PAPER DRAFT; Lean NOT_RUN"]
+ ROOT --> N0009["N0009: Wang-v3 compact obstruction — PAPER DRAFT; Lean PARTIAL, exact target OPEN"]
 ```
 
 - [Problem and workflow](AGENTS.md)
@@ -40,12 +40,12 @@ N0002 has passed its exact local Lean/review gate; N0003 is an independent open 
 N0002 is published at [commit 1174efe](https://github.com/SongXin2357/xiong-fns-general-vacuum/commit/1174efed45e32e6a34ecb03e7a003d9a3ee1789b). Its [publication receipt](evidence/N0002/github-publication.json) records a complete remote byte comparison.
 
 The strict-viscosity Wang-v3 [N0009 audit](notes/nodes/N0009/README.md) now has
-independent blind reconstruction, two adversarial reviews, a corrected paper
-proof, and a source matrix. It gives a paper-level obstruction to the universal
-small-energy global target for smooth compactly supported positive-mass data;
-the exact source-trace semantics and full Lean theorem remain open. N0009 has
-no descendants. No global-existence paper or full-paper formalization pass is
-claimed.
+independent blind reconstruction, adversarial reviews, a corrected paper proof,
+a source matrix, and [partially verified Lean bridges](notes/nodes/N0009/lean-bridge-progress-20261008.md).
+It gives a paper-level obstruction to the universal small-energy global target
+for smooth compactly supported positive-mass data; the exact source-trace
+semantics and full Lean theorem remain open. N0009 has no descendants. No
+global-existence paper or full-paper formalization pass is claimed.
 
 ## Current English research drafts
 

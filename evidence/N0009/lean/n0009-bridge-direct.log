@@ -1,0 +1,43 @@
+FNSTree.N0009.strict_viscosity_dissipation_nonneg (μ lam a b d : ℝ) (hμ : 0 < μ) (hbulk : 0 ≤ μ + lam) :
+  0 ≤ 2 * μ * (a ^ 2 + d ^ 2 + 2 * b ^ 2) + lam * (a + d) ^ 2
+'FNSTree.N0009.strict_viscosity_dissipation_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+FNSTree.N0009.strict_viscosity_dissipation_rigidity (μ lam a b d : ℝ) (hμ : 0 < μ) (hbulk : 0 < μ + lam)
+  (hQ : 2 * μ * (a ^ 2 + d ^ 2 + 2 * b ^ 2) + lam * (a + d) ^ 2 = 0) : a = 0 ∧ b = 0 ∧ d = 0
+'FNSTree.N0009.strict_viscosity_dissipation_rigidity' depends on axioms: [propext, Classical.choice, Quot.sound]
+FNSTree.N0009.fixed_support_moment_integrable (ρ : Plane → ℝ) (b : ℝ) (hb : 0 ≤ b) (hρint : Integrable ρ volume)
+  (hρsupport : ∀ᵐ (x : Plane), ρ x ≠ 0 → ‖x‖ ≤ b) : Integrable (fun x => ρ x * ‖x‖ ^ 2) volume
+'FNSTree.N0009.fixed_support_moment_integrable' depends on axioms: [propext, Classical.choice, Quot.sound]
+FNSTree.N0009.fixed_support_moment_bound (ρ : Plane → ℝ) (b : ℝ) (hb : 0 ≤ b) (hρint : Integrable ρ volume)
+  (hρnonneg : ∀ᵐ (x : Plane), 0 ≤ ρ x) (hρsupport : ∀ᵐ (x : Plane), ρ x ≠ 0 → ‖x‖ ≤ b) :
+  ∫ (x : Plane), ρ x * ‖x‖ ^ 2 ≤ (∫ (x : Plane), ρ x) * b ^ 2
+'FNSTree.N0009.fixed_support_moment_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+FNSTree.N0009.no_bounded_quadratic_growth (I : ℝ → ℝ) (a v c B : ℝ) (hc : 0 < c) (hupper : ∀ (t : ℝ), 0 ≤ t → I t ≤ B)
+  (hlower : ∀ (t : ℝ), 0 ≤ t → a + v * t + c * t ^ 2 ≤ I t) : False
+'FNSTree.N0009.no_bounded_quadratic_growth' depends on axioms: [propext, Classical.choice, Quot.sound]
+FNSTree.N0009.lower_bound_from_derivative (f f' : ℝ → ℝ) (c : ℝ) (hf : ∀ (s : ℝ), 0 ≤ s → HasDerivAt f (f' s) s)
+  (hf' : ∀ (s : ℝ), 0 ≤ s → c ≤ f' s) (t : ℝ) (ht : 0 ≤ t) : f 0 + c * t ≤ f t
+'FNSTree.N0009.lower_bound_from_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+FNSTree.N0009.quadratic_growth_from_virial (I J J' : ℝ → ℝ) (c : ℝ) (hI : ∀ (s : ℝ), 0 ≤ s → HasDerivAt I (2 * J s) s)
+  (hJ : ∀ (s : ℝ), 0 ≤ s → HasDerivAt J (J' s) s) (hJlower : ∀ (s : ℝ), 0 ≤ s → c ≤ J' s) (t : ℝ) (ht : 0 ≤ t) :
+  I 0 + 2 * J 0 * t + c * t ^ 2 ≤ I t
+'FNSTree.N0009.quadratic_growth_from_virial' depends on axioms: [propext, Classical.choice, Quot.sound]
+FNSTree.N0009.no_global_virial_profile (I J J' : ℝ → ℝ) (c B : ℝ) (hc : 0 < c)
+  (hI : ∀ (s : ℝ), 0 ≤ s → HasDerivAt I (2 * J s) s) (hJ : ∀ (s : ℝ), 0 ≤ s → HasDerivAt J (J' s) s)
+  (hJlower : ∀ (s : ℝ), 0 ≤ s → c ≤ J' s) (hupper : ∀ (s : ℝ), 0 ≤ s → I s ≤ B) : False
+'FNSTree.N0009.no_global_virial_profile' depends on axioms: [propext, Classical.choice, Quot.sound]
+FNSTree.N0009.quadratic_growth_from_integrated_virial (I J A : ℝ → ℝ) (c T : ℝ)
+  (hJint : ∀ (t : ℝ), 0 ≤ t → t < T → IntervalIntegrable A volume 0 t)
+  (hIint : ∀ (t : ℝ), 0 ≤ t → t < T → IntervalIntegrable J volume 0 t)
+  (hJrep : ∀ (t : ℝ), 0 ≤ t → t < T → J t = J 0 + ∫ (s : ℝ) in 0..t, A s)
+  (hIrep : ∀ (t : ℝ), 0 ≤ t → t < T → I t = I 0 + ∫ (s : ℝ) in 0..t, 2 * J s)
+  (hAlower : ∀ (t : ℝ), 0 ≤ t → t < T → ∀ᵐ (s : ℝ) ∂volume.restrict (Set.Icc 0 t), c ≤ A s) (t : ℝ) (ht : 0 ≤ t)
+  (htT : t < T) : I 0 + 2 * J 0 * t + c * t ^ 2 ≤ I t
+'FNSTree.N0009.quadratic_growth_from_integrated_virial' depends on axioms: [propext, Classical.choice, Quot.sound]
+FNSTree.N0009.no_global_integrated_virial_profile (I J A : ℝ → ℝ) (c B : ℝ) (hc : 0 < c)
+  (hJint : ∀ (t : ℝ), 0 ≤ t → IntervalIntegrable A volume 0 t)
+  (hIint : ∀ (t : ℝ), 0 ≤ t → IntervalIntegrable J volume 0 t)
+  (hJrep : ∀ (t : ℝ), 0 ≤ t → J t = J 0 + ∫ (s : ℝ) in 0..t, A s)
+  (hIrep : ∀ (t : ℝ), 0 ≤ t → I t = I 0 + ∫ (s : ℝ) in 0..t, 2 * J s)
+  (hAlower : ∀ (t : ℝ), 0 ≤ t → ∀ᵐ (s : ℝ) ∂volume.restrict (Set.Icc 0 t), c ≤ A s)
+  (hupper : ∀ (t : ℝ), 0 ≤ t → I t ≤ B) : False
+'FNSTree.N0009.no_global_integrated_virial_profile' depends on axioms: [propext, Classical.choice, Quot.sound]

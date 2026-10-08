@@ -131,7 +131,7 @@
       "dependencies": [],
       "kind": "v3-compact-support-obstruction-audit",
       "mathematical_status": "paper-draft-v3-strict-viscosity-source-semantics-open",
-      "lean_status": "not-started",
+      "lean_status": "partial",
       "gate": "open",
       "statement": "notes/nodes/N0009/statement.md",
       "children": [],
