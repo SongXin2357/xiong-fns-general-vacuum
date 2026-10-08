@@ -1,0 +1,38 @@
+{
+  "schema": "n0009-v3-manuscript-build-v1",
+  "source": "manuscript/wang_v3_compact_obstruction.tex",
+  "source_sha256": "8dc871a12bef8a5f09ad35b13988b9eb665d1d6f2c2d4e9eef64157f7cf95366",
+  "pdf": "manuscript/wang_v3_compact_obstruction.pdf",
+  "pdf_sha256": "28bf2c4a719d78e74b427b0adbad9c01471845419b9e2851b9d30911b50659ed",
+  "compiler": "XeLaTeX (Ubuntu-24.04 system installation)",
+  "command": "xelatex -interaction=nonstopmode -halt-on-error wang_v3_compact_obstruction.tex",
+  "working_directory": "manuscript",
+  "passes": [
+    {
+      "exit_code": 0,
+      "log": "evidence/manuscript/n0009-v3/pass1.log",
+      "log_sha256": "5e4a58aa5bb894c101fa91b6564ee0f0f4f7ce0685941db65790c0edea3c4c20"
+    },
+    {
+      "exit_code": 0,
+      "log": "evidence/manuscript/n0009-v3/pass2.log",
+      "log_sha256": "5e4a58aa5bb894c101fa91b6564ee0f0f4f7ce0685941db65790c0edea3c4c20"
+    }
+  ],
+  "final_log_warnings": 0,
+  "pages": 11,
+  "pdf_text_checks": {
+    "every_page_nonempty": true,
+    "title_status_and_references_present": true
+  },
+  "visual_qa": {
+    "rendered_pages": 11,
+    "dpi": 110,
+    "contact_sheet": "evidence/manuscript/n0009-v3/render/contact.png",
+    "inspected": "all pages in contact sheet; pages 1, 3, 7 and 11 individually",
+    "observed_clipping_or_overlap": false
+  },
+  "native_editor_compiler": "unavailable: Unable to find standard directories for platform; local XeLaTeX succeeded",
+  "mathematical_gate": "paper-level draft; exact N0009 Lean OPEN",
+  "agent_manuscript_audit": "evidence/N0009/n0009-v3-manuscript-redteam-r01/result.md"
+}

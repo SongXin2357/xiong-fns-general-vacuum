@@ -16,7 +16,7 @@ flowchart TD
  ROOT --> N0004["N0004: coupled thermal route — UNCLOSED"]
  ROOT --> N0005["N0005: initial trace — PARTIAL; full Lean target OPEN"]
  ROOT --> N0006["N0006: compact obstruction — PAPER DRAFT; Lean NOT_RUN"]
- ROOT --> N0009["N0009: Wang-v3 compact obstruction — PREREGISTERED; Lean NOT_RUN"]
+ ROOT --> N0009["N0009: Wang-v3 compact obstruction — PAPER DRAFT; Lean NOT_RUN"]
 ```
 
 - [Problem and workflow](AGENTS.md)
@@ -39,12 +39,19 @@ N0002 has passed its exact local Lean/review gate; N0003 is an independent open 
 
 N0002 is published at [commit 1174efe](https://github.com/SongXin2357/xiong-fns-general-vacuum/commit/1174efed45e32e6a34ecb03e7a003d9a3ee1789b). Its [publication receipt](evidence/N0002/github-publication.json) records a complete remote byte comparison.
 
-The strict-viscosity compact-support audit now has independent paper-level reconstruction and review. It provides substantial contrary evidence to the original target, but has no Lean certificate and no descendants. The initial-trace node has seven checked auxiliary lemmas; its full target remains open. No complete global paper or full-paper formalization pass is claimed.
+The strict-viscosity Wang-v3 [N0009 audit](notes/nodes/N0009/README.md) now has
+independent blind reconstruction, two adversarial reviews, a corrected paper
+proof, and a source matrix. It gives a paper-level obstruction to the universal
+small-energy global target for smooth compactly supported positive-mass data;
+the exact source-trace semantics and full Lean theorem remain open. N0009 has
+no descendants. No global-existence paper or full-paper formalization pass is
+claimed.
 
 ## Current English research drafts
 
 - [Main positive-estimate manuscript](manuscript/paper_en.tex) · [11-page compiled PDF](manuscript/paper_en.pdf).
 - [Separate compact-support audit](manuscript/compact_audit.tex) · [12-page compiled PDF](manuscript/compact_audit.pdf).
+- [Wang-v3 strict-viscosity obstruction manuscript](manuscript/wang_v3_compact_obstruction.tex) · [11-page compiled PDF](manuscript/wang_v3_compact_obstruction.pdf). This is an analytic research draft, not a Lean-certified theorem.
 - [Chinese substantive report](notes/research-outcome-20261006-zh.md) · [Full current TeX–Lean map](notes/current-tex-lean-map-20261006.json).
 
 The main draft does not claim global existence. The compact audit is a paper-level conditional obstruction in the strict-viscosity original displayed class; its analytic Lean chain and local construction remain unverified. The editable originals remain in the user-requested parent project paths. Full-paper formalization is NOT_PASS.

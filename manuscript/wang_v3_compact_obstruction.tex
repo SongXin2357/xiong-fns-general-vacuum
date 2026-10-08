@@ -1,0 +1,928 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{fontspec}
+\setmainfont{Latin Modern Roman}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1.05in]{geometry}
+\usepackage{microtype}
+\usepackage{xcolor}
+\definecolor{paperlink}{RGB}{0,0,114}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linktoc=all,linkcolor=paperlink,citecolor=paperlink,urlcolor=paperlink,pdfstartview=Fit,pdftitle={A Compact-Support Obstruction in Wang's Planar Strong-Solution Class}}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Compact-support obstruction for planar full flow}
+\fancyhead[R]{\small\thepage}
+\setlength{\headheight}{14pt}
+\setlength{\parindent}{1.25em}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{1em}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newcommand{\keywords}[1]{\par\noindent\textbf{Keywords.} #1\par}
+\newcommand{\R}{\mathbb R}
+\newcommand{\dd}{\,dx}
+\newcommand{\dt}{\,dt}
+\newcommand{\Div}{\operatorname{div}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\norm}[2]{\lVert#1\rVert_{#2}}
+\newcommand{\cH}{\mathcal H}
+\title{A Compact-Support Obstruction in Wang's Planar\\
+Full Compressible Navier--Stokes Strong-Solution Class}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We consider the planar full compressible Navier--Stokes system in
+Wang's version 3 strong-solution class, with positive heat conductivity
+and nonnegative temperature. In the strong
+solution class displayed in Wang's 2023 preprint, we prove a conditional
+obstruction to global solutions with compactly supported initial
+density, positive mass, and positive physical energy, under the strict
+viscosity condition $\mu+\lambda>0$. Finite spatial Lebesgue norms force
+the temperature and velocity to vanish in the transported exterior
+vacuum. A common set of admissible times then fixes the initial support
+ball. Compact support supplies the time regularity needed to recover the
+initial kinetic energy from the conservative momentum trace; the
+thermal trace is handled directly by the conservative equation.
+Conservation of total energy and the virial identity give an explicit
+upper bound for every interval on which the stated class is maintained.
+A smooth compatible family has fixed positive mass, common bounds for
+all the stipulated initial norms, and positive energy tending to zero.
+The theorem excludes global solutions retaining the displayed class;
+it does not independently reconstruct the cited local solution.
+\end{abstract}
+\noindent\textbf{Manuscript status.} Analytic proof draft; the exact PDE theorem has not been fully formalized in Lean.\par\medskip
+\keywords{Compressible Navier--Stokes equations $\cdot$
+Heat conduction $\cdot$ Planar vacuum $\cdot$
+Compact support $\cdot$ Physical energy}
+
+\section{The equations and the conditional obstruction}\label{sec:intro}
+
+We study the Cauchy problem for the heat-conducting compressible
+Navier--Stokes system on $\R^2$:
+\begin{align}
+ \rho_t+\Div(\rho u)&=0,\label{eq:mass}\\
+ (\rho u)_t+\Div(\rho u\otimes u)-\Div S+\nabla P&=0,
+ \label{eq:momentum}\\
+ c_v\bigl[(\rho\theta)_t+\Div(\rho\theta u)\bigr]
+ &=Q(u)-P\Div u+\kappa\Delta\theta.\label{eq:thermal}
+\end{align}
+Here $\rho$, $u=(u_1,u_2)$, and $\theta$ denote the density, velocity,
+and absolute temperature. The pressure and viscous stress are
+\begin{equation}
+ \begin{aligned}
+ P&=R\rho\theta,\qquad
+ D(u)=\tfrac12(\nabla u+\nabla u^{\mathsf T}),\\
+ S&=2\mu D(u)+\lambda(\Div u)I,\qquad
+ Q(u)=S:\nabla u
+       =2\mu|D(u)|^2+\lambda(\Div u)^2.
+ \end{aligned}\label{eq:stress}
+\end{equation}
+We assume throughout that
+\begin{equation}
+ \mu>0,\qquad b:=\mu+\lambda>0,\qquad R,c_v,\kappa>0.
+ \label{eq:parameters}
+\end{equation}
+The source condition \cite[(1.2)]{WangV3} permits $b\ge0$;
+our conclusion is restricted to $b>0$.
+In particular, $\Div S=\mu\Delta u+b\nabla\Div u$. The letter $R$
+always denotes the gas constant; support balls will have radius $L$.
+
+The argument concerns a precise solution class. In
+\cite[Theorem 1.1]{WangV3}, Wang states local existence for this system
+with vacuum and gives a complete list of weighted and unweighted
+regularity properties. We use that displayed list as a hypothesis on
+a putative solution and do not invoke the local existence assertion
+to construct one. Thus the conclusion below excludes global
+solutions in the stated class. Finite-time breakdown of a particular
+locally constructed solution additionally requires a separate local
+construction.
+
+The exterior thermal equation is decisive. In a spacetime vacuum
+region it becomes $-\kappa\Delta\theta=Q(u)$. In two dimensions,
+nonnegativity and finite spatial Lebesgue integrability force such a
+superharmonic temperature to vanish on a connected exterior domain.
+Under \eqref{eq:parameters}, the resulting equality $Q(u)=0$ makes the
+velocity a rigid motion there, and its finite Lebesgue norm eliminates
+that motion. We first carry out this argument on the transported
+exterior of the initial support ball. After proving that the exterior
+flow is stationary, we use the resulting fixed support bound in the
+energy and virial identities.
+
+All function spaces and spatial integrals without a specified domain
+are over $\R^2$. On a fixed finite time interval, constants in
+intermediate estimates may depend on that interval, the physical
+parameters, the exponents, the support radius, and the finite solution
+norms explicitly used. The constant in the final lifespan bound is
+given exactly.
+
+Fix $a>1$, $q>2$, and $\eta_0>0$, and set
+\begin{equation}
+ \begin{aligned}
+ \bar x&=(e+|x|^2)^{1/2}\log^{1+\eta_0}(e+|x|^2),\\
+ \alpha&=\min\{a/2,1\},\qquad
+ p_u=\frac4\alpha,\qquad
+ p_\theta=\frac6{2\alpha-1}.
+ \end{aligned}\label{eq:weights}
+\end{equation}
+Thus $1/2<\alpha\le1$, $4\le p_u<8$, and
+$6\le p_\theta<\infty$. The exponents $p_u,p_\theta$ are denoted
+by $q_1,q_2$ in \cite[(1.8)]{WangV3}.
+
+The initial assumptions are the displayed data conditions
+\cite[(1.5)--(1.6)]{WangV3}:
+\begin{equation}
+ \begin{aligned}
+ &\rho_0,\theta_0\ge0,\qquad
+       \bar x^a\rho_0\in L^1\cap H^1\cap W^{1,q},\\
+ &\sqrt{\rho_0}u_0,\ \sqrt{\rho_0}\theta_0\in L^2,\qquad
+       \nabla u_0\in H^1,\quad \nabla\theta_0\in L^2,
+ \end{aligned}\label{eq:data}
+\end{equation}
+and
+\begin{equation}
+ -\mu\Delta u_0-b\nabla\Div u_0
+       +R\nabla(\rho_0\theta_0)=\sqrt{\rho_0}\,g,
+ \qquad g\in L^2.
+ \label{eq:compatibility}
+\end{equation}
+In particular, $\norm{\sqrt{\rho_0}\theta_0}{2}^2
+=\int\rho_0\theta_0^2\dd$. No unweighted $L^2$ assumption on
+$u_0$ or $\theta_0$, finite-$L^{p_u}$ assumption on $u_0$, or thermal
+compatibility condition is included in these displayed data conditions.
+
+\begin{definition}\label{def:solution}
+A solution in the specified class on $[0,T_*)$, where $T_*>0$, consists
+of $\rho,u,\theta$ with $\rho,\theta\ge0$, for which all derivatives
+in \eqref{eq:mass}--\eqref{eq:thermal} are regular distributions and
+the equations hold almost everywhere. For every $0<T<T_*$ it satisfies
+the complete regularity list
+\begin{equation}
+ \begin{aligned}
+ &\rho\in C([0,T];L^1\cap H^1\cap W^{1,q}),\qquad
+   \bar x^a\rho\in L^\infty(0,T;L^1\cap H^1\cap W^{1,q}),\\
+ &\nabla u\in L^\infty(0,T;H^1)\cap L^2(0,T;W^{1,q}),
+   \qquad u\in L^\infty(0,T;L^{p_u}),\\
+ &\nabla\theta,\ \sqrt t\,\nabla^2\theta
+     \in L^\infty(0,T;L^2)\cap L^2(0,T;H^1),
+   \qquad\theta\in L^2(0,T;L^{p_\theta}),\\
+ &\sqrt\rho\,u,\ \sqrt\rho\,\theta,\ \sqrt\rho\,u_t,\
+    \sqrt t\sqrt\rho\,\theta_t,\
+    \bar x^{\alpha/2}\nabla u\in L^\infty(0,T;L^2),\\
+ &\nabla u_t,\ \sqrt\rho\,\theta_t,\
+     \sqrt t\,\nabla\theta_t\in L^2(\R^2\times(0,T)).
+ \end{aligned}\label{eq:fullclass}
+\end{equation}
+Its initial conditions are imposed on conservative variables:
+\begin{equation}
+ \begin{gathered}
+ \rho(0)=\rho_0,\qquad
+ \rho u(t)\longrightarrow\rho_0u_0,\qquad
+ \rho\theta(t)\longrightarrow\rho_0\theta_0\\
+ \hbox{in }\mathcal D'(\R^2)\quad(t\downarrow0).
+ \end{gathered}
+ \label{eq:traces}
+\end{equation}
+The density trace is also strong in the spaces specified in
+\eqref{eq:fullclass}.
+\end{definition}
+
+The list \eqref{eq:fullclass} reproduces \cite[(1.7)]{WangV3};
+the interpretation of strong derivatives is
+\cite[Definition 1.1]{WangV3}. The conservative initial variables
+are those of \cite[(1.3)]{WangV3}; we interpret (1.3) as distributional
+convergence of those variables, without imposing an unweighted initial trace.
+The far-field condition
+\cite[(1.4)]{WangV3} is qualified by \emph{in some weak sense}.
+We do not assign an additional topology to that phrase. Our proof
+uses the explicit finite norms of $u$ and $\theta$ in
+\eqref{eq:fullclass}, imposed on the functions themselves.
+Replacing them by conditions on representatives modulo constants
+would change the hypothesis.
+
+For clarity, the following portion of the full class suffices
+for the proof:
+\begin{equation}
+ \begin{aligned}
+ &\rho\in C([0,T];L^1\cap H^1\cap W^{1,q}),\\
+ &\nabla u\in L^\infty(0,T;H^1)
+                    \cap L^2(0,T;W^{1,q}),\\
+ &u\in L^\infty(0,T;L^{p_u}),\\
+ &\sqrt\rho\,u,\ \sqrt\rho\,\theta,\ \nabla\theta
+                       \in L^\infty(0,T;L^2),\\
+ &\nabla u_t,\ \nabla^2\theta\in L^2(0,T;L^2),\qquad
+       \theta\in L^2(0,T;L^{p_\theta}).
+ \end{aligned}\label{eq:usedclass}
+\end{equation}
+This identifies the analytic inputs; Definition~\ref{def:solution}
+retains the full original list. The unweighted spacetime Hessian
+bound in \eqref{eq:usedclass} is an explicit source assumption,
+not a consequence asserted from its time-weighted counterpart.
+
+Here and below $B_L=B_L(0)$ is the origin-centered ball. Suppose now that,
+for some $L>0$,
+\begin{equation}
+ \begin{gathered}
+ \supp\rho_0\subset\overline{B_L},\qquad M:=\int\rho_0\dd>0,\\
+ E_0:=\int\left(\tfrac12\rho_0|u_0|^2+c_v\rho_0\theta_0\right)\dd>0.
+ \end{gathered}
+ \label{eq:compactdata}
+\end{equation}
+Positive mass is explicit here; no mass normalization is used.
+The energy is finite by \eqref{eq:data}, since
+$\int\rho_0\theta_0\dd
+\le M^{1/2}\norm{\sqrt{\rho_0}\theta_0}{2}$.
+Define
+\begin{equation}
+ I_0=\int\rho_0|x|^2\dd,\qquad
+ J_0=\int\rho_0u_0\cdot x\dd,\qquad
+ \beta=\min\{1,R/c_v\}>0.
+ \label{eq:moments}
+\end{equation}
+Both moments are finite:
+$I_0\le ML^2$ and
+$|J_0|\le I_0^{1/2}\norm{\sqrt{\rho_0}u_0}{2}$. In fact,
+\begin{equation}
+ I_0<ML^2,
+ \label{eq:strictmoment}
+\end{equation}
+because $\rho_0$ is an integrable function of positive mass and the
+circle $\{|x|=L\}$ has two-dimensional Lebesgue measure zero.
+
+\begin{theorem}\label{thm:obstruction}
+Assume \eqref{eq:parameters}, \eqref{eq:data},
+\eqref{eq:compatibility}, and \eqref{eq:compactdata}.
+If a solution in the sense of Definition~\ref{def:solution} exists on
+$[0,T_*)$, then for every $0\le t<T_*$,
+\begin{equation}
+ I_0+2J_0t+2\beta E_0t^2
+       \le\int\rho(t,x)|x|^2\dd\le ML^2.
+ \label{eq:mainbound}
+\end{equation}
+Consequently,
+\begin{equation}
+ T_*\le
+ \frac{-J_0+\sqrt{J_0^2+2\beta E_0(ML^2-I_0)}}
+      {2\beta E_0}<\infty.
+ \label{eq:lifespan}
+\end{equation}
+In particular, no global solution satisfying the stated class on
+every finite interval exists for these data.
+\end{theorem}
+
+The theorem requires neither nonzero total momentum nor a positive
+density or temperature lower bound. Its second moment follows from
+compact support. If a local solution has been constructed
+independently, \eqref{eq:lifespan} limits any extension maintaining
+this class. Without that construction, the conclusion remains the
+conditional absence of a global solution.
+
+\section{Exterior vacuum and fixed support}\label{sec:exterior}
+
+We first prove the planar rigidity fact used for the temperature.
+
+\begin{lemma}\label{lem:superharmonic}
+Let $\Omega\subset\R^2$ be connected and open, and suppose that
+$\{|x|>L_1\}\subset\Omega$ for some $L_1>0$. If
+\[
+ v\in W^{2,2}_{\mathrm{loc}}(\Omega)\cap L^p(\Omega),\qquad
+ v\ge0,\qquad -\Delta v\ge0
+\]
+in distributions, where $1\le p<\infty$, then $v=0$ in $\Omega$.
+\end{lemma}
+
+\begin{proof}
+Local Sobolev regularity gives a continuous representative of $v$.
+For $s>\log L_1$, let
+\[
+ h(s)=\frac1{2\pi}\int_0^{2\pi}
+           v(e^s\cos\varphi,e^s\sin\varphi)\,d\varphi.
+\]
+The polar change of variables on compact annuli and angular
+integration show that $h\in H^2_{\mathrm{loc}}$ and
+\begin{equation}
+ h''(s)=\frac{e^{2s}}{2\pi}\int_0^{2\pi}
+             \Delta v(e^s\cos\varphi,e^s\sin\varphi)\,d\varphi
+       \le0
+ \label{eq:concavemean}
+\end{equation}
+almost everywhere. Thus $h$ is nonnegative and concave on a half-line.
+It is nondecreasing: a negative secant slope, together with concavity,
+would force $h$ to become negative at sufficiently large $s$.
+Jensen's inequality gives
+\begin{equation}
+ 2\pi\int_{\log L_1}^{\infty} h(s)^p e^{2s}\,ds
+       \le\int_{|x|>L_1}|v(x)|^p\dd<\infty.
+ \label{eq:meanLp}
+\end{equation}
+If $h(s_0)>0$, monotonicity would make the left side infinite.
+Hence $h=0$, and nonnegativity and continuity imply $v=0$ on
+$\{|x|>L_1\}$.
+
+To propagate this equality, the local super-mean inequality gives
+\begin{equation}
+ \frac1{2\pi}\int_0^{2\pi}
+       v(z+r(\cos\varphi,\sin\varphi))\,d\varphi\le v(z),
+ \qquad \overline{B_r(z)}\subset\Omega.
+ \label{eq:supermean}
+\end{equation}
+For the stated regularity, convolve $v$ inside a slightly larger
+ball, apply the smooth inequality, and pass to the limit locally
+uniformly. If $v(z)=0$, nonnegativity forces the average in
+\eqref{eq:supermean} to vanish for every sufficiently small $r$.
+Continuity therefore gives $v=0$ in a neighborhood of $z$.
+The zero set is relatively open and closed in $\Omega$ and is
+nonempty. Connectedness proves the assertion.
+\end{proof}
+
+\begin{proposition}\label{prop:fixedsupport}
+Let a solution satisfy Definition~\ref{def:solution} on $[0,T_*)$,
+and suppose that $\supp\rho_0\subset\overline{B_L}$. Then
+\begin{equation}
+ \begin{gathered}
+ \supp\rho(t)\subset\overline{B_L}\quad(0\le t<T_*),\\
+ u(t)=\theta(t)=0\quad\hbox{on }\R^2\setminus\overline{B_L}
+ \end{gathered}
+ \label{eq:fixedsupport}
+\end{equation}
+for almost every $t\in(0,T_*)$. The density assertion holds for its
+continuous spatial representative.
+\end{proposition}
+
+\begin{proof}
+Fix $0<T<T_*$. Since $q>2$, Sobolev embedding applied to $\nabla u$
+gives
+$\norm{\nabla u(t)}{\infty}
+\le C_q\norm{\nabla u(t)}{W^{1,q}}$
+for almost every $t$. Averaging the velocity over a unit ball and
+using its Lipschitz bound, we obtain
+\begin{align}
+ |u(t,x)|
+ &\le \frac1{|B_1|}\int_{B_1(x)}|u(t,y)|\,dy
+           +C\norm{\nabla u(t)}{\infty}\notag\\
+ &\le C_{p_u}\norm{u(t)}{p_u}
+           +C\norm{\nabla u(t)}{\infty}.
+ \label{eq:velocitybound}
+\end{align}
+The source norms and Cauchy--Schwarz in time imply
+\begin{equation}
+ A_T:=\int_0^T\norm{u(t)}{\infty}\dt<\infty,\qquad
+ B_T:=\int_0^T\norm{\nabla u(t)}{\infty}\dt<\infty.
+ \label{eq:flowbounds}
+\end{equation}
+The spatial representative is $C^1$ for almost every time, since
+$\nabla u\in W^{1,q}$. Values on the remaining null set of times
+do not affect the integral flow
+\begin{equation}
+ X(t,y)=y+\int_0^t u(s,X(s,y))\,ds.
+ \label{eq:flow}
+\end{equation}
+Existence and forward and backward uniqueness follow from
+\eqref{eq:flowbounds}. Gronwall's inequality gives
+\begin{equation}
+ \begin{aligned}
+ |X(t,y)-y|&\le A_T,\\
+ e^{-B_T}|y-z|&\le |X(t,y)-X(t,z)|
+                        \le e^{B_T}|y-z|.
+ \end{aligned}\label{eq:bilipschitz}
+\end{equation}
+Thus $X(t,\cdot)$ is a bi-Lipschitz homeomorphism. The flow and its
+inverse are jointly continuous in space and time, and
+\begin{equation}
+ \mathcal J(t,y)=\det\nabla_yX(t,y)
+    =\exp\left(\int_0^t\Div u(s,X(s,y))\,ds\right)>0.
+ \label{eq:jacobian}
+\end{equation}
+The variational equation for spatial derivatives is justified by
+the spatial $C^1$ representative and the integrable derivative bound;
+it also follows by spatial smoothing and Lipschitz stability of the
+flow. In particular, $\mathcal J$ has positive upper and lower bounds
+depending only on $B_T$.
+
+We justify the density characteristic identity rather than assume
+a pointwise time chain rule. For a spatial mollifier $\zeta_\delta$
+put $\rho_\delta=\zeta_\delta*\rho$. The continuity equation yields
+\begin{equation}
+ (\rho_\delta)_t+u\cdot\nabla\rho_\delta
+           +(\Div u)\rho_\delta=r_\delta.
+ \label{eq:mollifieddensity}
+\end{equation}
+Its transport commutator satisfies
+\begin{equation}
+ \norm{u\cdot\nabla\rho_\delta
+               -(u\cdot\nabla\rho)_\delta}{q}
+       \le C\delta\norm{\nabla u}{\infty}\norm{\nabla\rho}{q}.
+ \label{eq:transportcommutator}
+\end{equation}
+The other commutator,
+$(\Div u)\rho_\delta-((\Div u)\rho)_\delta$, tends to zero in $L^q$
+for almost every time and is bounded by
+$2\norm{\Div u}{\infty}\norm{\rho}{q}$.
+Hence $r_\delta\to0$ in $L^1(0,T;L^q)$.
+Integrate \eqref{eq:mollifieddensity} along \eqref{eq:flow}.
+The Jacobian bounds allow passage to the limit in $L^q_y$, giving
+\begin{equation}
+ \rho(t,X(t,y))\mathcal J(t,y)=\rho_0(y).
+ \label{eq:transportdensity}
+\end{equation}
+Initially this holds almost everywhere in $y$. Spatial continuity
+of $\rho$, the flow, and \eqref{eq:jacobian} extends it to every $y$.
+Continuity of $\rho$ in time in $W^{1,q}$ extends it to every
+$t\in[0,T]$. No division by density is involved.
+
+Put $\Omega_0=\R^2\setminus\overline{B_L}$ and
+$\Omega_t=X(t,\Omega_0)$. Equation \eqref{eq:transportdensity} gives
+$\rho(t)=0$ on $\Omega_t$ for every $t$. Each $\Omega_t$ is connected
+and open, with compact complement $X(t,\overline{B_L})$, and
+\begin{equation}
+ \{|x|>L+A_T+1\}\subset\Omega_t,\qquad 0\le t\le T.
+ \label{eq:commonexterior}
+\end{equation}
+At this stage the support is only transported.
+The spacetime set
+\[
+ \mathcal V=\{(t,x):0<t<T,\ X(t,\cdot)^{-1}(x)\in\Omega_0\}
+\]
+is open by joint continuity of the inverse flow. On $\mathcal V$,
+$\rho=0$, so $\rho\theta$, $\rho\theta u$, and $P$ vanish as
+distributions. Restriction of the conservative thermal equation gives
+\begin{equation}
+ -\kappa\Delta\theta=Q(u)\quad\hbox{in }\mathcal D'(\mathcal V).
+ \label{eq:vacuumthermal}
+\end{equation}
+This uses an open spacetime vacuum region; it does not set a time
+derivative to zero merely from vacuum on a single time slice.
+
+To slice \eqref{eq:vacuumthermal}, cover $\mathcal V$ by countably
+many spacetime cylinders with closures contained in $\mathcal V$.
+For a countable dense collection of spatial tests in each cylinder,
+Fubini's theorem removes a single null set of times. Taking the
+countable union of these exceptional sets, together with the null
+sets for the source norms and signs, gives one full-measure set
+$G\subset(0,T)$ such that, for each $t\in G$,
+\begin{equation}
+ \begin{gathered}
+ \theta(t)\in W^{2,2}_{\mathrm{loc}}(\R^2)\cap L^{p_\theta},
+       \qquad \theta(t)\ge0,\\
+ u(t)\in L^{p_u},\qquad \nabla u(t)\in W^{1,q},\\
+ -\kappa\Delta\theta(t)=Q(u(t))
+       \quad\hbox{in }\mathcal D'(\Omega_t).
+ \end{gathered}\label{eq:commontimes}
+\end{equation}
+Local $L^2$ integrability of $\theta(t)$ follows from $p_\theta\ge2$;
+the gradient and unweighted Hessian bounds provide the other local
+derivatives. Thus $\theta(t)$ is continuous. Crucially, $G$ has been
+chosen independently of all trajectories and spatial points.
+
+Write $d=\Div u$ and $D_0=D(u)-\tfrac12dI$. In two dimensions,
+\begin{equation}
+ Q(u)=2\mu|D_0|^2+b\,d^2\ge0.
+ \label{eq:positiveQ}
+\end{equation}
+For every $t\in G$, Lemma~\ref{lem:superharmonic} applies on
+$\Omega_t$ with $p=p_\theta$. It gives $\theta(t)=0$ there.
+Then \eqref{eq:vacuumthermal} gives $Q(u(t))=0$ there, and strict
+$\mu>0$, $b>0$ imply $D(u(t))=0$. The distributional identity
+\begin{equation}
+ \partial_j\partial_k u_i
+   =\partial_j D_{ik}(u)+\partial_k D_{ij}(u)
+                         -\partial_i D_{jk}(u)
+ \label{eq:rigididentity}
+\end{equation}
+shows that all second derivatives of $u(t)$ vanish on $\Omega_t$.
+Connectedness gives $u(t,x)=A(t)x+c(t)$, where $A(t)$ is a constant
+skew-symmetric matrix. A nonzero constant or planar rotation has
+infinite $L^{p_u}$ norm on a full exterior region. Hence
+\begin{equation}
+ u(t,x)=\theta(t,x)=0
+       \quad(x\in\Omega_t,\ t\in G).
+ \label{eq:exteriorzero}
+\end{equation}
+Spatial continuity makes these equalities pointwise.
+
+Fix any $y\in\Omega_0$. Since $X(t,y)\in\Omega_t$,
+\eqref{eq:exteriorzero} gives $u(t,X(t,y))=0$ on the same set $G$
+for every such $y$. Absolute continuity of the trajectories yields
+\[
+ X(t,y)=y\quad(0\le t\le T,\ y\in\Omega_0).
+\]
+Continuity fixes $\partial B_L$ as well. Bijectivity therefore implies
+$X(t,\overline{B_L})=\overline{B_L}$ and $\Omega_t=\Omega_0$.
+Equations \eqref{eq:transportdensity} and \eqref{eq:exteriorzero}
+now prove \eqref{eq:fixedsupport}. The argument applies to every
+$T<T_*$.
+\end{proof}
+
+The fixed initial ball is essential: a radius growing with
+$\int_0^t\norm{u}{\infty}$ would not give the uniform moment bound
+in \eqref{eq:mainbound}. Strict viscosity is also essential to
+this proof. At $b=0$, \eqref{eq:positiveQ} does not control
+$\Div u$, so $Q(u)=0$ does not force $D(u)=0$. No endpoint
+assertion is made here.
+
+\section{Time traces and conservation of energy}\label{sec:energy}
+
+We now justify the total-energy constant, including its value at
+$t=0$. Conservative momentum convergence alone does not imply
+convergence of the kinetic energy. The additional time regularity
+required for that step follows from Proposition~\ref{prop:fixedsupport}.
+
+\begin{proposition}\label{prop:energy}
+Under the hypotheses of Theorem~\ref{thm:obstruction}, set
+\[
+ K(t)=\frac12\int\rho|u|^2\dd,\qquad
+ U(t)=c_v\int\rho\theta\dd.
+\]
+For each $T<T_*$ these quantities have absolutely continuous
+representatives on $[0,T]$, with
+\begin{equation}
+ \begin{aligned}
+ K(0)&=\frac12\int\rho_0|u_0|^2\dd,\qquad
+ U(0)=c_v\int\rho_0\theta_0\dd,\\
+ K'(t)&=-\int Q(u)\dd+\int P\Div u\dd,\\
+ U'(t)&=\int Q(u)\dd-\int P\Div u\dd
+ \end{aligned}\label{eq:energyidentities}
+\end{equation}
+for almost every $t$. In particular,
+\begin{equation}
+ K(t)+U(t)=E_0,\qquad K(t),U(t)\ge0,\qquad 0\le t<T_*.
+ \label{eq:energyconservation}
+\end{equation}
+Moreover, $\int\rho(t)\dd=M$ for all $t<T_*$.
+\end{proposition}
+
+\begin{proof}
+Fix $T<T_*$. The fixed support, the existing whole-space weak
+derivatives, and the finite spatial Lebesgue norms permit the
+Poincar\'e inequality on a slightly larger ball. Thus
+\begin{equation}
+ \begin{aligned}
+ &u\in L^\infty(0,T;H^2),\\
+ &\theta\in L^\infty(0,T;H^1)\cap L^2(0,T;H^2).
+ \end{aligned}\label{eq:compactSobolev}
+\end{equation}
+Indeed,
+$\norm{u}{2}\le C_L\norm{\nabla u}{2}$ and
+$\norm{\theta}{2}\le C_L\norm{\nabla\theta}{2}$; the remaining
+derivatives are already in \eqref{eq:usedclass}. These are
+whole-space Sobolev functions, so the argument introduces no
+boundary conditions on an unknown vacuum interface.
+
+The distribution $u_t$ also vanishes outside $\overline{B_L}$ in
+spacetime. We claim that
+\begin{equation}
+ \norm{u_t}{L^2(0,T;L^2)}
+       \le C_L\norm{\nabla u_t}{L^2(0,T;L^2)},
+ \qquad u_t\in L^2(0,T;H^1).
+ \label{eq:utPoincare}
+\end{equation}
+To prove this for the distributional time derivative, convolve
+first in time on a compact subinterval of $(0,T)$ and then in space
+with a mollifier of radius $\delta<1$. The resulting smooth function
+$w_{\varepsilon,\delta}$ is supported in $B_{L+\delta}$ spatially.
+The Poincar\'e inequality on $B_{L+1}$ gives
+\[
+ \norm{w_{\varepsilon,\delta}(t)}{2}
+       \le C_L\norm{\nabla w_{\varepsilon,\delta}(t)}{2}.
+\]
+Integration on the compact time interval and the $L^2$ contraction
+of convolution bound this by the given spacetime norm of $\nabla u_t$.
+Weak compactness and distributional convergence identify the limit
+with $u_t$. Exhausting $(0,T)$ by compact subintervals proves
+\eqref{eq:utPoincare}. The constant is independent of the smoothing
+parameters and the compact time subinterval.
+
+Consequently,
+$u\in H^1(0,T;H^1)\cap L^\infty(0,T;H^2)$, and its continuous
+$H^1$ representative has a limit
+\begin{equation}
+ u(t)\longrightarrow u_*
+       \quad\hbox{in }H^1\quad(t\downarrow0).
+ \label{eq:velocitytrace}
+\end{equation}
+Since $\rho(t)\to\rho_0$ in $W^{1,q}$ and hence in $L^\infty$,
+we have $\rho(t)u(t)\to\rho_0u_*$ in $L^2$.
+The conservative momentum trace identifies
+\begin{equation}
+ \rho_0u_*=\rho_0u_0\quad\hbox{almost everywhere}.
+ \label{eq:identifytrace}
+\end{equation}
+This imposes no identification on the initial vacuum set. For the
+kinetic energy,
+\begin{align}
+ &\left|\int\rho(t)|u(t)|^2\dd-\int\rho_0|u_*|^2\dd\right|\notag\\
+ &\quad\le
+ \norm{\rho(t)-\rho_0}{\infty}\norm{u(t)}{2}^2\notag\\
+ &\qquad
+   +\norm{\rho_0}{\infty}\norm{u(t)-u_*}{2}
+           \bigl(\norm{u(t)}{2}+\norm{u_*}{2}\bigr)
+ \longrightarrow0.
+ \label{eq:kinetictrace}
+\end{align}
+Equation \eqref{eq:identifytrace} then gives the asserted value of
+$K(0)$.
+
+We derive the balances with integrable right sides. Continuity and
+the preceding regularity imply
+\begin{equation}
+ \rho_t=-u\cdot\nabla\rho-\rho\Div u
+       \in L^2(0,T;L^q).
+ \label{eq:densitytime}
+\end{equation}
+Here $u\in L^\infty(0,T;L^\infty)$ follows from
+\eqref{eq:compactSobolev}; the other factors use
+$\rho,\nabla\rho\in L^\infty(0,T;L^q)$ and
+$\Div u\in L^2(0,T;L^\infty)$.
+The time product rule for $\int\rho|u|^2$ is legitimate:
+for the $\rho_t$ term use
+$|u|^2\in L^\infty(0,T;L^{q/(q-1)})$, and for the $u_t$ term
+use $\rho\in L^\infty$ and $u,u_t\in L^2$ in space.
+These bounds also justify passage from space and time
+mollifications to the unmollified products.
+
+Using continuity to write momentum as
+$\rho(u_t+u\cdot\nabla u)=\Div S-\nabla P$, we test by $u$,
+with a fixed spatial cutoff equal to one near $\overline{B_L}$.
+The convective term obeys
+\begin{equation}
+ \int\rho(u\cdot\nabla u)\cdot u\dd
+       =-\frac12\int\Div(\rho u)|u|^2\dd
+       =\frac12\int\rho_t|u|^2\dd.
+ \label{eq:kinetictransport}
+\end{equation}
+Weak integration by parts gives
+\[
+ \int\Div S\cdot u\dd=-\int Q(u)\dd,\qquad
+ -\int\nabla P\cdot u\dd=\int P\Div u\dd.
+\]
+These pairings are valid with $S,P\in L^2$ and $u\in H^1$.
+In fact,
+\begin{equation}
+ \norm{P(t)}{2}
+       \le R\norm{\rho(t)}{\infty}^{1/2}
+                    \norm{\sqrt{\rho(t)}\theta(t)}{2}.
+ \label{eq:pressureLtwo}
+\end{equation}
+Thus
+\begin{equation}
+ \frac{d}{dt}\frac12\int\rho|u|^2\dd
+       =-\int Q(u)\dd+\int P\Div u\dd.
+ \label{eq:kineticbalance}
+\end{equation}
+The bounds
+\begin{equation}
+ \begin{aligned}
+ \int|Q(u)|\dd&\le C(\mu,\lambda)\norm{\nabla u}{2}^2,\\
+ \left|\int P\Div u\dd\right|
+       &\le\norm{P}{2}\norm{\Div u}{2}
+ \end{aligned}\label{eq:energyintegrability}
+\end{equation}
+show that the right side is integrable on $[0,T]$. Together with
+\eqref{eq:kinetictrace}, this proves the asserted absolute
+continuity of $K$.
+
+For internal energy we keep the conservative thermal equation.
+Choose $\chi\in C_c^\infty(\R^2)$ equal to one on a neighborhood
+of $\overline{B_L}$. Spatial pairing with $\chi$ gives
+\begin{equation}
+ \frac{d}{dt}\left(c_v\int\rho\theta\,\chi\dd\right)
+       =\int Q(u)\dd-\int P\Div u\dd.
+ \label{eq:internalbalance}
+\end{equation}
+Indeed, $\rho\theta u\cdot\nabla\chi=0$. The function $\theta$
+and its distributional spatial derivatives are supported in
+$\overline{B_L}$ for almost every time, so
+\[
+ \langle\Delta\theta,\chi\rangle
+       =\langle\theta,\Delta\chi\rangle=0.
+\]
+The functions $Q(u)$ and $P\Div u$ are supported in that ball too.
+Thus no flux term at infinity or at a moving vacuum boundary has
+been dropped.
+
+The left side of \eqref{eq:internalbalance} is $U'(t)$, and
+$U$ is essentially bounded because
+$\left|\int\rho\theta\dd\right|
+\le\norm{\rho}{1}^{1/2}\norm{\sqrt\rho\,\theta}{2}$.
+The right side lies in $L^1(0,T)$ by
+\eqref{eq:energyintegrability}, giving an absolutely continuous
+extension to $[0,T]$. Pairing the conservative thermal trace
+\eqref{eq:traces} with the same $\chi$ yields
+\[
+ U(0)=c_v\int\rho_0\theta_0\dd.
+\]
+No unweighted strong trace of $\theta$ is required.
+Adding the kinetic and internal balances proves
+\eqref{eq:energyconservation}, including its constant at zero.
+The signs follow from $\rho,\theta\ge0$ and extend to the
+continuous energy representatives. Finally, testing
+\eqref{eq:mass} with $\chi$ gives conservation of mass, whose
+value is $M$ by the density trace.
+\end{proof}
+
+All pointwise-in-time statements about $K$ and $U$ use the absolutely
+continuous representatives obtained in Proposition~\ref{prop:energy};
+the original Bochner fields are defined only almost everywhere in time.
+The equality in \eqref{eq:energyconservation}, with its correctly
+identified initial value, is needed below. An upper energy
+inequality alone would not give the positive lower bound for the
+virial acceleration. The conservative thermal test avoids any
+unproved temperature chain rule in vacuum.
+
+\section{The virial bound and small positive-energy data}\label{sec:virial}
+
+\begin{proof}[Proof of Theorem~\ref{thm:obstruction}]
+Fix $0<T<T_*$. Let $\chi$ be the cutoff in
+Proposition~\ref{prop:energy} and define
+\[
+ I(t)=\int\rho(t,x)|x|^2\dd,\qquad
+ J(t)=\int\rho(t,x)u(t,x)\cdot x\dd.
+\]
+By fixed support, these are the pairings with $\chi|x|^2$ and
+$\chi x$. They are finite; in particular,
+$|J(t)|\le L M^{1/2}\norm{\sqrt{\rho(t)}u(t)}{2}$.
+Testing continuity with $\chi|x|^2$ gives
+\begin{equation}
+ I'(t)=2J(t).
+ \label{eq:firstvirial}
+\end{equation}
+Testing conservative momentum with $\chi x$ gives
+\begin{equation}
+ J'(t)=\int\rho|u|^2\dd-\int\operatorname{tr}S\dd
+                                      +2\int P\dd.
+ \label{eq:secondvirial}
+\end{equation}
+Terms involving derivatives of $\chi$ are supported where
+$\rho=u=\theta=0$ and their weak spatial derivatives vanish.
+In two dimensions,
+$\operatorname{tr}S=2(\mu+\lambda)\Div u=2b\Div u$.
+Fixed support and $\nabla u\in L^2$ imply $\Div u\in L^1$, and
+\[
+ \int\Div u\dd=-\int u\cdot\nabla\chi\dd=0.
+\]
+Consequently,
+\begin{equation}
+ J'(t)=2K(t)+2\frac{R}{c_v}U(t).
+ \label{eq:momentumvirial}
+\end{equation}
+The right side is integrable, so $J$ has an absolutely continuous
+representative. The conservative momentum trace tested with $\chi x$
+gives $J(0)=J_0$; the density trace gives $I(0)=I_0$.
+Equation \eqref{eq:firstvirial} identifies the absolutely continuous
+derivative of $I$. Nonnegativity and conservation of energy give
+\begin{equation}
+ I''(t)=4K(t)+4\frac{R}{c_v}U(t)
+       \ge4\beta\bigl(K(t)+U(t)\bigr)=4\beta E_0
+ \label{eq:virialacceleration}
+\end{equation}
+almost everywhere. Integrating twice,
+\begin{equation}
+ I(t)\ge I_0+2J_0t+2\beta E_0t^2,\qquad 0\le t\le T.
+ \label{eq:quadraticgrowth}
+\end{equation}
+On the other hand, fixed support and mass conservation yield
+\begin{equation}
+ 0\le I(t)\le L^2\int\rho(t)\dd=ML^2.
+ \label{eq:momentupper}
+\end{equation}
+This proves \eqref{eq:mainbound}. Since $E_0>0$ and
+$ML^2-I_0>0$, the inequality
+\[
+ 2\beta E_0t^2+2J_0t-(ML^2-I_0)\le0
+\]
+has exactly one positive root, the right side of \eqref{eq:lifespan}.
+Every $t<T_*$ is bounded by it, since $T<T_*$ was arbitrary.
+The theorem follows.
+\end{proof}
+
+We finish with smooth initial data whose common norm bounds can be
+fixed before the energy parameter is chosen.
+
+\begin{corollary}\label{cor:smallenergy}
+Fix the parameters in \eqref{eq:parameters}, $a>1$, $q>2$,
+$\eta_0>0$, and a mass $M>0$. There is a family
+$(\rho_0^\varepsilon,u_0^\varepsilon,\theta_0^\varepsilon)$,
+$0<\varepsilon\le1$, of smooth compactly supported data satisfying
+\eqref{eq:data}--\eqref{eq:compatibility} such that
+\begin{equation}
+ \begin{gathered}
+ \int\rho_0^\varepsilon\dd=M,\qquad
+ \supp\rho_0^\varepsilon\subset\overline{B_1},\\
+ E_0^\varepsilon>0,\qquad E_0^\varepsilon\longrightarrow0.
+ \end{gathered}
+ \label{eq:familyproperties}
+\end{equation}
+The density is independent of $\varepsilon$. Every norm displayed
+in \eqref{eq:data}, as well as $\norm{g^\varepsilon}{2}$, has a
+common finite upper bound. No member of the family admits a global
+solution in Definition~\ref{def:solution}.
+\end{corollary}
+
+\begin{proof}
+Take the nonnegative smooth function
+\[
+ f(x)=
+ \begin{cases}
+ \exp\bigl(-1/(1-|x|^2)\bigr),&|x|<1,\\
+ 0,&|x|\ge1,
+ \end{cases}
+ \qquad
+ c=\frac{M}{\int f^2\dd},
+ \qquad r=cf^2.
+\]
+Then $r,\sqrt r\in C_c^\infty(\R^2)$, $r>0$ on $B_1$, and
+$\int r\dd=M$. Set
+\begin{equation}
+ \rho_0^\varepsilon=r,\qquad
+ u_0^\varepsilon=0,\qquad
+ \theta_0^\varepsilon=\varepsilon r,
+ \qquad 0<\varepsilon\le1.
+ \label{eq:familydefinition}
+\end{equation}
+The weighted density norm
+$\norm{\bar x^a r}{L^1\cap H^1\cap W^{1,q}}$ is fixed and finite.
+The velocity norms vanish, and
+\begin{equation}
+ \begin{aligned}
+ \norm{\sqrt r\,\theta_0^\varepsilon}{2}
+       &=\varepsilon\left(\int r^3\dd\right)^{1/2},\\
+ \norm{\nabla\theta_0^\varepsilon}{2}
+       &=\varepsilon\norm{\nabla r}{2}.
+ \end{aligned}\label{eq:familynorms}
+\end{equation}
+The momentum compatibility condition holds exactly:
+\begin{align}
+ &-\mu\Delta u_0^\varepsilon
+       -b\nabla\Div u_0^\varepsilon
+       +R\nabla(\rho_0^\varepsilon\theta_0^\varepsilon)\notag\\
+ &\hspace{16mm}=R\varepsilon\nabla(r^2)
+       =2R\varepsilon r\nabla r
+       =\sqrt r\,g^\varepsilon,\notag\\
+ &g^\varepsilon=2R\varepsilon\sqrt r\,\nabla r.
+ \label{eq:familycompatibility}
+\end{align}
+Since $\sqrt r\in C_c^\infty$, $g^\varepsilon$ is smooth and
+compactly supported, with
+\begin{equation}
+ \norm{g^\varepsilon}{2}
+       =2R\varepsilon
+                \left(\int r|\nabla r|^2\dd\right)^{1/2}.
+ \label{eq:familygbound}
+\end{equation}
+All required initial bounds are therefore uniform for
+$0<\varepsilon\le1$. No thermal compatibility condition is imposed.
+
+Finally,
+\begin{equation}
+ E_0^\varepsilon=c_v\varepsilon\int r^2\dd>0,\qquad
+ J_0^\varepsilon=0,\qquad
+ I_0^\varepsilon=\int r|x|^2\dd<M.
+ \label{eq:familyenergy}
+\end{equation}
+Theorem~\ref{thm:obstruction} applies to each $\varepsilon>0$.
+If a solution in the specified class exists on $[0,T_*^\varepsilon)$,
+its interval satisfies
+\begin{equation}
+ T_*^\varepsilon
+       \le\left(\frac{M-\int r|x|^2\dd}
+                 {2\beta c_v\varepsilon\int r^2\dd}\right)^{1/2}.
+ \label{eq:familylifespan}
+\end{equation}
+This is finite for every $\varepsilon>0$.
+\end{proof}
+
+The family has fixed positive mass, fixed density support, and zero
+total momentum. The initial velocity and temperature are actual
+compactly supported smooth functions, so their integrability has no
+constant-representative ambiguity. A positive energy threshold based
+only on the fixed parameters and these common initial upper bounds
+therefore cannot guarantee a global solution in the stated class for
+every member of the family. The upper bound
+\eqref{eq:familylifespan} tends to infinity as
+$\varepsilon\downarrow0$; the conclusion concerns each strictly
+positive energy.
+
+The construction verifies the displayed initial assumptions and
+compatibility condition, but does not independently establish local
+solvability in \eqref{eq:fullclass}. It gives no example of finite-time
+breakdown without that additional result. The theorem also retains
+nonnegative temperature, finite unweighted velocity and temperature
+norms, and strict $\mu+\lambda>0$. Different solution classes and the
+viscosity endpoint require separate arguments.
+
+\begin{thebibliography}{1}
+\bibitem{WangV3}
+Wang, X.:
+On Existence and Blowup Criterion of Strong Solutions to
+Cauchy Problem of 2D Full Compressible Navier--Stokes System with Vacuum.
+arXiv:2212.13343v3 [math.AP], 4 April 2023.
+\end{thebibliography}
+\end{document}

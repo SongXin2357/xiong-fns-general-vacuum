@@ -1,0 +1,87 @@
+{
+  "schema": "n0009-xiong-research-evidence-v1",
+  "node": "N0009",
+  "source_pdf_sha256": "3d57bb0d85391db8515c8c554509f645886c7e1851efe9a13ee4cc321c63e00a",
+  "runs": [
+    {
+      "run_id": "n0009-v3-blind-r01",
+      "role": "blind reconstruction",
+      "invocation": "wsl.exe --distribution Ubuntu-24.04 -- python3 scripts/run_xiong.py research n0009-v3-blind-r01",
+      "private_serialized_input_sha256": "3c8721a3254a5b9baece5ee7118d710e84085afb7fa331611a4dfaa7b035815b",
+      "project_run_rules_sha256": "29221c71b68145bb980c13666feee6e89f144c7cca5cf1969129c535ca412802",
+      "installed_root_rules": {
+        "AGENTS.md": "c8f50fff2499fc839952843047ac20d3d1d0abc190e3abad1c3b3442eae00c7f",
+        "README.md": "aad07df044d9b6a3bfc6178805a765f6415611d5fede47f32b3f096d42c8e612"
+      },
+      "instruction_load_returncode": 0,
+      "project_rules_visible": true,
+      "final_rules_visible": true,
+      "agent_exec_returncode": 0,
+      "agent_exec_timed_out": false,
+      "result_path": "evidence/N0009/n0009-v3-blind-r01/result.md",
+      "result_sha256": "c97d4bd3e9e641323b6aaebeeb325c050ad8e87f044f783a927b3a322aad52b6",
+      "raw_input_and_runtime_logs": "private ignored runs; not published"
+    },
+    {
+      "run_id": "n0009-v3-redteam-r01",
+      "role": "nonblind adversarial review",
+      "invocation": "wsl.exe --distribution Ubuntu-24.04 -- python3 scripts/run_xiong.py research n0009-v3-redteam-r01",
+      "private_serialized_input_sha256": "3d6684e85c66eddde92b128d678bee08725820146d48d7095af3e27c6e540934",
+      "project_run_rules_sha256": "29221c71b68145bb980c13666feee6e89f144c7cca5cf1969129c535ca412802",
+      "installed_root_rules": {
+        "AGENTS.md": "c8f50fff2499fc839952843047ac20d3d1d0abc190e3abad1c3b3442eae00c7f",
+        "README.md": "aad07df044d9b6a3bfc6178805a765f6415611d5fede47f32b3f096d42c8e612"
+      },
+      "instruction_load_returncode": 0,
+      "project_rules_visible": true,
+      "final_rules_visible": true,
+      "agent_exec_returncode": 0,
+      "agent_exec_timed_out": false,
+      "result_path": "evidence/N0009/n0009-v3-redteam-r01/result.md",
+      "result_sha256": "e71b00119a54f18d6a0a3e267366a3e01ec7551d5f024cc6eb65a8d3d77683e2",
+      "raw_input_and_runtime_logs": "private ignored runs; not published"
+    },
+    {
+      "run_id": "n0009-v3-repair-review-r01",
+      "role": "focused repair review",
+      "invocation": "wsl.exe --distribution Ubuntu-24.04 -- python3 scripts/run_xiong.py research n0009-v3-repair-review-r01",
+      "private_serialized_input_sha256": "7d75e18aef28b34efdd221db42e55380e2997e842e17380662fa50ece59a7425",
+      "project_run_rules_sha256": "29221c71b68145bb980c13666feee6e89f144c7cca5cf1969129c535ca412802",
+      "installed_root_rules": {
+        "AGENTS.md": "c8f50fff2499fc839952843047ac20d3d1d0abc190e3abad1c3b3442eae00c7f",
+        "README.md": "aad07df044d9b6a3bfc6178805a765f6415611d5fede47f32b3f096d42c8e612"
+      },
+      "instruction_load_returncode": 0,
+      "project_rules_visible": true,
+      "final_rules_visible": true,
+      "agent_exec_returncode": 0,
+      "agent_exec_timed_out": false,
+      "result_path": "evidence/N0009/n0009-v3-repair-review-r01/result.md",
+      "result_sha256": "38582e33c977a85ed8358022fda406f423e6ec9cf5df2e30e7df795eb6e952b6",
+      "raw_input_and_runtime_logs": "private ignored runs; not published"
+    },
+    {
+      "run_id": "n0009-v3-manuscript-redteam-r01",
+      "role": "fresh full-manuscript source-fidelity red-team",
+      "invocation": "wsl.exe --distribution Ubuntu-24.04 -- python3 scripts/run_xiong.py research n0009-v3-manuscript-redteam-r01",
+      "private_serialized_input_sha256": "ba6a46e9461dedb345814d5778ca021454bf7d39666500ded34f874ec23f647d",
+      "project_run_rules_sha256": "29221c71b68145bb980c13666feee6e89f144c7cca5cf1969129c535ca412802",
+      "installed_root_rules": {
+        "AGENTS.md": "c8f50fff2499fc839952843047ac20d3d1d0abc190e3abad1c3b3442eae00c7f",
+        "README.md": "aad07df044d9b6a3bfc6178805a765f6415611d5fede47f32b3f096d42c8e612"
+      },
+      "instruction_load_returncode": 0,
+      "project_rules_visible": true,
+      "final_rules_visible": true,
+      "agent_exec_returncode": 0,
+      "agent_exec_timed_out": false,
+      "result_path": "evidence/N0009/n0009-v3-manuscript-redteam-r01/result.md",
+      "result_sha256": "19b14d508e83dbe68aafa8d3244300ecf7453b2f8e50a96dce9bf7cd352d8742",
+      "raw_input_and_runtime_logs": "private ignored runs; not published"
+    }
+  ],
+  "mathematical_status": "repaired paper derivation for strict viscosity; source trace semantics open",
+  "exact_full_target_lean": "NOT_RUN",
+  "node_gate": "OPEN",
+  "global_existence_theorem": "OPEN"
+}

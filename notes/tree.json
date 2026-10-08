@@ -130,7 +130,7 @@
       "parent": "ROOT",
       "dependencies": [],
       "kind": "v3-compact-support-obstruction-audit",
-      "mathematical_status": "preregistered-exploring",
+      "mathematical_status": "paper-draft-v3-strict-viscosity-source-semantics-open",
       "lean_status": "not-started",
       "gate": "open",
       "statement": "notes/nodes/N0009/statement.md",
