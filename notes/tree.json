@@ -34,7 +34,8 @@
       "gate": "passed",
       "statement": "notes/nodes/N0002/statement.md",
       "children": [
-        "N0007"
+        "N0007",
+        "N0008"
       ],
       "certificate": "evidence/N0002/certificate.json",
       "github_commit": "1174efed45e32e6a34ecb03e7a003d9a3ee1789b",
@@ -109,6 +110,20 @@
       "certificate": null,
       "github_commit": null,
       "extension_status": "blocked-until-verified-and-published"
+    },
+    {
+      "id": "N0008",
+      "parent": "N0002",
+      "dependencies": [],
+      "kind": "PDE-application-v3",
+      "mathematical_status": "preregistered-exploring",
+      "lean_status": "not-started",
+      "gate": "open",
+      "statement": "notes/nodes/N0008/statement.md",
+      "children": [],
+      "certificate": null,
+      "github_commit": null,
+      "extension_status": "blocked-until-exact-full-Lean-semantic-and-publication-gate"
     }
   ],
   "github_status": "published-public",
